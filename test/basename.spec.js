@@ -1,0 +1,20 @@
+import { basename } from '../src';
+
+describe('basename', () => {
+  it('should return the original string if there isn\'t a slash', () => {
+    expect(basename('hello.md')).toBe('hello.md');
+  });
+
+  it('should return the last portion of a path', () => {
+    expect(basename('/hello/world.md')).toBe('world.md');
+  });
+
+  it('should exclude the specified second parameter', () => {
+    expect(basename('/hello/world.md', '.md')).toBe('world');
+  });
+
+  it('can use the third parameter to be the separator of the path', () => {
+    expect(basename('\\hello\\world.md', null, '\\')).toBe('world.md');
+  });
+});
+
