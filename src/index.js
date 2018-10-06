@@ -5,3 +5,4 @@ export { default as extname } from './extname';
 export { default as countLines } from './countLines';
 export { default as getQuery } from './getQuery';
 export { default as getHashQuery } from './getHashQuery';
+export { default as randomString } from './randomString';
