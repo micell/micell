@@ -13,7 +13,7 @@
  * Performance:
  *  http://jsperf.com/random-string-for-loop-vs-replace
  */
-const randstr = function (len, chars) {
+export default function randomString(len, chars) {
   const actualLen = len || 32;
   const actualChars = chars || '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz';
 
@@ -24,6 +24,4 @@ const randstr = function (len, chars) {
   }
 
   return str;
-};
-
-export default randstr;
+}
