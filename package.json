@@ -29,6 +29,14 @@
     "type": "git",
     "url": "git+ssh://git@github.com/Alex1990/micellar.git"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  },
   "keywords": [
     "micellar",
     "utility",
@@ -53,9 +61,10 @@
     "eslint": "^4.3.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
+    "husky": "^1.1.2",
     "jest": "^20.0.4",
+    "lint-staged": "^7.3.0",
     "mkdirp": "^0.5.1",
-    "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.4.1"
