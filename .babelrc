@@ -1,22 +1,28 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
-        "browsers": ["last 4 versions", "ie >= 8", ">= 0.5%"]
+        "browsers": ["last 4 versions", "ie >= 9", ">= 0.5%"]
       },
       "loose": true
     }]
   ],
   "plugins": [
-    "transform-object-rest-spread"
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-runtime"
   ],
   "env": {
     "commonjs": {
       "plugins": [
-        ["transform-es2015-modules-commonjs", { "loose": true }]
+        ["@babel/plugin-transform-modules-commonjs", { "loose": true }]
       ]
     },
-    "es": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", {
+          "targets": { node: "current" }
+        }]
+      ]
     }
   }
 }

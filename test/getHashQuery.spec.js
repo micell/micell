@@ -1,14 +1,6 @@
 import { getHashQuery } from '../src';
 
 describe('getHashQuery', () => {
-  beforeAll(() => {
-    Object.defineProperty(window.location, 'hash', {
-      configurable: true,
-      writable: true,
-      value: '',
-    });
-  });
-
   it('should return undefined when the query name is not exist', () => {
     window.location.hash = '';
     expect(getHashQuery('foo')).toBe(undefined);

@@ -3,15 +3,17 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const root = process.cwd();
-const NODE_ENV = process.env.NODE_ENV;
+const { NODE_ENV } = process.env;
 const packageName = process.env.npm_package_name;
 
+
 const config = {
+  mode: NODE_ENV === 'production' ? 'production' : 'development',
   context: root,
   devtool: 'source-map',
   entry: './src/index.js',
   output: {
-    filename: `${packageName}.js',
+    filename: `${packageName}.js`,
     path: path.join(root, 'dist'),
   },
   node: {
@@ -20,7 +22,7 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-    })
+    }),
   ],
   module: {
     rules: [
@@ -30,9 +32,9 @@ const config = {
         use: [
           {
             loader: 'babel-loader',
-          }
+          },
         ],
-      }
+      },
     ],
   },
 };
@@ -42,21 +44,13 @@ if (NODE_ENV === 'production') {
   config.plugins.push(
     new UglifyJsPlugin({
       sourceMap: true,
-      parallel: {
-        // cache: true,
-        // workers: 4,
-      },
+      parallel: true,
       uglifyOptions: {
-        ecma: 8,
-        ie8: true,
-        compress: {
-          warnings: false,
-        },
         output: {
           ascii_only: true,
         },
       },
-    })
+    }),
   );
 }
 
