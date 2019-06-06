@@ -1,4 +1,5 @@
 export { default as basename } from './basename';
+export { default as countChars } from './countChars';
 export { default as countLines } from './countLines';
 export { default as dirname } from './dirname';
 export { default as escapeRegexp } from './escapeRegexp';
