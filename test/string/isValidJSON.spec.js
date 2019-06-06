@@ -1,4 +1,4 @@
-import { isValidJSON } from '../src';
+import isValidJSON from '../../src/string/isValidJSON';
 
 describe('isValidJSON', () => {
   it('should return true if a valid JSON string is passed', () => {

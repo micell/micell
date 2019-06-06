@@ -10,4 +10,3 @@ export default function isValidJSON(value) {
 
   return isValid;
 }
-

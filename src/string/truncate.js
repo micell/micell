@@ -1,4 +1,4 @@
-import isCJK from './char/isCJK';
+import isCJK from '../char/isCJK';
 
 export default function truncate(str = '', options = {}) {
   const {

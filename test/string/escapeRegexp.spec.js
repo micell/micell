@@ -1,4 +1,4 @@
-import { escapeRegexp } from '../src';
+import escapeRegexp from '../../src/string/escapeRegexp';
 
 describe('dirname', () => {
   const specialChars = '.*+?^$|[](){}\\-';

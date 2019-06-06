@@ -1,4 +1,4 @@
-import isString from './lang/isString';
+import isString from '../lang/isString';
 
 const lastChar = (str) => {
   if (!isString(str)) {

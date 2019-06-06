@@ -1,4 +1,4 @@
-import { countChars } from '../src';
+import countChars from '../../src/string/countChars';
 
 describe('countChars', () => {
   const str = 'hello, world!你好，世界！';

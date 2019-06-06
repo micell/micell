@@ -1,4 +1,4 @@
-import { truncate } from '../src';
+import truncate from '../../src/string/truncate';
 
 describe('truncate', () => {
   const str = 'hello, 你好，world!世界！';

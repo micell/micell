@@ -49,6 +49,13 @@
     - [isRealNumber](#isrealnumber)
     - [isRgb](#isrgb)
     - [isRgba](#isrgba)
+  - [string](#string)
+    - [countLines](#countlines)
+    - [escapeRegexp](#escaperegexp)
+    - [firstChar](#firstchar)
+    - [isValidJSON](#isvalidjson)
+    - [lastChar](#lastchar)
+    - [truncate](#truncate)
   - [ua](#ua)
     - [isWindows](#iswindows)
     - [isMacOS](#ismacos)
@@ -61,10 +68,15 @@
     - [isIPhone](#isiphone)
     - [isIPad](#isipad)
   - [basename](#basename)
+  - [dirname](#dirname)
+  - [domReady](#domready)
+  - [extname](#extname)
+  - [getHashQuery](#gethashquery)
+  - [getQuery](#getquery)
+  - [insertScript](#insertscript)
   - [pageX](#pagex)
   - [pageY](#pagey)
   - [randomString](#randomstring)
-  - [truncate](#truncate)
 
 ## char
 
@@ -1203,6 +1215,162 @@ isRgb('RGBA(255, 255, 255, 0.5)');
 // => true
 ```
 
+## string
+
+### countLines
+
+```js
+countLines(str)
+```
+
+Count the number of lines separated by `"\n"`.
+
+**Arguments**
+
+* **str (String)**
+
+**Returns**
+
+* **(Number)**
+
+**Example**
+
+```js
+const str = `hello
+world
+1`;
+countLines(str);
+// => 3
+```
+
+### escapeRegexp
+
+```js
+escapeRegexp(str)
+```
+
+Escape the special characters in regular expression.
+
+**Arguments**
+
+* **str (String)**
+
+**Returns**
+
+* **(String)**
+
+**Example**
+
+```js
+escapeRegexp('a-z');
+// => "a\-z"
+```
+
+### firstChar
+
+```js
+firstChar(str)
+```
+
+Return the first character of a string.
+
+**Arguments**
+
+* **str (String)**
+
+**Returns**
+
+* **(String)**
+
+**Example**
+
+```js
+firstChar('hello');
+// => "h"
+```
+
+### isValidJSON
+
+```js
+isValidJSON(str)
+```
+
+Check if a string is a valid JSON string.
+
+**Arguments**
+
+* **str (String)**
+
+**Returns**
+
+* **(Boolean)**
+
+**Example**
+
+```js
+isValidJSON('{"name": "Alex Chao"}');
+// => true
+
+isValidJSON('""');
+// => true
+```
+
+### lastChar
+
+```js
+lastChar(str)
+```
+
+Return the last character of a string.
+
+**Arguments**
+
+* **str (String)**
+
+**Returns**
+
+* **(String)**
+
+**Example**
+
+```js
+lastChar('hello');
+// => "o"
+```
+
+### truncate
+
+```js
+truncate([str = ''], [options = {}])
+```
+
+Return a truncated string end with the specified omission.
+
+**Arguments**
+
+* **[str = ''] (String)**: The string to be truncated.
+* **[options = {}] (Object)**: The options object.
+  + **[length] (Number)**: The maxmium string length. It is the `str` length by default.
+  + **[omission = '...'] (String)**: The omission string.
+  + **[countType = 0] (Number)**: How to count the half width and full width characters.
+    - `0`: Count 1 for each character.
+    - `1`: Count 1 for half width and count 2 for full width.
+    - `2`: Count 0.5 for half width and count 1 for full width.
+
+**Returns**
+
+* **(String)**
+
+**Example**
+
+```js
+const str = 'hello, 你好，world!世界！';
+truncate(str);
+truncate(str, { length: 10 });
+truncate(str, { omission: '***' });
+truncate(str, { length: 10, countType: 1 });
+```
+
 ## ua
 
 ### isWindows
@@ -1345,31 +1513,6 @@ Return the last part of the path string.
 ```js
 basename('/foo/bar');
 // => "bar"
-
-## countLines
-
-```js
-countLines(str)
-```
-
-Count the number of lines separated by `"\n"`.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(Number)**
-
-**Example**
-
-```js
-const str = `hello
-world
-1`;
-countLines(str);
-// => 3
 ```
 
 ## dirname
@@ -1419,29 +1562,6 @@ domReady(function () {
 });
 ```
 
-## escapeRegexp
-
-```js
-escapeRegexp(str)
-```
-
-Escape the special characters in regular expression.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(String)**
-
-**Example**
-
-```js
-escapeRegexp('a-z');
-// => "a\-z"
-```
-
 ## extname
 
 ```js
@@ -1463,29 +1583,6 @@ Return the extension name of the path.
 ```js
 extname('/foo/bar.txt');
 // => ".txt"
-```
-
-## firstChar
-
-```js
-firstChar(str)
-```
-
-Return the first character of a string.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(String)**
-
-**Example**
-
-```js
-firstChar('hello');
-// => "h"
 ```
 
 ## getHashQuery
@@ -1555,54 +1652,6 @@ Insert a `<script>` to document.
 * **url (String)**: The `script.src` string.
 * **props (Object)**: The `<script>` element properties.
 
-## isValidJSON
-
-```js
-isValidJSON(str)
-```
-
-Check if a string is a valid JSON string.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(Boolean)**
-
-**Example**
-
-```js
-isValidJSON('{"name": "Alex Chao"}');
-// => true
-
-isValidJSON('""');
-// => true
-```
-
-## lastChar
-
-```js
-lastChar(str)
-```
-
-Return the last character of a string.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(String)**
-
-**Example**
-
-```js
-lastChar('hello');
-// => "o"
-
 ## pageX
 
 ```js
@@ -1652,6 +1701,8 @@ Return a random string which consists of the characters specified by `chars`.
 
 * **(String)**
 
+**Example**
+
 ```js
 randomString();
 
@@ -1660,36 +1711,4 @@ randomString(8);
 
 // Generate a random digit string.
 randomString(undefined, '0123456789');
-```
-
-
-## truncate
-
-```js
-truncate([str = ''], [options = {}])
-```
-
-Return a truncated string end with the specified omission.
-
-**Arguments**
-
-* **[str = ''] (String)**: The string to be truncated.
-* **[options = {}] (Object)**: The options object.
-  + **[length] (Number)**: The maxmium string length. It is the `str` length by default.
-  + **[omission = '...'] (String)**: The omission string.
-  + **[countType = 0] (Number)**: How to count the half width and full width characters.
-    - `0`: Count 1 for each character.
-    - `1`: Count 1 for half width and count 2 for full width.
-    - `2`: Count 0.5 for half width and count 1 for full width.
-
-**Returns**
-
-* **(String)**
-
-```js
-const str = 'hello, 你好，world!世界！';
-truncate(str);
-truncate(str, { length: 10 });
-truncate(str, { omission: '***' });
-truncate(str, { length: 10, countType: 1 });
 ```

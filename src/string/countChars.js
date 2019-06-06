@@ -1,5 +1,5 @@
-import isString from './lang/isString';
-import isCJK from './char/isCJK';
+import isString from '../lang/isString';
+import isCJK from '../char/isCJK';
 
 export default function count(str, type = 0) {
   if (!isString(str)) {

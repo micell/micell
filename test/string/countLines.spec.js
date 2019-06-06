@@ -1,4 +1,4 @@
-import { countLines } from '../src';
+import countLines from '../../src/string/countLines';
 
 describe('countLines', () => {
   it('should return 0 if the input is an empty string', () => {
@@ -19,4 +19,3 @@ describe('countLines', () => {
     expect(countLines(macText, '\r')).toBe(2);
   });
 });
-
