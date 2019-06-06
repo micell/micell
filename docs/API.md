@@ -1,80 +1,70 @@
 # API
 
-* [char](#char)
-  + [isAlphabetic](#isAlphabetic)
-  + [isAlphanumeric](#isAlphanumeric)
-  + [isASCII](#isASCII)
-  + [isCJK](#isCJK)
-  + [isControl](#isControl)
-  + [isDigit](#isDigit)
-  + [isGraph](#isGraph)
-  + [isHexadecimal](#isHexadecimal)
-  + [isLower](#isLower)
-  + [isPrint](#isPrint)
-  + [isPunctuation](#isPunctuation)
-  + [isSpcae](#isSpcae)
-  + [isUpper](#isUpper)
-* [date](#date)
-  + [diff](#diff)
-  + [format](#format)
-  + [timeAgo](#timeAgo)
-* [dom](#dom)
-* [lang](#lang)
-  + [isArray](#isArray)
-  + [isBoolean](#isBoolean)
-  + [isDate](#isDate)
-  + [isError](#isError)
-  + [isFunction](#isFunction)
-  + [isNil](#isNil)
-  + [isNull](#isNull)
-  + [isNumber](#isNumber)
-  + [isObject](#isObject)
-  + [isRegExp](#isRegExp)
-  + [isString](#isString)
-  + [isUndefined](#isUndefined)
-* [regex](#regex)
-  + [isAscii](#isAscii)
-  + [isDecimal](#isDecimal)
-  + [isDigit](#isDigit)
-  + [isDomain](#isDomain)
-  + [isEmail](#isEmail)
-  + [isHexColor](#isHexColor)
-  + [isHsl](#isHsl)
-  + [isHsla](#isHsla)
-  + [isInterger](#isInterger)
-  + [isIP](#isIP)
-  + [isIPv4](#isIPv4)
-  + [isIPv6](#isIPv6)
-  + [isQQ](#isQQ)
-  + [isRealNumber](#isRealNumber)
-  + [isRgb](#isRgb)
-  + [isRgba](#isRgba)
-* [ua](#ua)
-  + [isWindows](#isWindows)
-  + [isMacOS](#isMacOS)
-  + [isLinux](#isLinux)
-  + [isAndroid](#isAndroid)
-  + [isIOS](#isIOS)
-  + [isMobile](#isMobile)
-  + [isTablet](#isTablet)
-  + [isWeChat](#isWeChat)
-  + [isIPhone](#isIPhone)
-  + [isIPad](#isIPad)
-* [basename](#basename)
-* [countLines](#countLines)
-* [dirname](#dirname)
-* [domReady](#domReady)
-* [escapeRegexp](#escapeRegexp)
-* [extname](#extname)
-* [firstChar](#firstChar)
-* [getHashQuery](#getHashQuery)
-* [getQuery](#getQuery)
-* [insertScript](#insertScript)
-* [isValidJSON](#isValidJSON)
-* [lastChar](#lastChar)
-* [pageX](#pageX)
-* [pageY](#pageY)
-* [randomString](#randomString)
+- [API](#api)
+  - [char](#char)
+    - [isAlphabetic](#isalphabetic)
+    - [isAlphanumeric](#isalphanumeric)
+    - [isASCII](#isascii)
+    - [isCJK](#iscjk)
+    - [isControl](#iscontrol)
+    - [isDigit](#isdigit)
+    - [isGraph](#isgraph)
+    - [isHexadecimal](#ishexadecimal)
+    - [isLower](#islower)
+    - [isPrint](#isprint)
+    - [isPunctuation](#ispunctuation)
+    - [isSpace](#isspace)
+    - [isUpper](#isupper)
+  - [date](#date)
+    - [diff](#diff)
+    - [format](#format)
+    - [timeAgo](#timeago)
+  - [lang](#lang)
+    - [isArray](#isarray)
+    - [isBoolean](#isboolean)
+    - [isDate](#isdate)
+    - [isError](#iserror)
+    - [isFunction](#isfunction)
+    - [isNil](#isnil)
+    - [isNull](#isnull)
+    - [isNumber](#isnumber)
+    - [isObject](#isobject)
+    - [isRegExp](#isregexp)
+    - [isString](#isstring)
+    - [isUndefined](#isundefined)
+  - [regex](#regex)
+    - [isAscii](#isascii)
+    - [isDecimal](#isdecimal)
+    - [isDigit](#isdigit-1)
+    - [isDomain](#isdomain)
+    - [isEmail](#isemail)
+    - [isHexColor](#ishexcolor)
+    - [isHsl](#ishsl)
+    - [isHsla](#ishsla)
+    - [isInteger](#isinteger)
+    - [isIP](#isip)
+    - [isIPv4](#isipv4)
+    - [isIPv4](#isipv4-1)
+    - [isQQ](#isqq)
+    - [isRealNumber](#isrealnumber)
+    - [isRgb](#isrgb)
+    - [isRgba](#isrgba)
+  - [ua](#ua)
+    - [isWindows](#iswindows)
+    - [isMacOS](#ismacos)
+    - [isLinux](#islinux)
+    - [isAndroid](#isandroid)
+    - [isIOS](#isios)
+    - [isMobile](#ismobile)
+    - [isTablet](#istablet)
+    - [isWechat](#iswechat)
+    - [isIPhone](#isiphone)
+    - [isIPad](#isipad)
+  - [basename](#basename)
+  - [pageX](#pagex)
+  - [pageY](#pagey)
+  - [randomString](#randomstring)
+  - [truncate](#truncate)
 
 ## char
 
@@ -1670,4 +1660,36 @@ randomString(8);
 
 // Generate a random digit string.
 randomString(undefined, '0123456789');
+```
+
+
+## truncate
+
+```js
+truncate([str = ''], [options = {}])
+```
+
+Return a truncated string end with the specified omission.
+
+**Arguments**
+
+* **[str = ''] (String)**: The string to be truncated.
+* **[options = {}] (Object)**: The options object.
+  + **[length] (Number)**: The maxmium string length. It is the `str` length by default.
+  + **[omission = '...'] (String)**: The omission string.
+  + **[countType = 0] (Number)**: How to count the half width and full width characters.
+    - `0`: Count 1 for each character.
+    - `1`: Count 1 for half width and count 2 for full width.
+    - `2`: Count 0.5 for half width and count 1 for full width.
+
+**Returns**
+
+* **(String)**
+
+```js
+const str = 'hello, 你好，world!世界！';
+truncate(str);
+truncate(str, { length: 10 });
+truncate(str, { omission: '***' });
+truncate(str, { length: 10, countType: 1 });
 ```

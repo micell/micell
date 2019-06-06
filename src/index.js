@@ -8,3 +8,4 @@ export { default as getHashQuery } from './getHashQuery';
 export { default as getQuery } from './getQuery';
 export { default as isValidJSON } from './isValidJSON';
 export { default as randomString } from './randomString';
+export { default as truncate } from './truncate';
