@@ -2,13 +2,13 @@ import isArray from '../../src/lang/isArray';
 
 describe('lang/isArray', () => {
   it('should return true', () => {
-    expect(isArray([])).toBe(true);
+    expect(isArray([])).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isArray(new ArrayBuffer())).toBe(false);
-    expect(isArray({})).toBe(false);
-    expect(isArray(undefined)).toBe(false);
-    expect(isArray(null)).toBe(false);
+    expect(isArray(new ArrayBuffer())).to.equal(false);
+    expect(isArray({})).to.equal(false);
+    expect(isArray(undefined)).to.equal(false);
+    expect(isArray(null)).to.equal(false);
   });
 });

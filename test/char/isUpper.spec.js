@@ -3,7 +3,7 @@ import isUpper from '../../src/char/isUpper';
 describe('char/isUpper', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 65; i <= 90; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -11,13 +11,13 @@ describe('char/isUpper', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isUpper(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isUpper({})).toBe(false);
-    expect(isUpper('')).toBe(false);
-    expect(isUpper(null)).toBe(false);
-    expect(isUpper(undefined)).toBe(false);
+    expect(isUpper({})).to.equal(false);
+    expect(isUpper('')).to.equal(false);
+    expect(isUpper(null)).to.equal(false);
+    expect(isUpper(undefined)).to.equal(false);
   });
 });

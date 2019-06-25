@@ -3,7 +3,7 @@ import isDigit from '../../src/char/isDigit';
 describe('char/isDigit', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 48; i <= 57; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -11,13 +11,13 @@ describe('char/isDigit', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isDigit(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isDigit({})).toBe(false);
-    expect(isDigit('')).toBe(false);
-    expect(isDigit(null)).toBe(false);
-    expect(isDigit(undefined)).toBe(false);
+    expect(isDigit({})).to.equal(false);
+    expect(isDigit('')).to.equal(false);
+    expect(isDigit(null)).to.equal(false);
+    expect(isDigit(undefined)).to.equal(false);
   });
 });

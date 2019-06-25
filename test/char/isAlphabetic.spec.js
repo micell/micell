@@ -3,7 +3,7 @@ import isAlphabetic from '../../src/char/isAlphabetic';
 describe('char/isAlphabetic', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 65; i <= 90; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -14,14 +14,13 @@ describe('char/isAlphabetic', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isAlphabetic(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isAlphabetic({})).toBe(false);
-    expect(isAlphabetic('')).toBe(false);
-    expect(isAlphabetic(null)).toBe(false);
-    expect(isAlphabetic(undefined)).toBe(false);
+    expect(isAlphabetic({})).to.equal(false);
+    expect(isAlphabetic('')).to.equal(false);
+    expect(isAlphabetic(null)).to.equal(false);
+    expect(isAlphabetic(undefined)).to.equal(false);
   });
 });
-

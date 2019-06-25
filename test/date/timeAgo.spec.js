@@ -6,12 +6,12 @@ describe('date/timeAgo', () => {
   });
 
   it('should the current locale', () => {
-    expect(timeAgo.getLocale()).toBe('en_US');
+    expect(timeAgo.getLocale()).to.equal('en_US');
   });
 
   it('should return the set locale', () => {
     timeAgo.setLocale('zh_CN');
-    expect(timeAgo.getLocale()).toBe('zh_CN');
+    expect(timeAgo.getLocale()).to.equal('zh_CN');
   });
 
   it('should return the expected formatted string', () => {
@@ -75,19 +75,19 @@ describe('date/timeAgo', () => {
       ],
     ];
     testUnits.forEach((testUnit) => {
-      expect(timeAgo.format.apply(null, testUnit[0])).toBe(testUnit[1]);
+      expect(timeAgo.format.apply(null, testUnit[0])).to.equal(testUnit[1]);
     });
   });
 
   it('should work with the second `locale` parameter', () => {
     const now = Date.now();
-    expect(timeAgo.format(now - 5000, 'zh_CN')).toBe('5 秒前');
+    expect(timeAgo.format(now - 5000, 'zh_CN')).to.equal('5 秒前');
   });
 
   it('should work with the third `nowDate` paramter', () => {
     const now = Date.now();
     const nowDate = now - 5000;
-    expect(timeAgo.format(now, null, nowDate)).toBe('in 5 seconds');
+    expect(timeAgo.format(now, null, nowDate)).to.equal('in 5 seconds');
   });
 
   it('should add the specified locale', () => {
@@ -98,7 +98,7 @@ describe('date/timeAgo', () => {
       ['-%s minutes', '+%s minutes'],
     ]);
     timeAgo.setLocale('custom');
-    expect(timeAgo.getLocale()).toBe('custom');
+    expect(timeAgo.getLocale()).to.equal('custom');
 
     const now = Date.now();
     const testUnits = [
@@ -121,7 +121,7 @@ describe('date/timeAgo', () => {
     ];
 
     testUnits.forEach((testUnit) => {
-      expect(timeAgo.format.apply(null, testUnit[0])).toBe(testUnit[1]);
+      expect(timeAgo.format.apply(null, testUnit[0])).to.equal(testUnit[1]);
     });
   });
 });

@@ -3,7 +3,7 @@ import isHexadecimal from '../../src/char/isHexadecimal';
 describe('char/isHexadecimal', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 48; i <= 57; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -17,13 +17,13 @@ describe('char/isHexadecimal', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isHexadecimal(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isHexadecimal({})).toBe(false);
-    expect(isHexadecimal('')).toBe(false);
-    expect(isHexadecimal(null)).toBe(false);
-    expect(isHexadecimal(undefined)).toBe(false);
+    expect(isHexadecimal({})).to.equal(false);
+    expect(isHexadecimal('')).to.equal(false);
+    expect(isHexadecimal(null)).to.equal(false);
+    expect(isHexadecimal(undefined)).to.equal(false);
   });
 });

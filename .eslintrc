@@ -3,11 +3,10 @@
   "env": {
     "browser": true,
     "node": true,
-    "jest": true
+    "mocha": true
   },
   "globals": {
-    "mocha": true,
-    "chai": true
+    "expect": true
   },
   "rules": {
     "no-cond-assign": 0,

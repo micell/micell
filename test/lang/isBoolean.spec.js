@@ -2,21 +2,21 @@ import isBoolean from '../../src/lang/isBoolean';
 
 describe('lang/isBoolean', () => {
   it('primitive', () => {
-    expect(isBoolean(true)).toBe(true);
-    expect(isBoolean(false)).toBe(true);
+    expect(isBoolean(true)).to.equal(true);
+    expect(isBoolean(false)).to.equal(true);
   });
 
   it('wrapper object', () => {
     /* eslint-disable  no-new-wrappers */
-    expect(isBoolean(new Boolean(true))).toBe(true);
-    expect(isBoolean(new Boolean(false))).toBe(true);
+    expect(isBoolean(new Boolean(true))).to.equal(true);
+    expect(isBoolean(new Boolean(false))).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isBoolean({})).toBe(false);
-    expect(isBoolean(null)).toBe(false);
-    expect(isBoolean(undefined)).toBe(false);
-    expect(isBoolean(1)).toBe(false);
-    expect(isBoolean(0)).toBe(false);
+    expect(isBoolean({})).to.equal(false);
+    expect(isBoolean(null)).to.equal(false);
+    expect(isBoolean(undefined)).to.equal(false);
+    expect(isBoolean(1)).to.equal(false);
+    expect(isBoolean(0)).to.equal(false);
   });
 });

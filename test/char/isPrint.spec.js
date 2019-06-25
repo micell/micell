@@ -3,7 +3,7 @@ import isPrint from '../../src/char/isPrint';
 describe('char/isPrint', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 32; i <= 126; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -11,13 +11,13 @@ describe('char/isPrint', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isPrint(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isPrint({})).toBe(false);
-    expect(isPrint('')).toBe(false);
-    expect(isPrint(null)).toBe(false);
-    expect(isPrint(undefined)).toBe(false);
+    expect(isPrint({})).to.equal(false);
+    expect(isPrint('')).to.equal(false);
+    expect(isPrint(null)).to.equal(false);
+    expect(isPrint(undefined)).to.equal(false);
   });
 });

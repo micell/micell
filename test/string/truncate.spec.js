@@ -3,23 +3,23 @@ import truncate from '../../src/string/truncate';
 describe('truncate', () => {
   const str = 'hello, 你好，world!世界！';
   it('zero argument', () => {
-    expect(truncate()).toBe('...');
+    expect(truncate()).to.equal('...');
   });
 
   it('only first argument', () => {
-    expect(truncate(str)).toBe(`${str}...`);
+    expect(truncate(str)).to.equal(`${str}...`);
   });
 
   it('options.omission', () => {
-    expect(truncate(str, { omission: '***' })).toBe(`${str}***`);
+    expect(truncate(str, { omission: '***' })).to.equal(`${str}***`);
   });
 
   it('options.length', () => {
-    expect(truncate(str, { length: 10 })).toBe('hello, 你好，...');
+    expect(truncate(str, { length: 10 })).to.equal('hello, 你好，...');
   });
 
   it('options.countType', () => {
-    expect(truncate(str, { length: 10, countType: 1 })).toBe('hello, 你...');
-    expect(truncate(str, { length: 10, countType: 2 })).toBe('hello, 你好，world!...');
+    expect(truncate(str, { length: 10, countType: 1 })).to.equal('hello, 你...');
+    expect(truncate(str, { length: 10, countType: 2 })).to.equal('hello, 你好，world!...');
   });
 });

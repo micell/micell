@@ -3,7 +3,7 @@ import isControl from '../../src/char/isControl';
 describe('char/isControl', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 0; i <= 31; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -12,13 +12,13 @@ describe('char/isControl', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isControl(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isControl({})).toBe(false);
-    expect(isControl('')).toBe(false);
-    expect(isControl(null)).toBe(false);
-    expect(isControl(undefined)).toBe(false);
+    expect(isControl({})).to.equal(false);
+    expect(isControl('')).to.equal(false);
+    expect(isControl(null)).to.equal(false);
+    expect(isControl(undefined)).to.equal(false);
   });
 });

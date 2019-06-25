@@ -5,6 +5,6 @@ describe('dirname', () => {
   const escapedSpecialChars = '\\.\\*\\+\\?\\^\\$\\|\\[\\]\\(\\)\\{\\}\\\\\\-';
 
   it('should escape the special characters', () => {
-    expect(escapeRegexp(specialChars)).toBe(escapedSpecialChars);
+    expect(escapeRegexp(specialChars)).to.equal(escapedSpecialChars);
   });
 });

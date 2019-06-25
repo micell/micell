@@ -3,7 +3,7 @@ import isPunctuation from '../../src/char/isPunctuation';
 describe('char/isPunctuation', () => {
   const chars = [];
 
-  beforeAll(() => {
+  before(() => {
     for (let i = 33; i <= 47; i++) {
       chars.push(String.fromCharCode(i));
     }
@@ -20,13 +20,13 @@ describe('char/isPunctuation', () => {
 
   it('should return true', () => {
     const result = chars.every(ch => isPunctuation(ch));
-    expect(result).toBe(true);
+    expect(result).to.equal(true);
   });
 
   it('should return false', () => {
-    expect(isPunctuation({})).toBe(false);
-    expect(isPunctuation('')).toBe(false);
-    expect(isPunctuation(null)).toBe(false);
-    expect(isPunctuation(undefined)).toBe(false);
+    expect(isPunctuation({})).to.equal(false);
+    expect(isPunctuation('')).to.equal(false);
+    expect(isPunctuation(null)).to.equal(false);
+    expect(isPunctuation(undefined)).to.equal(false);
   });
 });
