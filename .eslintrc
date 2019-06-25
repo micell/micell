@@ -5,6 +5,10 @@
     "node": true,
     "jest": true
   },
+  "globals": {
+    "mocha": true,
+    "chai": true
+  },
   "rules": {
     "no-cond-assign": 0,
     "no-plusplus": 0
