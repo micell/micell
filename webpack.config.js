@@ -1,10 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const pkg = require('./package.json');
 
 const root = process.cwd();
 const { NODE_ENV } = process.env;
-const packageName = process.env.npm_package_name;
 
 
 const config = {
@@ -13,8 +12,11 @@ const config = {
   devtool: 'source-map',
   entry: './src/index.js',
   output: {
-    filename: `${packageName}.js`,
+    filename: `${pkg.name}.js`,
     path: path.join(root, 'dist'),
+    library: 'micellar',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   },
   node: {
     Buffer: false,
@@ -22,6 +24,7 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      'process.env.VERSION': JSON.stringify(pkg.version),
     }),
   ],
   module: {
@@ -40,18 +43,7 @@ const config = {
 };
 
 if (NODE_ENV === 'production') {
-  config.output.filename = `${packageName}.min.js`;
-  config.plugins.push(
-    new UglifyJsPlugin({
-      sourceMap: true,
-      parallel: true,
-      uglifyOptions: {
-        output: {
-          ascii_only: true,
-        },
-      },
-    }),
-  );
+  config.output.filename = `${pkg.name}.min.js`;
 }
 
 module.exports = config;

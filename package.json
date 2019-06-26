@@ -16,11 +16,11 @@
     "clean": "rimraf dist lib es",
     "lint": "eslint src test",
     "test": "cross-env BABEL_ENV=test karma start",
-    "build": "npm run build:es && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "build:commonjs": "cross-env BABEL_ENV=production babel src --out-dir lib",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development webpack",
-    "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production webpack"
+    "build": "npm run clean && npm run build:es && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env babel src --out-dir es",
+    "build:umd": "cross-env NODE_ENV=development webpack",
+    "build:umd:min": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -73,7 +73,6 @@
     "mocha": "^6.1.4",
     "request": "^2.88.0",
     "rimraf": "^2.6.1",
-    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
   },
