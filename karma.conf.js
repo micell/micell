@@ -40,6 +40,7 @@ module.exports = function (config) {
 
     // webpack
     webpack: {
+      mode: 'development',
     },
 
 

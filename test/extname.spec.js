@@ -1,4 +1,4 @@
-import { extname } from '../src';
+import extname from '../src/extname';
 
 describe('extname', () => {
   it('should return the extension of the path', () => {

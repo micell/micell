@@ -1,4 +1,4 @@
-import { getQuery } from '../src';
+import getQuery from '../src/getQuery';
 
 describe('getQuery', () => {
   it('single query name', () => {

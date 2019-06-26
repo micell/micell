@@ -1,4 +1,4 @@
-import { getHashQuery } from '../src';
+import getHashQuery from '../src/getHashQuery';
 
 describe('getHashQuery', () => {
   it('should return undefined when the query name is not exist', () => {

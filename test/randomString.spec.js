@@ -1,4 +1,4 @@
-import { randomString } from '../src';
+import randomString from '../src/randomString';
 
 describe('randomString', () => {
   it('first parameter', () => {

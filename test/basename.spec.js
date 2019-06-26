@@ -1,4 +1,4 @@
-import { basename } from '../src';
+import basename from '../src/basename';
 
 describe('basename', () => {
   it('should return the original string if there isn\'t a slash', () => {

@@ -1,4 +1,4 @@
-import { dirname } from '../src';
+import dirname from '../src/dirname';
 
 describe('dirname', () => {
   it('should return the directory name of a path', () => {

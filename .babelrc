@@ -4,7 +4,8 @@
       "targets": {
         "browsers": ["last 4 versions", "ie >= 9", ">= 0.5%"]
       },
-      "loose": true
+      "loose": true,
+      "modules": false
     }]
   ],
   "plugins": [
@@ -20,7 +21,7 @@
     "test": {
       "presets": [
         ["@babel/preset-env", {
-          "targets": { node: "current" }
+          "targets": { "node": "current" }
         }]
       ]
     }
