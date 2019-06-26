@@ -1,5 +1,5 @@
-import isType from '../_internal/isType';
+import isType from '../_internal/isType'
 
-const isString = isType('String');
+const isString = isType('String')
 
-export default isString;
+export default isString

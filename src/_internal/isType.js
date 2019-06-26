@@ -1,4 +1,4 @@
 const isType = type => o =>
-  Object.prototype.toString.call(o) === `[object ${type}]`;
+  Object.prototype.toString.call(o) === `[object ${type}]`
 
-export default isType;
+export default isType

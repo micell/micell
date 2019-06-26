@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reDecimal from './decimal';
+import isString from '../lang/isString'
+import reDecimal from './decimal'
 
-const isDecimal = string => isString(string) && reDecimal.test(string);
+const isDecimal = string => isString(string) && reDecimal.test(string)
 
-export default isDecimal;
+export default isDecimal

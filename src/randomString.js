@@ -13,15 +13,15 @@
  * Performance:
  *  http://jsperf.com/random-string-for-loop-vs-replace
  */
-export default function randomString(len, chars) {
-  const actualLen = len || 32;
-  const actualChars = chars || '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz';
+export default function randomString (len, chars) {
+  const actualLen = len || 32
+  const actualChars = chars || '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz'
 
-  let str = '';
+  let str = ''
 
   for (let i = 0; i < actualLen; i++) {
-    str += actualChars.charAt(Math.random() * actualChars.length);
+    str += actualChars.charAt(Math.random() * actualChars.length)
   }
 
-  return str;
+  return str
 }

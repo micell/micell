@@ -1,3 +1,3 @@
-const isNil = o => o === null || o === undefined;
+const isNil = o => o === null || o === undefined
 
-export default isNil;
+export default isNil

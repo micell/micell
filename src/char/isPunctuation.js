@@ -1,14 +1,14 @@
-import isString from '../lang/isString';
+import isString from '../lang/isString'
 
 const isPunctuation = (ch) => {
   if (isString(ch) && ch.length === 1) {
-    const charCode = ch.charCodeAt(0);
+    const charCode = ch.charCodeAt(0)
     return (charCode >= 33 && charCode <= 47) ||
       (charCode >= 58 && charCode <= 64) ||
       (charCode >= 91 && charCode <= 96) ||
-      (charCode >= 123 && charCode <= 126);
+      (charCode >= 123 && charCode <= 126)
   }
-  return false;
-};
+  return false
+}
 
-export default isPunctuation;
+export default isPunctuation

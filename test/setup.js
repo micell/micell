@@ -1,2 +1,2 @@
-mocha.setup('bdd');
-window.expect = chai.expect;
+mocha.setup('bdd')
+window.expect = chai.expect

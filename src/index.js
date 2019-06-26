@@ -1,16 +1,16 @@
-import char from './char';
-import date from './date';
-import lang from './lang';
-import regex from './regex';
-import string from './string';
-import ua from './ua';
-import basename from './basename';
-import dirname from './dirname';
-import extname from './extname';
-import getHashQuery from './getHashQuery';
-import getQuery from './getQuery';
-import randomString from './randomString';
-import VERSION from './version';
+import char from './char'
+import date from './date'
+import lang from './lang'
+import regex from './regex'
+import string from './string'
+import ua from './ua'
+import basename from './basename'
+import dirname from './dirname'
+import extname from './extname'
+import getHashQuery from './getHashQuery'
+import getQuery from './getQuery'
+import randomString from './randomString'
+import VERSION from './version'
 
 export default {
   char,
@@ -25,5 +25,5 @@ export default {
   getHashQuery,
   getQuery,
   randomString,
-  VERSION,
-};
+  VERSION
+}

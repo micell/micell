@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reRgb from './rgb';
+import isString from '../lang/isString'
+import reRgb from './rgb'
 
-const isRgb = string => isString(string) && reRgb.test(string);
+const isRgb = string => isString(string) && reRgb.test(string)
 
-export default isRgb;
+export default isRgb

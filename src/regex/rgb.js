@@ -1,1 +1,1 @@
-export default /^(rgb|RGB)\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)$/;
+export default /^(rgb|RGB)\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)$/

@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reHsla from './hsla';
+import isString from '../lang/isString'
+import reHsla from './hsla'
 
-const isHsla = string => isString(string) && reHsla.test(string);
+const isHsla = string => isString(string) && reHsla.test(string)
 
-export default isHsla;
+export default isHsla

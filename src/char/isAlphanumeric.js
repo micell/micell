@@ -1,13 +1,13 @@
-import isString from '../lang/isString';
+import isString from '../lang/isString'
 
 const isAlphanumeric = (ch) => {
   if (isString(ch) && ch.length === 1) {
-    const charCode = ch.charCodeAt(0);
+    const charCode = ch.charCodeAt(0)
     return (charCode >= 48 && charCode <= 57) ||
       (charCode >= 65 && charCode <= 90) ||
-      (charCode >= 97 && charCode <= 122);
+      (charCode >= 97 && charCode <= 122)
   }
-  return false;
-};
+  return false
+}
 
-export default isAlphanumeric;
+export default isAlphanumeric

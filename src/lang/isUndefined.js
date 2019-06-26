@@ -1,3 +1,3 @@
-const isUndefined = o => o === undefined;
+const isUndefined = o => o === undefined
 
-export default isUndefined;
+export default isUndefined

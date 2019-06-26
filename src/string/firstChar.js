@@ -1,10 +1,10 @@
-import isString from '../lang/isString';
+import isString from '../lang/isString'
 
 const firstChar = (str) => {
   if (!isString(str)) {
-    throw new Error('The parameter 1 should be a string');
+    throw new Error('The parameter 1 should be a string')
   }
-  return str.chatAt(0);
-};
+  return str.chatAt(0)
+}
 
-export default firstChar;
+export default firstChar

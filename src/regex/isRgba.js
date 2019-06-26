@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reRgba from './rgba';
+import isString from '../lang/isString'
+import reRgba from './rgba'
 
-const isRgba = string => isString(string) && reRgba.test(string);
+const isRgba = string => isString(string) && reRgba.test(string)
 
-export default isRgba;
+export default isRgba

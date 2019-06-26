@@ -1,1 +1,1 @@
-export default /^((https?):\/\/)?[^\s].[^\s]*$/i;
+export default /^((https?):\/\/)?[^\s].[^\s]*$/i

@@ -1,3 +1,3 @@
-const isNull = o => o === null;
+const isNull = o => o === null
 
-export default isNull;
+export default isNull

@@ -1,5 +1,5 @@
-import isType from '../_internal/isType';
+import isType from '../_internal/isType'
 
-const isBoolean = isType('Boolean');
+const isBoolean = isType('Boolean')
 
-export default isBoolean;
+export default isBoolean

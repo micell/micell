@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reHexColor from './hexColor';
+import isString from '../lang/isString'
+import reHexColor from './hexColor'
 
-const isHexColor = string => isString(string) && reHexColor.test(string);
+const isHexColor = string => isString(string) && reHexColor.test(string)
 
-export default isHexColor;
+export default isHexColor

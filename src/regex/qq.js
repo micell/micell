@@ -1,1 +1,1 @@
-export default /^1\d{4,}$/;
+export default /^1\d{4,}$/

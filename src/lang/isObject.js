@@ -1,5 +1,5 @@
-import isType from '../_internal/isType';
+import isType from '../_internal/isType'
 
-const isObject = isType('Object');
+const isObject = isType('Object')
 
-export default isObject;
+export default isObject

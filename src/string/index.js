@@ -1,10 +1,10 @@
-import countChars from './countChars';
-import countLines from './countLines';
-import escapeRegexp from './escapeRegexp';
-import firstChar from './firstChar';
-import isValidJSON from './isValidJSON';
-import lastChar from './lastChar';
-import truncate from './truncate';
+import countChars from './countChars'
+import countLines from './countLines'
+import escapeRegexp from './escapeRegexp'
+import firstChar from './firstChar'
+import isValidJSON from './isValidJSON'
+import lastChar from './lastChar'
+import truncate from './truncate'
 
 export default {
   countChars,
@@ -13,5 +13,5 @@ export default {
   firstChar,
   isValidJSON,
   lastChar,
-  truncate,
-};
+  truncate
+}

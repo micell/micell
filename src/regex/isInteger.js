@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reInteger from './integer';
+import isString from '../lang/isString'
+import reInteger from './integer'
 
-const isInteger = string => isString(string) && reInteger.test(string);
+const isInteger = string => isString(string) && reInteger.test(string)
 
-export default isInteger;
+export default isInteger

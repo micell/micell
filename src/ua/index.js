@@ -1,4 +1,4 @@
-const userAgent = window.navigator.userAgent;
+const userAgent = window.navigator.userAgent
 
 // Ref: https://github.com/mumuy/browser
 const testMap = {
@@ -11,13 +11,13 @@ const testMap = {
   Tablet: /Tablet|Pad|Nexus 7/,
   WeChat: /MicroMessenger/,
   IPhone: /iPhone|iPod/,
-  IPad: /iPad/,
-};
+  IPad: /iPad/
+}
 
-const ua = {};
+const ua = {}
 
 Object.keys(testMap).forEach((prop) => {
-  ua[`is${prop}`] = (u = userAgent) => { testMap[prop].test(u); };
-});
+  ua[`is${prop}`] = (u = userAgent) => { testMap[prop].test(u) }
+})
 
-export default ua;
+export default ua

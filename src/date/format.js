@@ -1,32 +1,32 @@
-import isDate from '../lang/isDate';
-import isNumber from '../lang/isNumber';
-import isString from '../lang/isString';
-import padStart from '../_internal/padStart';
+import isDate from '../lang/isDate'
+import isNumber from '../lang/isNumber'
+import isString from '../lang/isString'
+import padStart from '../_internal/padStart'
 
 const dateFormat = (date, format, isUTC) => {
   if (!isDate(date) && !isNumber(date)) {
-    throw new Error('The first parameter should be a Date object or a number');
+    throw new Error('The first parameter should be a Date object or a number')
   }
 
-  let d = date;
+  let d = date
 
   if (isNumber(date)) {
-    d = new Date(d);
+    d = new Date(d)
   }
 
   if (!isString(format)) {
-    return d.toString();
+    return d.toString()
   }
 
-  const year = isUTC ? d.getUTCFullYear() : d.getFullYear();
-  const month = isUTC ? d.getUTCMonth() : d.getMonth();
-  const day = isUTC ? d.getUTCDate() : d.getDate();
-  const hour = isUTC ? d.getUTCHours() : d.getHours();
-  const hour12 = hour % 12;
-  const amOrPm = hour < 12 ? 'AM' : 'PM';
-  const minute = isUTC ? d.getUTCMinutes() : d.getMinutes();
-  const second = isUTC ? d.getUTCSeconds() : d.getSeconds();
-  const millisecond = isUTC ? d.getUTCMilliseconds() : d.getMilliseconds();
+  const year = isUTC ? d.getUTCFullYear() : d.getFullYear()
+  const month = isUTC ? d.getUTCMonth() : d.getMonth()
+  const day = isUTC ? d.getUTCDate() : d.getDate()
+  const hour = isUTC ? d.getUTCHours() : d.getHours()
+  const hour12 = hour % 12
+  const amOrPm = hour < 12 ? 'AM' : 'PM'
+  const minute = isUTC ? d.getUTCMinutes() : d.getMinutes()
+  const second = isUTC ? d.getUTCSeconds() : d.getSeconds()
+  const millisecond = isUTC ? d.getUTCMilliseconds() : d.getMilliseconds()
 
   return format
     .replace(/(^|[^Y])YYYY([^Y]|$)/g, `$1${year}$2`)
@@ -46,13 +46,13 @@ const dateFormat = (date, format, isUTC) => {
     .replace(/(^|[^s])ss([^s]|$)/g, `$1${padStart(second, 2, '0')}$2`)
     .replace(/(^|[^s])s([^s]|$)/g, `$1${second}$2`)
     .replace(/(^|[^S]+)([S]+)([^S]+|$)/g, (match, s1, s2, s3) => {
-      let msStr = padStart(String(millisecond), 3, '0');
+      let msStr = padStart(String(millisecond), 3, '0')
       for (let i = 3; i < s2.length; i++) {
-        msStr += '0';
+        msStr += '0'
       }
-      msStr = msStr.slice(0, s2.length);
-      return `${s1}${msStr}${s3}`;
-    });
-};
+      msStr = msStr.slice(0, s2.length)
+      return `${s1}${msStr}${s3}`
+    })
+}
 
-export default dateFormat;
+export default dateFormat

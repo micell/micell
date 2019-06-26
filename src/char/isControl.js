@@ -1,11 +1,11 @@
-import isString from '../lang/isString';
+import isString from '../lang/isString'
 
 const isControl = (ch) => {
   if (isString(ch) && ch.length === 1) {
-    const charCode = ch.charCodeAt(0);
-    return (charCode >= 0 && charCode <= 31) || charCode === 127;
+    const charCode = ch.charCodeAt(0)
+    return (charCode >= 0 && charCode <= 31) || charCode === 127
   }
-  return false;
-};
+  return false
+}
 
-export default isControl;
+export default isControl

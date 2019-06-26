@@ -1,5 +1,5 @@
-import isType from '../_internal/isType';
+import isType from '../_internal/isType'
 
-const isDate = isType('Date');
+const isDate = isType('Date')
 
-export default isDate;
+export default isDate

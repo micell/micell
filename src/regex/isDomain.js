@@ -1,6 +1,6 @@
-import isString from '../lang/isString';
-import reDomain from './domain';
+import isString from '../lang/isString'
+import reDomain from './domain'
 
-const isDomain = string => isString(string) && reDomain.test(string);
+const isDomain = string => isString(string) && reDomain.test(string)
 
-export default isDomain;
+export default isDomain
