@@ -5,4 +5,4 @@ dist: trusty
 addons:
   chrome: stable
 script:
-  - npm test:ci
+  - npm run test:ci
