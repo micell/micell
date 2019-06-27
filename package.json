@@ -18,6 +18,7 @@
     "lint": "standard '**/*.js' --verbose | snazzy",
     "lint:fix": "standard '**/*.js' --fix --verbose | snazzy",
     "test": "cross-env BABEL_ENV=test karma start",
+    "test:ci": "npm run test -- --single-run",
     "build": "npm run clean && npm run build:es && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env babel src --out-dir es",
