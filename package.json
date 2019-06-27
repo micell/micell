@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A set of functions for web development",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "engines": {
     "node": ">=6.0.0"
   },
