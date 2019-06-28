@@ -1,5 +1,6 @@
 import char from './char'
 import date from './date'
+import dom from './dom'
 import lang from './lang'
 import regex from './regex'
 import string from './string'
@@ -15,6 +16,7 @@ import VERSION from './version'
 export default {
   char,
   date,
+  dom,
   lang,
   regex,
   string,
