@@ -10,6 +10,7 @@ import dirname from './dirname'
 import extname from './extname'
 import getHashQuery from './getHashQuery'
 import getQuery from './getQuery'
+import noop from './noop'
 import randomString from './randomString'
 import VERSION from './version'
 
@@ -26,6 +27,7 @@ export default {
   extname,
   getHashQuery,
   getQuery,
+  noop,
   randomString,
   VERSION
 }
