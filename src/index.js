@@ -12,6 +12,7 @@ import getHashQuery from './getHashQuery'
 import getQuery from './getQuery'
 import noop from './noop'
 import randomString from './randomString'
+import uuid from './uuid'
 import VERSION from './version'
 
 export default {
@@ -28,6 +29,7 @@ export default {
   getHashQuery,
   getQuery,
   noop,
+  uuid,
   randomString,
   VERSION
 }
