@@ -1,6 +1,6 @@
-import extname from '../src/extname'
+import extname from '../../src/path/extname'
 
-describe('extname', () => {
+describe('path/extname', () => {
   it('should return the extension of the path', () => {
     expect(extname('hello.md')).to.equal('.md')
     expect(extname('app.min.js')).to.equal('.js')

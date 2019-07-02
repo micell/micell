@@ -1,6 +1,6 @@
-import basename from '../src/basename'
+import basename from '../../src/path/basename'
 
-describe('basename', () => {
+describe('path/basename', () => {
   it('should return the original string if there isn\'t a slash', () => {
     expect(basename('hello.md')).to.equal('hello.md')
   })
