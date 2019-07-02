@@ -14,6 +14,7 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/chai/chai.js',
+      'node_modules/sinon/pkg/sinon.js',
       'test/setup.js',
       'test/**/*.spec.js'
     ],
