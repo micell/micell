@@ -37,6 +37,7 @@
     ],
     "globals": [
       "chai",
+      "sinon",
       "expect"
     ]
   },

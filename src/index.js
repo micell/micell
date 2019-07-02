@@ -5,7 +5,9 @@ import lang from './lang'
 import regex from './regex'
 import string from './string'
 import ua from './ua'
+
 import basename from './basename'
+import delay from './delay'
 import dirname from './dirname'
 import extname from './extname'
 import getHashQuery from './getHashQuery'
@@ -23,7 +25,9 @@ export default {
   regex,
   string,
   ua,
+
   basename,
+  delay,
   dirname,
   extname,
   getHashQuery,
