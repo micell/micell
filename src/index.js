@@ -11,6 +11,7 @@ import delay from './delay'
 import getHashQuery from './getHashQuery'
 import getQuery from './getQuery'
 import noop from './noop'
+import numberFormat from './numberFormat'
 import randomString from './randomString'
 import uuid from './uuid'
 import VERSION from './version'
@@ -29,7 +30,8 @@ export default {
   getHashQuery,
   getQuery,
   noop,
-  uuid,
+  numberFormat,
   randomString,
+  uuid,
   VERSION
 }

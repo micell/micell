@@ -1,0 +1,26 @@
+import numberFormat from '../src/numberFormat'
+
+describe('numberFormat', () => {
+  it('should return an empty string if the 1st argument is missing or not a number', () => {
+    expect(numberFormat()).to.equal('')
+    expect(numberFormat('3.14')).to.equal('')
+  })
+
+  it('should format the number normally', () => {
+    expect(numberFormat(0)).to.equal('0')
+    expect(numberFormat(123456789.123, 3)).to.equal('123,456,789.123')
+  })
+
+  it('2nd argument: digits > -1', () => {
+    expect(numberFormat(3.14, 0)).to.equal('3')
+    expect(numberFormat(3.1415, 3)).to.equal('3.142')
+  })
+
+  it('3rd argument: dot', () => {
+    expect(numberFormat(3.14, 2, '_')).to.equal('3_14')
+  })
+
+  it('4th argument: sep', () => {
+    expect(numberFormat(123456789.456, 3, undefined, ' ')).to.equal('123 456 789.456')
+  })
+})
