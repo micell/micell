@@ -8,8 +8,6 @@ import string from './string'
 import ua from './ua'
 
 import delay from './delay'
-import getHashQuery from './getHashQuery'
-import getQuery from './getQuery'
 import noop from './noop'
 import numberFormat from './numberFormat'
 import randomString from './randomString'
@@ -27,8 +25,6 @@ export default {
   ua,
 
   delay,
-  getHashQuery,
-  getQuery,
   noop,
   numberFormat,
   randomString,
