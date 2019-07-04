@@ -3,6 +3,7 @@ import date from './date'
 import dom from './dom'
 import lang from './lang'
 import path from './path'
+import qs from './qs'
 import regex from './regex'
 import string from './string'
 import ua from './ua'
@@ -20,6 +21,7 @@ export default {
   dom,
   lang,
   path,
+  qs,
   regex,
   string,
   ua,
