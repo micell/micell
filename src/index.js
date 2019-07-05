@@ -1,4 +1,5 @@
 import char from './char'
+import cookie from './cookie'
 import date from './date'
 import dom from './dom'
 import lang from './lang'
@@ -17,6 +18,7 @@ import VERSION from './version'
 
 export default {
   char,
+  cookie,
   date,
   dom,
   lang,
