@@ -9,6 +9,7 @@ import regex from './regex'
 import string from './string'
 import ua from './ua'
 
+import ajax from './ajax'
 import delay from './delay'
 import noop from './noop'
 import numberFormat from './numberFormat'
@@ -28,6 +29,7 @@ export default {
   string,
   ua,
 
+  ajax,
   delay,
   noop,
   numberFormat,
