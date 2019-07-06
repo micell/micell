@@ -10,6 +10,7 @@ import string from './string'
 import ua from './ua'
 
 import ajax from './ajax'
+import css from './css'
 import delay from './delay'
 import noop from './noop'
 import numberFormat from './numberFormat'
@@ -30,6 +31,7 @@ export default {
   ua,
 
   ajax,
+  css,
   delay,
   noop,
   numberFormat,
