@@ -1,5 +1,5 @@
 {
-  "name": "micellar",
+  "name": "micell",
   "version": "0.1.0",
   "description": "A set of functions for web development",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Alex1990/micellar.git"
+    "url": "git+ssh://git@github.com/Alex1990/micell.git"
   },
   "standard": {
     "env": [
@@ -60,9 +60,9 @@
   "author": "Alex Chao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Alex1990/micellar/issues"
+    "url": "https://github.com/Alex1990/micell/issues"
   },
-  "homepage": "https://github.com/Alex1990/micellar#readme",
+  "homepage": "https://github.com/Alex1990/micell#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
