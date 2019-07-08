@@ -17,7 +17,7 @@ Detect a character whether it is one of a-z or A-Z.
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -43,7 +43,7 @@ Detect a character whether it is one of a-z or A-Z or 0-9.
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -72,7 +72,7 @@ Detect a character whether it is an ASCII character.
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -101,7 +101,7 @@ Detect a character whether it is a CJK (Chinese, Japanese and Korean) character.
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -127,7 +127,7 @@ Detect a character whether it is a [control character](https://en.wikipedia.org/
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -153,7 +153,7 @@ Detect a character whether it is a decimal digit (0-9).
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -179,7 +179,7 @@ Detect a character whether it is a [graphic character](https://en.wikipedia.org/
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -205,7 +205,7 @@ Detect a character whether it is a hexadecimal character (0-9, a-f, A-F).
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -234,7 +234,7 @@ Detect a character whether it is a lower-case character (a-z).
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -257,7 +257,7 @@ Detect a character whether it is a [printable character](https://en.wikipedia.or
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -280,7 +280,7 @@ Detect a character whether it is a punctuation character.
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -303,7 +303,7 @@ Detect a character whether it is a space character.
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -326,7 +326,7 @@ Detect a character whether it is a upper-case character (A-Z).
 
 * **ch (String)**: A string with length equal to 1.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -336,6 +336,117 @@ Detect a character whether it is a upper-case character (A-Z).
 isUpper('a');
 // => true
 ```
+
+## cookie
+
+### get
+
+```js
+get(key)
+```
+
+**Arguments**
+
+* **key (String)**
+
+**Return**
+
+* **(String)**
+
+### getAll
+
+```js
+getAll()
+```
+
+**Return**
+
+* **(Object)**
+
+### getJson
+
+```
+getJson(key)
+```
+
+**Arguments**
+
+* **key (String)**
+
+**Return**
+
+* **(String)**
+
+### getRaw
+
+```
+getRaw(key)
+```
+
+**Arguments**
+
+* **key (String)**
+
+**Return**
+
+* **(String)**
+
+### isEnabled
+
+```js
+isEnabled()
+```
+
+**Return**
+
+* **(Boolean)**
+
+### remove
+
+```js
+remove(key, options)
+```
+
+**Arguments**
+
+* **key (String)**
+* **options (Object)**
+
+### set
+
+```js
+set(key, value, options)
+```
+
+**Arguments**
+
+* **key (String)**
+* **value (String)**
+* **options (Object)**
+
+### setJson
+
+```js
+set(key, value, options)
+```
+
+**Arguments**
+
+* **key (String)**
+* **value (Any)**
+* **options (Object)**
+
+### setRaw
+
+```js
+set(key, value, options)
+```
+
+**Arguments**
+
+* **key (String)**
+* **value (String)**
+* **options (Object)**
 
 ## date
 
@@ -354,7 +465,7 @@ Compute the difference of the specified period unit between two dates.
 * **unit (String)**: A string specifies the peroid unit, default is `"ms"`. See unit table.
 * **roundFunc (Function)**: A round function, default is `Math.round`.
 
-**Returns**
+**Return**
 
 * **(Number)**
 
@@ -393,7 +504,7 @@ format(date, format, isUTC)
 * **format (String)**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
 * **isUTC (Boolean)**: Use the UTC time, default is `false`.
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -438,7 +549,7 @@ timeAgo.format(date, locale, nowDate)
 * **locale (String)**: the locale, "en_US" (default) and "zh_CN" are builtins supported.
 * **nowDate (Date)**: The base date.
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -452,6 +563,294 @@ timeAgo.format(d);
 
 timeAgo.format(d, 'zh_CN');
 // => "10 分钟前"
+```
+
+## dom
+
+### clientX
+
+```js
+clientX(elem)
+```
+
+Get the difference between the left edge of an element and the left edge of viewport.
+
+**Arguments**
+
+* **elem (Element)**: An element.
+
+**Return**
+
+* **(Number)**
+
+**Example**
+
+```js
+const el = document.getElementById('el');
+const x = clientX(el);
+// x => 100
+```
+
+### clientY
+
+```js
+clientY(elem)
+```
+
+Get the difference between the top edge of an element and the top edge of viewport.
+
+**Arguments**
+
+* **elem (Element)**: An element.
+
+**Return**
+
+* **(Number)**
+
+**Example**
+
+```js
+const el = document.getElementById('el');
+const y = clientY(el);
+// y => 100
+```
+
+### createEvent
+
+```js
+createEvent(type, options)
+```
+
+Create a custom event.
+
+**Arguments**
+
+* **type (String)**: The event type.
+* **options (String)**: The event options.
+  + **options.bubbles (Boolean)**:
+  + **options.cancelable (Boolean)**:
+  + **options.detail (Any)**
+
+**Return**
+
+* **(Event)**
+
+**Example**
+
+```js
+const btn = document.getElementById('btn');
+const event = createEvent('click');
+
+btn.dispatchEvent(event);
+```
+
+## domReady
+
+```js
+domReady(callback)
+```
+
+Defer the execution of the `callback`, which will be executed in `DOMContentLoaded` event.
+If the `DOMContentLoaded` has triggered, then the `callback` will be executed in next event loop.
+
+**Arguments**
+
+* **callback (Function)**
+
+**Example**
+
+```js
+domReady(function () {
+  // ...
+});
+
+// You can use it multiple times.
+domReady(function () {
+  // other callback
+});
+```
+
+
+### insertScript
+
+```js
+insertScript(url, props)
+```
+
+Insert a `<script>` to document.
+
+**Arguments**
+
+* **url (String)**: The `script.src` string.
+* **props (Object)**: The `<script>` element properties.
+
+### isElement
+
+```js
+isElement(obj)
+```
+
+Check if the argument is an element.
+
+**Arguments**
+
+* **obj (Any)**: Any value.
+
+**Return**
+
+* **(Boolean)**
+
+### isInViewport
+
+```js
+isInViewport(el)
+```
+
+Check if an element is in the viewport.
+
+**Arguments**
+
+* **el (Element)**: An element.
+
+**Return**
+
+* **(Boolean)**
+
+### isWindow
+
+```js
+isWindow(obj)
+```
+
+Check if a value is window object.
+
+**Arguments**
+
+* **obj (Any)**: Any value.
+
+**Return**
+
+* **(Boolean)**
+
+### pageX
+
+```js
+pageX(el)
+```
+
+Return the horizontal distance of an element to the left edge of the page.
+
+**Arguments**
+
+* **el (Element)**
+
+**Return**
+
+* **(Number)**
+
+**Example**
+
+```js
+const el = document.getElementById('el')
+pageX(el)
+```
+
+### pageY
+
+```js
+pageY(el)
+```
+
+Return the vertical distance of an element to the left edge of the page.
+
+**Arguments**
+
+* **el (Element)**
+
+**Return**
+
+* **(Number)**
+
+**Example**
+
+```js
+const el = document.getElementById('el')
+pageY(el)
+```
+
+### scrollX
+
+```js
+scrollX(elOrWindow)
+```
+
+Get the horizontal scroll distance of an element or a window.
+
+**Arguments**
+
+* **elOrWindow (Element | Window)**: An element or a window.
+
+**Return**
+
+* **(Number)**
+
+**Example**
+
+```js
+// Return the window scrollX if no argument is passed
+scrollX();
+
+const el = document.getElementById('el')
+scrollX(el);
+```
+
+### scrolY
+
+```js
+scrollY(elOrWindow)
+```
+
+Get the horizontal scroll distance of an element or a window.
+
+**Arguments**
+
+* **elOrWindow (Element | Window)**: An element or a window.
+
+**Return**
+
+* **(Number)**
+
+**Example**
+
+```js
+// Return the window scrollY if no argument is passed
+scrollY();
+
+const el = document.getElementById('el')
+scrollY(el);
+```
+
+### viewport
+
+```js
+viewport(elOrWindow)
+```
+
+Get the width and height of the viewport of an element or a window.
+
+**Arguments**
+
+* **elOrWindow (Element | Window)**: An element or a window.
+
+**Return**
+
+* **(Object)**
+
+**Example**
+
+```js
+viewport();
+// => { width: 1920, height: 900 }
 ```
 
 ## lang
@@ -468,7 +867,7 @@ Check if a value is an Array.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -491,7 +890,7 @@ Check if a value is a Boolean.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -514,7 +913,7 @@ Check if a value is a Date object.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -537,7 +936,7 @@ Check if a value is an Error object.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -560,7 +959,7 @@ Check if a value is a function, including generator function and async function.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -586,7 +985,7 @@ Check if a value is `null` or `undefined`.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -611,7 +1010,7 @@ Check if a value is `null`
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -634,7 +1033,7 @@ Check if a value is a Number.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -657,7 +1056,7 @@ Check if a value is an Object.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -682,7 +1081,7 @@ Check if a value is a RegExp object.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -705,7 +1104,7 @@ Check if a value is a String.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -728,7 +1127,7 @@ Check if a value is `undefined`.
 
 * **value (any)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -738,6 +1137,132 @@ Check if a value is `undefined`.
 isUndefined(void 0);
 // => true
 ```
+
+## path
+
+### basename
+
+```js
+basename(str)
+```
+Return the last part of the path string.
+
+**Arguments**
+
+* **str (String)**
+
+**Return**
+
+* **(String)**
+
+**Example**
+
+```js
+basename('/foo/bar');
+// => "bar"
+```
+
+### dirname
+
+```js
+dirname(str)
+```
+
+**Arguments**
+
+* **str (String)**
+
+**Return**
+
+* **(String)**
+
+**Example**
+
+```js
+dirname('/foo/bar');
+// => "/foo"
+```
+
+### extname
+
+```js
+extname(str)
+```
+
+Return the extension name of the path.
+
+**Arguments**
+
+* **str (String)**
+
+**Return**
+
+* **(String)**
+
+**Example**
+
+```js
+extname('/foo/bar.txt');
+// => ".txt"
+```
+
+## qs
+
+### get
+
+```js
+get(name)
+```
+
+**Arguments**
+
+* **name (String)**
+
+**Return**
+
+* **(String|Array\<String\>)**
+
+**Example**
+
+```js
+// location.search = '?hello=world'
+getQuery('hello');
+// => "world"
+
+
+// location.search = '?fruits=apple&fruits=orange'
+getQuery('fruits');
+// => ["apple", "orange"]
+```
+
+### parse
+
+```js
+parse(search)
+```
+
+**Arguments**
+
+* **search (String)**
+
+**Return**
+
+* **(Object)**
+
+### stringify
+
+```js
+stringify(query)
+```
+
+**Arguments**
+
+* **query (Object)**
+
+**Return**
+
+* **(String)**
+
 ## regex
 
 ### isAscii
@@ -752,7 +1277,7 @@ Check if a string contains the ASCII characters only.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -775,7 +1300,7 @@ Check if a string is a decimal number.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -800,7 +1325,7 @@ Check if a string contains the digits (0-9) only.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -823,7 +1348,7 @@ Check if a string is an http(s) domain.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -846,7 +1371,7 @@ Check if a string is an email address.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -872,7 +1397,7 @@ Check if a string is an hex color value.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -901,7 +1426,7 @@ Check if a string is an HSL value.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -927,7 +1452,7 @@ Check if a string is an HSLA value.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -953,7 +1478,7 @@ Same as `isDigit`. Check if a string contains the digits only.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -976,7 +1501,7 @@ Check if a string is an IP (v4 or v6) address.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1002,7 +1527,7 @@ Check if a string is an IP (v4) address.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1013,10 +1538,10 @@ isIPv4('192.0.0.1');
 // => true
 ```
 
-### isIPv4
+### isIPv6
 
 ```js
-isIPv4(str)
+isIPv6(str)
 ```
 
 Check if a string is an IP (v4) address.
@@ -1025,7 +1550,7 @@ Check if a string is an IP (v4) address.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1048,7 +1573,7 @@ Check if a string is a QQ id.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1071,7 +1596,7 @@ Check if a string is a real number.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1100,7 +1625,7 @@ Check if a string is a RGB value.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1126,7 +1651,7 @@ Check if a string is a RGBA value.
 
 * **str (string)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1154,7 +1679,7 @@ Count the number of lines separated by `"\n"`.
 
 * **str (String)**
 
-**Returns**
+**Return**
 
 * **(Number)**
 
@@ -1180,7 +1705,7 @@ Escape the special characters in regular expression.
 
 * **str (String)**
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -1203,7 +1728,7 @@ Return the first character of a string.
 
 * **str (String)**
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -1226,7 +1751,7 @@ Check if a string is a valid JSON string.
 
 * **str (String)**
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1252,7 +1777,7 @@ Return the last character of a string.
 
 * **str (String)**
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -1282,7 +1807,7 @@ Return a truncated string end with the specified omission.
     - `1`: Count 1 for half width and count 2 for full width.
     - `2`: Count 0.5 for half width and count 1 for full width.
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -1306,7 +1831,7 @@ isWindows()
 
 Check if the os is Windows.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1318,7 +1843,7 @@ isMacOS()
 
 Check if the os is macOS.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1330,7 +1855,7 @@ isLinux()
 
 Check if the os is Linux.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1342,7 +1867,7 @@ isAndroid()
 
 Check if the os is Android.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1354,7 +1879,7 @@ isIOS()
 
 Check if the os is iOS.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1366,7 +1891,7 @@ isMobile()
 
 Check if the os is a mobile system.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1378,7 +1903,7 @@ isTablet()
 
 Check if the os is a tablet system.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1390,7 +1915,7 @@ isWechat()
 
 Check if the environment is Wechat.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1402,7 +1927,7 @@ isIPhone()
 
 Check if the environment is iPhone.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
@@ -1414,200 +1939,101 @@ isIPad()
 
 Check if the environment is iPad.
 
-**Returns**
+**Return**
 
 * **(Boolean)**
 
-## basename
+## ajax
 
 ```js
-basename(str)
-```
-Return the last part of the path string.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(String)**
-
-**Example**
-
-```js
-basename('/foo/bar');
-// => "bar"
-```
-
-## dirname
-
-```js
-dirname(str)
+ajax(url, options)
 ```
 
 **Arguments**
 
-* **str (String)**
+* **url (String)**
+* **options (Object)**
+  + **options.async (Boolean)**
+  + **options.beforeSend (Function)**
+  + **options.data (String | Object)**
+  + **options.headers (Object)**
+  + **options.method (String)**
+  + **options.responseType (String)**
+  + **options.timeout (Number)**
 
-**Returns**
+**Return**
 
-* **(String)**
+* **(Promise)**
 
-**Example**
-
-```js
-dirname('/foo/bar');
-// => "/foo"
-```
-
-## domReady
-
-```js
-domReady(callback)
-```
-
-Defer the execution of the `callback`, which will be executed in `DOMContentLoaded` event.
-If the `DOMContentLoaded` has triggered, then the `callback` will be executed in next event loop.
-
-**Arguments**
-
-* **callback (Function)**
-
-**Example**
+## css
 
 ```js
-domReady(function () {
-  // ...
-});
-
-// You can use it multiple times.
-domReady(function () {
-  // other callback
-});
+css(el, prop)
 ```
-
-## extname
-
-```js
-extname(str)
-```
-
-Return the extension name of the path.
-
-**Arguments**
-
-* **str (String)**
-
-**Returns**
-
-* **(String)**
-
-**Example**
-
-```js
-extname('/foo/bar.txt');
-// => ".txt"
-```
-
-## getHashQuery
-
-```js
-getHashQuery(name)
-```
-
-**Arguments**
-
-* **name (String)**
-
-**Returns**
-
-* **(String|Array\<String\>)**
-
-**Example**
-
-```js
-// location.hash = '#?hello=world'
-getHashQuery('hello');
-// => "world"
-
-
-// location.hash = '#?fruits=apple&fruits=orange'
-getHashQuery('fruits');
-// => ["apple", "orange"]
-```
-
-## getQuery
-
-```js
-getQuery(name)
-```
-
-**Arguments**
-
-* **name (String)**
-
-**Returns**
-
-* **(String|Array\<String\>)**
-
-**Example**
-
-```js
-// location.search = '?hello=world'
-getQuery('hello');
-// => "world"
-
-
-// location.search = '?fruits=apple&fruits=orange'
-getQuery('fruits');
-// => ["apple", "orange"]
-```
-
-## insertScript
-
-```js
-insertScript(url, props)
-```
-
-Insert a `<script>` to document.
-
-**Arguments**
-
-* **url (String)**: The `script.src` string.
-* **props (Object)**: The `<script>` element properties.
-
-## pageX
-
-```js
-pageX(el)
-```
-
-Return the horizontal distance of an element to the left edge of the page.
 
 **Arguments**
 
 * **el (Element)**
+* **prop (String)**
 
-**Returns**
+**Return**
 
-* **(Number)**
+* **(String | Object)**
 
-## pageY
+## delay
 
 ```js
-pageY(el)
+delay(duration)
 ```
-
-Return the vertical distance of an element to the left edge of the page.
 
 **Arguments**
 
-* **el (Element)**
+* **duration (Number)**
 
-**Returns**
+**Return**
 
-* **(Number)**
+* **(Promise)**
+
+## jsonp
+
+```js
+jsonp(url, options)
+```
+
+**Arguments**
+
+* **url (String)**
+* **options (Object)**
+  + **options.callback (String)**
+  + **options.responseType (String)**
+  + **options.timeout (Number)**
+
+**Return**
+
+* **(Promise)**
+
+## noop
+
+```js
+noop()
+```
+
+## numberFormat
+
+```js
+numberFormat(number, digits, dot, sep)
+```
+
+**Arguments**
+
+* **number (Number)**
+* **digits (Number)**
+* **dot (String)**
+* **sep (String)**
+
+**Return**
+
+* **(String)**
 
 ## randomString
 
@@ -1622,7 +2048,7 @@ Return a random string which consists of the characters specified by `chars`.
 * **len (Number)**: The length of random string, default is `32`.
 * **chars (String)**: The character set, default is lower letters, upper letters and digits.
 
-**Returns**
+**Return**
 
 * **(String)**
 
@@ -1637,3 +2063,13 @@ randomString(8);
 // Generate a random digit string.
 randomString(undefined, '0123456789');
 ```
+
+## uuid
+
+```js
+uuid()
+```
+
+**Return**
+
+* **(String)**
