@@ -6,8 +6,16 @@ A set of functions for web development.
 
 ## Install
 
+**Npm**
+
 ```sh
 npm i -S micell
+```
+
+**Yarn**
+
+```sh
+yarn add micell
 ```
 
 ## Docs
@@ -21,7 +29,7 @@ See [Docs](https://micell.org/docs).
 > You should use yarn to install the dependencies.
 
 ```sh
-// local docs server
+# local docs server
 npm run docs:dev
 ```
 
