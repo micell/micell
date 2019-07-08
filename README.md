@@ -10,9 +10,20 @@ A set of functions for web development.
 npm i -S micell
 ```
 
-## API
+## Docs
 
-See [docs/API](docs/API.md)
+See [Docs](https://micell.org/docs).
+
+## Development
+
+### Docs
+
+> You should use yarn to install the dependencies.
+
+```sh
+// local docs server
+npm run docs:dev
+```
 
 ## License
 
