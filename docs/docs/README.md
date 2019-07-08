@@ -1,82 +1,7 @@
-# API
-
-- [API](#api)
-  - [char](#char)
-    - [isAlphabetic](#isalphabetic)
-    - [isAlphanumeric](#isalphanumeric)
-    - [isASCII](#isascii)
-    - [isCJK](#iscjk)
-    - [isControl](#iscontrol)
-    - [isDigit](#isdigit)
-    - [isGraph](#isgraph)
-    - [isHexadecimal](#ishexadecimal)
-    - [isLower](#islower)
-    - [isPrint](#isprint)
-    - [isPunctuation](#ispunctuation)
-    - [isSpace](#isspace)
-    - [isUpper](#isupper)
-  - [date](#date)
-    - [diff](#diff)
-    - [format](#format)
-    - [timeAgo](#timeago)
-  - [lang](#lang)
-    - [isArray](#isarray)
-    - [isBoolean](#isboolean)
-    - [isDate](#isdate)
-    - [isError](#iserror)
-    - [isFunction](#isfunction)
-    - [isNil](#isnil)
-    - [isNull](#isnull)
-    - [isNumber](#isnumber)
-    - [isObject](#isobject)
-    - [isRegExp](#isregexp)
-    - [isString](#isstring)
-    - [isUndefined](#isundefined)
-  - [regex](#regex)
-    - [isAscii](#isascii)
-    - [isDecimal](#isdecimal)
-    - [isDigit](#isdigit-1)
-    - [isDomain](#isdomain)
-    - [isEmail](#isemail)
-    - [isHexColor](#ishexcolor)
-    - [isHsl](#ishsl)
-    - [isHsla](#ishsla)
-    - [isInteger](#isinteger)
-    - [isIP](#isip)
-    - [isIPv4](#isipv4)
-    - [isIPv4](#isipv4-1)
-    - [isQQ](#isqq)
-    - [isRealNumber](#isrealnumber)
-    - [isRgb](#isrgb)
-    - [isRgba](#isrgba)
-  - [string](#string)
-    - [countLines](#countlines)
-    - [escapeRegexp](#escaperegexp)
-    - [firstChar](#firstchar)
-    - [isValidJSON](#isvalidjson)
-    - [lastChar](#lastchar)
-    - [truncate](#truncate)
-  - [ua](#ua)
-    - [isWindows](#iswindows)
-    - [isMacOS](#ismacos)
-    - [isLinux](#islinux)
-    - [isAndroid](#isandroid)
-    - [isIOS](#isios)
-    - [isMobile](#ismobile)
-    - [isTablet](#istablet)
-    - [isWechat](#iswechat)
-    - [isIPhone](#isiphone)
-    - [isIPad](#isipad)
-  - [basename](#basename)
-  - [dirname](#dirname)
-  - [domReady](#domready)
-  - [extname](#extname)
-  - [getHashQuery](#gethashquery)
-  - [getQuery](#getquery)
-  - [insertScript](#insertscript)
-  - [pageX](#pagex)
-  - [pageY](#pagey)
-  - [randomString](#randomstring)
+---
+sidebar: auto
+---
+# Docs
 
 ## char
 
@@ -1597,7 +1522,7 @@ getHashQuery(name)
 
 **Returns**
 
-* **(String|Array<String>)**
+* **(String|Array\<String\>)**
 
 **Example**
 
@@ -1624,7 +1549,7 @@ getQuery(name)
 
 **Returns**
 
-* **(String|Array<String>)**
+* **(String|Array\<String\>)**
 
 **Example**
 

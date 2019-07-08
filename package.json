@@ -15,6 +15,8 @@
   ],
   "scripts": {
     "clean": "rimraf dist lib es",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "lint": "standard '**/*.js' --verbose | snazzy",
     "lint:fix": "standard '**/*.js' --fix --verbose | snazzy",
     "test": "cross-env BABEL_ENV=test karma start",
@@ -89,6 +91,7 @@
     "sinon": "^7.3.2",
     "snazzy": "^8.0.0",
     "standard": "^12.0.1",
+    "vuepress": "^1.0.2",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
   },
