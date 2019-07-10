@@ -447,8 +447,6 @@ set(key, value, [options])
   + **[samesite] (Boolean)**
   + **[secure] (Boolean)**
 
-`expires`属性为带后缀的数值字符串时，后缀含义表。
-
 | 单位后缀     | 含义            |
 | ----------- | -------------- |
 | Y           | 年             |
@@ -836,14 +834,14 @@ pageY(el)
 ### scrollX
 
 ```js
-scrollX(elOrWindow)
+scrollX([elOrWindow])
 ```
 
 返回一个元素或页面的水平滚动距离。
 
 **参数**
 
-* **elOrWindow (Element | Window)**：一个元素或`window`对象。
+* **[elOrWindow = window] (Element | Window)**：一个元素或`window`对象。
 
 **返回值**
 
@@ -862,14 +860,14 @@ scrollX(el);
 ### scrolY
 
 ```js
-scrollY(elOrWindow)
+scrollY([elOrWindow])
 ```
 
 返回一个元素或页面的竖直滚动距离。
 
 **参数**
 
-* **elOrWindow (Element | Window)**：一个元素或`window`对象。
+* **[elOrWindow = window] (Element | Window)**：一个元素或`window`对象。
 
 **返回值**
 
@@ -888,14 +886,14 @@ scrollY(el);
 ### viewport
 
 ```js
-viewport(elOrWindow)
+viewport([elOrWindow])
 ```
 
 获取一个元素或`window`的视口宽度和高度。
 
 **参数**
 
-* **elOrWindow (Element | Window)**：一个元素或`window`对象。
+* **[elOrWindow = window] (Element | Window)**：一个元素或`window`对象。
 
 **返回值**
 
@@ -1304,7 +1302,7 @@ parse(search)
 
 **参数**
 
-* **search (String)**：查询字符串。
+* **search (String)**
 
 **返回值**
 
@@ -2047,6 +2045,8 @@ css(el, [prop])
 
 * **(String | Object)**
 
+**示例**
+
 ```js
 const el = document.getElementById('el');
 
@@ -2059,7 +2059,7 @@ css('#el');
 // => CSSStyleDeclaration { ... }
 
 // 获取指定属性的值
-css('width');
+css('#el', 'width');
 // => '100px'
 ```
 
@@ -2082,7 +2082,7 @@ delay([duration])
 ## jsonp
 
 ```js
-jsonp(url, options)
+jsonp(url, [options])
 ```
 
 **参数**
@@ -2104,7 +2104,7 @@ jsonp(url, options)
 ## numberFormat
 
 ```js
-numberFormat(number, digits, dot, sep)
+numberFormat(number, [digits], [dot], [sep])
 ```
 
 格式化一个数值。

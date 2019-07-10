@@ -345,9 +345,11 @@ isUpper('a');
 get(key)
 ```
 
+Get the cookie's value of the specified name, with `decodeURIComponent` decoding.
+
 **Arguments**
 
-* **key (String)**
+* **key (String)**: Cookie name.
 
 **Return**
 
@@ -359,6 +361,8 @@ get(key)
 getAll()
 ```
 
+Get the all cookies' value, with `decodeURIComponent` decoding.
+
 **Return**
 
 * **(Object)**
@@ -369,9 +373,11 @@ getAll()
 getJson(key)
 ```
 
+Get the cookie's value of the specified name, with `JSON.parse` decoding.
+
 **Arguments**
 
-* **key (String)**
+* **key (String)**: Cookie name.
 
 **Return**
 
@@ -382,6 +388,8 @@ getJson(key)
 ```
 getRaw(key)
 ```
+
+Get the cookie's value of the specified name, without decoding.
 
 **Arguments**
 
@@ -397,6 +405,8 @@ getRaw(key)
 isEnabled()
 ```
 
+Check if the cookie is enabled.
+
 **Return**
 
 * **(Boolean)**
@@ -404,13 +414,17 @@ isEnabled()
 ### remove
 
 ```js
-remove(key, options)
+remove(key, [options])
 ```
+
+Remove a cookie.
 
 **Arguments**
 
-* **key (String)**
-* **options (Object)**
+* **key (String)**: Cookie name.
+* **[options] (Object)**: Cookie options.
+  + **[domain] (String)**
+  + **[path = "/"] (String)**
 
 ### set
 
@@ -418,23 +432,48 @@ remove(key, options)
 set(key, value, options)
 ```
 
+Set a cookie, and the `value` argument will be encoded with `encodeURIComponent`.
+
 **Arguments**
 
-* **key (String)**
-* **value (String)**
-* **options (Object)**
+* **key (String)**: Cookie name.
+* **value (String)**: Cookie value.
+* **[options] (Object)**: Cookie options.
+  + **[domain] (String)**: The domain belongs to.
+  + **[path = "/"] (String)**: The path belongs to.
+  + **[expires] (Number | String | Date)**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
+  + **[max-age] (Number)** The time of existence.
+  + **[samesite] (Boolean)**
+  + **[secure] (Boolean)**
+
+| Unit suffix | Representation |
+| ----------- | -------------- |
+| Y           | One year       |
+| M           | One month      |
+| D           | One day        |
+| h           | One hour       |
+| m           | One minute     |
+| s           | One second     |
 
 ### setJson
 
 ```js
-set(key, value, options)
+set(key, value, [options])
 ```
+
+Same as `set`, set a cookie, and the `value` argument will be encoded with `JSON.stringify`.
 
 **Arguments**
 
-* **key (String)**
-* **value (Any)**
-* **options (Object)**
+* **key (String)**: Cookie name.
+* **value (Any)**: Cookie value.
+* **[options] (Object)**: Cookie options.
+  + **[domain] (String)**: The domain belongs to.
+  + **[path = "/"] (String)**: The path belongs to.
+  + **[expires] (Number | String | Date)**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
+  + **[max-age] (Number)** The time of existence.
+  + **[samesite] (Boolean)**
+  + **[secure] (Boolean)**
 
 ### setRaw
 
@@ -442,18 +481,26 @@ set(key, value, options)
 set(key, value, options)
 ```
 
+Same as `set`, set a cookie without any encoding.
+
 **Arguments**
 
-* **key (String)**
-* **value (String)**
-* **options (Object)**
+* **key (String)**: Cookie name.
+* **value (Any)**: Cookie value.
+* **[options] (Object)**: Cookie options.
+  + **[domain] (String)**: The domain belongs to.
+  + **[path = "/"] (String)**: The path belongs to.
+  + **[expires] (Number | String | Date)**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
+  + **[max-age] (Number)** The time of existence.
+  + **[samesite] (Boolean)**
+  + **[secure] (Boolean)**
 
 ## date
 
 ### diff
 
 ```js
-diff(date1, date2, unit, roundFunc)
+diff(date1, date2, [unit], [roundFunc])
 ```
 
 Compute the difference of the specified period unit between two dates.
@@ -462,8 +509,8 @@ Compute the difference of the specified period unit between two dates.
 
 * **date1 (Number|Date|String)**: A timestamp number, a Date object or a parsable date string.
 * **date2 (Number|Date|String)**: A timestamp number, a Date object or a parsable date string.
-* **unit (String)**: A string specifies the peroid unit, default is `"ms"`. See unit table.
-* **roundFunc (Function)**: A round function, default is `Math.round`.
+* **[unit = "ms"] (String)**: A string specifies the peroid unit, default is `"ms"`. See unit table.
+* **[roundFunc = Math.round] (Function)**: A round function, default is `Math.round`.
 
 **Return**
 
@@ -495,14 +542,14 @@ diff(date1, date2, 'D')
 ### format
 
 ```js
-format(date, format, isUTC)
+format(date, format, [isUTC])
 ```
 
 **Arguments**
 
 * **date (Date|Number)**: A Date object or a timestamp number.
 * **format (String)**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
-* **isUTC (Boolean)**: Use the UTC time, default is `false`.
+* **[isUTC = false] (Boolean)**: Use the UTC time, default is `false`.
 
 **Return**
 
@@ -540,14 +587,14 @@ format(date, 'YYYY-M-D h:m:s');
 ### timeAgo
 
 ```js
-timeAgo.format(date, locale, nowDate)
+timeAgo.format(date, [locale], [nowDate])
 ```
 
 **Arguments**
 
 * **date (Number|Date|String)**: A timestamp, a Date object or a parsable date string.
-* **locale (String)**: the locale, "en_US" (default) and "zh_CN" are builtins supported.
-* **nowDate (Date)**: The base date.
+* **[locale = "en_US"] (String)**: the locale, "en_US" (default) and "zh_CN" are builtins supported.
+* **[nowDate = new Date()](Date)**: The base date.
 
 **Return**
 
@@ -618,7 +665,7 @@ const y = clientY(el);
 ### createEvent
 
 ```js
-createEvent(type, options)
+createEvent(type, [options])
 ```
 
 Create a custom event.
@@ -626,10 +673,10 @@ Create a custom event.
 **Arguments**
 
 * **type (String)**: The event type.
-* **options (String)**: The event options.
-  + **options.bubbles (Boolean)**:
-  + **options.cancelable (Boolean)**:
-  + **options.detail (Any)**
+* **[options] (String)**: The event options.
+  + **[bubbles = false] (Boolean)**:
+  + **[cancelable = false] (Boolean)**:
+  + **[detail = null] (Object)**
 
 **Return**
 
@@ -644,7 +691,7 @@ const event = createEvent('click');
 btn.dispatchEvent(event);
 ```
 
-## domReady
+### domReady
 
 ```js
 domReady(callback)
@@ -674,7 +721,7 @@ domReady(function () {
 ### insertScript
 
 ```js
-insertScript(url, props)
+insertScript(url, [props])
 ```
 
 Insert a `<script>` to document.
@@ -682,7 +729,7 @@ Insert a `<script>` to document.
 **Arguments**
 
 * **url (String)**: The `script.src` string.
-* **props (Object)**: The `<script>` element properties.
+* **[props] (Object)**: The `<script>` element properties.
 
 ### isElement
 
@@ -781,14 +828,14 @@ pageY(el)
 ### scrollX
 
 ```js
-scrollX(elOrWindow)
+scrollX([elOrWindow])
 ```
 
 Get the horizontal scroll distance of an element or a window.
 
 **Arguments**
 
-* **elOrWindow (Element | Window)**: An element or a window.
+* **[elOrWindow = window] (Element | Window)**: An element or a window.
 
 **Return**
 
@@ -807,14 +854,14 @@ scrollX(el);
 ### scrolY
 
 ```js
-scrollY(elOrWindow)
+scrollY([elOrWindow])
 ```
 
 Get the horizontal scroll distance of an element or a window.
 
 **Arguments**
 
-* **elOrWindow (Element | Window)**: An element or a window.
+* **[elOrWindow = window] (Element | Window)**: An element or a window.
 
 **Return**
 
@@ -833,14 +880,14 @@ scrollY(el);
 ### viewport
 
 ```js
-viewport(elOrWindow)
+viewport([elOrWindow])
 ```
 
 Get the width and height of the viewport of an element or a window.
 
 **Arguments**
 
-* **elOrWindow (Element | Window)**: An element or a window.
+* **[elOrWindow = window] (Element | Window)**: An element or a window.
 
 **Return**
 
@@ -1214,6 +1261,8 @@ extname('/foo/bar.txt');
 get(name)
 ```
 
+Get the value of the specified name in the current search string.
+
 **Arguments**
 
 * **name (String)**
@@ -1241,6 +1290,8 @@ getQuery('fruits');
 parse(search)
 ```
 
+Parse a search string.
+
 **Arguments**
 
 * **search (String)**
@@ -1254,6 +1305,8 @@ parse(search)
 ```js
 stringify(query)
 ```
+
+Convert an object to a search string.
 
 **Arguments**
 
@@ -1791,17 +1844,17 @@ lastChar('hello');
 ### truncate
 
 ```js
-truncate([str = ''], [options = {}])
+truncate([str], [options])
 ```
 
 Return a truncated string end with the specified omission.
 
 **Arguments**
 
-* **[str = ''] (String)**: The string to be truncated.
+* **[str = ""] (String)**: The string to be truncated.
 * **[options = {}] (Object)**: The options object.
   + **[length] (Number)**: The maxmium string length. It is the `str` length by default.
-  + **[omission = '...'] (String)**: The omission string.
+  + **[omission = "..."] (String)**: The omission string.
   + **[countType = 0] (Number)**: How to count the half width and full width characters.
     - `0`: Count 1 for each character.
     - `1`: Count 1 for half width and count 2 for full width.
@@ -1946,20 +1999,20 @@ Check if the environment is iPad.
 ## ajax
 
 ```js
-ajax(url, options)
+ajax(url, [options])
 ```
 
 **Arguments**
 
-* **url (String)**
-* **options (Object)**
-  + **options.async (Boolean)**
-  + **options.beforeSend (Function)**
-  + **options.data (String | Object)**
-  + **options.headers (Object)**
-  + **options.method (String)**
-  + **options.responseType (String)**
-  + **options.timeout (Number)**
+* **url (String)**: The request url.
+* **[options] (Object)**: The ajax options.
+  + **[async = true] (Boolean)**: If the request is send asynchronously.
+  + **[beforeSend] (Function)**: The callback called before the request sent. If it returns `false`, then the request will not be sent.
+  + **[data = null] (String | Object)**: The data sent.
+  + **[headers = null] (Object)**: The request headers.
+  + **[method = "get"] (String)**: The request method.
+  + **[responseType = "json"] (String)**: How to parse the response.
+  + **[timeout = 0] (Number)**: The timeout.
 
 **Return**
 
@@ -1968,27 +2021,48 @@ ajax(url, options)
 ## css
 
 ```js
-css(el, prop)
+css(el, [prop])
 ```
+
+Get the value of the specified or all CSS properties.
 
 **Arguments**
 
-* **el (Element)**
-* **prop (String)**
+* **el (Element | String)**: an element or a CSS selector string.
+* **[prop] (String)**: CSS property name.
 
 **Return**
 
 * **(String | Object)**
+
+**Example**
+
+```js
+const el = document.getElementById('el');
+
+// Get all properties
+css(el);
+// => CSSStyleDeclaration { ... }
+
+// Passing a selector string
+css('#el');
+// => CSSStyleDeclaration { ... }
+
+// Get the specified properties' value
+css('#el', 'width');
+// => '100px'
+```
 
 ## delay
 
 ```js
 delay(duration)
 ```
+Return a promise, it will be resolved after the `duration` time.
 
 **Arguments**
 
-* **duration (Number)**
+* **duration (Number)**: The duration.
 
 **Return**
 
@@ -1997,16 +2071,16 @@ delay(duration)
 ## jsonp
 
 ```js
-jsonp(url, options)
+jsonp(url, [options])
 ```
 
 **Arguments**
 
-* **url (String)**
-* **options (Object)**
-  + **options.callback (String)**
-  + **options.responseType (String)**
-  + **options.timeout (Number)**
+* **url (String)**: The request url
+* **[options] (Object)**: The options.
+  + **[callback] (String)**: The callback called after the request success or failed.
+  + **[responseType = "json"] (String)**: How to parse the response.
+  + **[timeout = 0] (Number)**: The request timeout.
 
 **Return**
 
@@ -2014,39 +2088,48 @@ jsonp(url, options)
 
 ## noop
 
-```js
-noop()
-```
+This is an empty function, accepting no argument, returning no value.
 
 ## numberFormat
 
 ```js
-numberFormat(number, digits, dot, sep)
+numberFormat(number, [digits], [dot], [sep])
 ```
+
+Format a number.
 
 **Arguments**
 
-* **number (Number)**
-* **digits (Number)**
-* **dot (String)**
-* **sep (String)**
+* **number (Number)**: The number to be formatted.
+* **[digits = -1] (Number)**: The length of decimal part. If it's `-1`, then the original decimal part will be preserved. It it's greater than `-1`, the the last of the preserved digits will be obtained with `Math.round`.
+* **[dot = "."] (String)**: The delimiter of the integer and decimal part.
+* **[sep = ","] (String)**: The thousand separator.
 
 **Return**
 
 * **(String)**
 
+**Example**
+
+```js
+numberFormat(3.1415);
+// => '3.1415'
+numberFormat(3.1415, 3);
+// => '3.142'
+```
+
 ## randomString
 
 ```js
-randomString(len, chars)
+randomString([len], [chars])
 ```
 
 Return a random string which consists of the characters specified by `chars`.
 
 **Arguments**
 
-* **len (Number)**: The length of random string, default is `32`.
-* **chars (String)**: The character set, default is lower letters, upper letters and digits.
+* **[len = 32] (Number)**: The length of random string, default is `32`.
+* **[chars] (String)**: The character set, default is lower letters, upper letters and digits.
 
 **Return**
 
@@ -2070,6 +2153,15 @@ randomString(undefined, '0123456789');
 uuid()
 ```
 
+Generate a UUID based on random numbers, see algorithm in [rfc4122](https://tools.ietf.org/html/rfc4122#section-4.4).
+
 **Return**
 
 * **(String)**
+
+**Example**
+
+```js
+uuid();
+// => 'fedb3747-4208-475d-b473-e51b583cddaf'
+```
