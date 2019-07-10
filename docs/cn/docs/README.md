@@ -1,7 +1,7 @@
 ---
 sidebar: auto
 ---
-# Docs
+# 文档
 
 ## char
 
@@ -11,17 +11,17 @@ sidebar: auto
 isAlphabetic(ch)
 ```
 
-Detect a character whether it is one of a-z or A-Z.
+判断一个字符是否是 a-z 或 A-Z。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isAlphabetic('a');
@@ -37,17 +37,17 @@ isAlphabetic('1');
 isAlphanumeric(ch)
 ```
 
-Detect a character whether it is one of a-z or A-Z or 0-9.
+判断一个字符是否是 a-z 或 A-Z 或 0-9。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isAlphanumeric('a');
@@ -66,17 +66,17 @@ isAlphanumeric('*');
 isASCII(ch)
 ```
 
-Detect a character whether it is an ASCII character.
+判断一个字符是否是一个 ASCII 字符。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isASCII('a');
@@ -95,17 +95,17 @@ isASCII('你');
 isCJK(ch)
 ```
 
-Detect a character whether it is a CJK (Chinese, Japanese and Korean) character.
+判断一个字符是否是一个 CJK（中文、日文、韩文）字符。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isCJK('你');
@@ -122,16 +122,17 @@ isControl(ch)
 ```
 
 Detect a character whether it is a [control character](https://en.wikipedia.org/wiki/Control_character).
+判断一个字符是否是一个[控制字符](https://en.wikipedia.org/wiki/Control_character)。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isControl('\t');
@@ -147,17 +148,17 @@ isControl('\r');
 isDigit(ch)
 ```
 
-Detect a character whether it is a decimal digit (0-9).
+判断一个字符是否是一个十进制数字（0-9）。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isDigit('0');
@@ -173,17 +174,16 @@ isDigit('1');
 isGraph(ch)
 ```
 
-Detect a character whether it is a [graphic character](https://en.wikipedia.org/wiki/Graphic_character).
+判断一个字符是否是一个[图形字符](https://en.wikipedia.org/wiki/Graphic_character)。
+**参数**
 
-**Arguments**
+* **ch (String)**：长度为 1 的字符串。
 
-* **ch (String)**: A string with length equal to 1.
-
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isGraph('0');
@@ -199,17 +199,17 @@ isGraph('a');
 isHexadecimal(ch)
 ```
 
-Detect a character whether it is a hexadecimal character (0-9, a-f, A-F).
+判断一个字符是否是一个十六进制字符（0-9、a-f、A-F）。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isHexadecimal('0');
@@ -228,17 +228,17 @@ isHexadecimal('A');
 isLower(ch)
 ```
 
-Detect a character whether it is a lower-case character (a-z).
+判断一个字符是否是小写字符（a-z）。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isLower('a');
@@ -251,17 +251,17 @@ isLower('a');
 isPrint(ch)
 ```
 
-Detect a character whether it is a [printable character](https://en.wikipedia.org/wiki/ASCII#Printable_characters).
+判断一个字符是否是[可打印字符](https://en.wikipedia.org/wiki/ASCII#Printable_characters)。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isPrint('a');
@@ -275,16 +275,17 @@ isPunctuation(ch)
 ```
 
 Detect a character whether it is a punctuation character.
+判断一个字符是否是标点字符。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isPunctuation(',');
@@ -297,17 +298,17 @@ isPunctuation(',');
 isSpace(ch)
 ```
 
-Detect a character whether it is a space character.
+判断一个字符是否是一个空格字符。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isSpace(' ');
@@ -320,17 +321,17 @@ isSpace(' ');
 isUpper(ch)
 ```
 
-Detect a character whether it is a upper-case character (A-Z).
+判断一个字符是否是大写字符（A-Z）。
 
-**Arguments**
+**参数**
 
-* **ch (String)**: A string with length equal to 1.
+* **ch (String)**：长度为 1 的字符串。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isUpper('a');
@@ -345,11 +346,13 @@ isUpper('a');
 get(key)
 ```
 
-**Arguments**
+获取指定名称的 Cookie 值，使用`decodeURIComponent`解码。
 
-* **key (String)**
+**参数**
 
-**Return**
+* **key (String)**：Cookie 名称。
+
+**返回值**
 
 * **(String)**
 
@@ -359,7 +362,9 @@ get(key)
 getAll()
 ```
 
-**Return**
+获取所有的 Cookie 值，使用`decodeURIComponent`解码。
+
+**返回值**
 
 * **(Object)**
 
@@ -369,13 +374,15 @@ getAll()
 getJson(key)
 ```
 
-**Arguments**
+获取指定名称的 Cookie 值，使用`JSON.parse`解码。
 
-* **key (String)**
+**参数**
 
-**Return**
+* **key (String)**：Cookie 名称。
 
-* **(String)**
+**返回值**
+
+* **(Any)**
 
 ### getRaw
 
@@ -383,11 +390,13 @@ getJson(key)
 getRaw(key)
 ```
 
-**Arguments**
+获取指定名称的 Cookie 值，不应用任何解码。
 
-* **key (String)**
+**参数**
 
-**Return**
+* **key (String)**：Cookie 名称。
+
+**返回值**
 
 * **(String)**
 
@@ -397,91 +406,133 @@ getRaw(key)
 isEnabled()
 ```
 
-**Return**
+检测 Cookie 功能是否启用。
+
+**返回值**
 
 * **(Boolean)**
 
 ### remove
 
 ```js
-remove(key, options)
+remove(key, [options])
 ```
 
-**Arguments**
+移除当前域名下指定名称的 Cookie。
 
-* **key (String)**
-* **options (Object)**
+**参数**
+
+* **key (String)**：Cookie 名称。
+* **[options] (Object)**：Cookie 配置参数。
+  + **[domain] (String)**
+  + **[path = "/"] (String)**
 
 ### set
 
 ```js
-set(key, value, options)
+set(key, value, [options])
 ```
 
-**Arguments**
+设置一个 Cookie，`value`参数将会使用`encodeURIComponent`进行编码。
 
-* **key (String)**
-* **value (String)**
-* **options (Object)**
+**参数**
+
+* **key (String)**：Cookie 名称
+* **value (String)**：Cookie 值。
+* **[options] (Object)**：Cookie 配置。
+  + **[domain] (String)**：Cookie 所属域名。
+  + **[path = "/"] (String)**：Cookie 所属路径。
+  + **[expires] (Number | String | Date)**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
+  + **[max-age] (Number)**：Cookie 持续时间。
+  + **[samesite] (Boolean)**
+  + **[secure] (Boolean)**
+
+`expires`属性为带后缀的数值字符串时，后缀含义表。
+
+| 单位后缀     | 含义            |
+| ----------- | -------------- |
+| Y           | 年             |
+| M           | 月             |
+| D           | 天             |
+| h           | 日             |
+| m           | 分             |
+| s           | 秒             |
 
 ### setJson
 
 ```js
-set(key, value, options)
+set(key, value, [options])
 ```
 
-**Arguments**
+同`set`，设置一个 Cookie，只是`value`参数将会使用`JSON.stringify`进行编码。
 
-* **key (String)**
-* **value (Any)**
-* **options (Object)**
+**参数**
+
+* **key (String)**：Cookie 名称
+* **value (String)**：Cookie 值。
+* **[options] (Object)**：Cookie 配置。
+  + **[domain] (String)**：Cookie 所属域名。
+  + **[path = "/"] (String)**：Cookie 所属路径。
+  + **[expires] (Number | String | Date)**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
+  + **[max-age] (Number)**：Cookie 持续时间。
+  + **[samesite] (Boolean)**
+  + **[secure] (Boolean)**
+
 
 ### setRaw
 
 ```js
-set(key, value, options)
+set(key, value, [options])
 ```
 
-**Arguments**
+同`set`，设置一个 Cookie，只是`value`参数不使用任何编码。
 
-* **key (String)**
-* **value (String)**
-* **options (Object)**
+**参数**
+
+* **key (String)**：Cookie 名称
+* **value (String)**：Cookie 值。
+* **[options] (Object)**：Cookie 配置。
+  + **[domain] (String)**：Cookie 所属域名。
+  + **[path = "/"] (String)**：Cookie 所属路径。
+  + **[expires] (Number | String | Date)**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
+  + **[max-age] (Number)**：Cookie 持续时间。
+  + **[samesite] (Boolean)**
+  + **[secure] (Boolean)**
 
 ## date
 
 ### diff
 
 ```js
-diff(date1, date2, unit, roundFunc)
+diff(date1, date2, [unit], [roundFunc])
 ```
 
-Compute the difference of the specified period unit between two dates.
+计算两个日期之间的差，可以指定单位及四舍五入函数。
 
-**Arguments**
+**参数**
 
-* **date1 (Number|Date|String)**: A timestamp number, a Date object or a parsable date string.
-* **date2 (Number|Date|String)**: A timestamp number, a Date object or a parsable date string.
-* **unit (String)**: A string specifies the peroid unit, default is `"ms"`. See unit table.
-* **roundFunc (Function)**: A round function, default is `Math.round`.
+* **date1 (Number|Date|String)**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
+* **date2 (Number|Date|String)**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
+* **[unit = "ms"] (String)**：一个表示时间单位的字符串，`d`（表示天），详细见下面表格。
+* **[roundFunc = Math.round] (Function)**：一个四舍五入函数。
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Unit table**
+**时间单位**
 
-| Unit value | Representation |
+| 单位值 | 表示含义 |
 | ---------- | -------------- |
-| Y | Years |
-| M | Months |
-| D | Days |
-| h | hours |
-| m | minutes |
-| s | seconds |
-| ms | milliseconds |
+| Y | 年 |
+| M | 月 |
+| D | 日 |
+| h | 小时 |
+| m | 分钟 |
+| s | 秒 |
+| ms | 毫秒 |
 
-**Example
+**示例**
 
 ```js
 const date1 = new Date(2019, 1, 10, 0, 0, 0);
@@ -495,16 +546,18 @@ diff(date1, date2, 'D')
 ### format
 
 ```js
-format(date, format, isUTC)
+format(date, format, [isUTC])
 ```
 
-**Arguments**
+根据指定的格式对一个日期格式化。
 
-* **date (Date|Number)**: A Date object or a timestamp number.
-* **format (String)**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
-* **isUTC (Boolean)**: Use the UTC time, default is `false`.
+**参数**
 
-**Return**
+* **date (Date|Number)**：一个`Date`对象或一个时间戳（单位：毫秒）。
+* **format (String)**一个占位符替换字符串，为 [moment format tokens](http://momentjs.com/docs/#/displaying/format/) 的一部分，具体查看下面表格。
+* **[isUTC = false] (Boolean)**：是否使用协调世界时（UTC）。
+
+**返回值**
 
 * **(String)**
 
@@ -527,7 +580,7 @@ format(date, format, isUTC)
 | s | 1 2 ... 58 59 |
 | ss | 01 02 ... 58 59 |
 
-**Example**
+**示例**
 
 ```js
 const date = new Date(1970, 0, 1, 13, 1, 1);
@@ -540,20 +593,22 @@ format(date, 'YYYY-M-D h:m:s');
 ### timeAgo
 
 ```js
-timeAgo.format(date, locale, nowDate)
+timeAgo.format(date, [locale], [nowDate])
 ```
 
-**Arguments**
+将一个日期格式化为“5 分钟之前”之类的字符串。
 
-* **date (Number|Date|String)**: A timestamp, a Date object or a parsable date string.
-* **locale (String)**: the locale, "en_US" (default) and "zh_CN" are builtins supported.
-* **nowDate (Date)**: The base date.
+**参数**
 
-**Return**
+* **date (Number|Date|String)**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
+* **[locale = "en_US"] (String)**：时区，内置支持`"en_US"`和`"zh_CN"`。
+* **[nowDate = new Date() (Date)**：比对日期。
+
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 const d = new Date();
@@ -573,17 +628,17 @@ timeAgo.format(d, 'zh_CN');
 clientX(elem)
 ```
 
-Get the difference between the left edge of an element and the left edge of viewport.
+获取一个元素左边界距离视口（浏览器窗口可视区域）左边界距离。
 
-**Arguments**
+**参数**
 
-* **elem (Element)**: An element.
+* **elem (Element)**
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
 const el = document.getElementById('el');
@@ -597,17 +652,17 @@ const x = clientX(el);
 clientY(elem)
 ```
 
-Get the difference between the top edge of an element and the top edge of viewport.
+获取一个元素顶部距离视口（浏览器窗口可视区域）顶部距离。
 
-**Arguments**
+**参数**
 
-* **elem (Element)**: An element.
+* **elem (Element)**
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
 const el = document.getElementById('el');
@@ -618,24 +673,24 @@ const y = clientY(el);
 ### createEvent
 
 ```js
-createEvent(type, options)
+createEvent(type, [options])
 ```
 
-Create a custom event.
+创建一个自定义事件对象。
 
-**Arguments**
+**参数**
 
-* **type (String)**: The event type.
-* **options (String)**: The event options.
-  + **options.bubbles (Boolean)**:
-  + **options.cancelable (Boolean)**:
-  + **options.detail (Any)**
+* **type (String)**：事件名称。
+* **[options] (String)**：事件配置对象。
+  + **[bubbles = false] (Boolean)**：事件是否冒泡。
+  + **[cancelable = false] (Boolean)**：事件是否可被取消。
+  + **[detail = null] (Object)**：附加的数据。
 
-**Return**
+**返回值**
 
 * **(Event)**
 
-**Example**
+**示例**
 
 ```js
 const btn = document.getElementById('btn');
@@ -644,29 +699,29 @@ const event = createEvent('click');
 btn.dispatchEvent(event);
 ```
 
-## domReady
+### domReady
 
 ```js
 domReady(callback)
 ```
 
-Defer the execution of the `callback`, which will be executed in `DOMContentLoaded` event.
-If the `DOMContentLoaded` has triggered, then the `callback` will be executed in next event loop.
+延迟执行一个回调函数，直到`DOMContentLoaded`事件触发或者 DOM 可访问时执行。如果`domReady`执行时，`DOMContentLoaded`
+事件已经触发或者 DOM 已经可访问，则`callback`会在下一个事件循环（event loop）被执行。
 
-**Arguments**
+**参数**
 
-* **callback (Function)**
+* **callback (Function)**：被执行的回调函数。
 
-**Example**
+**示例**
 
 ```js
 domReady(function () {
   // ...
 });
 
-// You can use it multiple times.
+// 可以使用多次。
 domReady(function () {
-  // other callback
+  // 其他回调
 });
 ```
 
@@ -674,15 +729,15 @@ domReady(function () {
 ### insertScript
 
 ```js
-insertScript(url, props)
+insertScript(url, [props])
 ```
 
-Insert a `<script>` to document.
+插入一个`<script>`标签到文档中。
 
-**Arguments**
+**参数**
 
-* **url (String)**: The `script.src` string.
-* **props (Object)**: The `<script>` element properties.
+* **url (String)**：`<script>`标签的`src`属性。
+* **[props] (Object)**：其他`<script>`标签支持的属性。
 
 ### isElement
 
@@ -690,13 +745,13 @@ Insert a `<script>` to document.
 isElement(obj)
 ```
 
-Check if the argument is an element.
+判断一个值是否为元素对象。
 
-**Arguments**
+**参数**
 
-* **obj (Any)**: Any value.
+* **obj (Any)**：任意值。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -706,13 +761,13 @@ Check if the argument is an element.
 isInViewport(el)
 ```
 
-Check if an element is in the viewport.
+判断一个元素是否位于视口（浏览器可视区域）内。
 
-**Arguments**
+**参数**
 
-* **el (Element)**: An element.
+* **el (Element)**：一个元素。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -722,13 +777,13 @@ Check if an element is in the viewport.
 isWindow(obj)
 ```
 
-Check if a value is window object.
+判断一个值是否是`window`对象。
 
-**Arguments**
+**参数**
 
-* **obj (Any)**: Any value.
+* **obj (Any)**：任意值。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -738,17 +793,17 @@ Check if a value is window object.
 pageX(el)
 ```
 
-Return the horizontal distance of an element to the left edge of the page.
+返回一个元素距离页面左边界的水平距离。
 
-**Arguments**
+**参数**
 
 * **el (Element)**
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
 const el = document.getElementById('el')
@@ -761,17 +816,17 @@ pageX(el)
 pageY(el)
 ```
 
-Return the vertical distance of an element to the left edge of the page.
+返回一个元素距离页面顶部的竖直距离。
 
-**Arguments**
+**参数**
 
 * **el (Element)**
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
 const el = document.getElementById('el')
@@ -784,20 +839,20 @@ pageY(el)
 scrollX(elOrWindow)
 ```
 
-Get the horizontal scroll distance of an element or a window.
+返回一个元素或页面的水平滚动距离。
 
-**Arguments**
+**参数**
 
-* **elOrWindow (Element | Window)**: An element or a window.
+* **elOrWindow (Element | Window)**：一个元素或`window`对象。
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
-// Return the window scrollX if no argument is passed
+// 如果不传任何参数，则返回页面的水平滚动距离。
 scrollX();
 
 const el = document.getElementById('el')
@@ -810,20 +865,20 @@ scrollX(el);
 scrollY(elOrWindow)
 ```
 
-Get the horizontal scroll distance of an element or a window.
+返回一个元素或页面的竖直滚动距离。
 
-**Arguments**
+**参数**
 
-* **elOrWindow (Element | Window)**: An element or a window.
+* **elOrWindow (Element | Window)**：一个元素或`window`对象。
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
-// Return the window scrollY if no argument is passed
+// 如果不传任何参数，则返回页面的竖直滚动距离。
 scrollY();
 
 const el = document.getElementById('el')
@@ -836,17 +891,17 @@ scrollY(el);
 viewport(elOrWindow)
 ```
 
-Get the width and height of the viewport of an element or a window.
+获取一个元素或`window`的视口宽度和高度。
 
-**Arguments**
+**参数**
 
-* **elOrWindow (Element | Window)**: An element or a window.
+* **elOrWindow (Element | Window)**：一个元素或`window`对象。
 
-**Return**
+**返回值**
 
 * **(Object)**
 
-**Example**
+**示例**
 
 ```js
 viewport();
@@ -861,17 +916,17 @@ viewport();
 isArray(value)
 ```
 
-Check if a value is an Array.
+判断一个值是否是数组类型。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isArray([]);
@@ -884,17 +939,17 @@ isArray([]);
 isBoolean(value)
 ```
 
-Check if a value is a Boolean.
+判断一个值是否是布尔类型。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isBoolean(true);
@@ -907,17 +962,17 @@ isBoolean(true);
 isDate(value)
 ```
 
-Check if a value is a Date object.
+判断一个值是否是 Date 对象。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isDate([]);
@@ -930,17 +985,17 @@ isDate([]);
 isError(value)
 ```
 
-Check if a value is an Error object.
+判断一个值是否是 Error 类型。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isError(new Error('error message'));
@@ -953,17 +1008,17 @@ isError(new Error('error message'));
 isFunction(value)
 ```
 
-Check if a value is a function, including generator function and async function.
+判断一个值是否是一个函数，包括生成器函数和异步函数。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isFunction(function () {});
@@ -979,17 +1034,17 @@ isFunction(function* () {});
 isNil(value)
 ```
 
-Check if a value is `null` or `undefined`.
+判断一个值是否是`null`或`undefined`。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isNil(null);
@@ -1004,17 +1059,17 @@ isNil(undefined);
 isNull(value)
 ```
 
-Check if a value is `null`
+判断一个值是否是`null`。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isNull(null);
@@ -1027,17 +1082,17 @@ isNull(null);
 isNumber(value)
 ```
 
-Check if a value is a Number.
+判断一个值是否是数值类型。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isNumber(1);
@@ -1050,17 +1105,17 @@ isNumber(1);
 isObject(value)
 ```
 
-Check if a value is an Object.
+判断一个值是否是一个对象类型。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isObject({});
@@ -1075,17 +1130,17 @@ isObject(null);
 isRegExp(value)
 ```
 
-Check if a value is a RegExp object.
+判断一个值是否是 RegExp 对象。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isRegExp(/\s+/);
@@ -1098,17 +1153,17 @@ isRegExp(/\s+/);
 isString(value)
 ```
 
-Check if a value is a String.
+判断一个值是否是字符串类型。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isString('hello world');
@@ -1121,17 +1176,17 @@ isString('hello world');
 isUndefined(value)
 ```
 
-Check if a value is `undefined`.
+判断一个值是否是`undefined`。
 
-**Arguments**
+**参数**
 
 * **value (any)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isUndefined(void 0);
@@ -1145,17 +1200,17 @@ isUndefined(void 0);
 ```js
 basename(str)
 ```
-Return the last part of the path string.
+返回一个路径字符串的最后一部分。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 basename('/foo/bar');
@@ -1168,15 +1223,17 @@ basename('/foo/bar');
 dirname(str)
 ```
 
-**Arguments**
+返回一个路口字符串的目录部分。
+
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 dirname('/foo/bar');
@@ -1189,17 +1246,17 @@ dirname('/foo/bar');
 extname(str)
 ```
 
-Return the extension name of the path.
+返回一个路径字符串的扩展名部分。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 extname('/foo/bar.txt');
@@ -1214,15 +1271,17 @@ extname('/foo/bar.txt');
 get(name)
 ```
 
-**Arguments**
+获取查询字符串当中指定名称的值。
+
+**参数**
 
 * **name (String)**
 
-**Return**
+**返回值**
 
 * **(String|Array\<String\>)**
 
-**Example**
+**示例**
 
 ```js
 // location.search = '?hello=world'
@@ -1241,11 +1300,13 @@ getQuery('fruits');
 parse(search)
 ```
 
-**Arguments**
+解析一个查询字符串。
 
-* **search (String)**
+**参数**
 
-**Return**
+* **search (String)**：查询字符串。
+
+**返回值**
 
 * **(Object)**
 
@@ -1255,11 +1316,13 @@ parse(search)
 stringify(query)
 ```
 
-**Arguments**
+将对象序列化为查询字符串。
+
+**参数**
 
 * **query (Object)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
@@ -1271,17 +1334,17 @@ stringify(query)
 isAscii(str)
 ```
 
-Check if a string contains the ASCII characters only.
+判断一个字符串是否只包含 ASCII 字符。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isAscii('hello world');
@@ -1294,17 +1357,17 @@ isAscii('hello world');
 isDecimal(str)
 ```
 
-Check if a string is a decimal number.
+判断一个字符串是否是一个小数记数法表示的数值。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isDecimal('1');
@@ -1319,17 +1382,17 @@ isDecimal('3.14');
 isDigit(str)
 ```
 
-Check if a string contains the digits (0-9) only.
+判断一个字符串是否只包含十进制数字（0-9）。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isDigit('0123');
@@ -1342,17 +1405,17 @@ isDigit('0123');
 isDomain(str)
 ```
 
-Check if a string is an http(s) domain.
+判断一个字符串是否是一个 http(s) 域名。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isDomain('https://example.com');
@@ -1365,17 +1428,17 @@ isDomain('https://example.com');
 isEmail(str)
 ```
 
-Check if a string is an email address.
+判断一个字符串是否一个邮件地址。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isEmail('alexchao1990@gmail.com');
@@ -1391,17 +1454,17 @@ isEmail('alexchao1990+github@gmail.com');
 isHexColor(str)
 ```
 
-Check if a string is an hex color value.
+判断一个字符串是否是一个十六进制数字格式的颜色值。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isHexColor('#f50');
@@ -1420,17 +1483,17 @@ isHexColor('#FF5500');
 isHsl(str)
 ```
 
-Check if a string is an HSL value.
+判断一个字符串是否是一个 HSL 颜色值。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isHsl('hsl(100, 50, 50)');
@@ -1446,17 +1509,17 @@ isHsl('HSL(100, 50, 50)');
 isHsla(str)
 ```
 
-Check if a string is an HSLA value.
+判断一个字符串是否是一个 HSLA 颜色值。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isHsla('hsla(100, 50, 50, 0.5)');
@@ -1472,17 +1535,17 @@ isHsla('HSLA(100, 50, 50, 0.5)');
 isInteger(str)
 ```
 
-Same as `isDigit`. Check if a string contains the digits only.
+与`isDigit`相同，判断一个字符串是否只包含十进制数字。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isInteger('0123');
@@ -1495,17 +1558,17 @@ isInteger('0123');
 isIP(str)
 ```
 
-Check if a string is an IP (v4 or v6) address.
+判断一个字符串是否一个 IP（v4 或 v6）地址。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isIP('192.0.0.1');
@@ -1521,17 +1584,17 @@ isIP('2408:8100:2514:3f70:c98:15fe:9611:acdc');
 isIPv4(str)
 ```
 
-Check if a string is an IP (v4) address.
+判断一个字符串是否是一个 IP v4 地址。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isIPv4('192.0.0.1');
@@ -1544,17 +1607,17 @@ isIPv4('192.0.0.1');
 isIPv6(str)
 ```
 
-Check if a string is an IP (v4) address.
+判断一个字符串是否是一个 IP v6 地址。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isIPv6('2408:8100:2514:3f70:c98:15fe:9611:acdc');
@@ -1567,17 +1630,17 @@ isIPv6('2408:8100:2514:3f70:c98:15fe:9611:acdc');
 isQQ(str)
 ```
 
-Check if a string is a QQ id.
+判断一个字符串是否是一个 QQ 号。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isQQ('10000');
@@ -1590,17 +1653,17 @@ isQQ('10000');
 isRealNumber(str)
 ```
 
-Check if a string is a real number.
+判断一个字符串是否是一个实数。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isRealNumber('0.12');
@@ -1619,17 +1682,17 @@ isRealNumber('1.2e-10');
 isRgb(str)
 ```
 
-Check if a string is a RGB value.
+判断一个字符串是否是一个 RGB 颜色值。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isRgb('rgb(255, 255, 255)');
@@ -1645,17 +1708,17 @@ isRgb('RGB(255, 255, 255)');
 isRgba(str)
 ```
 
-Check if a string is a RGBA value.
+判断一个字符串是否是个 RGBA 颜色值。
 
-**Arguments**
+**参数**
 
 * **str (string)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isRgb('rgba(255, 255, 255, 0.5)');
@@ -1673,17 +1736,17 @@ isRgb('RGBA(255, 255, 255, 0.5)');
 countLines(str)
 ```
 
-Count the number of lines separated by `"\n"`.
+计算字符串的行数（以`\n`为分隔符）。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(Number)**
 
-**Example**
+**示例**
 
 ```js
 const str = `hello
@@ -1699,17 +1762,17 @@ countLines(str);
 escapeRegexp(str)
 ```
 
-Escape the special characters in regular expression.
+对正则表达式当中的特殊字符进行转义。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 escapeRegexp('a-z');
@@ -1722,17 +1785,17 @@ escapeRegexp('a-z');
 firstChar(str)
 ```
 
-Return the first character of a string.
+返回一个字符串的首个字符。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 firstChar('hello');
@@ -1745,17 +1808,17 @@ firstChar('hello');
 isValidJSON(str)
 ```
 
-Check if a string is a valid JSON string.
+判断一个字符串是否是一个合法的 JSON 字符串。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
-**Example**
+**示例**
 
 ```js
 isValidJSON('{"name": "Alex Chao"}');
@@ -1771,17 +1834,17 @@ isValidJSON('""');
 lastChar(str)
 ```
 
-Return the last character of a string.
+返回一个字符串的最后一个字符。
 
-**Arguments**
+**参数**
 
 * **str (String)**
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 lastChar('hello');
@@ -1794,24 +1857,24 @@ lastChar('hello');
 truncate([str = ''], [options = {}])
 ```
 
-Return a truncated string end with the specified omission.
+返回一个裁剪之后的字符串，并可指定结尾字符串。
 
-**Arguments**
+**参数**
 
-* **[str = ''] (String)**: The string to be truncated.
-* **[options = {}] (Object)**: The options object.
-  + **[length] (Number)**: The maxmium string length. It is the `str` length by default.
-  + **[omission = '...'] (String)**: The omission string.
-  + **[countType = 0] (Number)**: How to count the half width and full width characters.
-    - `0`: Count 1 for each character.
-    - `1`: Count 1 for half width and count 2 for full width.
-    - `2`: Count 0.5 for half width and count 1 for full width.
+* **[str = ""] (String)**：被裁剪的字符串。
+* **[options = {}] (Object)**：配置对象
+  + **[length] (Number)**：允许的最大字符串长度，默认为`str`长度。
+  + **[omission = "..."] (String)**：结尾字符串。
+  + **[countType = 0] (Number)**：如何对半宽与全宽字符计数。
+    - `0`：每个字符长度都算做 1。
+    - `1`：半宽长度算作 1，全宽字符长度算作 2。
+    - `2`：两个半宽字符长度算作 1，不足按 1 算，全宽字符长度算作 1。
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 const str = 'hello, 你好，world!世界！';
@@ -1829,9 +1892,9 @@ truncate(str, { length: 10, countType: 1 });
 isWindows()
 ```
 
-Check if the os is Windows.
+判断运行环境是否是 Windows。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1841,9 +1904,9 @@ Check if the os is Windows.
 isMacOS()
 ```
 
-Check if the os is macOS.
+判断运行环境是否是 macOS。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1853,9 +1916,9 @@ Check if the os is macOS.
 isLinux()
 ```
 
-Check if the os is Linux.
+判断运行环境是否是 Linux。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1865,9 +1928,9 @@ Check if the os is Linux.
 isAndroid()
 ```
 
-Check if the os is Android.
+判断运行环境是否是安卓。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1877,9 +1940,9 @@ Check if the os is Android.
 isIOS()
 ```
 
-Check if the os is iOS.
+判断运行环境是否是 iOS。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1889,9 +1952,9 @@ Check if the os is iOS.
 isMobile()
 ```
 
-Check if the os is a mobile system.
+判断运行环境是否是移动端。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1901,9 +1964,9 @@ Check if the os is a mobile system.
 isTablet()
 ```
 
-Check if the os is a tablet system.
+判断运行环境是否是平板。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1913,9 +1976,9 @@ Check if the os is a tablet system.
 isWechat()
 ```
 
-Check if the environment is Wechat.
+判断运行环境是否是微信。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1925,9 +1988,9 @@ Check if the environment is Wechat.
 isIPhone()
 ```
 
-Check if the environment is iPhone.
+判断运行环境是否是 iPhone。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
@@ -1937,60 +2000,82 @@ Check if the environment is iPhone.
 isIPad()
 ```
 
-Check if the environment is iPad.
+判断运行环境是否是 iPad。
 
-**Return**
+**返回值**
 
 * **(Boolean)**
 
 ## ajax
 
 ```js
-ajax(url, options)
+ajax(url, [options])
 ```
 
-**Arguments**
+发送一个 AJAX 请求。
 
-* **url (String)**
-* **options (Object)**
-  + **options.async (Boolean)**
-  + **options.beforeSend (Function)**
-  + **options.data (String | Object)**
-  + **options.headers (Object)**
-  + **options.method (String)**
-  + **options.responseType (String)**
-  + **options.timeout (Number)**
+**参数**
 
-**Return**
+* **url (String)**：请求 URL。
+* **[options] (Object)**：配置对象。
+  + **[async = true] (Boolean)**：是否为异步请求。
+  + **[beforeSend] (Function)**：发送请求之前的回调，如果返回`false`，则不会发送请求。
+  + **[data = null] (String | Object)**：发送的数据。
+  + **[headers = null] (Object)**：请求头部。
+  + **[method = "get"] (String)**：请求方法。
+  + **[responseType = "json"] (String)**：如何解析响应值。
+  + **[timeout = 0] (Number)**：请求超时设置。
+
+**返回值**
 
 * **(Promise)**
 
 ## css
 
 ```js
-css(el, prop)
+css(el, [prop])
 ```
 
-**Arguments**
+获取一个元素所有或指定属性的值。
 
-* **el (Element)**
-* **prop (String)**
+**参数**
 
-**Return**
+* **el (Element | String)**：一个元素对象或者 CSS 选择器。
+* **[prop] (String)**：CSS 属性名。
+
+**返回值**
 
 * **(String | Object)**
+
+```js
+const el = document.getElementById('el');
+
+// 获取所有属性值
+css(el);
+// => CSSStyleDeclaration { ... }
+
+// 传入一个 CSS 选择器
+css('#el');
+// => CSSStyleDeclaration { ... }
+
+// 获取指定属性的值
+css('width');
+// => '100px'
+```
 
 ## delay
 
 ```js
-delay(duration)
+delay([duration])
 ```
 
-**Arguments**
+返回一个 Promise，持续`duration`时间之后 resolve。
 
-* **duration (Number)**
+**参数**
 
-**Return**
+* **[duration = 0] (Number)**：持续时间。
+
+**返回值**
 
 * **(Promise)**
 
@@ -2000,23 +2085,21 @@ delay(duration)
 jsonp(url, options)
 ```
 
-**Arguments**
+**参数**
 
-* **url (String)**
-* **options (Object)**
-  + **options.callback (String)**
-  + **options.responseType (String)**
-  + **options.timeout (Number)**
+* **url (String)**：请求数据的 URL。
+* **[options] (Object)**：配置对象。
+  + **[callback] (String)**：数据请求成功或失败的回调函数。
+  + **[responseType = "json"] (String)**：对返回的数据如何处理。
+  + **[timeout = 0] (Number)**：请求超时配置，默认`0`，表示设置请求超时。
 
-**Return**
+**返回值**
 
 * **(Promise)**
 
 ## noop
 
-```js
-noop()
-```
+该函数为一个空函数，不接受任何参数，不返回任何值。
 
 ## numberFormat
 
@@ -2024,43 +2107,54 @@ noop()
 numberFormat(number, digits, dot, sep)
 ```
 
-**Arguments**
+格式化一个数值。
 
-* **number (Number)**
-* **digits (Number)**
-* **dot (String)**
-* **sep (String)**
+**参数**
 
-**Return**
+* **number (Number)**：被格式化的数值。
+* **[digits = -1] (Number)**：保留的小数位数，如果为`-1`则表示保留所有小数位数，如果该值`> -1`，则保留的最后一位为四舍五入所得。
+* **[dot = "."] (String)**：整数与小数部分的分隔符。
+* **[sep = ","] (String)**：千分位分隔符。
+
+**返回值**
 
 * **(String)**
+
+**示例**
+
+```js
+numberFormat(3.1415);
+// => '3.1415'
+numberFormat(3.1415, 3);
+// => '3.142'
+```
 
 ## randomString
 
 ```js
-randomString(len, chars)
+randomString([len], [chars])
 ```
 
-Return a random string which consists of the characters specified by `chars`.
+生成一个随机字符串，可以指定字符串的长度和组成字符串的字符集。
 
-**Arguments**
+**参数**
 
-* **len (Number)**: The length of random string, default is `32`.
-* **chars (String)**: The character set, default is lower letters, upper letters and digits.
+* **[len = 32] (Number)**：随机字符串长度。
+* **[chars] (String)**：组成字符串的字符集，默认为英文大写字母、小写字母及十进制数字，即 A-Za-z0-9。
 
-**Return**
+**返回值**
 
 * **(String)**
 
-**Example**
+**示例**
 
 ```js
 randomString();
 
-// Generate an 8 length string.
+// 生成一个长度为 8 的随机字符串。
 randomString(8);
 
-// Generate a random digit string.
+// 生成一串随机数字。
 randomString(undefined, '0123456789');
 ```
 
@@ -2070,6 +2164,15 @@ randomString(undefined, '0123456789');
 uuid()
 ```
 
-**Return**
+生成一个基于随机数字的 UUID，算法见 [rfc4122](https://tools.ietf.org/html/rfc4122#section-4.4)。
+
+**返回值**
 
 * **(String)**
+
+**示例**
+
+```js
+uuid();
+// => 'fedb3747-4208-475d-b473-e51b583cddaf'
+```
