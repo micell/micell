@@ -15,11 +15,11 @@ Detect a character whether it is one of a-z or A-Z.
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -41,11 +41,11 @@ Detect a character whether it is one of a-z or A-Z or 0-9.
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -70,11 +70,11 @@ Detect a character whether it is an ASCII character.
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -99,11 +99,11 @@ Detect a character whether it is a CJK (Chinese, Japanese and Korean) character.
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -125,11 +125,11 @@ Detect a character whether it is a [control character](https://en.wikipedia.org/
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -151,11 +151,11 @@ Detect a character whether it is a decimal digit (0-9).
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -177,11 +177,11 @@ Detect a character whether it is a [graphic character](https://en.wikipedia.org/
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -203,11 +203,11 @@ Detect a character whether it is a hexadecimal character (0-9, a-f, A-F).
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -232,11 +232,11 @@ Detect a character whether it is a lower-case character (a-z).
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -255,11 +255,11 @@ Detect a character whether it is a [printable character](https://en.wikipedia.or
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -278,11 +278,11 @@ Detect a character whether it is a punctuation character.
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -301,11 +301,11 @@ Detect a character whether it is a space character.
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -324,11 +324,11 @@ Detect a character whether it is a upper-case character (A-Z).
 
 **Arguments**
 
-* **`ch (String)`**: A string with length equal to 1.
+* **`ch (string)`**: A string with length equal to 1.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -349,11 +349,11 @@ Get the cookie's value of the specified name, with `decodeURIComponent` decoding
 
 **Arguments**
 
-* **`key (String)`**: Cookie name.
+* **`key (string)`**: Cookie name.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 ### getAll
 
@@ -377,11 +377,11 @@ Get the cookie's value of the specified name, with `JSON.parse` decoding.
 
 **Arguments**
 
-* **`key (String)`**: Cookie name.
+* **`key (string)`**: Cookie name.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 ### getRaw
 
@@ -393,11 +393,11 @@ Get the cookie's value of the specified name, without decoding.
 
 **Arguments**
 
-* **`key (String)`**
+* **`key (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 ### isEnabled
 
@@ -409,7 +409,7 @@ Check if the cookie is enabled.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### remove
 
@@ -421,10 +421,10 @@ Remove a cookie.
 
 **Arguments**
 
-* **`key (String)`**: Cookie name.
+* **`key (string)`**: Cookie name.
 * **`[options] (Object)`**: Cookie options.
-  + **`[domain] (String)`**
-  + **`[path = "/"] (String)`**
+  + **`[domain] (string)`**
+  + **`[path = "/"] (string)`**
 
 ### set
 
@@ -436,15 +436,15 @@ Set a cookie, and the `value` argument will be encoded with `encodeURIComponent`
 
 **Arguments**
 
-* **`key (String)`**: Cookie name.
-* **`value (String)`**: Cookie value.
+* **`key (string)`**: Cookie name.
+* **`value (string)`**: Cookie value.
 * **`[options] (Object)`**: Cookie options.
-  + **`[domain] (String)`**: The domain belongs to.
-  + **`[path = "/"] (String)`**: The path belongs to.
-  + **`[expires] (Number | String | Date)`**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
-  + **`[max-age] (Number)`** The time of existence.
-  + **`[samesite] (Boolean)`**
-  + **`[secure] (Boolean)`**
+  + **`[domain] (string)`**: The domain belongs to.
+  + **`[path = "/"] (string)`**: The path belongs to.
+  + **`[expires] (number|string|Date)`**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
+  + **`[max-age] (number)`** The time of existence.
+  + **`[samesite] (boolean)`**
+  + **`[secure] (boolean)`**
 
 | Unit suffix | Representation |
 | ----------- | -------------- |
@@ -465,15 +465,15 @@ Same as `set`, set a cookie, and the `value` argument will be encoded with `JSON
 
 **Arguments**
 
-* **`key (String)`**: Cookie name.
+* **`key (string)`**: Cookie name.
 * **`value (Any)`**: Cookie value.
 * **`[options] (Object)`**: Cookie options.
-  + **`[domain] (String)`**: The domain belongs to.
-  + **`[path = "/"] (String)`**: The path belongs to.
-  + **`[expires] (Number | String | Date)`**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
-  + **`[max-age] (Number)`** The time of existence.
-  + **`[samesite] (Boolean)`**
-  + **`[secure] (Boolean)`**
+  + **`[domain] (string)`**: The domain belongs to.
+  + **`[path = "/"] (string)`**: The path belongs to.
+  + **`[expires] (number|string|Date)`**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
+  + **`[max-age] (number)`** The time of existence.
+  + **`[samesite] (boolean)`**
+  + **`[secure] (boolean)`**
 
 ### setRaw
 
@@ -485,15 +485,15 @@ Same as `set`, set a cookie without any encoding.
 
 **Arguments**
 
-* **`key (String)`**: Cookie name.
+* **`key (string)`**: Cookie name.
 * **`value (Any)`**: Cookie value.
 * **`[options] (Object)`**: Cookie options.
-  + **`[domain] (String)`**: The domain belongs to.
-  + **`[path = "/"] (String)`**: The path belongs to.
-  + **`[expires] (Number | String | Date)`**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
-  + **`[max-age] (Number)`** The time of existence.
-  + **`[samesite] (Boolean)`**
-  + **`[secure] (Boolean)`**
+  + **`[domain] (string)`**: The domain belongs to.
+  + **`[path = "/"] (string)`**: The path belongs to.
+  + **`[expires] (number|string|Date)`**: It can accept a `Date` object, a parsable date string (parsed by `Date.parse()`), an integer (unit: day) or a numeric string with a suffix character which specifies the time unit.
+  + **`[max-age] (number)`** The time of existence.
+  + **`[samesite] (boolean)`**
+  + **`[secure] (boolean)`**
 
 ## date
 
@@ -507,14 +507,14 @@ Compute the difference of the specified period unit between two dates.
 
 **Arguments**
 
-* **`date1 (Number|Date|String)`**: A timestamp number, a Date object or a parsable date string.
-* **`date2 (Number|Date|String)`**: A timestamp number, a Date object or a parsable date string.
-* **`[unit = "ms"] (String)`**: A string specifies the peroid unit, default is `"ms"`. See unit table.
+* **`date1 (number|Date|string)`**: A timestamp number, a Date object or a parsable date string.
+* **`date2 (number|Date|string)`**: A timestamp number, a Date object or a parsable date string.
+* **`[unit = "ms"] (string)`**: A string specifies the peroid unit, default is `"ms"`. See unit table.
 * **`[roundFunc = Math.round] (Function)`**: A round function, default is `Math.round`.
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Unit table**
 
@@ -547,13 +547,13 @@ format(date, format, [isUTC])
 
 **Arguments**
 
-* **`date (Date|Number)`**: A Date object or a timestamp number.
-* **`format (String)`**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
-* **`[isUTC = false] (Boolean)`**: Use the UTC time, default is `false`.
+* **`date (Date|number)`**: A Date object or a timestamp number.
+* **`format (string)`**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
+* **`[isUTC = false] (boolean)`**: Use the UTC time, default is `false`.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Format tokens**
 
@@ -592,13 +592,13 @@ timeAgo.format(date, [locale], [nowDate])
 
 **Arguments**
 
-* **`date (Number|Date|String)`**: A timestamp, a Date object or a parsable date string.
-* **`[locale = "en_US"] (String)`**: the locale, "en_US" (default) and "zh_CN" are builtins supported.
+* **`date (number|Date|string)`**: A timestamp, a Date object or a parsable date string.
+* **`[locale = "en_US"] (string)`**: the locale, "en_US" (default) and "zh_CN" are builtins supported.
 * **`[nowDate = new Date()](Date)`**: The base date.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -628,7 +628,7 @@ Get the difference between the left edge of an element and the left edge of view
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -652,7 +652,7 @@ Get the difference between the top edge of an element and the top edge of viewpo
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -672,10 +672,10 @@ Create a custom event.
 
 **Arguments**
 
-* **`type (String)`**: The event type.
-* **`[options] (String)`**: The event options.
-  + **`[bubbles = false] (Boolean)`**:
-  + **`[cancelable = false] (Boolean)`**:
+* **`type (string)`**: The event type.
+* **`[options] (string)`**: The event options.
+  + **`[bubbles = false] (boolean)`**:
+  + **`[cancelable = false] (boolean)`**:
   + **`[detail = null] (Object)`**
 
 **Return**
@@ -728,7 +728,7 @@ Insert a `<script>` to document.
 
 **Arguments**
 
-* **`url (String)`**: The `script.src` string.
+* **`url (string)`**: The `script.src` string.
 * **`[props] (Object)`**: The `<script>` element properties.
 
 ### isElement
@@ -745,7 +745,7 @@ Check if the argument is an element.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isInViewport
 
@@ -761,7 +761,7 @@ Check if an element is in the viewport.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isWindow
 
@@ -777,7 +777,7 @@ Check if a value is window object.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### pageX
 
@@ -793,7 +793,7 @@ Return the horizontal distance of an element to the left edge of the page.
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -816,7 +816,7 @@ Return the vertical distance of an element to the left edge of the page.
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -835,11 +835,11 @@ Get the horizontal scroll distance of an element or a window.
 
 **Arguments**
 
-* **`[elOrWindow = window] (Element | Window)`**: An element or a window.
+* **`[elOrWindow = window] (Element|Window)`**: An element or a window.
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -861,11 +861,11 @@ Get the horizontal scroll distance of an element or a window.
 
 **Arguments**
 
-* **`[elOrWindow = window] (Element | Window)`**: An element or a window.
+* **`[elOrWindow = window] (Element|Window)`**: An element or a window.
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -887,7 +887,7 @@ Get the width and height of the viewport of an element or a window.
 
 **Arguments**
 
-* **`[elOrWindow = window] (Element | Window)`**: An element or a window.
+* **`[elOrWindow = window] (Element|Window)`**: An element or a window.
 
 **Return**
 
@@ -916,7 +916,7 @@ Check if a value is an Array.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -939,7 +939,7 @@ Check if a value is a Boolean.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -962,7 +962,7 @@ Check if a value is a Date object.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -985,7 +985,7 @@ Check if a value is an Error object.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1008,7 +1008,7 @@ Check if a value is a function, including generator function and async function.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1034,7 +1034,7 @@ Check if a value is `null` or `undefined`.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1059,7 +1059,7 @@ Check if a value is `null`
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1082,7 +1082,7 @@ Check if a value is a Number.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1105,7 +1105,7 @@ Check if a value is an Object.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1130,7 +1130,7 @@ Check if a value is a RegExp object.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1153,7 +1153,7 @@ Check if a value is a String.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1176,7 +1176,7 @@ Check if a value is `undefined`.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1196,11 +1196,11 @@ Return the last part of the path string.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1217,11 +1217,11 @@ dirname(str)
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1240,11 +1240,11 @@ Return the extension name of the path.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1265,11 +1265,11 @@ Get the value of the specified name in the current search string.
 
 **Arguments**
 
-* **`name (String)`**
+* **`name (string)`**
 
 **Return**
 
-* **`(String|Array\<String\>)`**
+* **`(string|Array\<string\>)`**
 
 **Example**
 
@@ -1294,7 +1294,7 @@ Parse a search string.
 
 **Arguments**
 
-* **`search (String)`**
+* **`search (string)`**
 
 **Return**
 
@@ -1314,7 +1314,7 @@ Convert an object to a search string.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 ## regex
 
@@ -1332,7 +1332,7 @@ Check if a string contains the ASCII characters only.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1355,7 +1355,7 @@ Check if a string is a decimal number.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1380,7 +1380,7 @@ Check if a string contains the digits (0-9) only.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1403,7 +1403,7 @@ Check if a string is an http(s) domain.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1426,7 +1426,7 @@ Check if a string is an email address.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1452,7 +1452,7 @@ Check if a string is an hex color value.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1481,7 +1481,7 @@ Check if a string is an HSL value.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1507,7 +1507,7 @@ Check if a string is an HSLA value.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1533,7 +1533,7 @@ Same as `isDigit`. Check if a string contains the digits only.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1556,7 +1556,7 @@ Check if a string is an IP (v4 or v6) address.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1582,7 +1582,7 @@ Check if a string is an IP (v4) address.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1605,7 +1605,7 @@ Check if a string is an IP (v4) address.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1628,7 +1628,7 @@ Check if a string is a QQ id.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1651,7 +1651,7 @@ Check if a string is a real number.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1680,7 +1680,7 @@ Check if a string is a RGB value.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1706,7 +1706,7 @@ Check if a string is a RGBA value.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1730,11 +1730,11 @@ Count the number of lines separated by `"\n"`.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(Number)`**
+* **`(number)`**
 
 **Example**
 
@@ -1756,11 +1756,11 @@ Escape the special characters in regular expression.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1779,11 +1779,11 @@ Return the first character of a string.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1802,11 +1802,11 @@ Check if a string is a valid JSON string.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **Example**
 
@@ -1828,11 +1828,11 @@ Return the last character of a string.
 
 **Arguments**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1851,18 +1851,18 @@ Return a truncated string end with the specified omission.
 
 **Arguments**
 
-* **`[str = ""] (String)`**: The string to be truncated.
+* **`[str = ""] (string)`**: The string to be truncated.
 * **`[options = {}] (Object)`**: The options object.
-  + **`[length] (Number)`**: The maxmium string length. It is the `str` length by default.
-  + **`[omission = "..."] (String)`**: The omission string.
-  + **`[countType = 0] (Number)`**: How to count the half width and full width characters.
+  + **`[length] (number)`**: The maxmium string length. It is the `str` length by default.
+  + **`[omission = "..."] (string)`**: The omission string.
+  + **`[countType = 0] (number)`**: How to count the half width and full width characters.
     - `0`: Count 1 for each character.
     - `1`: Count 1 for half width and count 2 for full width.
     - `2`: Count 0.5 for half width and count 1 for full width.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -1886,7 +1886,7 @@ Check if the os is Windows.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isMacOS
 
@@ -1898,7 +1898,7 @@ Check if the os is macOS.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isLinux
 
@@ -1910,7 +1910,7 @@ Check if the os is Linux.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isAndroid
 
@@ -1922,7 +1922,7 @@ Check if the os is Android.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isIOS
 
@@ -1934,7 +1934,7 @@ Check if the os is iOS.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isMobile
 
@@ -1946,7 +1946,7 @@ Check if the os is a mobile system.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isTablet
 
@@ -1958,7 +1958,7 @@ Check if the os is a tablet system.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isWechat
 
@@ -1970,7 +1970,7 @@ Check if the environment is Wechat.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isIPhone
 
@@ -1982,7 +1982,7 @@ Check if the environment is iPhone.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isIPad
 
@@ -1994,7 +1994,7 @@ Check if the environment is iPad.
 
 **Return**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ## ajax
 
@@ -2004,15 +2004,15 @@ ajax(url, [options])
 
 **Arguments**
 
-* **`url (String)`**: The request url.
+* **`url (string)`**: The request url.
 * **`[options] (Object)`**: The ajax options.
-  + **`[async = true] (Boolean)`**: If the request is send asynchronously.
+  + **`[async = true] (boolean)`**: If the request is send asynchronously.
   + **`[beforeSend] (Function)`**: The callback called before the request sent. If it returns `false`, then the request will not be sent.
-  + **`[data = null] (String | Object)`**: The data sent.
+  + **`[data = null] (string|Object)`**: The data sent.
   + **`[headers = null] (Object)`**: The request headers.
-  + **`[method = "get"] (String)`**: The request method.
-  + **`[responseType = "json"] (String)`**: How to parse the response.
-  + **`[timeout = 0] (Number)`**: The timeout.
+  + **`[method = "get"] (string)`**: The request method.
+  + **`[responseType = "json"] (string)`**: How to parse the response.
+  + **`[timeout = 0] (number)`**: The timeout.
 
 **Return**
 
@@ -2028,12 +2028,12 @@ Get the value of the specified or all CSS properties.
 
 **Arguments**
 
-* **`el (Element | String)`**: an element or a CSS selector string.
-* **`[prop] (String)`**: CSS property name.
+* **`el (Element|string)`**: an element or a CSS selector string.
+* **`[prop] (string)`**: CSS property name.
 
 **Return**
 
-* **`(String | Object)`**
+* **`(string|Object)`**
 
 **Example**
 
@@ -2062,7 +2062,7 @@ Return a promise, it will be resolved after the `duration` time.
 
 **Arguments**
 
-* **`duration (Number)`**: The duration.
+* **`duration (number)`**: The duration.
 
 **Return**
 
@@ -2076,11 +2076,11 @@ jsonp(url, [options])
 
 **Arguments**
 
-* **`url (String)`**: The request url
+* **`url (string)`**: The request url
 * **`[options] (Object)`**: The options.
-  + **`[callback] (String)`**: The callback called after the request success or failed.
-  + **`[responseType = "json"] (String)`**: How to parse the response.
-  + **[timeout = 0] (Number)**: The request timeout.
+  + **`[callback] (string)`**: The callback called after the request success or failed.
+  + **`[responseType = "json"] (string)`**: How to parse the response.
+  + **[timeout = 0] (number)**: The request timeout.
 
 **Return**
 
@@ -2100,14 +2100,14 @@ Format a number.
 
 **Arguments**
 
-* **`number (Number)`**: The number to be formatted.
-* **`[digits = -1] (Number)`**: The length of decimal part. If it's `-1`, then the original decimal part will be preserved. It it's greater than `-1`, the the last of the preserved digits will be obtained with `Math.round`.
-* **`[dot = "."] (String)`**: The delimiter of the integer and decimal part.
-* **`[sep = ","] (String)`**: The thousand separator.
+* **`number (number)`**: The number to be formatted.
+* **`[digits = -1] (number)`**: The length of decimal part. If it's `-1`, then the original decimal part will be preserved. It it's greater than `-1`, the the last of the preserved digits will be obtained with `Math.round`.
+* **`[dot = "."] (string)`**: The delimiter of the integer and decimal part.
+* **`[sep = ","] (string)`**: The thousand separator.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -2128,12 +2128,12 @@ Return a random string which consists of the characters specified by `chars`.
 
 **Arguments**
 
-* **`[len = 32] (Number)`**: The length of random string, default is `32`.
-* **`[chars] (String)`**: The character set, default is lower letters, upper letters and digits.
+* **`[len = 32] (number)`**: The length of random string, default is `32`.
+* **`[chars] (string)`**: The character set, default is lower letters, upper letters and digits.
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 
@@ -2157,7 +2157,7 @@ Generate a UUID based on random numbers, see algorithm in [rfc4122](https://tool
 
 **Return**
 
-* **`(String)`**
+* **`(string)`**
 
 **Example**
 

@@ -15,11 +15,11 @@ isAlphabetic(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -41,11 +41,11 @@ isAlphanumeric(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -70,11 +70,11 @@ isASCII(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -99,11 +99,11 @@ isCJK(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -126,11 +126,11 @@ Detect a character whether it is a [control character](https://en.wikipedia.org/
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -152,11 +152,11 @@ isDigit(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -177,11 +177,11 @@ isGraph(ch)
 判断一个字符是否是一个[图形字符](https://en.wikipedia.org/wiki/Graphic_character)。
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -203,11 +203,11 @@ isHexadecimal(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -232,11 +232,11 @@ isLower(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -255,11 +255,11 @@ isPrint(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -279,11 +279,11 @@ Detect a character whether it is a punctuation character.
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -302,11 +302,11 @@ isSpace(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -325,11 +325,11 @@ isUpper(ch)
 
 **参数**
 
-* **`ch (String)`**：长度为 1 的字符串。
+* **`ch (string)`**：长度为 1 的字符串。
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -350,11 +350,11 @@ get(key)
 
 **参数**
 
-* **`key (String)`**：Cookie 名称。
+* **`key (string)`**：Cookie 名称。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 ### getAll
 
@@ -378,7 +378,7 @@ getJson(key)
 
 **参数**
 
-* **`key (String)`**：Cookie 名称。
+* **`key (string)`**：Cookie 名称。
 
 **返回值**
 
@@ -394,11 +394,11 @@ getRaw(key)
 
 **参数**
 
-* **`key (String)`**：Cookie 名称。
+* **`key (string)`**：Cookie 名称。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 ### isEnabled
 
@@ -410,7 +410,7 @@ isEnabled()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### remove
 
@@ -422,10 +422,10 @@ remove(key, [options])
 
 **参数**
 
-* **`key (String)`**：Cookie 名称。
+* **`key (string)`**：Cookie 名称。
 * **`[options] (Object)`**：Cookie 配置参数。
-  + **`[domain] (String)`**
-  + **`[path = "/"] (String)`**
+  + **`[domain] (string)`**
+  + **`[path = "/"] (string)`**
 
 ### set
 
@@ -437,15 +437,15 @@ set(key, value, [options])
 
 **参数**
 
-* **`key (String)`**：Cookie 名称
-* **`value (String)`**：Cookie 值。
+* **`key (string)`**：Cookie 名称
+* **`value (string)`**：Cookie 值。
 * **`[options] (Object)`**：Cookie 配置。
-  + **`[domain] (String)`**：Cookie 所属域名。
-  + **`[path = "/"] (String)`**：Cookie 所属路径。
-  + **`[expires] (Number | String | Date)`**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
-  + **`[max-age] (Number)`**：Cookie 持续时间。
-  + **`[samesite] (Boolean)`**
-  + **`[secure] (Boolean)`**
+  + **`[domain] (string)`**：Cookie 所属域名。
+  + **`[path = "/"] (string)`**：Cookie 所属路径。
+  + **`[expires] (number|string|Date)`**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
+  + **`[max-age] (number)`**：Cookie 持续时间。
+  + **`[samesite] (boolean)`**
+  + **`[secure] (boolean)`**
 
 | 单位后缀     | 含义            |
 | ----------- | -------------- |
@@ -466,15 +466,15 @@ set(key, value, [options])
 
 **参数**
 
-* **`key (String)`**：Cookie 名称
-* **`value (String)`**：Cookie 值。
+* **`key (string)`**：Cookie 名称
+* **`value (string)`**：Cookie 值。
 * **`[options] (Object)`**：Cookie 配置。
-  + **`[domain] (String)`**：Cookie 所属域名。
-  + **`[path = "/"] (String)`**：Cookie 所属路径。
-  + **`[expires] (Number | String | Date)`**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
-  + **`[max-age] (Number)`**：Cookie 持续时间。
-  + **`[samesite] (Boolean)`**
-  + **`[secure] (Boolean)`**
+  + **`[domain] (string)`**：Cookie 所属域名。
+  + **`[path = "/"] (string)`**：Cookie 所属路径。
+  + **`[expires] (number|string|Date)`**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
+  + **`[max-age] (number)`**：Cookie 持续时间。
+  + **`[samesite] (boolean)`**
+  + **`[secure] (boolean)`**
 
 
 ### setRaw
@@ -487,15 +487,15 @@ set(key, value, [options])
 
 **参数**
 
-* **`key (String)`**：Cookie 名称
-* **`value (String)`**：Cookie 值。
+* **`key (string)`**：Cookie 名称
+* **`value (string)`**：Cookie 值。
 * **`[options] (Object)`**：Cookie 配置。
-  + **`[domain] (String)`**：Cookie 所属域名。
-  + **`[path = "/"] (String)`**：Cookie 所属路径。
-  + **`[expires] (Number | String | Date)`**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
-  + **`[max-age] (Number)`**：Cookie 持续时间。
-  + **`[samesite] (Boolean)`**
-  + **`[secure] (Boolean)`**
+  + **`[domain] (string)`**：Cookie 所属域名。
+  + **`[path = "/"] (string)`**：Cookie 所属路径。
+  + **`[expires] (number|string|Date)`**：可以是一个`Date`对象，一个可被`Date.parse()`解析的日期字符串，一个整数（单位：天），或者一个带时间后缀的数值字符串。
+  + **`[max-age] (number)`**：Cookie 持续时间。
+  + **`[samesite] (boolean)`**
+  + **`[secure] (boolean)`**
 
 ## date
 
@@ -509,14 +509,14 @@ diff(date1, date2, [unit], [roundFunc])
 
 **参数**
 
-* **`date1 (Number|Date|String)`**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
-* **`date2 (Number|Date|String)`**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
-* **`[unit = "ms"] (String)`**：一个表示时间单位的字符串，`d`（表示天），详细见下面表格。
+* **`date1 (number|Date|string)`**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
+* **`date2 (number|Date|string)`**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
+* **`[unit = "ms"] (string)`**：一个表示时间单位的字符串，`d`（表示天），详细见下面表格。
 * **`[roundFunc = Math.round] (Function)`**：一个四舍五入函数。
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **时间单位**
 
@@ -551,13 +551,13 @@ format(date, format, [isUTC])
 
 **参数**
 
-* **`date (Date|Number)`**：一个`Date`对象或一个时间戳（单位：毫秒）。
-* **`format (String)`**：一个占位符替换字符串，为 [moment format tokens](http://momentjs.com/docs/#/displaying/format/) 的一部分，具体查看下面表格。
-* **`[isUTC = false] (Boolean)`**：是否使用协调世界时（UTC）。
+* **`date (Date|number)`**：一个`Date`对象或一个时间戳（单位：毫秒）。
+* **`format (string)`**：一个占位符替换字符串，为 [moment format tokens](http://momentjs.com/docs/#/displaying/format/) 的一部分，具体查看下面表格。
+* **`[isUTC = false] (boolean)`**：是否使用协调世界时（UTC）。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **Format tokens**
 
@@ -598,13 +598,13 @@ timeAgo.format(date, [locale], [nowDate])
 
 **参数**
 
-* **`date (Number|Date|String)`**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
-* **`[locale = "en_US"] (String)`**：时区，内置支持`"en_US"`和`"zh_CN"`。
+* **`date (number|Date|string)`**：一个时间戳（单位：毫秒），或一个`Date`对象，或一个可被解析的日期字符串。
+* **`[locale = "en_US"] (string)`**：时区，内置支持`"en_US"`和`"zh_CN"`。
 * **`[nowDate = new Date() (Date)`**：比对日期。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -634,7 +634,7 @@ clientX(elem)
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -658,7 +658,7 @@ clientY(elem)
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -678,10 +678,10 @@ createEvent(type, [options])
 
 **参数**
 
-* **`type (String)`**：事件名称。
-* **`[options] (String)`**：事件配置对象。
-  + **`[bubbles = false] (Boolean)`**：事件是否冒泡。
-  + **`[cancelable = false] (Boolean)`**：事件是否可被取消。
+* **`type (string)`**：事件名称。
+* **`[options] (string)`**：事件配置对象。
+  + **`[bubbles = false] (boolean)`**：事件是否冒泡。
+  + **`[cancelable = false] (boolean)`**：事件是否可被取消。
   + **`[detail = null] (Object)`**：附加的数据。
 
 **返回值**
@@ -734,7 +734,7 @@ insertScript(url, [props])
 
 **参数**
 
-* **`url (String)`**：`<script>`标签的`src`属性。
+* **`url (string)`**：`<script>`标签的`src`属性。
 * **`[props] (Object)`**：其他`<script>`标签支持的属性。
 
 ### isElement
@@ -751,7 +751,7 @@ isElement(obj)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isInViewport
 
@@ -767,7 +767,7 @@ isInViewport(el)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isWindow
 
@@ -783,7 +783,7 @@ isWindow(obj)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### pageX
 
@@ -799,7 +799,7 @@ pageX(el)
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -822,7 +822,7 @@ pageY(el)
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -841,11 +841,11 @@ scrollX([elOrWindow])
 
 **参数**
 
-* **`[elOrWindow = window] (Element | Window)`**：一个元素或`window`对象。
+* **`[elOrWindow = window] (Element|Window)`**：一个元素或`window`对象。
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -867,11 +867,11 @@ scrollY([elOrWindow])
 
 **参数**
 
-* **`[elOrWindow = window] (Element | Window)`**：一个元素或`window`对象。
+* **`[elOrWindow = window] (Element|Window)`**：一个元素或`window`对象。
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -893,7 +893,7 @@ viewport([elOrWindow])
 
 **参数**
 
-* **`[elOrWindow = window] (Element | Window)`**：一个元素或`window`对象。
+* **`[elOrWindow = window] (Element|Window)`**：一个元素或`window`对象。
 
 **返回值**
 
@@ -922,7 +922,7 @@ isArray(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -945,7 +945,7 @@ isBoolean(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -968,7 +968,7 @@ isDate(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -991,7 +991,7 @@ isError(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1014,7 +1014,7 @@ isFunction(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1040,7 +1040,7 @@ isNil(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1065,7 +1065,7 @@ isNull(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1088,7 +1088,7 @@ isNumber(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1111,7 +1111,7 @@ isObject(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1136,7 +1136,7 @@ isRegExp(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1159,7 +1159,7 @@ isString(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1182,7 +1182,7 @@ isUndefined(value)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1202,11 +1202,11 @@ basename(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1225,11 +1225,11 @@ dirname(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1248,11 +1248,11 @@ extname(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1273,11 +1273,11 @@ get(name)
 
 **参数**
 
-* **`name (String)`**
+* **`name (string)`**
 
 **返回值**
 
-* **`(String|Array\<String\>)`**
+* **`(string|Array\<string\>)`**
 
 **示例**
 
@@ -1302,7 +1302,7 @@ parse(search)
 
 **参数**
 
-* **`search (String)`**
+* **`search (string)`**
 
 **返回值**
 
@@ -1322,7 +1322,7 @@ stringify(query)
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 ## regex
 
@@ -1340,7 +1340,7 @@ isAscii(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1363,7 +1363,7 @@ isDecimal(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1388,7 +1388,7 @@ isDigit(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1411,7 +1411,7 @@ isDomain(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1434,7 +1434,7 @@ isEmail(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1460,7 +1460,7 @@ isHexColor(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1489,7 +1489,7 @@ isHsl(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1515,7 +1515,7 @@ isHsla(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1541,7 +1541,7 @@ isInteger(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1564,7 +1564,7 @@ isIP(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1590,7 +1590,7 @@ isIPv4(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1613,7 +1613,7 @@ isIPv6(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1636,7 +1636,7 @@ isQQ(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1659,7 +1659,7 @@ isRealNumber(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1688,7 +1688,7 @@ isRgb(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1714,7 +1714,7 @@ isRgba(str)
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1738,11 +1738,11 @@ countLines(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(Number)`**
+* **`(number)`**
 
 **示例**
 
@@ -1764,11 +1764,11 @@ escapeRegexp(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1787,11 +1787,11 @@ firstChar(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1810,11 +1810,11 @@ isValidJSON(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 **示例**
 
@@ -1836,11 +1836,11 @@ lastChar(str)
 
 **参数**
 
-* **`str (String)`**
+* **`str (string)`**
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1859,18 +1859,18 @@ truncate([str = ''], [options = {}])
 
 **参数**
 
-* **`[str = ""] (String)`**：被裁剪的字符串。
+* **`[str = ""] (string)`**：被裁剪的字符串。
 * **`[options = {}] (Object)`**：配置对象
-  + **`[length] (Number)`**：允许的最大字符串长度，默认为`str`长度。
-  + **`[omission = "..."] (String)`**：结尾字符串。
-  + **`[countType = 0] (Number)`**：如何对半宽与全宽字符计数。
+  + **`[length] (number)`**：允许的最大字符串长度，默认为`str`长度。
+  + **`[omission = "..."] (string)`**：结尾字符串。
+  + **`[countType = 0] (number)`**：如何对半宽与全宽字符计数。
     - `0`：每个字符长度都算做 1。
     - `1`：半宽长度算作 1，全宽字符长度算作 2。
     - `2`：两个半宽字符长度算作 1，不足按 1 算，全宽字符长度算作 1。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -1894,7 +1894,7 @@ isWindows()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isMacOS
 
@@ -1906,7 +1906,7 @@ isMacOS()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isLinux
 
@@ -1918,7 +1918,7 @@ isLinux()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isAndroid
 
@@ -1930,7 +1930,7 @@ isAndroid()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isIOS
 
@@ -1942,7 +1942,7 @@ isIOS()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isMobile
 
@@ -1954,7 +1954,7 @@ isMobile()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isTablet
 
@@ -1966,7 +1966,7 @@ isTablet()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isWechat
 
@@ -1978,7 +1978,7 @@ isWechat()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isIPhone
 
@@ -1990,7 +1990,7 @@ isIPhone()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ### isIPad
 
@@ -2002,7 +2002,7 @@ isIPad()
 
 **返回值**
 
-* **`(Boolean)`**
+* **`(boolean)`**
 
 ## ajax
 
@@ -2014,15 +2014,15 @@ ajax(url, [options])
 
 **参数**
 
-* **`url (String)`**：请求 URL。
+* **`url (string)`**：请求 URL。
 * **`[options] (Object)`**：配置对象。
-  + **`[async = true] (Boolean)`**：是否为异步请求。
+  + **`[async = true] (boolean)`**：是否为异步请求。
   + **`[beforeSend] (Function)`**：发送请求之前的回调，如果返回`false`，则不会发送请求。
-  + **`[data = null] (String | Object)`**：发送的数据。
+  + **`[data = null] (string|Object)`**：发送的数据。
   + **`[headers = null] (Object)`**：请求头部。
-  + **`[method = "get"] (String)`**：请求方法。
-  + **`[responseType = "json"] (String)`**：如何解析响应值。
-  + **`[timeout = 0] (Number)`**：请求超时设置。
+  + **`[method = "get"] (string)`**：请求方法。
+  + **`[responseType = "json"] (string)`**：如何解析响应值。
+  + **`[timeout = 0] (number)`**：请求超时设置。
 
 **返回值**
 
@@ -2038,12 +2038,12 @@ css(el, [prop])
 
 **参数**
 
-* **`el (Element | String)`**：一个元素对象或者 CSS 选择器。
-* **`[prop] (String)`**：CSS 属性名。
+* **`el (Element|string)`**：一个元素对象或者 CSS 选择器。
+* **`[prop] (string)`**：CSS 属性名。
 
 **返回值**
 
-* **`(String | Object)`**
+* **`(string | Object)`**
 
 **示例**
 
@@ -2073,7 +2073,7 @@ delay([duration])
 
 **参数**
 
-* **`[duration = 0] (Number)`**：持续时间。
+* **`[duration = 0] (number)`**：持续时间。
 
 **返回值**
 
@@ -2087,11 +2087,11 @@ jsonp(url, [options])
 
 **参数**
 
-* **`url (String)`**：请求数据的 URL。
+* **`url (string)`**：请求数据的 URL。
 * **`[options] (Object)`**：配置对象。
-  + **`[callback] (String)`**：数据请求成功或失败的回调函数。
-  + **`[responseType = "json"] (String)`**：对返回的数据如何处理。
-  + **`[timeout = 0] (Number)`**：请求超时配置，默认`0`，表示设置请求超时。
+  + **`[callback] (string)`**：数据请求成功或失败的回调函数。
+  + **`[responseType = "json"] (string)`**：对返回的数据如何处理。
+  + **`[timeout = 0] (number)`**：请求超时配置，默认`0`，表示设置请求超时。
 
 **返回值**
 
@@ -2111,14 +2111,14 @@ numberFormat(number, [digits], [dot], [sep])
 
 **参数**
 
-* **`number (Number)`**：被格式化的数值。
-* **`[digits = -1] (Number)`**：保留的小数位数，如果为`-1`则表示保留所有小数位数，如果该值`> -1`，则保留的最后一位为四舍五入所得。
-* **`[dot = "."] (String)`**：整数与小数部分的分隔符。
-* **`[sep = ","] (String)`**：千分位分隔符。
+* **`number (number)`**：被格式化的数值。
+* **`[digits = -1] (number)`**：保留的小数位数，如果为`-1`则表示保留所有小数位数，如果该值`> -1`，则保留的最后一位为四舍五入所得。
+* **`[dot = "."] (string)`**：整数与小数部分的分隔符。
+* **`[sep = ","] (string)`**：千分位分隔符。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -2139,12 +2139,12 @@ randomString([len], [chars])
 
 **参数**
 
-* **`[len = 32] (Number)`**：随机字符串长度。
-* **`[chars] (String)`**：组成字符串的字符集，默认为英文大写字母、小写字母及十进制数字，即 A-Za-z0-9。
+* **`[len = 32] (number)`**：随机字符串长度。
+* **`[chars] (string)`**：组成字符串的字符集，默认为英文大写字母、小写字母及十进制数字，即 A-Za-z0-9。
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
@@ -2168,7 +2168,7 @@ uuid()
 
 **返回值**
 
-* **`(String)`**
+* **`(string)`**
 
 **示例**
 
