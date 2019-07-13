@@ -3,12 +3,14 @@
  *
  * Ref: https://tools.ietf.org/html/rfc4122
  */
+import isBrowser from './_internal/isBrowser'
+
 const hexDigits = '0123456789abcdef'
 const maxUint32 = Math.pow(2, 32) - 1
 
 let random = Math.random
 
-if (typeof window.Uint32Array === 'function' &&
+if (isBrowser && typeof window.Uint32Array === 'function' &&
   ((window.crypto && typeof window.crypto.getRandomValues === 'function') ||
   (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function'))) {
   random = () => window.crypto.getRandomValues(new Uint32Array(1))[0] / maxUint32

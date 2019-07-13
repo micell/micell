@@ -1,4 +1,6 @@
-const userAgent = window.navigator.userAgent
+import isBrowser from '../_internal/isBrowser'
+
+let userAgent = isBrowser ? window.navigator.userAgent : ''
 
 // Ref: https://github.com/mumuy/browser
 const testMap = {
