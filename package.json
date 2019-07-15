@@ -7,12 +7,6 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "files": [
-    "dist",
-    "lib",
-    "es",
-    "src"
-  ],
   "scripts": {
     "clean": "rimraf dist lib es",
     "docs:dev": "vuepress dev docs",
@@ -96,9 +90,6 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
   },
-  "precommit": [
-    "lint"
-  ],
   "dependencies": {
     "@babel/runtime": "^7.4.4"
   }
