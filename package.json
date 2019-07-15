@@ -2,8 +2,8 @@
   "name": "micell",
   "version": "0.1.0",
   "description": "A set of functions for web development",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/micellar.common.js",
+  "module": "dist/micellar.esm.js",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -15,11 +15,9 @@
     "lint:fix": "standard '**/*.js' --fix --verbose | snazzy",
     "test": "cross-env BABEL_ENV=test karma start",
     "test:ci": "npm run test -- --single-run",
-    "build": "npm run clean && npm run build:es && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "build": "npm run clean && npm run build:commonjs && npm run rollup",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:es": "cross-env babel src --out-dir es",
-    "build:umd": "cross-env NODE_ENV=development webpack",
-    "build:umd:min": "cross-env NODE_ENV=production webpack"
+    "rollup": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -83,12 +81,17 @@
     "mocha": "^6.1.4",
     "request": "^2.88.0",
     "rimraf": "^2.6.1",
+    "rollup": "^1.17.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.1",
     "sinon": "^7.3.2",
     "snazzy": "^8.0.0",
     "standard": "^12.0.1",
     "vuepress": "^1.0.2",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
+    "webpack": "^4.30.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4"
