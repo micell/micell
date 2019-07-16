@@ -16,7 +16,6 @@ import noop from './noop'
 import numberFormat from './numberFormat'
 import randomString from './randomString'
 import uuid from './uuid'
-import VERSION from './version'
 
 export default {
   char,
@@ -36,6 +35,5 @@ export default {
   noop,
   numberFormat,
   randomString,
-  uuid,
-  VERSION
+  uuid
 }
