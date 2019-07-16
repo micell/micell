@@ -2,7 +2,7 @@ node_modules
 coverage
 dist
 lib
-es
+build
 package-lock.json
 yarn.lock
 *.swp
