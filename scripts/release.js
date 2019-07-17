@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const yargsParser = require('yargs-parser')
 const { exec, exit, rm, mkdir, cp } = require('shelljs')
 const { flowRight: compose } = require('lodash')
 const chalk = require('chalk')
@@ -12,6 +13,8 @@ const log = compose(consoleLog, chalk.bold)
 const logSuccess = compose(consoleLog, chalk.green.bold)
 const logError = compose(consoleLog, chalk.red.bold)
 
+const argv = yargsParser(process.argv.slice(2))
+const { pkgOnly = false } = argv
 const root = path.resolve(__dirname, '..')
 const outDir = path.resolve(root, 'build')
 
@@ -19,7 +22,7 @@ const writeFile = (filepath, string) =>
   fs.writeFileSync(filepath, string, 'utf8')
 
 try {
-  if (exec('git diff-files --quiet').code !== 0) {
+  if (!pkgOnly && exec('git diff-files --quiet').code !== 0) {
     logError(`You have unsaved changes in the working tree. Commit or stash changes before releaseing.`)
     exit(1)
   }
@@ -57,6 +60,7 @@ try {
   const files = [
     'dist',
     'lib/*',
+    'types/*',
     'README.md',
     'LICENSE'
   ]
@@ -69,6 +73,11 @@ try {
   const pkgConfig = Object.assign(pkg, { version: nextVersion })
 
   writeFile(path.resolve(outDir, 'package.json'), JSON.stringify(pkgConfig, null, 2))
+
+  if (pkgOnly) {
+    log('Prepublish done!')
+    exit(0)
+  }
 
   log('Publishing...')
   if (exec(`cd ${outDir} && npm publish`).code !== 0) {
