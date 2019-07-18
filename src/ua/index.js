@@ -1,25 +1,23 @@
-import isBrowser from '../_internal/isBrowser'
+import isAndroid from './isAndroid'
+import isIOS from './isIOS'
+import isIPad from './isIPad'
+import isIPhone from './isIPhone'
+import isLinux from './isLinux'
+import isMacOS from './isMacOS'
+import isMobile from './isMobile'
+import isTablet from './isTablet'
+import isWeChat from './isWeChat'
+import isWindows from './isWindows'
 
-let userAgent = isBrowser ? window.navigator.userAgent : ''
-
-// Ref: https://github.com/mumuy/browser
-const testMap = {
-  Windows: /Windows/,
-  MacOS: /Macintosh/,
-  Linux: /Linux|X11/,
-  Android: /Android|Adr/,
-  IOS: /like Mac OS X/,
-  Mobile: /Mobi|iPh|480/,
-  Tablet: /Tablet|Pad|Nexus 7/,
-  WeChat: /MicroMessenger/,
-  IPhone: /iPhone|iPod/,
-  IPad: /iPad/
+export default {
+  isAndroid,
+  isIOS,
+  isIPad,
+  isIPhone,
+  isLinux,
+  isMacOS,
+  isMobile,
+  isTablet,
+  isWeChat,
+  isWindows
 }
-
-const ua = {}
-
-Object.keys(testMap).forEach((prop) => {
-  ua[`is${prop}`] = (u = userAgent) => { testMap[prop].test(u) }
-})
-
-export default ua
