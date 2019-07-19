@@ -88,7 +88,7 @@ try {
   logSuccess(`${pkg.name}@${nextVersion} was successfully published.`)
 
   log('Bump version...')
-  exec(`npm version --no-git-tag-version ${nextVersion}`)
+  exec(`npm --no-git-tag-version version ${nextVersion}`)
 
   log('Committing changes...')
   exec('git add package.json')
