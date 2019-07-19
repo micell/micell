@@ -1,4 +1,7 @@
 module.exports = {
+  head: [
+    ['link', { rel: 'manifest', href: '/manifest.json' }]
+  ],
   locales: {
     '/': {
       lang: 'en-US',
@@ -35,9 +38,6 @@ module.exports = {
           { text: 'Github', link: 'https://github.com/Alex1990/micell' }
         ]
       }
-    },
-    serviceWorker: {
-      updatePopup: true
     }
   },
   sidebar: [
@@ -45,12 +45,18 @@ module.exports = {
     '/docs'
   ],
   sidebarDepth: 3,
-  serviceWorker: true,
   plugins: [
     [
       '@vuepress/google-analytics',
       {
         ga: 'UA-144169082-1'
+      }
+    ],
+    [
+      '@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: true
       }
     ]
   ]

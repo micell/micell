@@ -71,6 +71,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@vuepress/plugin-google-analytics": "next",
+    "@vuepress/plugin-pwa": "next",
     "babel-loader": "^8.0.5",
     "babel-plugin-add-module-exports": "^1.0.2",
     "chai": "^4.2.0",
