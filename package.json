@@ -1,6 +1,6 @@
 {
   "name": "micell",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A collection of functions for frontend development",
   "main": "dist/micellar.common.js",
   "module": "dist/micellar.esm.js",
