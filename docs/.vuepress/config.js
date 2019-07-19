@@ -45,5 +45,13 @@ module.exports = {
     '/docs'
   ],
   sidebarDepth: 3,
-  serviceWorker: true
+  serviceWorker: true,
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'UA-144169082-1'
+      }
+    ]
+  ]
 }
