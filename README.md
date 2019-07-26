@@ -1,6 +1,7 @@
 # micell
 
-[![Build Status](https://travis-ci.com/Alex1990/micell.svg?token=ZA7x9KTLugdB4jX4ZUmj&branch=master)](https://travis-ci.com/Alex1990/micell)
+[![Build Status](https://travis-ci.org/micell/micell.svg?branch=master)](https://travis-ci.org/micell/micell)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bff6938e-fda6-416f-84fd-bf33fc6a6072/deploy-status)](https://app.netlify.com/sites/pensive-leakey-00e229/deploys)
 
 A set of functions for web development.
 
