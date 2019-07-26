@@ -2118,6 +2118,32 @@ numberFormat(3.1415, 3);
 // => '3.142'
 ```
 
+## raf
+
+```js
+raf(callback)
+```
+
+It is same as [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) when supported. Or, use `setTimeout` to simulate.
+
+**Arguments**
+
+* **`callback (Function)`**: The function to be invoked before the next repaint. A [DOMHighResTimeStamp](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp) similar  to be returned by `performance.now()` is passed to be as the first argument.
+
+**Return**
+
+* **`(number)`**: The timer id to be used to cancel the next callback.
+
+**Example**
+
+```js
+raf(time => console.log(time))
+// => 120.123
+
+const timerId = raf(() => console.log('never happen'))
+raf.cancel(timerId)
+```
+
 ## randomString
 
 ```js

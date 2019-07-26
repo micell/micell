@@ -217,6 +217,8 @@ declare namespace micell {
 
   export function numberFormat(number: number, digits?: number, dot?: string, sep?: string): string;
 
+  export function raf(callback: (time: number) => void): number;
+
   export function randomString(len?: number, chars?: string): string;
 
   export function uuid(): string;

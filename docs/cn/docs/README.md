@@ -2129,6 +2129,32 @@ numberFormat(3.1415, 3);
 // => '3.142'
 ```
 
+## raf
+
+```js
+raf(callback)
+```
+
+如果浏览器支持 [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)，则和其一样。否则，使用`setTimeout`来模拟。
+
+**参数**
+
+* **`callback (Function)`**：在下一次重绘（repaint）之前调用的函数。一个由`performance.now()`返回的类似 [DOMHighResTimeStamp](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp) 的时间值将会作为第一个参数传入。
+
+**返回值**
+
+* **`(number)`**：用于取消下一次回调的定时器 ID。
+
+**示例**
+
+```js
+raf(time => console.log(time))
+// => 120.123
+
+const timerId = raf(() => console.log('never happen'))
+raf.cancel(timerId)
+```
+
 ## randomString
 
 ```js
