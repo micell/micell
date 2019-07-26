@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Alex1990/micell.git"
+    "url": "git+ssh://git@github.com/micell/micell.git"
   },
   "standard": {
     "env": [
@@ -59,9 +59,9 @@
   "author": "Alex Chao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Alex1990/micell/issues"
+    "url": "https://github.com/micell/micell/issues"
   },
-  "homepage": "https://github.com/Alex1990/micell#readme",
+  "homepage": "https://micell.org",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
