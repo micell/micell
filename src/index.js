@@ -2,6 +2,7 @@ import char from './char'
 import cookie from './cookie'
 import date from './date'
 import dom from './dom'
+import easing from './easing'
 import lang from './lang'
 import path from './path'
 import qs from './qs'
@@ -23,6 +24,7 @@ export default {
   cookie,
   date,
   dom,
+  easing,
   lang,
   path,
   qs,

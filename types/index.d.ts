@@ -90,6 +90,15 @@ declare namespace micell.dom {
   export function viewport(elOrWindow?: Window | Element): Viewport;
 }
 
+declare namespace micell.easing {
+  export function cubicBezier(x1: number, y1: number, x2: number, y2: number): (x: number) => number;
+  export function ease(x: number): number;
+  export function easeIn(x: number): number;
+  export function easeInOut(x: number): number;
+  export function easeOut(x: number): number;
+  export function linear(x: number): number;
+}
+
 declare namespace micell.lang {
   export function isArray(value: any): boolean;
   export function isBoolean(value: any): boolean;
