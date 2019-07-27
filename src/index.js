@@ -14,6 +14,7 @@ import css from './css'
 import delay from './delay'
 import noop from './noop'
 import numberFormat from './numberFormat'
+import raf from './raf'
 import randomString from './randomString'
 import uuid from './uuid'
 
@@ -34,6 +35,7 @@ export default {
   delay,
   noop,
   numberFormat,
+  raf,
   randomString,
   uuid
 }
