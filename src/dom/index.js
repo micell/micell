@@ -8,6 +8,7 @@ import isInViewport from './isInViewport'
 import isWindow from './isWindow'
 import pageX from './pageX'
 import pageY from './pageY'
+import scrollTo from './scrollTo'
 import scrollX from './scrollX'
 import scrollY from './scrollY'
 import viewport from './viewport'
@@ -23,6 +24,7 @@ export default {
   isWindow,
   pageX,
   pageY,
+  scrollTo,
   scrollX,
   scrollY,
   viewport
