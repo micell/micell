@@ -831,6 +831,50 @@ const el = document.getElementById('el')
 pageY(el)
 ```
 
+### scrollTo
+
+```js
+scrollTo(x, y)
+scrollTo(options)
+scrollTo(elOrWindow, x, y)
+scrollTo(elOrWindow, options)
+```
+
+滚动页面或元素到指定位置。
+
+**参数**
+
+* **`[x = 0] (number)`**
+* **`[y = 0] (number)`**
+* **`[elOrWindow = window] (Element | Window)`**
+* **`[options] (ExScrollToOptions)`**
+  + **`[x = 0] (number)`**
+  + **`[y = 0] (number)`**
+  + **`[easing] (string)`**：类似 CSS 的 [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)。 值为`linear`/`ease`/`easeIn`/`easeInOut`/`easeOut`/`cubic-bezier(x1, y1, x2, y2)`之一。
+  + **`[behavior] (string)`**：值为`smooth` or `auto`。查看[兼容性](https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions).
+
+**示例**
+
+```js
+// 滚动页面到 (100, 100)
+scroll(100, 100)
+
+// 平滑滚动页面到 (100, 100)
+scroll({ x: 100, y: 100, behavior: 'smooth' })
+
+// 滚动页面到 (100, 100)，并且应用一个缓动函数
+scroll({ x: 100, y: 100, easing: 'ease-out' })
+
+// 滚动元素到 (100, 100)
+scroll(el, 100, 100)
+
+// 平滑滚动元素到 (100, 100)
+scroll(el, { x: 100, y: 100, behavior: 'smooth' })
+
+// 滚动元素到 (100, 100)，并且应用一个缓动函数
+scroll(el, { x: 100, y: 100, easing: 'ease-out' })
+```
+
 ### scrollX
 
 ```js

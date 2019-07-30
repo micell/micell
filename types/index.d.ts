@@ -75,6 +75,15 @@ declare namespace micell.dom {
     height: number;
   }
 
+  export interface ExScrollToOptions {
+    x?: number;
+    y?: number;
+    left?: number;
+    top?: number;
+    behavior?: 'auto' | 'smooth'
+    easing?: string
+  }
+
   export function clientX(el: Element): number;
   export function clientY(el: Element): number;
   export function createEvent(type: string, options?: EventInit): Event;
@@ -85,6 +94,10 @@ declare namespace micell.dom {
   export function isWindow(value: any): boolean;
   export function pageX(el: Element): number;
   export function pageY(el: Element): number;
+  export function scrollTo(x: number, y: number): void;
+  export function scrollTo(elOrWindow: Element | Window, x: number, y: number): void;
+  export function scrollTo(options: ExScrollToOptions): void;
+  export function scrollTo(elOrWindow: Element | Window, options: ExScrollToOptions): void;
   export function scrollX(elOrWindow?: Element | Window): number;
   export function scrollY(elOrWindow?: Element | Window): number;
   export function viewport(elOrWindow?: Window | Element): Viewport;

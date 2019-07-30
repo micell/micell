@@ -825,6 +825,50 @@ const el = document.getElementById('el')
 pageY(el)
 ```
 
+### scrollTo
+
+```js
+scrollTo(x, y)
+scrollTo(options)
+scrollTo(elOrWindow, x, y)
+scrollTo(elOrWindow, options)
+```
+
+Scroll the page or element to the target position.
+
+**Arguments**
+
+* **`[x = 0] (number)`**
+* **`[y = 0] (number)`**
+* **`[elOrWindow = window] (Element | Window)`**
+* **`[options] (ExScrollToOptions)`**
+  + **`[x = 0] (number)`**
+  + **`[y = 0] (number)`**
+  + **`[easing] (string)`**: Similar to the CSS [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function). It is one of the `linear`/`ease`/`easeIn`/`easeInOut`/`easeOut`/`cubic-bezier(x1, y1, x2, y2)`.
+  + **`[behavior] (string)`**: It is `smooth` or `auto`. See the [compatibility](https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions).
+
+**Example**
+
+```js
+// Scroll the page to (100, 100)
+scroll(100, 100)
+
+// Scroll the page to (100, 100) smoothly
+scroll({ x: 100, y: 100, behavior: 'smooth' })
+
+// Scroll the page to (100, 100) with an easing function
+scroll({ x: 100, y: 100, easing: 'ease-out' })
+
+// Scroll an element to (100, 100)
+scroll(el, 100, 100)
+
+// Scroll an element to (100, 100) smoothly
+scroll(el, { x: 100, y: 100, behavior: 'smooth' })
+
+// Scroll an element to (100, 100) with an easing function
+scroll(el, { x: 100, y: 100, easing: 'ease-out' })
+```
+
 ### scrollX
 
 ```js
@@ -2196,7 +2240,7 @@ jsonp(url, [options])
 * **`[options] (Object)`**: The options.
   + **`[callback] (string)`**: The callback called after the request success or failed.
   + **`[responseType = "json"] (string)`**: How to parse the response.
-  + **[timeout = 0] (number)**: The request timeout.
+  + **`[timeout = 0] (number)`**: The request timeout.
 
 **Return**
 
