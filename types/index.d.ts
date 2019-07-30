@@ -85,8 +85,8 @@ declare namespace micell.dom {
   export function isWindow(value: any): boolean;
   export function pageX(el: Element): number;
   export function pageY(el: Element): number;
-  export function scrollX(): number;
-  export function scrollY(): number;
+  export function scrollX(elOrWindow?: Element | Window): number;
+  export function scrollY(elOrWindow?: Element | Window): number;
   export function viewport(elOrWindow?: Window | Element): Viewport;
 }
 
