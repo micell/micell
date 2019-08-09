@@ -1,3 +1,8 @@
+declare namespace micell.base64 {
+  export function encode(input: string | number[] | Uint8Array): string;
+  export function decode(input: string): string | number[];
+}
+
 declare namespace micell.char {
   export function isAlphabetic(ch: string): boolean;
   export function isASCII(ch: string): boolean;
@@ -42,7 +47,7 @@ declare namespace micell.cookie {
 
 declare namespace micell.date {
   export type ParsableDate = Number | String | Date;
-  export type RoundFunc = (num: number): number;
+  export type RoundFunc = (num: number) number;
 
   export function diff(date1: ParsableDate, date2: ParsableDate, unit?: string, roundFunc?: RoundFunc): number;
   export function format(date: Date | Number, format: String, isUTC?: boolean): string;

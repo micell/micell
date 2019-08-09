@@ -3,6 +3,79 @@ sidebar: auto
 ---
 # 文档
 
+## base64
+
+### decode
+
+```js
+decode(input, [options])
+```
+
+将 base64 编码的字符串解码为一个 UTF8 字符串、十六进制字符串或者字节数组。
+
+**参数**
+
+* **`input (string)`**
+* **`[options = {} (Object)]`**
+  + `[encoding = 'utf8' (string)]`：输出编码，可以是`'utf8'` or `'hex'` or `'binary'`。
+
+**返回值**
+
+* **`(string | Array)`**
+
+**示例**
+
+```js
+const input = 'aGVsbG8g5L2g5aW9'
+
+// 返回 utf8 字符串
+decode(input)
+// => 'hello 你好'
+
+// 返回十六进制字符串
+decode(input, { encoding: 'hex' })
+// => '68656c6c6f20e4bda0e5a5bd'
+
+// a byte array
+// 返回字节数组
+decode(input, { encoding: 'binary' })
+// => [104, 101, 108, 108, 111, 32, 228, 189, 160, 229, 165, 189]
+```
+
+### encode
+
+将一个 UTF8 字符串、字节数组或者`Uint8Array`编码为 base64 字符串。
+
+```js
+encode(input)
+```
+
+**参数**
+
+* **`input (string | Array | Uint8Array)`**
+
+**返回值**
+
+* **`(string)`**
+
+**示例**
+
+```js
+// 输入字符串
+encode('hello 你好')
+// => 'aGVsbG8g5L2g5aW9'
+
+// 输入字节数组
+const bytes = [104, 101, 108, 108, 111, 32, 228, 189, 160, 229, 165, 189]
+encode(bytes)
+// => 'aGVsbG8g5L2g5aW9'
+
+// 输入 Uint8Array
+const uint8 = new Uint8Array(bytes)
+encode(uint8)
+// => 'aGVsbG8g5L2g5aW9'
+```
+
 ## char
 
 ### isAlphabetic

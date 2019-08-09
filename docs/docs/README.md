@@ -3,6 +3,78 @@ sidebar: auto
 ---
 # Docs
 
+## base64
+
+### decode
+
+```js
+decode(input, [options])
+```
+
+Decoding a base64-encoded string to a utf8 string, hex string or byte array.
+
+**Arguments**
+
+* **`input (string)`**
+* **`[options = {} (Object)]`**
+  + `[encoding = 'utf8' (string)]`: The encoding of output, it can be `'utf8'` or `'hex'` or `'binary'`.
+
+**Return**
+
+* **`(string | Array)`**
+
+**Example**
+
+```js
+const input = 'aGVsbG8g5L2g5aW9'
+
+// Output a utf8 string
+decode(input)
+// => 'hello 你好'
+
+// Output a hex string
+decode(input, { encoding: 'hex' })
+// => '68656c6c6f20e4bda0e5a5bd'
+
+// Output a byte array
+decode(input, { encoding: 'binary' })
+// => [104, 101, 108, 108, 111, 32, 228, 189, 160, 229, 165, 189]
+```
+
+### encode
+
+Encoding a utf8 string, byte array or Uint8Array to a base64 string.
+
+```js
+encode(input)
+```
+
+**Arguments**
+
+* **`input (string | Array | Uint8Array)`**
+
+**Return**
+
+* **`(string)`**
+
+**Example**
+
+```js
+// Input a string
+encode('hello 你好')
+// => 'aGVsbG8g5L2g5aW9'
+
+// Input a byte array
+const bytes = [104, 101, 108, 108, 111, 32, 228, 189, 160, 229, 165, 189]
+encode(bytes)
+// => 'aGVsbG8g5L2g5aW9'
+
+// Input a Uint8Array
+const uint8 = new Uint8Array(bytes)
+encode(uint8)
+// => 'aGVsbG8g5L2g5aW9'
+```
+
 ## char
 
 ### isAlphabetic
