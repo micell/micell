@@ -1,3 +1,4 @@
+import base64 from './base64'
 import char from './char'
 import cookie from './cookie'
 import date from './date'
@@ -20,6 +21,7 @@ import randomString from './randomString'
 import uuid from './uuid'
 
 export default {
+  base64,
   char,
   cookie,
   date,
