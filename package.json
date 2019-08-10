@@ -21,8 +21,8 @@
     "build": "npm run clean && npm run build:commonjs && npm run rollup",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "rollup": "rollup -c",
-    "prepublishOnly": "node scripts/release.js",
-    "release": "semantic-release"
+    "pkg": "node scripts/release.js",
+    "release": "npm run pkg && semantic-release"
   },
   "repository": {
     "type": "git",
