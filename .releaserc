@@ -9,7 +9,7 @@
       "pkgRoot": "build",
     }],
     ["@semantic-release/git", {
-      "assets": ["build/**", "package.json"]
+      "assets": ["package.json"]
     }]
   ]
 }
