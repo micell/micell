@@ -24,7 +24,7 @@ module.exports = {
         nav: [
           { text: 'Home', link: '/' },
           { text: 'Docs', link: '/docs/' },
-          { text: 'Github', link: 'https://github.com/Alex1990/micell' }
+          { text: 'Github', link: 'https://github.com/micell/micell' }
         ]
       },
       '/cn/': {
@@ -35,7 +35,7 @@ module.exports = {
         nav: [
           { text: '首页', link: '/cn/' },
           { text: '文档', link: '/cn/docs/' },
-          { text: 'Github', link: 'https://github.com/Alex1990/micell' }
+          { text: 'Github', link: 'https://github.com/micell/micell' }
         ]
       }
     }
