@@ -42,7 +42,8 @@ try {
     'lib/*',
     'types/*',
     'README.md',
-    'LICENSE'
+    'LICENSE',
+    'package.json'
   ]
   files.forEach(filename => {
     const src = path.resolve(root, filename)
