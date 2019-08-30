@@ -10,6 +10,7 @@ import qs from './qs'
 import regex from './regex'
 import string from './string'
 import ua from './ua'
+import url from './url'
 
 import ajax from './ajax'
 import css from './css'
@@ -33,6 +34,7 @@ export default {
   regex,
   string,
   ua,
+  url,
 
   ajax,
   css,

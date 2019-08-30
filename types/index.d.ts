@@ -210,6 +210,11 @@ declare namespace micell.ua {
   export function isWindows(ua: string): boolean;
 }
 
+declare namespace micell.url {
+  export function parse(url: string): object;
+  export function stringify(urlParts: object): string;
+}
+
 declare namespace micell {
   export interface AjaxOptions {
     async?: boolean;
