@@ -2228,6 +2228,75 @@ Check if the environment is iPad.
 
 * **`(boolean)`**
 
+## url
+
+### parse
+
+```js
+parse(url)
+```
+
+**Arguments**
+
+* **`url (string)`**: The parsed url.
+
+**Return**
+
+* **`(Object)`**
+
+**Example**
+
+```js
+parse('http://admin:123456@example.com:8080/path-to-somewhere?foo=1&lang=js&lang=css#title')
+// =>
+// {
+//   hash: '#title',
+//   host: 'example.com:8080',
+//   hostname: 'example.com',
+//   href: 'http://admin:123456@example.com:8080/path-to-somewhere?foo=1&lang=js&lang=css#title',
+//   origin: 'http://example.com:8080',
+//   password: '123456',
+//   pathname: '/path-to-somewhere',
+//   port: '8080',
+//   protocol: 'http',
+//   query: {
+//     foo: '1',
+//     lang: ['js', 'css']
+//   },
+//   search: '?foo=1&lang=js&lang=css',
+//   username: 'admin'
+// }
+```
+
+### stringify
+
+```js
+stringify(urlParts)
+```
+
+**Arguments**
+
+* **`urlParts (Object)`**: The url parts object.
+
+**Return**
+
+* **`(string)`**
+
+**Example**
+
+```js
+stringify({
+  protocol: 'http',
+  host: 'example.com',
+  pathname: '/path',
+  query: {
+    foo: '1',
+    lang: ['js', 'css']
+  }
+})
+// => 'http://example.com/path?foo=1&lang=js&lang=css'
+```
+
 ## ajax
 
 ```js
