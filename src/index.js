@@ -15,6 +15,7 @@ import url from './url'
 import ajax from './ajax'
 import css from './css'
 import delay from './delay'
+import md5 from './md5'
 import noop from './noop'
 import numberFormat from './numberFormat'
 import raf from './raf'
@@ -39,6 +40,7 @@ export default {
   ajax,
   css,
   delay,
+  md5,
   noop,
   numberFormat,
   raf,

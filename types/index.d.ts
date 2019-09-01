@@ -245,6 +245,8 @@ declare namespace micell {
 
   export function jsonp(url: string, options?: JsonpOptions): Promise;
 
+  export function md5(input: string | number[] | Uint8Array): string;
+
   export function noop(): void;
 
   export function numberFormat(number: number, digits?: number, dot?: string, sep?: string): string;

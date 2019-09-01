@@ -2399,6 +2399,27 @@ jsonp(url, [options])
 
 * **`(Promise)`**
 
+## md5
+
+```js
+md5(input)
+```
+
+**参数**
+
+* **`input (string | number[] | Uint8Array)`**
+
+**返回值**
+
+* **`(string)`**
+
+**示例**
+
+```js
+md5('hello 你好')
+// => '429f2c0b03ebc9911455cbec2a09bc6f'
+```
+
 ## noop
 
 该函数为一个空函数，不接受任何参数，不返回任何值。
