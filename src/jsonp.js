@@ -1,4 +1,4 @@
-import insertScript from './insertScript'
+import insertScript from './dom/insertScript'
 
 export default function jsonp (url, options = {}) {
   // TODO: Promise polyfill
