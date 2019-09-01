@@ -2387,6 +2387,27 @@ jsonp(url, [options])
 
 * **`(Promise)`**
 
+## md5
+
+```js
+md5(input)
+```
+
+**Arguments**
+
+* **`input (string | number[] | Uint8Array)`**
+
+**Return**
+
+* **`(string)`**
+
+**Example**
+
+```js
+md5('hello 你好')
+// => '429f2c0b03ebc9911455cbec2a09bc6f'
+```
+
 ## noop
 
 This is an empty function, accepting no argument, returning no value.
