@@ -4,6 +4,7 @@ import cookie from './cookie'
 import date from './date'
 import dom from './dom'
 import easing from './easing'
+import emitter from './emitter'
 import lang from './lang'
 import path from './path'
 import qs from './qs'
@@ -30,6 +31,7 @@ export default {
   date,
   dom,
   easing,
+  emitter,
   lang,
   path,
   qs,
