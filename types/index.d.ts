@@ -117,6 +117,28 @@ declare namespace micell.easing {
   export function linear(x: number): number;
 }
 
+declare namespace micell.emitter {
+  type EventType = string | symbol;
+  type Listener = (...args: any[]) => void;
+
+  export interface Emitter {
+    new(): Emitter;
+
+    emit(event: EventType, ...args: any[]): boolean;
+    getListeners(event?: EventType): Array<Listener>;
+    off(event?: EventType, listener?: Listener): void;
+    on(event: EventType, listener: Listener): void;
+    once(event: EventType, listener: Listener): void;
+  }
+
+  export function create(): Emitter;
+  export function emit(event: EventType, ...args: any[]): boolean;
+  export function getListeners(event?: EventType): Array<Listener>;
+  export function off(event?: EventType, listener?: Listener): this;
+  export function on(event: EventType, listener: Listener): void;
+  export function once(event: EventType, listener: Listener): this;
+}
+
 declare namespace micell.lang {
   export function isArray(value: any): boolean;
   export function isBoolean(value: any): boolean;
