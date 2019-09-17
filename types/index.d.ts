@@ -233,6 +233,7 @@ declare namespace micell.ua {
 }
 
 declare namespace micell.url {
+  export function isAbsolute(url: string): boolean;
   export function parse(url: string): object;
   export function stringify(urlParts: object): string;
 }

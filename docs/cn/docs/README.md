@@ -2393,6 +2393,31 @@ isIPad()
 
 ## url
 
+### isAbsolute
+
+```js
+isAbsolute(url)
+```
+
+判断`url`是否是一个绝对 URL。
+
+**参数**
+
+* **`url (string)`**
+
+**返回值**
+
+* **`(boolean)`**
+
+**示例**
+
+```js
+isAbsolute('example.com')
+// => false
+isAbsolute('https://example.com')
+// => true
+```
+
 ### parse
 
 ```js
