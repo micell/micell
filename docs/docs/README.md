@@ -2385,6 +2385,31 @@ Check if the environment is iPad.
 
 ## url
 
+### isAbsolute
+
+```js
+isAbsolute(url)
+```
+
+Check if the `url` is an absolute URL.
+
+**Arguments**
+
+* **`url (string)`**
+
+**Return**
+
+* **`(boolean)`**
+
+**Example**
+
+```js
+isAbsolute('example.com')
+// => false
+isAbsolute('https://example.com')
+// => true
+```
+
 ### parse
 
 ```js
