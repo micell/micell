@@ -16,6 +16,7 @@ module.exports = function (config) {
       'node_modules/chai/chai.js',
       'node_modules/sinon/pkg/sinon.js',
       'test/setup.js',
+      'src/**/*.js',
       'test/**/*.spec.js'
     ],
 
@@ -26,6 +27,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.js': ['webpack', 'coverage'],
       'test/**/*.spec.js': ['webpack'],
       'test/fixtures/**/*': ['file-fixtures']
     },
@@ -33,7 +35,14 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      reporters: [
+        { type: 'lcovonly', subdir: '.' },
+        { type: 'html', subdir: '.' }
+      ]
+    },
 
     // webpack
     webpack: {
