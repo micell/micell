@@ -93,6 +93,20 @@ micell.cookie.get('name')
 
 查看[文档](https://micell.org/docs)。
 
+## 兼容性
+
+* Chrome
+* Firefox
+* Safari
+* Edge
+* IE >= 9
+* iOS >= 10
+* Android >= 5
+
+**真机测试由 BrowserStack 驱动**
+
+[![BrowserStack](https://d3but80xmlhqzj.cloudfront.net/production/images/static/header/header-logo.svg)](https://www.browserstack.com)
+
 ## 更新日志
 
 查看[版本说明](https://github.com/micell/micell/releases)。

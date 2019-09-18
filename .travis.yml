@@ -9,3 +9,4 @@ before_script:
 script:
   - npm run test:ci
   - codecov
+  - npm run test:bs
