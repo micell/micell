@@ -94,6 +94,20 @@ the methods as you needed.
 
 See [Docs](https://micell.org/docs).
 
+## Compatibility
+
+* Chrome
+* Firefox
+* Safari
+* Edge
+* IE >= 9
+* iOS >= 10
+* Android >= 5
+
+**Real device tests powered by**
+
+[![BrowserStack](https://d3but80xmlhqzj.cloudfront.net/production/images/static/header/header-logo.svg)](https://www.browserstack.com)
+
 ## Changelog
 
 See [Release notes](https://github.com/micell/micell/releases).
