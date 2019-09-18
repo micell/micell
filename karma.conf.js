@@ -1,3 +1,5 @@
+const path = require('path')
+
 // Karma configuration
 // Generated on Wed Jun 26 2019 00:32:00 GMT+0800 (China Standard Time)
 
@@ -27,7 +29,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack', 'coverage'],
+      'src/**/*.js': ['webpack'],
       'test/**/*.spec.js': ['webpack'],
       'test/fixtures/**/*': ['file-fixtures']
     },
@@ -35,18 +37,32 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage-istanbul'],
 
-    coverageReporter: {
-      reporters: [
-        { type: 'lcovonly', subdir: '.' },
-        { type: 'html', subdir: '.' }
-      ]
+    coverageIstanbulReporter: {
+      reports: ['html', 'lcovonly'],
+      fixWebpackSourcePaths: true
     },
 
     // webpack
     webpack: {
-      mode: 'development'
+      mode: 'development',
+      devtool: 'sourcemap',
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            use: {
+              loader: 'istanbul-instrumenter-loader',
+              options: {
+                esModules: true
+              }
+            },
+            enforce: 'post',
+            include: path.resolve('src/')
+          }
+        ]
+      }
     },
 
     // web server port
