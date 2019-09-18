@@ -105,7 +105,7 @@ micell.cookie.get('name')
 
 **真机测试由 BrowserStack 驱动**
 
-[![BrowserStack](https://d3but80xmlhqzj.cloudfront.net/production/images/static/header/header-logo.svg)](https://www.browserstack.com)
+[![BrowserStack](assets/Browserstack-logo@2x.png)](https://www.browserstack.com)
 
 ## 更新日志
 
