@@ -3,6 +3,9 @@
 [![Build Status](https://travis-ci.com/micell/micell.svg?branch=master)](https://travis-ci.com/micell/micell)
 [![codecov](https://codecov.io/gh/micell/micell/branch/master/graph/badge.svg)](https://codecov.io/gh/micell/micell)
 [![npm](https://img.shields.io/npm/v/micell.svg)](https://www.npmjs.com/package/micell)
+![David](https://img.shields.io/david/micell/micell)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/micell)
+![NPM](https://img.shields.io/npm/l/micell)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bff6938e-fda6-416f-84fd-bf33fc6a6072/deploy-status)](https://app.netlify.com/sites/pensive-leakey-00e229/deploys)
 
 **[English](README.md)** | **简体中文**
