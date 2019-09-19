@@ -106,7 +106,7 @@ See [Docs](https://micell.org/docs).
 
 **Real device tests powered by**
 
-[![BrowserStack](assets/Browserstack-logo@2x.png)](https://www.browserstack.com)
+[![BrowserStack](assets/Browserstack-logo@2x.png width=300)](https://www.browserstack.com)
 
 ## Changelog
 
