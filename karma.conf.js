@@ -179,7 +179,8 @@ module.exports = function (config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    ...browserStack,
+    // browserStack global configuration
+    browserStack,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
