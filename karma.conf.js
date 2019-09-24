@@ -1,4 +1,5 @@
 const path = require('path')
+const pkg = require('./package.json')
 
 // Karma configuration
 // Generated on Wed Jun 26 2019 00:32:00 GMT+0800 (China Standard Time)
@@ -9,10 +10,15 @@ module.exports = function (config) {
     BROWSERSTACK_USERNAME,
     BROWSERSTACK_ACCESS_KEY
   } = process.env
+  const browserStack = {}
   let customLaunchers = {}
   let reporters = []
 
   if (BS && BROWSERSTACK_USERNAME && BROWSERSTACK_ACCESS_KEY) {
+    browserStack.username = BROWSERSTACK_USERNAME
+    browserStack.accessKey = BROWSERSTACK_ACCESS_KEY
+    browserStack.project = pkg.name
+
     reporters = ['dots', 'BrowserStack']
     customLaunchers = {
       bs_chrome_win: {
@@ -172,6 +178,8 @@ module.exports = function (config) {
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
+
+    ...browserStack,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
