@@ -6,6 +6,7 @@
 ![David](https://img.shields.io/david/micell/micell)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/micell)
 ![NPM](https://img.shields.io/npm/l/micell)
+[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=Y3JwOGtWSysyUTRUR1BtZkZPQ3J4ZWxaOVJzMUYvZmsyVyt3TU9ZVXpNYz0tLVA5WXk4dVZxbURQb2FwTFIvN1E0UUE9PQ==--adf43d74135bbc962a24742452cc8625aa74e362)](https://automate.browserstack.com/public-build/Y3JwOGtWSysyUTRUR1BtZkZPQ3J4ZWxaOVJzMUYvZmsyVyt3TU9ZVXpNYz0tLVA5WXk4dVZxbURQb2FwTFIvN1E0UUE9PQ==--adf43d74135bbc962a24742452cc8625aa74e362)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bff6938e-fda6-416f-84fd-bf33fc6a6072/deploy-status)](https://app.netlify.com/sites/pensive-leakey-00e229/deploys)
 
 **English** | **[简体中文](README_zh-CN.md)**
