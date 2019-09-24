@@ -70,13 +70,13 @@ module.exports = function (config) {
       //   os: 'Windows',
       //   os_version: '7'
       // },
-      bs_ios13: {
-        base: 'BrowserStack',
-        device: 'iPhone 8',
-        real_mobile: 'true',
-        os: 'ios',
-        os_version: '13'
-      },
+      // bs_ios13: {
+      //   base: 'BrowserStack',
+      //   device: 'iPhone 8',
+      //   real_mobile: 'true',
+      //   os: 'ios',
+      //   os_version: '13'
+      // },
       bs_android9: {
         base: 'BrowserStack',
         device: 'Google Pixel 3',
