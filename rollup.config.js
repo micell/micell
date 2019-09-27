@@ -91,7 +91,7 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.js`,
       format: 'umd',
-      name: 'micellar'
+      name: pkg.name
     },
     plugins: [
       nodeResolve(),
@@ -109,7 +109,7 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.min.js`,
       format: 'umd',
-      name: 'micellar'
+      name: pkg.name
     },
     plugins: [
       nodeResolve(),
