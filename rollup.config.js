@@ -27,7 +27,7 @@ export default [
     external: isExternal,
     plugins: [
       nodeResolve(),
-      babel(getBabelOptions({ useESModules: true }))
+      babel(getBabelOptions())
     ]
   },
 
