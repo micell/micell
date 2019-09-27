@@ -125,8 +125,8 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack'],
-      'test/**/*.spec.js': ['webpack'],
+      'src/**/*.js': ['webpack', 'sourcemap'],
+      'test/**/*.spec.js': ['webpack', 'sourcemap'],
       'test/fixtures/**/*': ['file-fixtures']
     },
 
@@ -143,17 +143,21 @@ module.exports = function (config) {
     // webpack
     webpack: {
       mode: 'development',
-      devtool: 'sourcemap',
+      devtool: 'inline-source-map',
       module: {
         rules: [
           {
             test: /\.js$/,
-            use: {
-              loader: 'istanbul-instrumenter-loader',
-              options: {
-                esModules: true
+            use: [
+              'babel-loader',
+              {
+                loader: 'istanbul-instrumenter-loader',
+                options: {
+                  esModules: true,
+                  produceSourceMap: true
+                }
               }
-            },
+            ],
             enforce: 'post',
             include: path.resolve('src/')
           }
