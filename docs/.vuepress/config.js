@@ -1,7 +1,7 @@
 module.exports = {
   head: [
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['script', { src: '//cdn.jsdelivr.net/npm/micell' }]
+    ['script', { src: '//cdn.jsdelivr.net/npm/micell@latest' }]
   ],
   locales: {
     '/': {
