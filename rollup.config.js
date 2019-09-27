@@ -11,7 +11,7 @@ const outDir = path.join(__dirname, 'dist')
 const getBabelOptions = ({ useESModules = false } = {}) => ({
   exclude: 'node_modules/**',
   runtimeHelpers: true,
-  plugins: [['@babel/transform-runtime', { useESModules }]]
+  plugins: [['@babel/plugin-transform-runtime', { useESModules }]]
 })
 
 const isExternal = id => !id.startsWith('.') && !id.startsWith('/')
