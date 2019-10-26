@@ -129,6 +129,12 @@ If you have a bug or feature request or document improvement about micell, you c
 npm run docs:dev
 ```
 
+### Release
+
+```sh
+npm run release
+```
+
 ## License
 
 MIT
