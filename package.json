@@ -23,8 +23,7 @@
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "rollup": "rollup -c",
     "pkg": "node scripts/release.js",
-    "release": "npm run pkg && semantic-release",
-    "postpublish": "cp build/package.json ."
+    "release": "npm run pkg && semantic-release"
   },
   "repository": {
     "type": "git",
