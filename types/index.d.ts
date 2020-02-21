@@ -47,7 +47,7 @@ declare namespace micell.cookie {
 
 declare namespace micell.date {
   export type ParsableDate = Number | String | Date;
-  export type RoundFunc = (num: number) number;
+  export type RoundFunc = (num: number) => number;
 
   export function diff(date1: ParsableDate, date2: ParsableDate, unit?: string, roundFunc?: RoundFunc): number;
   export function format(date: Date | Number, format: String, isUTC?: boolean): string;
@@ -134,9 +134,9 @@ declare namespace micell.emitter {
   export function create(): Emitter;
   export function emit(event: EventType, ...args: any[]): boolean;
   export function getListeners(event?: EventType): Array<Listener>;
-  export function off(event?: EventType, listener?: Listener): this;
+  export function off(event?: EventType, listener?: Listener): void;
   export function on(event: EventType, listener: Listener): void;
-  export function once(event: EventType, listener: Listener): this;
+  export function once(event: EventType, listener: Listener): void;
 }
 
 declare namespace micell.lang {
@@ -255,7 +255,7 @@ declare namespace micell {
     timeout?: number;
   }
 
-  export function ajax(url: string, options?: AjaxOptions): Proimise;
+  export function ajax(url: string, options?: AjaxOptions): Promise<object>;
 
   export function css(el: Element, prop: string): string;
   export function css(el: string, prop: string): string;
@@ -264,9 +264,9 @@ declare namespace micell {
   export function css(el: Element): CSSStyleDeclaration;
   export function css(el: string): CSSStyleDeclaration;
 
-  export function delay(duration?: number): Promise;
+  export function delay(duration?: number): Promise<void>;
 
-  export function jsonp(url: string, options?: JsonpOptions): Promise;
+  export function jsonp(url: string, options?: JsonpOptions): Promise<object>;
 
   export function md5(input: string | number[] | Uint8Array): string;
 
