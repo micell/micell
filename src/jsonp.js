@@ -1,7 +1,6 @@
 import insertScript from './dom/insertScript'
 
 export default function jsonp (url, options = {}) {
-  // TODO: Promise polyfill
   return new Promise((resolve, reject) => {
     const {
       callback = '_callback',

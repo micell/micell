@@ -8,10 +8,13 @@ import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const outDir = path.join(__dirname, 'dist')
-const getBabelOptions = ({ useESModules = false } = {}) => ({
+const getBabelOptions = ({ useESModules = false, corejs = false } = {}) => ({
   exclude: 'node_modules/**',
   runtimeHelpers: true,
-  plugins: [['@babel/plugin-transform-runtime', { useESModules }]]
+  plugins: [['@babel/plugin-transform-runtime', {
+    useESModules,
+    corejs
+  }]]
 })
 
 const isExternal = id => !id.startsWith('.') && !id.startsWith('/')
@@ -95,7 +98,7 @@ export default [
     },
     plugins: [
       nodeResolve(),
-      babel(getBabelOptions()),
+      babel(getBabelOptions({ corejs: 3 })),
       commonjs(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development')
@@ -113,7 +116,7 @@ export default [
     },
     plugins: [
       nodeResolve(),
-      babel(getBabelOptions()),
+      babel(getBabelOptions({ corejs: 3 })),
       commonjs(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production')
