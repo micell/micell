@@ -1883,10 +1883,10 @@ isHsl(str)
 **示例**
 
 ```js
-isHsl('hsl(100, 50, 50)');
+isHsl('hsl(100, 50%, 50%)');
 // => true
 
-isHsl('HSL(100, 50, 50)');
+isHsl('HSL(100, 50%, 50%)');
 // => true
 ```
 
@@ -1909,10 +1909,10 @@ isHsla(str)
 **示例**
 
 ```js
-isHsla('hsla(100, 50, 50, 0.5)');
+isHsla('hsla(100, 50%, 50%, 0.5)');
 // => true
 
-isHsla('HSLA(100, 50, 50, 0.5)');
+isHsla('HSLA(100, 50%, 50%, 0.5)');
 // => true
 ```
 

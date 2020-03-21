@@ -1875,10 +1875,10 @@ Check if a string is an HSL value.
 **Example**
 
 ```js
-isHsl('hsl(100, 50, 50)');
+isHsl('hsl(100, 50%, 50%)');
 // => true
 
-isHsl('HSL(100, 50, 50)');
+isHsl('HSL(100, 50%, 50%)');
 // => true
 ```
 
@@ -1901,10 +1901,10 @@ Check if a string is an HSLA value.
 **Example**
 
 ```js
-isHsla('hsla(100, 50, 50, 0.5)');
+isHsla('hsla(100, 50%, 50%, 0.5)');
 // => true
 
-isHsla('HSLA(100, 50, 50, 0.5)');
+isHsla('HSLA(100, 50%, 50%, 0.5)');
 // => true
 ```
 
