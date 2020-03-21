@@ -1790,7 +1790,7 @@ isDigit('0123');
 isDomain(str)
 ```
 
-判断一个字符串是否是一个 http(s) 域名。
+判断一个字符串是否是一个域名。
 
 **参数**
 
@@ -1803,8 +1803,10 @@ isDomain(str)
 **示例**
 
 ```js
-isDomain('https://example.com');
+isDomain('example.com');
 // => true
+isDomain('https://example.com');
+// => false
 ```
 
 ### isEmail

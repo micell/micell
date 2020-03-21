@@ -1782,7 +1782,7 @@ isDigit('0123');
 isDomain(str)
 ```
 
-Check if a string is an http(s) domain.
+Check if a string is a domain.
 
 **Arguments**
 
@@ -1795,8 +1795,10 @@ Check if a string is an http(s) domain.
 **Example**
 
 ```js
-isDomain('https://example.com');
+isDomain('example.com');
 // => true
+isDomain('https://example.com');
+// => false
 ```
 
 ### isEmail
