@@ -30,7 +30,7 @@ describe('scrollTo', () => {
     expect(scrollY()).to.equal(0)
   })
 
-  it.skip('scrollTo(window, 100, 100)', async () => {
+  it('scrollTo(window, 100, 100)', async () => {
     scrollTo(window, 100, 100)
     await delay()
     expect(scrollX()).to.equal(100)
@@ -44,7 +44,7 @@ describe('scrollTo', () => {
     expect(scrollY(container)).to.equal(100)
   })
 
-  it.skip('scrollTo({ x: 100, y: 100 })', async () => {
+  it('scrollTo({ x: 100, y: 100 })', async () => {
     scrollTo({ x: 100, y: 100 })
     await delay()
     expect(scrollX()).to.equal(100)
@@ -58,7 +58,7 @@ describe('scrollTo', () => {
     expect(scrollY(container)).to.equal(100)
   })
 
-  it.skip('scrollTo({ left: 100, top: 100 })', async () => {
+  it('scrollTo({ left: 100, top: 100 })', async () => {
     scrollTo({ left: 100, top: 100 })
     await delay()
     expect(scrollX()).to.equal(100)
@@ -72,7 +72,7 @@ describe('scrollTo', () => {
     expect(scrollY(container)).to.equal(100)
   })
 
-  it.skip('scrollTo({ x: 0, y: 1000, easing: \'linear\' })', async () => {
+  it('scrollTo({ x: 0, y: 1000, easing: \'linear\' })', async () => {
     scrollTo({ x: 0, y: 1000, easing: 'linear' })
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(0)
@@ -86,7 +86,7 @@ describe('scrollTo', () => {
     expect(scrollY()).to.equal(1000)
   })
 
-  it.skip('scrollTo({ x: 0, y: 1000, easing: \'cubic-bezier(0,0,1,1)\' })', async () => {
+  it('scrollTo({ x: 0, y: 1000, easing: \'cubic-bezier(0,0,1,1)\' })', async () => {
     scrollTo({ x: 0, y: 1000, easing: 'cubic-bezier(0,0,1,1)' })
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(0)

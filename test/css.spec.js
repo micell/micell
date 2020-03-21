@@ -22,7 +22,7 @@ describe('css', () => {
     expect(css('#el1')).to.be.instanceof(CSSStyleDeclaration)
   })
 
-  it.skip('should return the specified property\'s value if the 2nd argument is a string', () => {
+  it('should return the specified property\'s value if the 2nd argument is a string', () => {
     expect(css('#el1', 'width')).to.equal('100px')
     expect(css('#el1', 'height')).to.equal('100px')
     expect(css('#el1', 'padding')).to.equal('10px')
@@ -30,7 +30,7 @@ describe('css', () => {
     expect(css('#el1', 'border-left-width')).to.equal('1px')
   })
 
-  it.skip('should set the css property if the 2nd argument is an object', () => {
+  it('should set the css property if the 2nd argument is an object', () => {
     const el = document.getElementById('el1')
     css(el, {
       width: '50px',
