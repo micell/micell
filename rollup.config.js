@@ -1,6 +1,7 @@
 import path from 'path'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
+import typescript from '@rollup/plugin-typescript'
 import commonjs from 'rollup-plugin-commonjs'
 import replace from 'rollup-plugin-replace'
 import { terser } from 'rollup-plugin-terser'
@@ -25,10 +26,12 @@ export default [
     input: 'src/index.js',
     output: {
       file: `${outDir}/${pkg.name}.common.js`,
-      format: 'cjs'
+      format: 'cjs',
+      sourcemap: true
     },
     external: isExternal,
     plugins: [
+      typescript(),
       nodeResolve(),
       babel(getBabelOptions())
     ]
@@ -39,10 +42,12 @@ export default [
     input: 'src/index.js',
     output: {
       file: `${outDir}/${pkg.name}.esm.js`,
-      format: 'es'
+      format: 'es',
+      sourcemap: true
     },
     external: isExternal,
     plugins: [
+      typescript(),
       nodeResolve(),
       babel(getBabelOptions({ useESModules: true }))
     ]
@@ -53,9 +58,11 @@ export default [
     input: 'src/index.js',
     output: {
       file: `${outDir}/${pkg.name}.esm.browser.js`,
-      format: 'es'
+      format: 'es',
+      sourcemap: true
     },
     plugins: [
+      typescript(),
       nodeResolve(),
       babel(getBabelOptions({ useESModules: true })),
       replace({
@@ -69,9 +76,11 @@ export default [
     input: 'src/index.js',
     output: {
       file: `${outDir}/${pkg.name}.esm.browser.min.js`,
-      format: 'es'
+      format: 'es',
+      sourcemap: true
     },
     plugins: [
+      typescript(),
       nodeResolve(),
       babel(getBabelOptions({ useESModules: true })),
       replace({
@@ -87,9 +96,11 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.js`,
       format: 'umd',
-      name: pkg.name
+      name: pkg.name,
+      sourcemap: true
     },
     plugins: [
+      typescript(),
       nodeResolve(),
       babel(getBabelOptions({ corejs: 3 })),
       commonjs(),
@@ -105,9 +116,11 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.min.js`,
       format: 'umd',
-      name: pkg.name
+      name: pkg.name,
+      sourcemap: true
     },
     plugins: [
+      typescript(),
       nodeResolve(),
       babel(getBabelOptions({ corejs: 3 })),
       commonjs(),
