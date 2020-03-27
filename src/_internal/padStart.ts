@@ -1,4 +1,4 @@
-const padStart = (str = '', len = 0, chars = '') => {
+const padStart = (str: string = '', len: number = 0, chars: string = ''): string => {
   const strValue = String(str)
   const charsValue = String(chars)
 
