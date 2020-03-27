@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import randomString from '../src/randomString'
 
 describe('randomString', () => {

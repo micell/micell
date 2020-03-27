@@ -14,8 +14,11 @@
     "clean": "rimraf dist lib es",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "standard '**/*.js' --verbose | snazzy",
-    "lint:fix": "standard '**/*.js' --fix --verbose | snazzy",
+    "lint": "npm run lint:js && npm run lint:ts",
+    "lint:js": "standard '**/*.js' --verbose | snazzy",
+    "lint:js:fix": "standard '**/*.js' --fix --verbose | snazzy",
+    "lint:ts": "tsc --noEmit",
+    "lint:ts:watch": "npm run lint:ts -- --watch",
     "test": "cross-env BABEL_ENV=test karma start",
     "test:ci": "npm run test -- --single-run",
     "test:bs": "cross-env BABEL_ENV=test BS=true karma start --single-run",
@@ -51,6 +54,9 @@
     "*.js": [
       "standard --fix",
       "git add"
+    ],
+    "*.ts": [
+      "tsc --noEmit"
     ]
   },
   "keywords": [
@@ -77,6 +83,8 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@rollup/plugin-typescript": "^4.0.0",
     "@semantic-release/git": "^7.0.16",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
     "@vuepress/plugin-google-analytics": "next",
     "@vuepress/plugin-pwa": "next",
     "babel-loader": "^8.0.5",
