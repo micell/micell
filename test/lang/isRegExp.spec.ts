@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isRegExp from '../../src/lang/isRegExp'
 
 describe('lang/isRegExp', () => {

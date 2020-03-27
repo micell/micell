@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isNil from '../../src/lang/isNil'
 
 describe('lang/isNil', () => {

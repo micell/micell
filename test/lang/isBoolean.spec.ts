@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isBoolean from '../../src/lang/isBoolean'
 
 describe('lang/isBoolean', () => {

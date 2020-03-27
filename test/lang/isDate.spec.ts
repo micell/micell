@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isDate from '../../src/lang/isDate'
 
 describe('lang/isDate', () => {

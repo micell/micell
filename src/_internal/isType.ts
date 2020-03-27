@@ -1,4 +1,4 @@
-interface ToStringFunc {
+export interface ToStringFunc {
   (o: any): boolean
 }
 
