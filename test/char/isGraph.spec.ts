@@ -1,7 +1,8 @@
+import { expect } from 'chai'
 import isGraph from '../../src/char/isGraph'
 
 describe('char/isGraph', () => {
-  const chars = []
+  const chars: Array<string> = []
 
   before(() => {
     for (let i = 33; i <= 126; i++) {

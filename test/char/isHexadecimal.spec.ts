@@ -1,7 +1,8 @@
+import { expect } from 'chai'
 import isHexadecimal from '../../src/char/isHexadecimal'
 
 describe('char/isHexadecimal', () => {
-  const chars = []
+  const chars: Array<string> = []
 
   before(() => {
     for (let i = 48; i <= 57; i++) {

@@ -1,7 +1,8 @@
+import { expect } from 'chai'
 import isSpace from '../../src/char/isSpace'
 
 describe('char/isSpace', () => {
-  const chars = []
+  const chars: Array<string> = []
 
   before(() => {
     for (let i = 9; i <= 13; i++) {
