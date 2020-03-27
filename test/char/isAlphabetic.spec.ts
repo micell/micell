@@ -1,7 +1,8 @@
+import { expect } from 'chai'
 import isAlphabetic from '../../src/char/isAlphabetic'
 
 describe('char/isAlphabetic', () => {
-  const chars = []
+  const chars: Array<string> = []
 
   before(() => {
     for (let i = 65; i <= 90; i++) {

@@ -1,7 +1,8 @@
+import { expect } from 'chai'
 import isPunctuation from '../../src/char/isPunctuation'
 
 describe('char/isPunctuation', () => {
-  const chars = []
+  const chars: Array<string> = []
 
   before(() => {
     for (let i = 33; i <= 47; i++) {

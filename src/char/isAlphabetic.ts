@@ -1,6 +1,6 @@
 import isString from '../lang/isString'
 
-const isAlphabetic = (ch) => {
+const isAlphabetic = (ch: any): boolean => {
   if (isString(ch) && ch.length === 1) {
     const charCode = ch.charCodeAt(0)
     return (charCode >= 65 && charCode <= 90) ||

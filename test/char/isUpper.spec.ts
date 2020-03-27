@@ -1,7 +1,8 @@
+import { expect } from 'chai'
 import isUpper from '../../src/char/isUpper'
 
 describe('char/isUpper', () => {
-  const chars = []
+  const chars: Array<string> = []
 
   before(() => {
     for (let i = 65; i <= 90; i++) {

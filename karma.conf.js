@@ -164,7 +164,10 @@ module.exports = function (config) {
               }
             ],
             enforce: 'post',
-            include: path.resolve('src/')
+            include: [
+              path.resolve('src/'),
+              path.resolve('test/')
+            ]
           }
         ]
       }
