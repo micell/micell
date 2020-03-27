@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isValidJSON from '../../src/string/isValidJSON'
 
 describe('isValidJSON', () => {

@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import truncate from '../../src/string/truncate'
 
 describe('truncate', () => {

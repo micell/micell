@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import escapeRegexp from '../../src/string/escapeRegexp'
 
 describe('dirname', () => {
