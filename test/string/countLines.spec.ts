@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import countLines from '../../src/string/countLines'
 
 describe('countLines', () => {

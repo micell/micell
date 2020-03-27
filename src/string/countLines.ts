@@ -1,4 +1,4 @@
-const countLines = (text, newline) => {
+const countLines = (text: string, newline?: string): number => {
   const textString = String(text)
   const newlineChar = newline || '\n'
   let index = -1
