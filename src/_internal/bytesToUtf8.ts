@@ -1,4 +1,4 @@
-export default function bytesToUtf8 (bytes) {
+export default function bytesToUtf8 (bytes: Array<number>): string {
   const codeUnits = []
   let codePoint = 0
   let utf8 = ''

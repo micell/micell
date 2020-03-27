@@ -1,5 +1,5 @@
-export default function utf8ToBytes (str) {
-  const bytes = []
+export default function utf8ToBytes (str: string): Array<number> {
+  const bytes: Array<number> = []
 
   for (let i = 0; i < str.length; i++) {
     let code = str.charCodeAt(i)
