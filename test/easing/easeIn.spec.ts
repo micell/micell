@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import cubicBezier from '../../src/easing/cubicBezier'
 import easeIn from '../../src/easing/easeIn'
 import { compare } from './util'
