@@ -1,6 +1,5 @@
 import isType from '../_internal/isType'
 import utf8ToBytes from '../_internal/utf8ToBytes'
-import isString from '../lang/isString'
 import isArray from '../lang/isArray'
 
 const isUint8Array = isType('Uint8Array')
@@ -9,7 +8,7 @@ const base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 const paddingChar = '='
 const bitPadding = '00000000'
 
-function octetToBase64 (octets) {
+function octetToBase64 (octets: Array<number>): string {
   const len = octets.length
   let bits = ''
   let paddingLen = 3 - len
@@ -39,10 +38,13 @@ function octetToBase64 (octets) {
   return result
 }
 
-export default function encode (input) {
-  let bytes = []
+export default function encode (input: string | Array<number> | Uint8Array ): string {
+  let bytes: Array<number> | Uint8Array = []
 
-  if (isString(input)) {
+  // TODO:
+  //  This should use lang/isString method, but need to use type assertions.
+  //  While the karma will throw errors if use type assertions.
+  if (typeof input === 'string') {
     bytes = utf8ToBytes(input)
   } else if (isArray(input) || isUint8Array(input)) {
     bytes = input
@@ -53,7 +55,9 @@ export default function encode (input) {
   let result = ''
 
   for (let i = 0, len = Math.ceil(bytes.length / 3); i < len; i++) {
-    result += octetToBase64(bytes.slice(i * 3, (i + 1) * 3))
+    // TODO:
+    //  bytes.slice(i * 3, (i + 1) * 3) will be failed at type check
+    result += octetToBase64(Array.prototype.slice.call(bytes, i * 3, (i + 1) * 3))
   }
 
   return result
