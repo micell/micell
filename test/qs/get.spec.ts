@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import get from '../../src/qs/get'
 
 describe('qs/get', () => {
