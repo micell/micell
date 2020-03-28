@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import linear from '../../src/easing/linear'
 import { identity, compare } from './util'
 
