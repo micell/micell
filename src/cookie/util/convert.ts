@@ -1,18 +1,20 @@
 import hasOwn from '../../_internal/hasOwn'
 import computeExpires from './computeExpires'
+import { Options } from '../types'
 
 // Convert an object to a cookie option string
-export default function convert (opts) {
+export default function convert (opts: Options): string {
   let res = ''
+  let key: (keyof Options)
 
-  for (const key in opts) {
+  for (key in opts) {
     if (hasOwn(opts, key)) {
       if (/^expires$/i.test(key)) {
         let expires = opts[key]
 
         if (typeof expires !== 'object') {
           expires += typeof expires === 'number' ? 'D' : ''
-          expires = computeExpires(expires)
+          expires = computeExpires(String(expires))
         }
         res += `;${key}=${expires.toUTCString()}`
       } else if (/^secure$/.test(key)) {
@@ -20,7 +22,7 @@ export default function convert (opts) {
           res += `;${key}`
         }
       } else {
-        res += `;${key}=${opts[key]}`
+        res += `;${key}=${String(opts[key])}`
       }
     }
   }

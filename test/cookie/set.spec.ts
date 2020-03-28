@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import get from '../../src/cookie/get'
 import getRaw from '../../src/cookie/getRaw'
 import set from '../../src/cookie/set'
@@ -21,7 +22,7 @@ describe('cookie/set', () => {
   it('should return the value without encoding if the 4th parameter is true', () => {
     const key = 'withoutEncoding'
     const value = 'https://github.com'
-    set(key, value, null, null)
+    set(key, value, undefined, null)
     expect(getRaw(key)).to.equal(value)
   })
 
