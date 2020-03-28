@@ -1,7 +1,16 @@
-export default function diff (date1, date2, unit, roundFunc = Math.round) {
+interface RoundFunc {
+  (value: number): number;
+}
+
+export default function diff (
+  date1: number | string | Date,
+  date2: number | string | Date,
+  unit?: string,
+  roundFunc: RoundFunc = Math.round
+): number {
   const d1 = new Date(date1)
   const d2 = new Date(date2)
-  const dateDiff = d2 - d1
+  const dateDiff = d2.getTime() - d1.getTime()
   let result = 0
 
   switch (unit) {

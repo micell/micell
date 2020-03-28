@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import timeAgo from '../../src/date/timeAgo'
 
 describe('date/timeAgo', () => {
@@ -16,7 +17,9 @@ describe('date/timeAgo', () => {
 
   it('should return the expected formatted string', () => {
     const now = Date.now()
-    const testUnits = [
+    type FormatParams = [number | string | Date]
+    type TestUnit = [FormatParams, string]
+    const testUnits: Array<TestUnit> = [
       [
         [now],
         'just now'
@@ -86,22 +89,25 @@ describe('date/timeAgo', () => {
 
   it('should work with the third `nowDate` paramter', () => {
     const now = Date.now()
-    const nowDate = now - 5000
-    expect(timeAgo.format(now, null, nowDate)).to.equal('in 5 seconds')
+    const nowDate = new Date(now - 5000)
+    expect(timeAgo.format(now, undefined, nowDate)).to.equal('in 5 seconds')
   })
 
   it('should add the specified locale', () => {
-    timeAgo.addLocale('custom', [
+    const locale: Array<[string, string]> = [
       ['-', '+'],
       ['-%s seconds', '+%s seconds'],
       ['-%s minute', '+%s minute'],
       ['-%s minutes', '+%s minutes']
-    ])
+    ]
+    timeAgo.addLocale('custom', locale)
     timeAgo.setLocale('custom')
     expect(timeAgo.getLocale()).to.equal('custom')
 
+    type FormatParams = [number | string | Date, string?, Date?]
+    type TestUnit = [FormatParams, string]
     const now = Date.now()
-    const testUnits = [
+    const testUnits: Array<TestUnit> = [
       [
         [now],
         '-'
@@ -111,7 +117,7 @@ describe('date/timeAgo', () => {
         '-5 seconds'
       ],
       [
-        [now, null, now - 5000],
+        [now, undefined, new Date(now - 5000)],
         '+5 seconds'
       ],
       [
