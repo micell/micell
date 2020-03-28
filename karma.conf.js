@@ -154,14 +154,17 @@ module.exports = function (config) {
           {
             test: /\.(js|ts)$/,
             use: [
-              'babel-loader',
-              {
-                loader: 'istanbul-instrumenter-loader',
-                options: {
-                  esModules: true,
-                  produceSourceMap: true
-                }
-              }
+              'babel-loader'
+              // TODO:
+              //  Because of the lack of maintainment, some typescript features will result build failed.
+              //  So, we need fork it or seek an alternative.
+              // {
+              //   loader: 'istanbul-instrumenter-loader',
+              //   options: {
+              //     esModules: true,
+              //     produceSourceMap: true
+              //   }
+              // }
             ],
             enforce: 'post',
             include: [
