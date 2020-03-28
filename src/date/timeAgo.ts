@@ -2,33 +2,46 @@ import hasOwn from '../_internal/hasOwn'
 import enUS from './i18n/timeAgo/en_US'
 import zhCN from './i18n/timeAgo/zh_CN'
 
-const locales = {
+type Locale = Array<[string, string]>
+
+interface Locales {
+  [key: string]: Locale;
+}
+
+const locales: Locales = {
   en_US: enUS,
   zh_CN: zhCN
 }
 
 let currentLocale = 'en_US'
 
-const timeAgo = {
-  getLocale () {
+interface TimeAgo {
+  getLocale(): string;
+  setLocale(name: string): void;
+  addLocale(name: string, locale: Locale): void;
+  format(date: number | string | Date, locale?: string, nowDate?: Date): string;
+}
+
+const timeAgo: TimeAgo = {
+  getLocale (): string {
     return currentLocale
   },
 
-  setLocale (name) {
+  setLocale (name: string): void {
     if (hasOwn(locales, name)) {
       currentLocale = name
     }
   },
 
-  addLocale (name, locale) {
+  addLocale (name: string, locale: Locale): void {
     locales[name] = locale
   },
 
-  format (date, locale, nowDate = new Date()) {
+  format (date: number | string | Date, locale: string = currentLocale, nowDate: Date = new Date()): string {
     const d = new Date(date)
     const actualLocale = hasOwn(locales, locale) ? locale : currentLocale
-    const sign = nowDate - d >= 0 ? 1 : -1
-    const diff = Math.abs(nowDate - d)
+    const sign = nowDate.getTime() - d.getTime() >= 0 ? 1 : -1
+    const diff = Math.abs(nowDate.getTime() - d.getTime())
     const years = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
     const months = Math.floor(diff / (30 * 24 * 60 * 60 * 1000))
     const weeks = Math.floor(diff / (7 * 24 * 60 * 60 * 1000))
@@ -85,7 +98,7 @@ const timeAgo = {
 
     const tmplPair = locales[actualLocale][index]
     const tmpl = sign > 0 ? tmplPair[0] : tmplPair[1]
-    return tmpl.replace(/%s/, number)
+    return tmpl.replace(/%s/, String(number))
   }
 }
 

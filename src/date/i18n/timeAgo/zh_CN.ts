@@ -1,4 +1,4 @@
-export default [
+const locale: Array<[string, string]> = [
   ['刚刚', '片刻后'],
   ['%s 秒前', '%s 秒后'],
   ['1 分钟前', '1 分钟后'],
@@ -14,3 +14,5 @@ export default [
   ['1 年前', '1 年后'],
   ['%s 年前', '%s 年后']
 ]
+
+export default locale

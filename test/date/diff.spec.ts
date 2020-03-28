@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import diff from '../../src/date/diff'
 
 describe('date/diff', () => {
@@ -26,7 +27,9 @@ describe('date/diff', () => {
   })
 
   it('should return the appropriate value for the specified unit', () => {
-    const testUnits = [
+    type DiffParams = [Date, Date, string]
+    type TestUnit = [DiffParams, number]
+    const testUnits: Array<TestUnit> = [
       [
         [new Date(2019, 0, 1, 0, 0, 0, 0), new Date(2019, 0, 1, 0, 0, 0, 10), 'ms'],
         10

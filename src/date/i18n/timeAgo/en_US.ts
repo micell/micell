@@ -1,4 +1,4 @@
-export default [
+const locale: Array<[string, string]> = [
   ['just now', 'right now'],
   ['%s seconds ago', 'in %s seconds'],
   ['1 minute ago', 'in 1 minute'],
@@ -14,3 +14,5 @@ export default [
   ['1 year ago', 'in 1 year'],
   ['%s years ago', 'in %s years']
 ]
+
+export default locale

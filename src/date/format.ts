@@ -3,15 +3,17 @@ import isNumber from '../lang/isNumber'
 import isString from '../lang/isString'
 import padStart from '../_internal/padStart'
 
-const dateFormat = (date, format, isUTC) => {
+const dateFormat = (date: number | Date, format?: string, isUTC?: boolean): string => {
   if (!isDate(date) && !isNumber(date)) {
     throw new Error('The first parameter should be a Date object or a number')
   }
 
-  let d = date
+  let d: Date
 
   if (isNumber(date)) {
-    d = new Date(d)
+    d = new Date(date)
+  } else {
+    d = date as Date
   }
 
   if (!isString(format)) {
@@ -28,7 +30,7 @@ const dateFormat = (date, format, isUTC) => {
   const second = isUTC ? d.getUTCSeconds() : d.getSeconds()
   const millisecond = isUTC ? d.getUTCMilliseconds() : d.getMilliseconds()
 
-  return format
+  return (format as string)
     .replace(/(^|[^Y])YYYY([^Y]|$)/g, `$1${year}$2`)
     .replace(/(^|[^Y])YY([^Y]|$)/g, `$1${String(year).slice(-2)}$2`)
     .replace(/(^|[^M])MM([^M]|$)/g, `$1${padStart(month + 1, 2, '0')}$2`)
