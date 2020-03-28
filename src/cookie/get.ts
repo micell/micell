@@ -1,7 +1,9 @@
 import isString from '../lang/isString'
 import escapeRegexp from '../string/escapeRegexp'
+import { Decoder } from './types'
 
-export default function get (key, decoder = decodeURIComponent) {
+
+export default function get (key: string, decoder: Decoder | null = decodeURIComponent): any {
   if (!isString(key) || !key) {
     return null
   }

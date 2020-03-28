@@ -1,5 +1,5 @@
 // Return a future date by the given string
-export default function computeExpires (str) {
+export default function computeExpires (str: string): Date {
   const lastCh = str.charAt(str.length - 1)
   const value = parseInt(str, 10)
   let expires = new Date()

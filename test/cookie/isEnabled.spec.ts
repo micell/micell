@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isEnabled from '../../src/cookie/isEnabled'
 
 describe('cookie/isEnabled', () => {

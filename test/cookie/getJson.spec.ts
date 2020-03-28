@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import getJson from '../../src/cookie/getJson'
 
 describe('cookie/getJson', () => {

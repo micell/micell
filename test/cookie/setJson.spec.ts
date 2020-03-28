@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import getJson from '../../src/cookie/getJson'
 import setJson from '../../src/cookie/setJson'
 
