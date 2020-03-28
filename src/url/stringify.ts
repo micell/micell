@@ -1,7 +1,22 @@
 import isObject from '../lang/isObject'
 import queryStringify from '../qs/stringify'
 
-export default function stringify (urlParts) {
+export interface URLParts {
+  hash?: string;
+  // TODO: host and hostname must be passed at least one
+  host?: string;
+  hostname?: string;
+  password?: string;
+  pathname?: string;
+  port?: string;
+  protocol: string;
+  query?: object;
+  search?: string;
+  username?: string;
+}
+
+
+export default function stringify (urlParts: URLParts): string {
   if (!isObject(urlParts)) {
     throw new TypeError('invalid url parts object')
   }

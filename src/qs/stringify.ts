@@ -1,7 +1,11 @@
 import hasOwn from '../_internal/hasOwn'
 import isObject from '../lang/isObject'
 
-export default function stringify (query) {
+interface Query {
+  [key: string]: any;
+}
+
+export default function stringify (query: Query): string {
   const pairs = []
 
   if (isObject(query)) {

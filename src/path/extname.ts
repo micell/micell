@@ -1,4 +1,4 @@
-const extname = (path) => {
+const extname = (path: string): string => {
   const pathString = String(path)
   const lastDotIndex = pathString.lastIndexOf('.')
   let ext = ''
