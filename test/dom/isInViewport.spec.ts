@@ -1,13 +1,17 @@
+import { expect } from 'chai'
 import isInViewport from '../../src/dom/isInViewport'
 
 describe('isInViewport', () => {
   before((done) => {
+    // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/isInViewport.html']
     done()
   })
 
   it('should return false if the argument is missing or not an element', () => {
+    // @ts-ignore
     expect(isInViewport()).to.equal(false)
+    // @ts-ignore
     expect(isInViewport({})).to.equal(false)
   })
 

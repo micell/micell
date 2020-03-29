@@ -12,12 +12,14 @@ for (let i = 0; i < vendors.length && !raf; i++) {
   caf = root[`${vendors[i]}Cancel${name}`]
 }
 
+type AnyFunc = (...args: any[]) => void;
+
 if (!raf || !caf) {
-  const queue = 0
+  const queue = []
   const tick = 1000 / 60
   let lastTime = 0
   let id = 0
-  raf = function (callback) {
+  raf = function (callback: AnyFunc): number {
     if (queue.length === 0) {
       const nowTime = now()
       const next = Math.max(0, tick - (nowTime - lastTime))
@@ -46,7 +48,7 @@ if (!raf || !caf) {
     return id
   }
 
-  caf = function (timerId) {
+  caf = function (timerId: number): void {
     for (let i = 0; i < queue.length; i++) {
       if (queue[i].timerId === timerId) {
         queue[i].cancelled = true
@@ -55,12 +57,12 @@ if (!raf || !caf) {
   }
 }
 
-function exposeRaf (fn) {
+function exposeRaf (fn: AnyFunc): number {
   return raf.call(root, fn)
 }
 
-exposeRaf.cancel = function (timer) {
-  caf.call(root, timer)
+exposeRaf.cancel = function (timerId: number): void {
+  caf.call(root, timerId)
 }
 
 export default exposeRaf

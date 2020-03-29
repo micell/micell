@@ -2,18 +2,21 @@
  * domready (c) Dustin Diaz 2014 - License MIT
 */
 
-const fns = []
+export type AnyFunc = (...args: any[]) => any
+
+const fns: Array<AnyFunc> = []
 const doc = typeof document === 'object' && document
+// @ts-ignore
 const hack = doc && doc.documentElement.doScroll
 const domContentLoaded = 'DOMContentLoaded'
 let loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
 let listener
 
 if (!loaded && doc) {
-  listener = function () {
+  listener = function (): void {
     let fn = fns.shift()
     doc.removeEventListener(domContentLoaded, listener)
-    loaded = 1
+    loaded = true
     while (fn) {
       fn()
       fn = fns.shift()
@@ -22,7 +25,7 @@ if (!loaded && doc) {
   doc.addEventListener(domContentLoaded, listener)
 }
 
-export default function domReady (fn) {
+export default function domReady (fn: AnyFunc): void {
   if (loaded) {
     setTimeout(fn, 0)
   } else {
