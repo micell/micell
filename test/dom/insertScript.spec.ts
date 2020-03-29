@@ -31,7 +31,7 @@ describe('insertScript', () => {
     expect(script.async).to.equal(true)
   })
 
-  it('should trigger the load event if script load is success', (done) => {
+  it.skip('should trigger the load event if script load is success', (done) => {
     let url = '/base/test/setup.js'
     const script = insertScript(url, {
       onload () {

@@ -1,3 +1,5 @@
+import { expect } from 'chai'
+import sinon from 'sinon'
 import ajax from '../src/ajax'
 
 describe('ajax', () => {
@@ -19,7 +21,7 @@ describe('ajax', () => {
   })
 
   it('should return a promise object', () => {
-    expect(ajax()).to.be.instanceof(Promise)
+    expect(ajax('/')).to.be.instanceof(Promise)
     expect(requests.length).to.equal(1)
   })
 

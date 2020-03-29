@@ -1,6 +1,6 @@
 import isNumber from './lang/isNumber'
 
-export default function numberFormat (number, digits = -1, dot = '.', sep = ',') {
+export default function numberFormat (number: number, digits: number = -1, dot: string = '.', sep: string = ','): string {
   if (!isNumber(number)) {
     return ''
   }

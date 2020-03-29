@@ -1,3 +1,5 @@
+import { expect } from 'chai'
+import sinon from 'sinon'
 import raf from '../src/raf'
 
 describe('raf', () => {

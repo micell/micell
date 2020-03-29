@@ -12,12 +12,13 @@ let random = Math.random
 
 if (isBrowser && typeof window.Uint32Array === 'function' &&
   ((window.crypto && typeof window.crypto.getRandomValues === 'function') ||
+  // @ts-ignore
   (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function'))) {
   random = () => window.crypto.getRandomValues(new Uint32Array(1))[0] / maxUint32
 }
 
-export default function uuid () {
-  let u = []
+export default function uuid (): string {
+  let u: Array<string> = []
 
   for (let i = 0; i < 36; i++) {
     u[i] = hexDigits.charAt(random() * 16)
@@ -25,6 +26,6 @@ export default function uuid () {
 
   u[8] = u[13] = u[18] = u[23] = '-'
   u[14] = '4'
-  u[19] = ((u[19] & 3) | 8).toString(16)
+  u[19] = ((Number(u[19]) & 3) | 8).toString(16)
   return u.join('')
 }

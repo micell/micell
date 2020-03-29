@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import uuid from '../src/uuid'
 
 describe('uuid', () => {

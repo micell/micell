@@ -1,11 +1,21 @@
 import isObject from './lang/isObject'
 import isString from './lang/isString'
 
-export default function ajax (url, options = {}) {
+export interface Options {
+  async?: boolean;
+  beforeSend?: (xhr: XMLHttpRequest) => void | boolean;
+  data?: any;
+  headers?: { [key: string]: string };
+  method?: string;
+  responseType?: XMLHttpRequestResponseType;
+  timeout?: number;
+}
+
+export default function ajax (url: string, options: Options = {}): Promise<XMLHttpRequest> {
   return new Promise((resolve, reject) => {
     const {
       async = true,
-      beforeSend = () => true,
+      beforeSend = (xhr: XMLHttpRequest) => true,
       data = null,
       headers = {},
       method = 'get',
@@ -31,7 +41,7 @@ export default function ajax (url, options = {}) {
 
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
-        if (timeout) clearTimeout(timerId)
+        if (timeout && timerId !== undefined) clearTimeout(timerId)
         if (xhr.status >= 200 && xhr.status < 300) {
           resolve(xhr)
         } else {

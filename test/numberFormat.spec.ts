@@ -1,8 +1,11 @@
+import { expect } from 'chai'
 import numberFormat from '../src/numberFormat'
 
 describe('numberFormat', () => {
   it('should return an empty string if the 1st argument is missing or not a number', () => {
+    // @ts-ignore
     expect(numberFormat()).to.equal('')
+    // @ts-ignore
     expect(numberFormat('3.14')).to.equal('')
   })
 
