@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import Emitter from '../../src/emitter/Emitter'
 
 export default function runSpec ({

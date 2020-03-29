@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import create from '../../src/emitter/create'
 import runSpec from './runSpec'
 

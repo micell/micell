@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import globalEmitter from '../../src/emitter/util/globalEmitter'
 import off from '../../src/emitter/off'
 import on from '../../src/emitter/on'
