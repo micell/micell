@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import isWindow from '../../src/dom/isWindow'
 
 describe('isWindow', () => {
@@ -11,7 +12,7 @@ describe('isWindow', () => {
   })
 
   it('should return false', () => {
-    expect(isWindow()).to.equal(false)
+    expect(isWindow(undefined)).to.equal(false)
     expect(isWindow({})).to.equal(false)
     expect(isWindow(document)).to.equal(false)
   })

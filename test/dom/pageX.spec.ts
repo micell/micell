@@ -1,12 +1,16 @@
+import { expect } from 'chai'
 import pageX from '../../src/dom/pageX'
 
 describe('pageX', () => {
   it('should return 0 if the argument is missing or not an element', () => {
+    // @ts-ignore
     expect(pageX()).to.equal(0)
+    // @ts-ignore
     expect(pageX({})).to.equal(0)
   })
 
   it('should return the expected pageX', (done) => {
+    // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/pageX.html']
     setTimeout(() => {
       expect(pageX(document.getElementById('el1'))).to.equal(0)

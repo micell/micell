@@ -1,7 +1,7 @@
 import isElement from './isElement'
 import viewport from './viewport'
 
-export default function isInViewport (el) {
+export default function isInViewport (el: Element): boolean {
   if (!isElement(el)) return false
 
   const { top, left, right, bottom } = el.getBoundingClientRect()

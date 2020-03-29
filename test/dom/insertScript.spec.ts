@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import insertScript from '../../src/dom/insertScript'
 
 describe('insertScript', () => {
@@ -5,13 +6,13 @@ describe('insertScript', () => {
     let url = 'http://example.com/app1.js'
     insertScript(url)
     const scripts = document.querySelectorAll('script')
-    let tag = {}
-    for (const script of scripts) {
+    let src = ''
+    for (const script of Array.from(scripts)) {
       if (script.src === url) {
-        tag = script
+        src = script.src
       }
     }
-    expect(tag.src).to.equal(url)
+    expect(src).to.equal(url)
   })
 
   it('should return the inserted <script>', () => {
@@ -26,7 +27,7 @@ describe('insertScript', () => {
       id: 'foo',
       async: true
     })
-    const script = document.getElementById('foo')
+    const script = document.getElementById('foo') as HTMLScriptElement
     expect(script.async).to.equal(true)
   })
 

@@ -1,12 +1,15 @@
+import { expect } from 'chai'
 import viewport from '../../src/dom/viewport'
 
 describe('viewport', () => {
   before((done) => {
+    // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/viewport.html']
     done()
   })
 
   it('should return `{ width: 0, height: 0 }` if no argument', () => {
+    // @ts-ignore
     expect(viewport()).to.deep.equal({ width: 0, height: 0 })
   })
 

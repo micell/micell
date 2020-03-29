@@ -1,7 +1,9 @@
+import { expect } from 'chai'
 import createEvent from '../../src/dom/createEvent'
 
 describe('createEvent', () => {
   before((done) => {
+    // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/createEvent.html']
     done()
   })
@@ -79,7 +81,7 @@ describe('createEvent', () => {
     const el = document.getElementById('el1')
     const detail = { foo: 1 }
     let called = true
-    const listener = (e) => {
+    const listener = (e: CustomEvent) => {
       called = true
       expect(e.detail).to.deep.equal(detail)
     }

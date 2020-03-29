@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import domReady from '../../src/dom/domReady'
 
 describe('domReady', () => {

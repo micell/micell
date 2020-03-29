@@ -24,41 +24,54 @@ const easings = {
 const reEasingKeyword = /^(linear|ease|ease-in|ease-in-out|ease-out)$/
 const reCubicBezier = /^cubic-bezier\(\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*\)$/
 
-export default function scrollTo (elOrWindow, x = 0, y = 0) {
-  let el = window
-  let options = {}
+export interface Options {
+  x?: number;
+  y?: number;
+  left?: number;
+  top?: number;
+  easing?: string;
+  behavior?: ScrollBehavior;
+}
+
+export default function scrollTo (
+  elOrWindow: Element | Window | number | Options,
+  x: number | Options = 0,
+  y: number = 0
+): void {
+  let el: any = window
+  let options: Options = {}
 
   if (isElement(elOrWindow) || isWindow(elOrWindow)) {
     el = elOrWindow
     if (isObject(x)) {
-      options = x
+      options = x as Options
     } else {
-      options.x = x
+      options.x = x as number
       options.y = y
     }
   } else {
     if (isObject(elOrWindow)) {
-      options = elOrWindow
+      options = elOrWindow as Options
     } else {
-      options.x = elOrWindow || 0
-      options.y = x
+      options.x = (elOrWindow as number) || 0
+      options.y = x as number
     }
   }
 
   if (!hasOwn(options, 'x')) options.x = options.left || 0
   if (!hasOwn(options, 'y')) options.y = options.top || 0
 
-  const innerScrollTo = (opts) => {
+  const innerScrollTo = (opts: Options): void => {
     if (isFunction(el.scrollTo)) {
       const {
         x: left,
         y: top,
         behavior
-      } = opts
-      el.scrollTo({ left, top, behavior })
+      } = opts;
+      (el as Window).scrollTo({ left, top, behavior })
     } else {
-      el.scrollLeft = opts.x
-      el.scrollTop = opts.y
+      (el as Element).scrollLeft = opts.x;
+      (el as Element).scrollTop = opts.y
     }
   }
 
@@ -68,10 +81,10 @@ export default function scrollTo (elOrWindow, x = 0, y = 0) {
       easingFn = easings[options.easing]
     } else if (reCubicBezier.test(options.easing)) {
       const matched = options.easing.match(reCubicBezier)
-      const x1 = matched[1]
-      const y1 = matched[2]
-      const x2 = matched[3]
-      const y2 = matched[4]
+      const x1 = Number(matched[1])
+      const y1 = Number(matched[2])
+      const x2 = Number(matched[3])
+      const y2 = Number(matched[4])
       easingFn = cubicBezier(x1, y1, x2, y2)
     } else {
       innerScrollTo(options)
@@ -93,7 +106,7 @@ export default function scrollTo (elOrWindow, x = 0, y = 0) {
     let start = null
     let tickCount = 0
 
-    const runScroll = (time) => {
+    const runScroll = (time: number): void => {
       if (!start) start = time
       if (tickCount <= tickTotal) {
         nextX = startX + diffX * Math.max(easingFn(tickCount / tickTotal), 1)

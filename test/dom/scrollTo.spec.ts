@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import delay from '../../src/delay'
 import scrollX from '../../src/dom/scrollX'
 import scrollY from '../../src/dom/scrollY'
@@ -7,6 +8,7 @@ describe('scrollTo', () => {
   let container = null
 
   before(() => {
+    // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/scrollTo.html']
     container = document.querySelector('.container')
   })
@@ -24,7 +26,7 @@ describe('scrollTo', () => {
     expect(scrollX()).to.equal(100)
     expect(scrollY()).to.equal(100)
 
-    scrollTo()
+    scrollTo(undefined)
     await delay()
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(0)
