@@ -1,3 +1,5 @@
+import { expect } from 'chai'
+import sinon from 'sinon'
 import delay from '../src/delay'
 
 describe('delay', () => {

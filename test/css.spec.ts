@@ -1,7 +1,9 @@
+import { expect } from 'chai'
 import css from '../src/css'
 
 describe('css', () => {
   before((done) => {
+    // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/css.html']
     setTimeout(() => done(), 0)
   })
@@ -12,7 +14,9 @@ describe('css', () => {
   })
 
   it('should throw an error if the 1st argument is not a string or an element', () => {
+    // @ts-ignore
     expect(() => css()).to.throw()
+    // @ts-ignore
     expect(() => css(1)).to.throw()
   })
 

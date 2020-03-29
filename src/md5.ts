@@ -9,33 +9,33 @@ import isArray from './lang/isArray'
 
 const isUint8Array = isType('Uint8Array')
 
-function F (a, b, c, d, x, s, t) {
+function F (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + (b & c | ~b & d) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function G (a, b, c, d, x, s, t) {
+function G (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + (b & d | c & ~d) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function H (a, b, c, d, x, s, t) {
+function H (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + (b ^ c ^ d) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function I (a, b, c, d, x, s, t) {
+function I (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + (c ^ (b | ~d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-export default function md5 (input) {
-  let bytes = []
+export default function md5 (input: string | Array<number> | Uint8Array): string {
+  let bytes: Array<number> = []
 
   if (isString(input)) {
-    bytes = utf8ToBytes(input)
+    bytes = utf8ToBytes(input as string)
   } else if (isArray(input) || isUint8Array(input)) {
-    bytes = input
+    bytes = input as Array<number>
   } else {
     throw TypeError('the input parameter must be one of String, Byte Array, Uint8Array')
   }
