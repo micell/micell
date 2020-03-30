@@ -86,7 +86,7 @@ module.exports = function (config) {
       }
     }
   } else {
-    reporters = ['progress', 'karma-typescript', 'coverage-istanbul']
+    reporters = ['progress', 'coverage-istanbul']
     customLaunchers = {
       ChromeNoSandboxHeadless: {
         base: 'Chrome',
@@ -107,14 +107,13 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'karma-typescript'],
+    frameworks: ['mocha'],
 
     // list of files / patterns to load in the browser
     files: [
       'node_modules/chai/chai.js',
       'node_modules/sinon/pkg/sinon.js',
-      'test/setup.js',
-      'test/**/*.spec.js',
+      'test/setup.ts',
       'test/**/*.spec.ts'
     ],
 
@@ -125,9 +124,8 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack', 'sourcemap'],
       'src/**/*.ts': ['webpack', 'sourcemap'],
-      'test/**/*.spec.js': ['webpack', 'sourcemap'],
+      'test/**/*.ts': ['webpack', 'sourcemap'],
       'test/**/*.spec.ts': ['webpack', 'sourcemap'],
       'test/fixtures/**/*': ['file-fixtures']
     },
