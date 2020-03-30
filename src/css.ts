@@ -7,7 +7,7 @@ interface CSSProps {
 }
 
 export default function css (el: string | Element, prop?: string | CSSProps): any {
-  let elem = null
+  let elem: Element | null
 
   if (isString(el)) {
     elem = document.querySelector(el as string)
@@ -21,15 +21,16 @@ export default function css (el: string | Element, prop?: string | CSSProps): an
   }
 
   if (isObject(prop)) {
-    let cssText = elem.style.cssText
+    let cssText = (elem as HTMLElement).style.cssText
     Object.keys(prop as CSSProps).forEach((name) => {
       cssText += `${name}: ${(prop as CSSProps)[name]};`
-    })
-    elem.style.cssText = cssText
+    });
+    (elem as HTMLElement).style.cssText = cssText
   } else {
     let ret = window.getComputedStyle(elem)
     if (isString(prop)) {
-      ret = ret[(prop as string)]
+      // @ts-ignore
+      ret = ret[prop as string]
     }
     return ret
   }

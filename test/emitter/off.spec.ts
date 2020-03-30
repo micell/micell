@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { Events } from '../../src/emitter/types'
 import globalEmitter from '../../src/emitter/util/globalEmitter'
 import off from '../../src/emitter/off'
 import on from '../../src/emitter/on'
@@ -6,11 +7,11 @@ import emit from '../../src/emitter/emit'
 
 describe('emitter/off', () => {
   beforeEach(() => {
-    globalEmitter['@events'] = {}
+    globalEmitter['@events'] = {} as Events
   })
 
   it('should remove specified listener(s) of the given event type', () => {
-    const calls = []
+    const calls: any[] = []
     const fn1 = function () {
       calls.push(1)
     }
@@ -31,7 +32,7 @@ describe('emitter/off', () => {
   })
 
   it('should remove all listeners of the given event type', () => {
-    const calls = []
+    const calls: any[] = []
     const fn1 = function () {
       calls.push(1)
     }
@@ -55,7 +56,7 @@ describe('emitter/off', () => {
   })
 
   it('should remove all listeners for all event type', () => {
-    const calls = []
+    const calls: any[] = []
     const fn1 = function () {
       calls.push(1)
     }

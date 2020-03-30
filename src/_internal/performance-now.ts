@@ -1,6 +1,6 @@
 import isBrowser from './isBrowser'
 
-let now
+let now: () => number
 
 if (isBrowser && window.performance && window.performance.now) {
   now = (): number => performance.now()

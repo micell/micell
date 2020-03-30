@@ -14,7 +14,7 @@ describe('cubicBezier', () => {
     const c = 1 - a
     const d = 1 - b
     const easing = cubicBezier(a, b, c, d)
-    const sym = x => 1 - easing(1 - x)
+    const sym = (x: number): number => 1 - easing(1 - x)
     expect(compare(easing, sym)).to.equal(true)
   })
 })

@@ -17,7 +17,7 @@ describe('isInViewport', () => {
 
   it('should return true if the element is in viewport', () => {
     const el = document.getElementById('el1')
-    expect(isInViewport(el)).to.equal(true)
+    el && expect(isInViewport(el)).to.equal(true)
   })
 
   it('should return false if the element is split by the viewport edge', () => {
@@ -25,10 +25,10 @@ describe('isInViewport', () => {
     const el3 = document.getElementById('el3')
     const el4 = document.getElementById('el4')
     const el5 = document.getElementById('el5')
-    expect(isInViewport(el2)).to.equal(false)
-    expect(isInViewport(el3)).to.equal(false)
-    expect(isInViewport(el4)).to.equal(false)
-    expect(isInViewport(el5)).to.equal(false)
+    el2 && expect(isInViewport(el2)).to.equal(false)
+    el3 && expect(isInViewport(el3)).to.equal(false)
+    el4 && expect(isInViewport(el4)).to.equal(false)
+    el5 && expect(isInViewport(el5)).to.equal(false)
   })
 
   it('should return false if the element is located in the outsite of viewport', () => {
@@ -36,9 +36,9 @@ describe('isInViewport', () => {
     const el7 = document.getElementById('el7')
     const el8 = document.getElementById('el8')
     const el9 = document.getElementById('el9')
-    expect(isInViewport(el6)).to.equal(false)
-    expect(isInViewport(el7)).to.equal(false)
-    expect(isInViewport(el8)).to.equal(false)
-    expect(isInViewport(el9)).to.equal(false)
+    el6 && expect(isInViewport(el6)).to.equal(false)
+    el7 && expect(isInViewport(el7)).to.equal(false)
+    el8 && expect(isInViewport(el8)).to.equal(false)
+    el9 && expect(isInViewport(el9)).to.equal(false)
   })
 })

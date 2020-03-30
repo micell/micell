@@ -9,7 +9,7 @@ describe('emitter/emit', () => {
   })
 
   it('should emit an event', () => {
-    const calls = []
+    const calls: any[] = []
 
     on('foo', function () {
       calls.push('one')
@@ -20,7 +20,7 @@ describe('emitter/emit', () => {
   })
 
   it('should pass some parameters', () => {
-    let calls = []
+    let calls: any[] = []
 
     on('foo', function () {
       calls = calls.concat(Array.prototype.slice.call(arguments))

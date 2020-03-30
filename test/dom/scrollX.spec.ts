@@ -19,14 +19,18 @@ describe('scrollX', () => {
 
   it('should return the element\'s scrollX if the first parameter is an element', (done) => {
     const el = document.querySelector('.container')
-    el.scrollLeft = 100
-    setTimeout(() => {
-      expect(scrollX(el)).to.equal(100)
-      done()
-    })
+    // TODO: do we need the conditional check to exclude `null` value?
+    if (el) {
+      el.scrollLeft = 100
+      setTimeout(() => {
+        expect(scrollX(el)).to.equal(100)
+        done()
+      })
+    }
   })
 
   it('should return 0 if the first parameter is not an element or a window or undefined', () => {
+    // @ts-ignore
     expect(scrollX(null)).to.equal(0)
     // @ts-ignore
     expect(scrollX({})).to.equal(0)

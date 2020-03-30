@@ -1,11 +1,11 @@
 export interface Query {
-  [key: string]: string;
+  [key: string]: string | Array<string>;
 }
 
 export default function parse (search: string = ''): Query {
   const queryString = search.charAt(0) === '?' ? search.slice(1) : search
   const reArrayName = /^[\w\W]+\[\]$/
-  const query = {}
+  const query: Query = {}
 
   queryString.split('&').forEach((part) => {
     if (part) {
@@ -25,9 +25,9 @@ export default function parse (search: string = ''): Query {
 
       if (query[name]) {
         if (!Array.isArray(query[name])) {
-          query[name] = [query[name]]
+          query[name] = [query[name]] as Array<string>
         }
-        query[name].push(value)
+        (query[name] as Array<string>).push(value)
       } else {
         query[name] = value
       }

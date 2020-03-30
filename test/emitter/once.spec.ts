@@ -2,14 +2,15 @@ import { expect } from 'chai'
 import globalEmitter from '../../src/emitter/util/globalEmitter'
 import once from '../../src/emitter/once'
 import emit from '../../src/emitter/emit'
+import { Events } from '../../src/emitter/types'
 
 describe('emitter/once', () => {
   beforeEach(() => {
-    globalEmitter['@events'] = {}
+    globalEmitter['@events'] = {} as Events
   })
 
   it('should add a listener which is executed once', () => {
-    const calls = []
+    const calls: any[] = []
 
     once('foo', function (val) {
       calls.push('one', val)
@@ -23,7 +24,7 @@ describe('emitter/once', () => {
   })
 
   it('should not be executed when the listener is triggered in the listener', () => {
-    const calls = []
+    const calls: any[] = []
 
     once('foo', function (val) {
       calls.push('one', val)
@@ -35,7 +36,7 @@ describe('emitter/once', () => {
   })
 
   it('should be executed one by one, but only once, when two listeners are bound', () => {
-    const calls = []
+    const calls: any[] = []
 
     once('foo', function (val) {
       calls.push('one', val)

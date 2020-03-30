@@ -3,14 +3,16 @@ import sinon from 'sinon'
 import delay from '../src/delay'
 
 describe('delay', () => {
-  let clock
+  let clock: sinon.SinonFakeTimers
 
   before(() => {
     clock = sinon.useFakeTimers()
   })
 
   after(() => {
-    clock.restore()
+    if (clock) {
+      clock.restore()
+    }
   })
 
   it('should return a promise', () => {
@@ -24,8 +26,12 @@ describe('delay', () => {
       expect(cb.calledOnce).to.equal(true)
       done()
     })
-    clock.tick(99)
+    if (clock) {
+      clock.tick(99)
+    }
     expect(cb.notCalled).to.equal(true)
-    clock.tick(1)
+    if (clock) {
+      clock.tick(1)
+    }
   })
 })

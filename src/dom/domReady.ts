@@ -10,7 +10,7 @@ const doc = typeof document === 'object' && document
 const hack = doc && doc.documentElement.doScroll
 const domContentLoaded = 'DOMContentLoaded'
 let loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
-let listener
+let listener: AnyFunc
 
 if (!loaded && doc) {
   listener = function (): void {

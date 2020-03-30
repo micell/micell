@@ -19,14 +19,17 @@ describe('scrollY', () => {
 
   it('should return the element\'s scrollY if the first parameter is an element', (done) => {
     const el = document.querySelector('.container')
-    el.scrollTop = 100
-    setTimeout(() => {
-      expect(scrollY(el)).to.equal(100)
-      done()
-    })
+    if (el) {
+      el.scrollTop = 100
+      setTimeout(() => {
+        expect(scrollY(el)).to.equal(100)
+        done()
+      })
+    }
   })
 
   it('should return 0 if the first parameter is not an element or a window or undefined', () => {
+    // @ts-ignore
     expect(scrollY(null)).to.equal(0)
     // @ts-ignore
     expect(scrollY({})).to.equal(0)

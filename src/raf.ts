@@ -4,18 +4,27 @@ import now from './_internal/performance-now'
 const vendors = ['webkit', 'moz']
 const root = isBrowser ? window : global
 const name = 'AnimationFrame'
+// @ts-ignore
 let raf = root[`request${name}`]
+// @ts-ignore
 let caf = root[`cancel${name}`]
 
 for (let i = 0; i < vendors.length && !raf; i++) {
+  // @ts-ignore
   raf = root[`${vendors[i]}Request${name}`]
+  // @ts-ignore
   caf = root[`${vendors[i]}Cancel${name}`]
 }
 
 type AnyFunc = (...args: any[]) => void;
+interface QueueItem {
+  timerId: number;
+  cancelled: boolean;
+  callback: AnyFunc;
+}
 
 if (!raf || !caf) {
-  const queue = []
+  const queue: Array<QueueItem> = []
   const tick = 1000 / 60
   let lastTime = 0
   let id = 0

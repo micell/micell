@@ -19,6 +19,10 @@ describe('createEvent', () => {
 
   it('should be dispatched normallly', () => {
     const el = document.getElementById('el1')
+    if (el === null) {
+      expect.fail('element is not exist')
+      return
+    }
     let called = true
     const listener = () => {
       called = true
@@ -35,6 +39,16 @@ describe('createEvent', () => {
   it('should not be bubbles', () => {
     const container = document.getElementById('container')
     const el = document.getElementById('el1')
+
+    if (container === null) {
+      expect.fail('element is not exist')
+      return
+    }
+    if (el === null) {
+      expect.fail('element is not exist')
+      return
+    }
+
     let called = false
     const listener = () => {
       called = true
@@ -50,6 +64,16 @@ describe('createEvent', () => {
   it('should be bubbled up to container', () => {
     const container = document.getElementById('container')
     const el = document.getElementById('el1')
+
+    if (container === null) {
+      expect.fail('element is not exist')
+      return
+    }
+    if (el === null) {
+      expect.fail('element is not exist')
+      return
+    }
+
     let called = false
     const listener = () => {
       called = true
@@ -64,8 +88,14 @@ describe('createEvent', () => {
 
   it('should be prevented', () => {
     const el = document.getElementById('el1')
+
+    if (el === null) {
+      expect.fail('element is not exist')
+      return
+    }
+
     let called = false
-    const listener = (e) => {
+    const listener = (e: Event) => {
       called = true
       expect(e.cancelable).to.equal(true)
     }
@@ -79,11 +109,17 @@ describe('createEvent', () => {
 
   it('should be the specified value if the `options.detail` option is passed', () => {
     const el = document.getElementById('el1')
+
+    if (el === null) {
+      expect.fail('element is not exist')
+      return
+    }
+
     const detail = { foo: 1 }
     let called = true
-    const listener = (e: CustomEvent) => {
+    const listener = (e: Event) => {
       called = true
-      expect(e.detail).to.deep.equal(detail)
+      expect((e as CustomEvent).detail).to.deep.equal(detail)
     }
     el.addEventListener('click', listener)
 
