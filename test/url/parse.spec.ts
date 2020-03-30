@@ -158,7 +158,12 @@ describe('url/parse', () => {
   // })
 
   it('should throw a TypeError if the 1st parameter is not a valid url', () => {
-    const createFn = url => () => parse(url)
+    type CallFunc = () => void
+    const createFn = function (url: string): CallFunc {
+      return (): void => {
+        parse(url)
+      }
+    }
     expect(createFn('')).to.throw(TypeError)
     expect(createFn('http://')).to.throw(TypeError)
     expect(createFn('example.com')).to.throw(TypeError)

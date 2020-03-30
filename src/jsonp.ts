@@ -23,14 +23,16 @@ export default function jsonp (url: string, options: Options = {}): Promise<any>
     }
     src += `${encodeURIComponent(callback)}=${encodeURIComponent(callbackName)}`
 
-    let timerId
+    let timerId: number
     if (timeout) {
-      timerId = setTimeout(() => {
+      // use `window.setTimeout` instead of `setTimeout` directly because type check
+      timerId = window.setTimeout(() => {
         reject(new Error(`the request is timeout ${timeout}ms`))
       }, timeout)
     }
 
-    window[callbackName] = (text) => {
+    // @ts-ignore
+    window[callbackName] = (text: string): void => {
       if (timerId) clearTimeout(timerId)
       if (responseType === 'json') {
         try {
@@ -44,7 +46,7 @@ export default function jsonp (url: string, options: Options = {}): Promise<any>
     }
 
     insertScript(src, {
-      onerror (err) {
+      onerror (err: Error) {
         reject(err)
       }
     })

@@ -22,7 +22,9 @@ describe('css', () => {
 
   it('should return a CSSStyleDeclaration object if the 2nd argument is missing', () => {
     const el = document.getElementById('el1')
-    expect(css(el)).to.be.instanceof(CSSStyleDeclaration)
+    if (el) {
+      expect(css(el)).to.be.instanceof(CSSStyleDeclaration)
+    }
     expect(css('#el1')).to.be.instanceof(CSSStyleDeclaration)
   })
 
@@ -36,12 +38,14 @@ describe('css', () => {
 
   it('should set the css property if the 2nd argument is an object', () => {
     const el = document.getElementById('el1')
-    css(el, {
-      width: '50px',
-      'border-width': '2px'
-    })
-    const style = window.getComputedStyle(el)
-    expect(style['width']).to.equal('50px')
-    expect(style['border-width']).to.equal('2px')
+    if (el) {
+      css(el, {
+        width: '50px',
+        'border-width': '2px'
+      })
+      const style = window.getComputedStyle(el)
+      expect(style.width).to.equal('50px')
+      expect(style.borderWidth).to.equal('2px')
+    }
   })
 })

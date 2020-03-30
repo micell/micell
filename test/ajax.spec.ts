@@ -3,14 +3,14 @@ import sinon from 'sinon'
 import ajax from '../src/ajax'
 
 describe('ajax', () => {
-  let fakeTimer
-  let fakeXhr
-  let requests = []
+  let fakeTimer: sinon.SinonFakeTimers
+  let fakeXhr: sinon.SinonFakeXMLHttpRequestStatic
+  let requests: sinon.SinonFakeXMLHttpRequest[] = []
 
   before(() => {
     fakeTimer = sinon.useFakeTimers()
     fakeXhr = sinon.useFakeXMLHttpRequest()
-    fakeXhr.onCreate = (xhr) => {
+    fakeXhr.onCreate = (xhr: sinon.SinonFakeXMLHttpRequest) => {
       requests.push(xhr)
     }
   })

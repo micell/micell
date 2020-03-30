@@ -56,7 +56,7 @@
       "git add"
     ],
     "*.ts": [
-      "tsc --noEmit"
+      "tsc --noEmit --esModuleInterop"
     ]
   },
   "keywords": [

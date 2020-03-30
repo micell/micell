@@ -1,21 +1,22 @@
 import { expect } from 'chai'
+import { Events } from '../../src/emitter/types'
 import globalEmitter from '../../src/emitter/util/globalEmitter'
 import on from '../../src/emitter/on'
 import emit from '../../src/emitter/emit'
 
 describe('emitter/on', () => {
   beforeEach(() => {
-    globalEmitter['@events'] = {}
+    globalEmitter['@events'] = {} as Events
   })
 
   it('should add listeners', () => {
-    const calls = []
+    const calls: any[] = []
 
-    on('foo', function (val) {
+    on('foo', function (val: number) {
       calls.push('one', val)
     })
 
-    on('foo', function (val) {
+    on('foo', function (val: number) {
       calls.push('two', val)
     })
 

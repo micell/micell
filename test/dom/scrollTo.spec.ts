@@ -5,7 +5,7 @@ import scrollY from '../../src/dom/scrollY'
 import scrollTo from '../../src/dom/scrollTo'
 
 describe('scrollTo', () => {
-  let container = null
+  let container: Element | null
 
   before(() => {
     // @ts-ignore
@@ -15,8 +15,10 @@ describe('scrollTo', () => {
 
   beforeEach(async () => {
     window.scrollTo(0, 0)
-    container.scrollLeft = 0
-    container.scrollTop = 0
+    if (container) {
+      container.scrollLeft = 0
+      container.scrollTop = 0
+    }
     await delay()
   })
 
@@ -26,7 +28,8 @@ describe('scrollTo', () => {
     expect(scrollX()).to.equal(100)
     expect(scrollY()).to.equal(100)
 
-    scrollTo(undefined)
+    // @ts-ignore
+    scrollTo()
     await delay()
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(0)
@@ -40,10 +43,12 @@ describe('scrollTo', () => {
   })
 
   it('scrollTo(container, 100, 100)', async () => {
-    scrollTo(container, 100, 100)
-    await delay()
-    expect(scrollX(container)).to.equal(100)
-    expect(scrollY(container)).to.equal(100)
+    if (container) {
+      scrollTo(container, 100, 100)
+      await delay()
+      expect(scrollX(container)).to.equal(100)
+      expect(scrollY(container)).to.equal(100)
+    }
   })
 
   it('scrollTo({ x: 100, y: 100 })', async () => {
@@ -54,10 +59,12 @@ describe('scrollTo', () => {
   })
 
   it('scrollTo(container, { x: 100, y: 100 })', async () => {
-    scrollTo(container, { x: 100, y: 100 })
-    await delay()
-    expect(scrollX(container)).to.equal(100)
-    expect(scrollY(container)).to.equal(100)
+    if (container) {
+      scrollTo(container, { x: 100, y: 100 })
+      await delay()
+      expect(scrollX(container)).to.equal(100)
+      expect(scrollY(container)).to.equal(100)
+    }
   })
 
   it('scrollTo({ left: 100, top: 100 })', async () => {
@@ -68,10 +75,12 @@ describe('scrollTo', () => {
   })
 
   it('scrollTo(container, { left: 100, top: 100 })', async () => {
-    scrollTo(container, { left: 100, top: 100 })
-    await delay()
-    expect(scrollX(container)).to.equal(100)
-    expect(scrollY(container)).to.equal(100)
+    if (container) {
+      scrollTo(container, { left: 100, top: 100 })
+      await delay()
+      expect(scrollX(container)).to.equal(100)
+      expect(scrollY(container)).to.equal(100)
+    }
   })
 
   it('scrollTo({ x: 0, y: 1000, easing: \'linear\' })', async () => {

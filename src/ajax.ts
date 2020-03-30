@@ -27,10 +27,10 @@ export default function ajax (url: string, options: Options = {}): Promise<XMLHt
 
     xhr.open(method, url, async)
 
-    let timerId
+    let timerId: number
 
     if (timeout) {
-      timerId = setTimeout(() => {
+      timerId = window.setTimeout(() => {
         reject(new Error(`the xhr request timeout ${timeout}ms`))
       }, timeout)
     }

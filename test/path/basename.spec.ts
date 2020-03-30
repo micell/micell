@@ -15,6 +15,6 @@ describe('path/basename', () => {
   })
 
   it('can use the third parameter to be the separator of the path', () => {
-    expect(basename('\\hello\\world.md', null, '\\')).to.equal('world.md')
+    expect(basename('\\hello\\world.md', undefined, '\\')).to.equal('world.md')
   })
 })

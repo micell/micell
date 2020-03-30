@@ -1,7 +1,11 @@
 import isBrowser from '../../_internal/isBrowser'
 
+interface TestMap {
+  [key: string]: RegExp;
+}
+
 // Ref: https://github.com/mumuy/browser
-const testMap = {
+const testMap: TestMap = {
   Windows: /Windows/,
   MacOS: /Macintosh/,
   Linux: /Linux|X11/,

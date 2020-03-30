@@ -13,7 +13,13 @@ import isElement from './isElement'
 import scrollX from './scrollX'
 import scrollY from './scrollY'
 
-const easings = {
+type EasingFunction = (x: number) => number
+
+interface Easings {
+  [key: string]: EasingFunction;
+}
+
+const easings: Easings = {
   linear,
   ease,
   'ease-in': easeIn,
@@ -62,29 +68,39 @@ export default function scrollTo (
   if (!hasOwn(options, 'y')) options.y = options.top || 0
 
   const innerScrollTo = (opts: Options): void => {
+    const {
+      x: left,
+      y: top,
+      behavior
+    } = opts;
     if (isFunction(el.scrollTo)) {
-      const {
-        x: left,
-        y: top,
-        behavior
-      } = opts;
       (el as Window).scrollTo({ left, top, behavior })
     } else {
-      (el as Element).scrollLeft = opts.x;
-      (el as Element).scrollTop = opts.y
+      if (left !== undefined) {
+        (el as Element).scrollLeft = left;
+      }
+      if (top !== undefined) {
+        (el as Element).scrollTop = top
+      }
     }
   }
 
   if (options.easing) {
-    let easingFn
+    let easingFn: EasingFunction
     if (reEasingKeyword.test(options.easing)) {
       easingFn = easings[options.easing]
     } else if (reCubicBezier.test(options.easing)) {
       const matched = options.easing.match(reCubicBezier)
-      const x1 = Number(matched[1])
-      const y1 = Number(matched[2])
-      const x2 = Number(matched[3])
-      const y2 = Number(matched[4])
+      let x1 = 0
+      let y1 = 0
+      let x2 = 0
+      let y2 = 0
+      if (matched) {
+        x1 = Number(matched[1])
+        y1 = Number(matched[2])
+        x2 = Number(matched[3])
+        y2 = Number(matched[4])
+      }
       easingFn = cubicBezier(x1, y1, x2, y2)
     } else {
       innerScrollTo(options)
@@ -95,7 +111,9 @@ export default function scrollTo (
     const maxDuration = 500
     const startX = scrollX(el)
     const startY = scrollY(el)
+    // @ts-ignore
     const diffX = options.x - startX
+    // @ts-ignore
     const diffY = options.y - startY
     const diff = Math.max(Math.abs(diffX), Math.abs(diffY))
     const duration = Math.min(minDuration + 100 * (diff / 1000), maxDuration)
@@ -103,7 +121,7 @@ export default function scrollTo (
     const tickTotal = Math.ceil(duration / tickTime)
     let nextX = startX
     let nextY = startY
-    let start = null
+    let start: number
     let tickCount = 0
 
     const runScroll = (time: number): void => {

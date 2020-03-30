@@ -44,7 +44,7 @@ describe('insertScript', () => {
   it.skip('should trigger the error event if script load is failed', (done) => {
     let url = 'http://some-never-be-exist-domain.com/app.js'
     const script = insertScript(url, {
-      onerror (e) {
+      onerror (e: Event) {
         expect(e.type).to.equal('error')
         done()
       }

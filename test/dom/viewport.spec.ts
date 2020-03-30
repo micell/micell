@@ -21,8 +21,10 @@ describe('viewport', () => {
 
   it('should return the element\'s viewport if an element object is passed', () => {
     const element = document.getElementById('el1')
-    const width = element.clientWidth
-    const height = element.clientHeight
-    expect(viewport(element)).to.deep.equal({ width, height })
+    if (element) {
+      const width = element.clientWidth
+      const height = element.clientHeight
+      expect(viewport(element)).to.deep.equal({ width, height })
+    }
   })
 })

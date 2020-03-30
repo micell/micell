@@ -13,9 +13,12 @@ describe('clientX', () => {
     // @ts-ignore
     document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/clientX.html']
     setTimeout(() => {
-      expect(clientX(document.getElementById('el1'))).to.equal(200)
-      window.scrollTo(100, 0)
-      expect(clientX(document.getElementById('el1'))).to.equal(100)
+      const el1 = document.getElementById('el1')
+      if (el1) {
+        expect(clientX(el1)).to.equal(200)
+        window.scrollTo(100, 0)
+        expect(clientX(el1)).to.equal(100)
+      }
       done()
     }, 0)
   })

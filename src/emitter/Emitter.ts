@@ -6,6 +6,8 @@ const slice = [].slice
 let proto
 
 class Emitter {
+  [EVENTS_KEY]: Events;
+
   constructor() {
     this[EVENTS_KEY] = {} as Events
   }
@@ -27,11 +29,13 @@ class Emitter {
   // or remove the given event listeners
   // or remove the specified listener for the given event.
   off (type?: EventType, fn?: Listener): void {
+    // @ts-ignore
     const events = this[EVENTS_KEY][type]
 
     if (arguments.length === 0) {
       this[EVENTS_KEY] = {} as Events
     } else if (arguments.length === 1) {
+      // @ts-ignore
       delete this[EVENTS_KEY][type]
     } else if (events) {
       let len = events.length
@@ -46,7 +50,10 @@ class Emitter {
           i++
         }
       }
-      if (!events.length) delete this[EVENTS_KEY][type]
+      if (!events.length) {
+        // @ts-ignore
+        delete this[EVENTS_KEY][type]
+      }
     }
   }
 
@@ -58,6 +65,7 @@ class Emitter {
 
     for (let i = 0; i < shallowListeners.length; i++) {
       const listener = shallowListeners[i]
+      // @ts-ignore
       if (listener.$once) {
         this.off(type, listener)
       }
