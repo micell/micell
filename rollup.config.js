@@ -23,7 +23,7 @@ const isExternal = id => !id.startsWith('.') && !id.startsWith('/')
 export default [
   // CommonJs
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: `${outDir}/${pkg.name}.common.js`,
       format: 'cjs',
@@ -39,7 +39,7 @@ export default [
 
   // ES
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: `${outDir}/${pkg.name}.esm.js`,
       format: 'es',
@@ -55,7 +55,7 @@ export default [
 
   // ES browser
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: `${outDir}/${pkg.name}.esm.browser.js`,
       format: 'es',
@@ -73,7 +73,7 @@ export default [
 
   // ES browser production
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: `${outDir}/${pkg.name}.esm.browser.min.js`,
       format: 'es',
@@ -92,7 +92,7 @@ export default [
 
   // UMD
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: `${outDir}/${pkg.name}.js`,
       format: 'umd',
@@ -112,7 +112,7 @@ export default [
 
   // UMD production
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: `${outDir}/${pkg.name}.min.js`,
       format: 'umd',
