@@ -1,11 +1,12 @@
+import { SuiteFunction, TestFunction } from 'mocha'
 import { expect } from 'chai'
 import Emitter from '../../src/emitter/Emitter'
 
-export default function runSpec ({
-  describe,
-  it,
-  expect
-}, creator) {
+interface Creator {
+  (): Emitter;
+}
+
+export default function runSpec (describe: SuiteFunction, it: TestFunction, creator: Creator): void {
   describe('emitter creator', () => {
     describe('new Emitter or create()', () => {
       it('should return an Emitter instance when no parameter is passed', () => {
@@ -19,13 +20,13 @@ export default function runSpec ({
     describe('on(type, fn)', () => {
       it('should add listeners', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
 
-        emitter.on('foo', function (val) {
+        emitter.on('foo', function (val: number) {
           calls.push('one', val)
         })
 
-        emitter.on('foo', function (val) {
+        emitter.on('foo', function (val: number) {
           calls.push('two', val)
         })
 
@@ -40,9 +41,9 @@ export default function runSpec ({
     describe('once(type, fn)', () => {
       it('should add a listener which is executed once', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
 
-        emitter.once('foo', function (val) {
+        emitter.once('foo', function (val: number) {
           calls.push('one', val)
         })
 
@@ -55,9 +56,9 @@ export default function runSpec ({
 
       it('should not be executed when the listener is triggered in the listener', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
 
-        emitter.once('foo', function (val) {
+        emitter.once('foo', function (val: number) {
           calls.push('one', val)
           emitter.emit('foo', 2)
         })
@@ -68,12 +69,12 @@ export default function runSpec ({
 
       it('should be executed one by one, but only once, when two listeners are bound', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
 
-        emitter.once('foo', function (val) {
+        emitter.once('foo', function (val: number) {
           calls.push('one', val)
         })
-        emitter.once('foo', function (val) {
+        emitter.once('foo', function (val: number) {
           calls.push('two', val)
         })
 
@@ -87,7 +88,7 @@ export default function runSpec ({
     describe('off(type, fn)', () => {
       it('should remove specified listener of the given event type', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
         const fn1 = function () {
           calls.push(1)
         }
@@ -108,7 +109,7 @@ export default function runSpec ({
 
       it('should remove all listeners of the given event type', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
         const fn1 = function () {
           calls.push(1)
         }
@@ -133,7 +134,7 @@ export default function runSpec ({
 
       it('should remove all listeners for all event type', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
         const fn1 = function () {
           calls.push(1)
         }
@@ -160,7 +161,7 @@ export default function runSpec ({
     describe('emit(type, [arg1], [arg2], ...)', () => {
       it('should emit an event', () => {
         const emitter = creator()
-        const calls = []
+        const calls: any[] = []
 
         emitter.on('foo', function () {
           calls.push('one')
@@ -172,7 +173,7 @@ export default function runSpec ({
 
       it('should pass some parameters', () => {
         const emitter = creator()
-        let calls = []
+        let calls: any[] = []
 
         emitter.on('foo', function () {
           calls = calls.concat(Array.prototype.slice.call(arguments))
