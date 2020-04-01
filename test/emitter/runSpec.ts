@@ -89,10 +89,10 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
       it('should remove specified listener of the given event type', () => {
         const emitter = creator()
         const calls: any[] = []
-        const fn1 = function () {
+        const fn1 = function (): void {
           calls.push(1)
         }
-        const fn2 = function () {
+        const fn2 = function (): void {
           calls.push(2)
         }
 
@@ -110,10 +110,10 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
       it('should remove all listeners of the given event type', () => {
         const emitter = creator()
         const calls: any[] = []
-        const fn1 = function () {
+        const fn1 = function (): void {
           calls.push(1)
         }
-        const fn2 = function () {
+        const fn2 = function (): void {
           calls.push(2)
         }
 
@@ -135,10 +135,10 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
       it('should remove all listeners for all event type', () => {
         const emitter = creator()
         const calls: any[] = []
-        const fn1 = function () {
+        const fn1 = function (): void {
           calls.push(1)
         }
-        const fn2 = function () {
+        const fn2 = function (): void {
           calls.push(2)
         }
 
@@ -163,7 +163,7 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
         const emitter = creator()
         const calls: any[] = []
 
-        emitter.on('foo', function () {
+        emitter.on('foo', function (): void {
           calls.push('one')
         })
         emitter.emit('foo', 1)
@@ -175,8 +175,8 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
         const emitter = creator()
         let calls: any[] = []
 
-        emitter.on('foo', function () {
-          calls = calls.concat(Array.prototype.slice.call(arguments))
+        emitter.on('foo', function (...args): void {
+          calls = calls.concat(args)
         })
         emitter.emit('foo', 1, false, 'hello')
 
@@ -187,8 +187,8 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
     describe('listeners(type)', () => {
       it('should return all listeners of the given event', () => {
         const emitter = creator()
-        const fn1 = function () {}
-        const fn2 = function () {}
+        const fn1 = function (): void {}
+        const fn2 = function (): void {}
 
         emitter.on('foo', fn1)
         emitter.on('bar', fn1)
@@ -201,8 +201,8 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
 
       it('should return all listeners', () => {
         const emitter = creator()
-        const fn1 = function () {}
-        const fn2 = function () {}
+        const fn1 = function (): void {}
+        const fn2 = function (): void {}
 
         emitter.on('foo', fn1)
         emitter.on('bar', fn1)
@@ -215,7 +215,7 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
 
       it('should return an empty array when no listener for the event', () => {
         const emitter = creator()
-        const fn = function () {}
+        const fn = function (): void {}
 
         emitter.on('bar', fn)
         const listeners = emitter.getListeners('foo')

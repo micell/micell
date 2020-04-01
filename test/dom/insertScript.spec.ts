@@ -3,7 +3,7 @@ import insertScript from '../../src/dom/insertScript'
 
 describe('insertScript', () => {
   it('should insert a <script> tag into document', () => {
-    let url = 'http://example.com/app1.js'
+    const url = 'http://example.com/app1.js'
     insertScript(url)
     const scripts = document.querySelectorAll('script')
     let src = ''
@@ -16,13 +16,13 @@ describe('insertScript', () => {
   })
 
   it('should return the inserted <script>', () => {
-    let url = 'http://example.com/app2.js'
+    const url = 'http://example.com/app2.js'
     const ret = insertScript(url)
     expect(ret.src).to.equal(url)
   })
 
   it('should insert a <script> tag with the specified attributes', () => {
-    let url = 'http://example.com/app3.js'
+    const url = 'http://example.com/app3.js'
     insertScript(url, {
       id: 'foo',
       async: true
@@ -32,7 +32,7 @@ describe('insertScript', () => {
   })
 
   it.skip('should trigger the load event if script load is success', (done) => {
-    let url = '/base/test/setup.js'
+    const url = '/base/test/setup.js'
     const script = insertScript(url, {
       onload () {
         done()
@@ -42,7 +42,7 @@ describe('insertScript', () => {
   })
 
   it.skip('should trigger the error event if script load is failed', (done) => {
-    let url = 'http://some-never-be-exist-domain.com/app.js'
+    const url = 'http://some-never-be-exist-domain.com/app.js'
     const script = insertScript(url, {
       onerror (e: Event) {
         expect(e.type).to.equal('error')

@@ -24,7 +24,7 @@ describe('createEvent', () => {
       return
     }
     let called = true
-    const listener = () => {
+    const listener = (): void => {
       called = true
     }
     el.addEventListener('click', listener)
@@ -50,7 +50,7 @@ describe('createEvent', () => {
     }
 
     let called = false
-    const listener = () => {
+    const listener = (): void => {
       called = true
     }
     container.addEventListener('click', listener)
@@ -75,7 +75,7 @@ describe('createEvent', () => {
     }
 
     let called = false
-    const listener = () => {
+    const listener = (): void => {
       called = true
     }
     container.addEventListener('click', listener)
@@ -95,7 +95,7 @@ describe('createEvent', () => {
     }
 
     let called = false
-    const listener = (e: Event) => {
+    const listener = (e: Event): void => {
       called = true
       expect(e.cancelable).to.equal(true)
     }
@@ -117,7 +117,7 @@ describe('createEvent', () => {
 
     const detail = { foo: 1 }
     let called = true
-    const listener = (e: Event) => {
+    const listener = (e: Event): void => {
       called = true
       expect((e as CustomEvent).detail).to.deep.equal(detail)
     }

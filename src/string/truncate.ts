@@ -7,7 +7,7 @@ interface Options {
 }
 
 export default function truncate (
-  str: string = '',
+  str = '',
   options: Options = {}
 ): string {
   const {

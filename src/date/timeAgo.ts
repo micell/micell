@@ -9,8 +9,8 @@ interface Locales {
 }
 
 const locales: Locales = {
-  en_US: enUS,
-  zh_CN: zhCN
+  'en_US': enUS,
+  'zh_CN': zhCN
 }
 
 let currentLocale = 'en_US'

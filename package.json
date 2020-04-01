@@ -14,7 +14,7 @@
     "clean": "rimraf dist lib es",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "eslint . --ext .js,.ts",
+    "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "test": "cross-env BABEL_ENV=test karma start",
@@ -37,8 +37,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts}": [
-      "eslint . --ext .js,.ts --fix",
+    "*.ts": [
+      "eslint . --ext .ts --fix",
       "git add"
     ],
     "*.ts": [

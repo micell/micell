@@ -12,10 +12,10 @@ describe('emitter/off', () => {
 
   it('should remove specified listener(s) of the given event type', () => {
     const calls: any[] = []
-    const fn1 = function () {
+    const fn1 = function (): void {
       calls.push(1)
     }
-    const fn2 = function () {
+    const fn2 = function (): void {
       calls.push(2)
     }
 
@@ -33,10 +33,10 @@ describe('emitter/off', () => {
 
   it('should remove all listeners of the given event type', () => {
     const calls: any[] = []
-    const fn1 = function () {
+    const fn1 = function (): void {
       calls.push(1)
     }
-    const fn2 = function () {
+    const fn2 = function (): void {
       calls.push(2)
     }
 
@@ -57,10 +57,10 @@ describe('emitter/off', () => {
 
   it('should remove all listeners for all event type', () => {
     const calls: any[] = []
-    const fn1 = function () {
+    const fn1 = function (): void {
       calls.push(1)
     }
-    const fn2 = function () {
+    const fn2 = function (): void {
       calls.push(2)
     }
 

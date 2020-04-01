@@ -9,8 +9,8 @@ describe('emitter/getListeners', () => {
   })
 
   it('should return all listeners of the given event', () => {
-    const fn1 = function () {}
-    const fn2 = function () {}
+    const fn1 = function (): void {}
+    const fn2 = function (): void {}
 
     on('foo', fn1)
     on('bar', fn1)
@@ -22,8 +22,8 @@ describe('emitter/getListeners', () => {
   })
 
   it('should return all listeners', () => {
-    const fn1 = function () {}
-    const fn2 = function () {}
+    const fn1 = function (): void {}
+    const fn2 = function (): void {}
 
     on('foo', fn1)
     on('bar', fn1)
@@ -35,7 +35,7 @@ describe('emitter/getListeners', () => {
   })
 
   it('should return an empty array when no listener for the event', () => {
-    const fn = function () {}
+    const fn = function (): void {}
 
     on('bar', fn)
     const listeners = getListeners('foo')

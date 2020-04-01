@@ -2,7 +2,7 @@ export interface Query {
   [key: string]: string | Array<string>;
 }
 
-export default function parse (search: string = ''): Query {
+export default function parse (search = ''): Query {
   const queryString = search.charAt(0) === '?' ? search.slice(1) : search
   const reArrayName = /^[\w\W]+\[\]$/
   const query: Query = {}

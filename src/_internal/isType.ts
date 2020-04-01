@@ -1,5 +1,5 @@
 export interface ToStringFunc {
-  (o: any): boolean
+  (o: any): boolean;
 }
 
 const isType: (type: string) => ToStringFunc = (type: string): ToStringFunc => (o: any): boolean =>
