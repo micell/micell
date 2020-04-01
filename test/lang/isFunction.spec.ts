@@ -3,27 +3,33 @@ import isFunction from '../../src/lang/isFunction'
 
 describe('lang/isFunction', () => {
   it('function declaration', () => {
-    function foo () {}
+    function foo (): number {
+      return 0
+    }
     expect(isFunction(foo)).to.equal(true)
   })
 
   it('function expresstion', () => {
-    const foo = function () {}
+    const foo = function (): number {
+      return 0
+    }
     expect(isFunction(foo)).to.equal(true)
   })
 
   it('arrow function', () => {
-    const foo = () => {}
+    const foo = (): number => {
+      return 0
+    }
     expect(isFunction(foo)).to.equal(true)
   })
 
   it('generator function', () => {
-    function * foo () { yield 0 }
+    function * foo (): IterableIterator<number> { yield 0 }
     expect(isFunction(foo)).to.equal(true)
   })
 
   it('async function', () => {
-    async function foo () { return 0 }
+    async function foo (): Promise<number> { return 0 }
     expect(isFunction(foo)).to.equal(true)
   })
 

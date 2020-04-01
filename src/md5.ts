@@ -58,10 +58,10 @@ export default function md5 (input: string | Array<number> | Uint8Array): string
   m[(((len + 64) >>> 9) << 4) + 14] = len
 
   for (let i = 0; i < m.length; i += 16) {
-    let aa = a
-    let bb = b
-    let cc = c
-    let dd = d
+    const aa = a
+    const bb = b
+    const cc = c
+    const dd = d
 
     a = F(a, b, c, d, m[i + 0], 7, -680876936)
     d = F(d, a, b, c, m[i + 1], 12, -389564586)

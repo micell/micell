@@ -15,7 +15,7 @@ export default function ajax (url: string, options: Options = {}): Promise<XMLHt
   return new Promise((resolve, reject) => {
     const {
       async = true,
-      beforeSend = (xhr: XMLHttpRequest) => true,
+      beforeSend = (): any => {},
       data = null,
       headers = {},
       method = 'get',
@@ -35,11 +35,11 @@ export default function ajax (url: string, options: Options = {}): Promise<XMLHt
       }, timeout)
     }
 
-    xhr.onerror = () => {
+    xhr.onerror = (): void => {
       reject(new Error('unknown error'))
     }
 
-    xhr.onreadystatechange = () => {
+    xhr.onreadystatechange = (): void => {
       if (xhr.readyState === 4) {
         if (timeout && timerId !== undefined) clearTimeout(timerId)
         if (xhr.status >= 200 && xhr.status < 300) {

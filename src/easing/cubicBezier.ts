@@ -51,11 +51,11 @@ function binarySubdivide (aX: number, aA: number, aB: number, mX1: number, mX2: 
 
 function newtonRaphsonIterate (aX: number, aGuessT: number, mX1: number, mX2: number): number {
   for (let i = 0; i < NEWTON_ITERATIONS; ++i) {
-    let currentSlope = getSlope(aGuessT, mX1, mX2)
+    const currentSlope = getSlope(aGuessT, mX1, mX2)
     if (currentSlope === 0.0) {
       return aGuessT
     }
-    let currentX = calcBezier(aGuessT, mX1, mX2) - aX
+    const currentX = calcBezier(aGuessT, mX1, mX2) - aX
     aGuessT -= currentX / currentSlope
   }
   return aGuessT
@@ -75,15 +75,15 @@ export default function bezier (mX1: number, mY1: number, mX2: number, mY2: numb
   }
 
   // Precompute samples table
-  var sampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize)
-  for (var i = 0; i < kSplineTableSize; ++i) {
+  const sampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize)
+  for (let i = 0; i < kSplineTableSize; ++i) {
     sampleValues[i] = calcBezier(i * kSampleStepSize, mX1, mX2)
   }
 
   function getTForX (aX: number): number {
-    var intervalStart = 0.0
-    var currentSample = 1
-    var lastSample = kSplineTableSize - 1
+    let intervalStart = 0.0
+    let currentSample = 1
+    const lastSample = kSplineTableSize - 1
 
     for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
       intervalStart += kSampleStepSize
@@ -91,10 +91,10 @@ export default function bezier (mX1: number, mY1: number, mX2: number, mY2: numb
     --currentSample
 
     // Interpolate to provide an initial guess for t
-    var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample])
-    var guessForT = intervalStart + dist * kSampleStepSize
+    const dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample])
+    const guessForT = intervalStart + dist * kSampleStepSize
 
-    var initialSlope = getSlope(guessForT, mX1, mX2)
+    const initialSlope = getSlope(guessForT, mX1, mX2)
     if (initialSlope >= NEWTON_MIN_SLOPE) {
       return newtonRaphsonIterate(aX, guessForT, mX1, mX2)
     } else if (initialSlope === 0.0) {

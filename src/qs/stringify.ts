@@ -9,7 +9,7 @@ export default function stringify (query: Query): string {
   const pairs = []
 
   if (isObject(query)) {
-    for (let name in query) {
+    for (const name in query) {
       if (hasOwn(query, name)) {
         const value = query[name]
         const encodedName = encodeURIComponent(name)

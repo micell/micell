@@ -42,7 +42,7 @@ describe('raf', () => {
   })
 
   it('should throw in the callback', (done) => {
-    const onError = function () {
+    const onError = (): void => {
       done()
     }
 

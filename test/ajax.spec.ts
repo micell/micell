@@ -5,12 +5,12 @@ import ajax from '../src/ajax'
 describe('ajax', () => {
   let fakeTimer: sinon.SinonFakeTimers
   let fakeXhr: sinon.SinonFakeXMLHttpRequestStatic
-  let requests: sinon.SinonFakeXMLHttpRequest[] = []
+  const requests: sinon.SinonFakeXMLHttpRequest[] = []
 
   before(() => {
     fakeTimer = sinon.useFakeTimers()
     fakeXhr = sinon.useFakeXMLHttpRequest()
-    fakeXhr.onCreate = (xhr: sinon.SinonFakeXMLHttpRequest) => {
+    fakeXhr.onCreate = (xhr: sinon.SinonFakeXMLHttpRequest): void => {
       requests.push(xhr)
     }
   })

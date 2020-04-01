@@ -39,10 +39,14 @@ describe('md5', () => {
   })
 
   it('should throw a TypeError', () => {
-    // @ts-ignore
-    const fn1 = () => md5()
-    // @ts-ignore
-    const fn2 = () => md5(1)
+    const fn1 = (): void => {
+      // @ts-ignore
+      md5()
+    }
+    const fn2 = (): void => {
+      // @ts-ignore
+      md5(1)
+    }
     expect(fn1).to.throw(TypeError)
     expect(fn2).to.throw(TypeError)
   })

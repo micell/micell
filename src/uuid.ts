@@ -8,17 +8,17 @@ import isBrowser from './_internal/isBrowser'
 const hexDigits = '0123456789abcdef'
 const maxUint32 = Math.pow(2, 32) - 1
 
-let random = Math.random
+let random: () => number = Math.random
 
 if (isBrowser && typeof window.Uint32Array === 'function' &&
   ((window.crypto && typeof window.crypto.getRandomValues === 'function') ||
   // @ts-ignore
   (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function'))) {
-  random = () => window.crypto.getRandomValues(new Uint32Array(1))[0] / maxUint32
+  random = (): number => window.crypto.getRandomValues(new Uint32Array(1))[0] / maxUint32
 }
 
 export default function uuid (): string {
-  let u: Array<string> = []
+  const u: Array<string> = []
 
   for (let i = 0; i < 36; i++) {
     u[i] = hexDigits.charAt(random() * 16)

@@ -1,23 +1,20 @@
 import isNumber from './lang/isNumber'
 
-export default function numberFormat (number: number, digits: number = -1, dot: string = '.', sep: string = ','): string {
+export default function numberFormat (number: number, digits = -1, dot = '.', sep = ','): string {
   if (!isNumber(number)) {
     return ''
   }
   const tenExp = Math.pow(10, digits)
   let result = ''
-  let intPart
-  let decPart
-  let intPartStr
   let decPartStr
 
   if (digits > -1) {
     number = Math.round(number * tenExp) / tenExp
   }
-  intPart = Math.floor(number)
-  decPart = ((number * tenExp) - (intPart * tenExp)) / tenExp
+  const intPart = Math.floor(number)
+  const decPart = ((number * tenExp) - (intPart * tenExp)) / tenExp
 
-  intPartStr = intPart.toString()
+  const intPartStr = intPart.toString()
 
   if (decPart === 0) {
     decPartStr = ''

@@ -9,7 +9,7 @@ describe('css', () => {
   })
 
   it('should throw an error if the selector matched element is not exist', () => {
-    const fn = () => css('not_exist_in_document')
+    const fn = (): void => { css('not_exist_in_document') }
     expect(fn).to.throw()
   })
 

@@ -2,8 +2,6 @@ import flattenEvents from './util/flattenEvents'
 import { EventType, Listener, Events } from './types'
 
 const EVENTS_KEY = '@events'
-const slice = [].slice
-let proto
 
 class Emitter {
   [EVENTS_KEY]: Events;

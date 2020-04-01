@@ -42,7 +42,7 @@ export interface Options {
 export default function scrollTo (
   elOrWindow: Element | Window | number | Options,
   x: number | Options = 0,
-  y: number = 0
+  y = 0
 ): void {
   let el: any = window
   let options: Options = {}

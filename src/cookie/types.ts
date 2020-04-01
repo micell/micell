@@ -1,5 +1,5 @@
 export interface Cookies {
-  [key: string]: string
+  [key: string]: string;
 }
 
 export interface Options {

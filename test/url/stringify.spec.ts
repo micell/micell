@@ -148,7 +148,9 @@ describe('url/stringify', () => {
   // })
 
   it('should throw a TypeError if host and hostname property missing', () => {
-    const fn = () => stringify({ protocol: 'http' })
+    const fn = (): void => {
+      stringify({ protocol: 'http' })
+    }
     expect(fn).to.throw(TypeError)
   })
 

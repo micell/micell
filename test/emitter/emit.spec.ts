@@ -22,8 +22,8 @@ describe('emitter/emit', () => {
   it('should pass some parameters', () => {
     let calls: any[] = []
 
-    on('foo', function () {
-      calls = calls.concat(Array.prototype.slice.call(arguments))
+    on('foo', function (...args) {
+      calls = calls.concat(args)
     })
     emit('foo', 1, false, 'hello')
 
