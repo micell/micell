@@ -86,7 +86,7 @@ module.exports = function (config) {
       }
     }
   } else {
-    reporters = ['progress', 'coverage-istanbul']
+    reporters = ['progress', 'coverage']
     customLaunchers = {
       ChromeNoSandboxHeadless: {
         base: 'Chrome',
@@ -135,9 +135,12 @@ module.exports = function (config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters,
 
-    coverageIstanbulReporter: {
-      reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true
+    coverageReporter: {
+      reporters: [
+        { type: 'html' },
+        { type: 'lcovonly' }
+      ],
+      subdir: '.'
     },
 
     // webpack
@@ -153,18 +156,7 @@ module.exports = function (config) {
             test: /\.(js|ts)$/,
             use: [
               'babel-loader'
-              // TODO:
-              //  Because of the lack of maintainment, some typescript features will result build failed.
-              //  So, we need fork it or seek an alternative.
-              // {
-              //   loader: 'istanbul-instrumenter-loader',
-              //   options: {
-              //     esModules: true,
-              //     produceSourceMap: true
-              //   }
-              // }
             ],
-            enforce: 'post',
             include: [
               path.resolve('src/'),
               path.resolve('test/')
