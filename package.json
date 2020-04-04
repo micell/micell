@@ -39,11 +39,9 @@
   },
   "lint-staged": {
     "*.ts": [
+      "tsc --noEmit --esModuleInterop",
       "eslint . --ext .ts --fix",
       "git add"
-    ],
-    "*.ts": [
-      "tsc --noEmit --esModuleInterop"
     ]
   },
   "keywords": [
@@ -85,7 +83,7 @@
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
-    "husky": "^2.1.0",
+    "husky": "^2.7.0",
     "istanbul-instrumenter-loader": "^3.0.1",
     "karma": "^4.4.1",
     "karma-browserstack-launcher": "^1.5.1",
