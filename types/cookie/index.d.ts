@@ -1,0 +1,21 @@
+import isEnabled from './isEnabled';
+import get from './get';
+import getAll from './getAll';
+import getJson from './getJson';
+import getRaw from './getRaw';
+import set from './set';
+import setJson from './setJson';
+import setRaw from './setRaw';
+import remove from './remove';
+declare const _default: {
+    isEnabled: typeof isEnabled;
+    get: typeof get;
+    getAll: typeof getAll;
+    getJson: typeof getJson;
+    getRaw: typeof getRaw;
+    set: typeof set;
+    setJson: typeof setJson;
+    setRaw: typeof setRaw;
+    remove: typeof remove;
+};
+export default _default;
