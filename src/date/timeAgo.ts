@@ -15,7 +15,7 @@ const locales: Locales = {
 
 let currentLocale = 'en_US'
 
-interface TimeAgo {
+export interface TimeAgo {
   getLocale(): string;
   setLocale(name: string): void;
   addLocale(name: string, locale: Locale): void;

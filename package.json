@@ -11,7 +11,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "clean": "rimraf dist lib es",
+    "clean": "rimraf dist lib es types",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint": "eslint . --ext .ts",
@@ -23,6 +23,7 @@
     "build": "npm run clean && npm run build:commonjs && npm run rollup",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "rollup": "rollup -c",
+    "types": "node scripts/generateDeclaration.js",
     "pkg": "node scripts/release.js",
     "release": "npm run pkg && semantic-release"
   },
