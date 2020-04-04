@@ -22,7 +22,8 @@
       "plugins": [
         ["babel-plugin-istanbul", {
           "exclude": [
-            "**/*.spec.js"
+            "**/*.spec.ts",
+            "test/**/*.ts"
           ]
         }]
       ]
