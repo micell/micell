@@ -2,6 +2,7 @@ node_modules
 coverage
 dist
 lib
+types
 build
 package-lock.json
 yarn.lock
