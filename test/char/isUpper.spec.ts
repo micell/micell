@@ -16,9 +16,13 @@ describe('char/isUpper', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isUpper({})).to.equal(false)
+    // @ts-ignore
     expect(isUpper('')).to.equal(false)
+    // @ts-ignore
     expect(isUpper(null)).to.equal(false)
+    // @ts-ignore
     expect(isUpper(undefined)).to.equal(false)
   })
 })

@@ -22,9 +22,13 @@ describe('char/isAlphanumeric', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isAlphanumeric({})).to.equal(false)
+    // @ts-ignore
     expect(isAlphanumeric('')).to.equal(false)
+    // @ts-ignore
     expect(isAlphanumeric(null)).to.equal(false)
+    // @ts-ignore
     expect(isAlphanumeric(undefined)).to.equal(false)
   })
 })

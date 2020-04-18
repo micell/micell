@@ -16,9 +16,13 @@ describe('char/isPrint', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isPrint({})).to.equal(false)
+    // @ts-ignore
     expect(isPrint('')).to.equal(false)
+    // @ts-ignore
     expect(isPrint(null)).to.equal(false)
+    // @ts-ignore
     expect(isPrint(undefined)).to.equal(false)
   })
 })

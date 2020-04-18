@@ -16,9 +16,13 @@ describe('char/isASCII', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isASCII({})).to.equal(false)
+    // @ts-ignore
     expect(isASCII('')).to.equal(false)
+    // @ts-ignore
     expect(isASCII(null)).to.equal(false)
+    // @ts-ignore
     expect(isASCII(undefined)).to.equal(false)
   })
 })

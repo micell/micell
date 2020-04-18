@@ -19,9 +19,13 @@ describe('char/isAlphabetic', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isAlphabetic({})).to.equal(false)
+    // @ts-ignore
     expect(isAlphabetic('')).to.equal(false)
+    // @ts-ignore
     expect(isAlphabetic(null)).to.equal(false)
+    // @ts-ignore
     expect(isAlphabetic(undefined)).to.equal(false)
   })
 })

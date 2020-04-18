@@ -1,6 +1,6 @@
 import isString from '../lang/isString'
 
-const isHexadecimal = (ch: any): boolean => {
+const isHexadecimal = (ch: string): boolean => {
   if (isString(ch) && ch.length === 1) {
     const charCode = ch.charCodeAt(0)
     return (charCode >= 48 && charCode <= 57) ||

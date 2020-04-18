@@ -16,9 +16,13 @@ describe('char/isDigit', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isDigit({})).to.equal(false)
+    // @ts-ignore
     expect(isDigit('')).to.equal(false)
+    // @ts-ignore
     expect(isDigit(null)).to.equal(false)
+    // @ts-ignore
     expect(isDigit(undefined)).to.equal(false)
   })
 })

@@ -16,9 +16,13 @@ describe('char/isLower', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isLower({})).to.equal(false)
+    // @ts-ignore
     expect(isLower('')).to.equal(false)
+    // @ts-ignore
     expect(isLower(null)).to.equal(false)
+    // @ts-ignore
     expect(isLower(undefined)).to.equal(false)
   })
 })

@@ -25,9 +25,13 @@ describe('char/isPunctuation', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isPunctuation({})).to.equal(false)
+    // @ts-ignore
     expect(isPunctuation('')).to.equal(false)
+    // @ts-ignore
     expect(isPunctuation(null)).to.equal(false)
+    // @ts-ignore
     expect(isPunctuation(undefined)).to.equal(false)
   })
 })

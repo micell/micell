@@ -16,9 +16,13 @@ describe('char/isGraph', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isGraph({})).to.equal(false)
+    // @ts-ignore
     expect(isGraph('')).to.equal(false)
+    // @ts-ignore
     expect(isGraph(null)).to.equal(false)
+    // @ts-ignore
     expect(isGraph(undefined)).to.equal(false)
   })
 })

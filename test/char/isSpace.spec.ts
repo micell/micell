@@ -22,9 +22,13 @@ describe('char/isSpace', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isSpace({})).to.equal(false)
+    // @ts-ignore
     expect(isSpace('')).to.equal(false)
+    // @ts-ignore
     expect(isSpace(null)).to.equal(false)
+    // @ts-ignore
     expect(isSpace(undefined)).to.equal(false)
   })
 })

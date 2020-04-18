@@ -22,9 +22,13 @@ describe('char/isHexadecimal', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isHexadecimal({})).to.equal(false)
+    // @ts-ignore
     expect(isHexadecimal('')).to.equal(false)
+    // @ts-ignore
     expect(isHexadecimal(null)).to.equal(false)
+    // @ts-ignore
     expect(isHexadecimal(undefined)).to.equal(false)
   })
 })

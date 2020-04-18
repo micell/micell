@@ -17,9 +17,13 @@ describe('char/isControl', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isControl({})).to.equal(false)
+    // @ts-ignore
     expect(isControl('')).to.equal(false)
+    // @ts-ignore
     expect(isControl(null)).to.equal(false)
+    // @ts-ignore
     expect(isControl(undefined)).to.equal(false)
   })
 })

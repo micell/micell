@@ -11,12 +11,19 @@ describe('char/isCJK', () => {
   })
 
   it('should return false', () => {
+    // @ts-ignore
     expect(isCJK({})).to.equal(false)
+    // @ts-ignore
     expect(isCJK('a')).to.equal(false)
+    // @ts-ignore
     expect(isCJK('1')).to.equal(false)
+    // @ts-ignore
     expect(isCJK('.')).to.equal(false)
+    // @ts-ignore
     expect(isCJK('')).to.equal(false)
+    // @ts-ignore
     expect(isCJK(null)).to.equal(false)
+    // @ts-ignore
     expect(isCJK(undefined)).to.equal(false)
   })
 })

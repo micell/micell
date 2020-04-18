@@ -1,6 +1,6 @@
 import isString from '../lang/isString'
 
-const isPunctuation = (ch: any): boolean => {
+const isPunctuation = (ch: string): boolean => {
   if (isString(ch) && ch.length === 1) {
     const charCode = ch.charCodeAt(0)
     return (charCode >= 33 && charCode <= 47) ||
