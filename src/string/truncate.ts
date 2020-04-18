@@ -1,6 +1,6 @@
 import isCJK from '../char/isCJK'
 
-interface Options {
+export interface TruncateOptions {
   length?: number;
   omission?: string;
   countType?: number;
@@ -8,7 +8,7 @@ interface Options {
 
 export default function truncate (
   str = '',
-  options: Options = {}
+  options: TruncateOptions = {}
 ): string {
   const {
     length,

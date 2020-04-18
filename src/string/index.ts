@@ -6,6 +6,8 @@ import isValidJSON from './isValidJSON'
 import lastChar from './lastChar'
 import truncate from './truncate'
 
+export type { TruncateOptions } from './truncate'
+
 export default {
   countChars,
   countLines,

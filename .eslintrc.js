@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/no-empty-function': 0,
-    '@typescript-eslint/no-explicit-any': 0
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-namespace': 0,
   }
 }

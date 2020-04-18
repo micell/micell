@@ -37,11 +37,11 @@ function base64ToBytes (str: string): Array<number> {
   return bytes
 }
 
-interface Options {
+export interface Base64DecodeOptions {
   encoding?: 'utf8' | 'binary' | 'hex';
 }
 
-export default function decode (input: string, options: Options = {}): Array<number> | string {
+export default function decode (input: string, options: Base64DecodeOptions = {}): Array<number> | string {
   if (!isString(input)) {
     throw TypeError('input parameter should be a string')
   }

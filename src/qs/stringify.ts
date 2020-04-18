@@ -1,9 +1,6 @@
 import hasOwn from '../_internal/hasOwn'
 import isObject from '../lang/isObject'
-
-interface Query {
-  [key: string]: any;
-}
+import { Query } from './types'
 
 export default function stringify (query: Query): string {
   const pairs = []

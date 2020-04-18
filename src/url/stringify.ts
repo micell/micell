@@ -1,5 +1,6 @@
 import isObject from '../lang/isObject'
 import queryStringify from '../qs/stringify'
+import { Query } from '../qs/types'
 
 export interface URLParts {
   hash?: string;
@@ -10,7 +11,7 @@ export interface URLParts {
   pathname?: string;
   port?: string;
   protocol: string;
-  query?: object;
+  query?: Query;
   search?: string;
   username?: string;
 }

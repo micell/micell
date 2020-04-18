@@ -30,7 +30,7 @@ const easings: Easings = {
 const reEasingKeyword = /^(linear|ease|ease-in|ease-in-out|ease-out)$/
 const reCubicBezier = /^cubic-bezier\(\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*\)$/
 
-export interface Options {
+export interface ScrollToOptions {
   x?: number;
   y?: number;
   left?: number;
@@ -40,24 +40,24 @@ export interface Options {
 }
 
 export default function scrollTo (
-  elOrWindow: Element | Window | number | Options,
-  x: number | Options = 0,
+  elOrWindow: Element | Window | number | ScrollToOptions,
+  x: number | ScrollToOptions = 0,
   y = 0
 ): void {
   let el: any = window
-  let options: Options = {}
+  let options: ScrollToOptions = {}
 
   if (isElement(elOrWindow) || isWindow(elOrWindow)) {
     el = elOrWindow
     if (isObject(x)) {
-      options = x as Options
+      options = x as ScrollToOptions
     } else {
       options.x = x as number
       options.y = y
     }
   } else {
     if (isObject(elOrWindow)) {
-      options = elOrWindow as Options
+      options = elOrWindow as ScrollToOptions
     } else {
       options.x = (elOrWindow as number) || 0
       options.y = x as number
@@ -67,7 +67,7 @@ export default function scrollTo (
   if (!hasOwn(options, 'x')) options.x = options.left || 0
   if (!hasOwn(options, 'y')) options.y = options.top || 0
 
-  const innerScrollTo = (opts: Options): void => {
+  const innerScrollTo = (opts: ScrollToOptions): void => {
     const {
       x: left,
       y: top,

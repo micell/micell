@@ -1,7 +1,7 @@
 import isObject from './lang/isObject'
 import isString from './lang/isString'
 
-export interface Options {
+export interface AjaxOptions {
   async?: boolean;
   beforeSend?: (xhr: XMLHttpRequest) => void | boolean;
   data?: any;
@@ -11,7 +11,7 @@ export interface Options {
   timeout?: number;
 }
 
-export default function ajax (url: string, options: Options = {}): Promise<XMLHttpRequest> {
+export default function ajax (url: string, options: AjaxOptions = {}): Promise<XMLHttpRequest> {
   return new Promise((resolve, reject) => {
     const {
       async = true,

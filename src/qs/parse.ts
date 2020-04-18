@@ -1,6 +1,4 @@
-export interface Query {
-  [key: string]: string | Array<string>;
-}
+import { Query } from './types'
 
 export default function parse (search = ''): Query {
   const queryString = search.charAt(0) === '?' ? search.slice(1) : search

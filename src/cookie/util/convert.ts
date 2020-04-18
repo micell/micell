@@ -1,11 +1,11 @@
 import hasOwn from '../../_internal/hasOwn'
 import computeExpires from './computeExpires'
-import { Options } from '../types'
+import { CookieOptions } from '../types'
 
 // Convert an object to a cookie option string
-export default function convert (opts: Options): string {
+export default function convert (opts: CookieOptions): string {
   let res = ''
-  let key: (keyof Options)
+  let key: (keyof CookieOptions)
 
   for (key in opts) {
     if (hasOwn(opts, key)) {

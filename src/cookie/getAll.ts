@@ -1,6 +1,6 @@
-import { Cookies, Decoder } from './types'
+import { Cookies, CookieDecoder } from './types'
 
-export default function getAll (decoder: Decoder = decodeURIComponent): Cookies {
+export default function getAll (decoder: CookieDecoder = decodeURIComponent): Cookies {
   const reKey = /(?:^|; )([^=]+?)(?:=([^;]*))?(?:;|$)/g
   const cookies: Cookies = {}
   let match

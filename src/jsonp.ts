@@ -1,12 +1,12 @@
 import insertScript from './dom/insertScript'
 
-export interface Options {
+export interface JsonpOptions {
   callback?: string;
   responseType?: string;
   timeout?: number;
 }
 
-export default function jsonp (url: string, options: Options = {}): Promise<any> {
+export default function jsonp (url: string, options: JsonpOptions = {}): Promise<any> {
   return new Promise((resolve, reject) => {
     const {
       callback = '_callback',

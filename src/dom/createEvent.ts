@@ -1,10 +1,10 @@
-export interface Options {
+export interface CreateEventOptions {
   bubbles?: boolean;
   cancelable?: boolean;
   detail?: any;
 }
 
-export default function createEvent (type: string, options: Options = {}): CustomEvent<any> {
+export default function createEvent (type: string, options: CreateEventOptions = {}): CustomEvent<any> {
   const {
     bubbles = false,
     cancelable = false,

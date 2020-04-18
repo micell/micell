@@ -2,13 +2,13 @@ import hasOwn from '../_internal/hasOwn'
 import enUS from './i18n/timeAgo/en_US'
 import zhCN from './i18n/timeAgo/zh_CN'
 
-type Locale = Array<[string, string]>
+export type TimeAgoLocale = Array<[string, string]>
 
-interface Locales {
-  [key: string]: Locale;
+interface TimeAgoLocales {
+  [key: string]: TimeAgoLocale;
 }
 
-const locales: Locales = {
+const locales: TimeAgoLocales = {
   'en_US': enUS,
   'zh_CN': zhCN
 }
@@ -18,7 +18,7 @@ let currentLocale = 'en_US'
 export interface TimeAgo {
   getLocale(): string;
   setLocale(name: string): void;
-  addLocale(name: string, locale: Locale): void;
+  addLocale(name: string, locale: TimeAgoLocale): void;
   format(date: number | string | Date, locale?: string, nowDate?: Date): string;
 }
 
@@ -33,7 +33,7 @@ const timeAgo: TimeAgo = {
     }
   },
 
-  addLocale (name: string, locale: Locale): void {
+  addLocale (name: string, locale: TimeAgoLocale): void {
     locales[name] = locale
   },
 

@@ -1,7 +1,7 @@
 import isWindow from './isWindow'
 import isElement from './isElement'
 
-interface Viewport {
+export interface Viewport {
   width: number;
   height: number;
 }

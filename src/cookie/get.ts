@@ -1,9 +1,9 @@
 import isString from '../lang/isString'
 import escapeRegexp from '../string/escapeRegexp'
-import { Decoder } from './types'
+import { CookieDecoder } from './types'
 
 
-export default function get (key: string, decoder: Decoder | null = decodeURIComponent): any {
+export default function get (key: string, decoder: CookieDecoder | null = decodeURIComponent): any {
   if (!isString(key) || !key) {
     return null
   }

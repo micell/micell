@@ -2,7 +2,7 @@ export interface Cookies {
   [key: string]: string;
 }
 
-export interface Options {
+export interface CookieOptions {
   domain?: string;
   path?: string;
   expires?: number | string | Date;
@@ -11,5 +11,5 @@ export interface Options {
   samesite?: string;
 }
 
-export type Decoder<T = string> = (value: string) => T
-export type Encoder<T = string> = (value: T) => string
+export type CookieDecoder<T = string> = (value: string) => T
+export type CookieEncoder<T = string> = (value: T) => string

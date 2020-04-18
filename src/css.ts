@@ -2,7 +2,7 @@ import isString from './lang/isString'
 import isObject from './lang/isObject'
 import isElement from './dom/isElement'
 
-interface CSSProps {
+export interface CSSProps {
   [key: string]: number | string;
 }
 

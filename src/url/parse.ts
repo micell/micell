@@ -1,9 +1,10 @@
 import isString from '../lang/isString'
-import queryParse, { Query } from '../qs/parse'
+import queryParse from '../qs/parse'
+import { Query } from '../qs/types'
 
 const reUrl = /(\w+):\/\/(?:(\w+)(?::(\w+))?@)?([^@/#]+\.[a-z]+)(?::(\d+))?([^?#]+)?(\?[^#]+)?(#[\w\W]+)?/
 
-export interface URLObj {
+export interface URLObject {
   hash: string;
   host: string;
   hostname: string;
@@ -18,7 +19,7 @@ export interface URLObj {
   username: string;
 }
 
-export default function parse (url: string): URLObj {
+export default function parse (url: string): URLObject {
   if (!isString(url)) {
     throw new TypeError('invalid url')
   }

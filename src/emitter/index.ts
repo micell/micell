@@ -6,6 +6,8 @@ import off from './off'
 import on from './on'
 import once from './once'
 
+export type { EventType, Listener, Events } from './types'
+
 export default {
   Emitter,
   create,

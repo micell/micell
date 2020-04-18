@@ -1,9 +1,9 @@
 import { expect } from 'chai'
-import parse, { URLObj } from '../../src/url/parse'
+import parse, { URLObject } from '../../src/url/parse'
 
 interface TestDatum {
   input: string;
-  expected: URLObj;
+  expected: URLObject;
 }
 
 const testData = [

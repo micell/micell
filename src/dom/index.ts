@@ -13,6 +13,12 @@ import scrollX from './scrollX'
 import scrollY from './scrollY'
 import viewport from './viewport'
 
+export { CreateEventOptions } from './createEvent'
+export { AnyFunction } from './domReady'
+export { InsertScriptOptions } from './insertScript'
+export { ScrollToOptions } from './scrollTo'
+export { Viewport } from './viewport'
+
 export default {
   clientX,
   clientY,
