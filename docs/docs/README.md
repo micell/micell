@@ -619,7 +619,7 @@ format(date, format, [isUTC])
 
 **Arguments**
 
-* **`date (Date|number)`**: A Date object or a timestamp number.
+* **`date (number|string|Date)`**: A timestamp number (unit: ms) or a parsable date string or a `Date` object.
 * **`format (string)`**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
 * **`[isUTC = false] (boolean)`**: Use the UTC time, default is `false`.
 
