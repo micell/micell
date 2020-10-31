@@ -624,7 +624,7 @@ format(date, format, [isUTC])
 
 **参数**
 
-* **`date (Date|number)`**：一个`Date`对象或一个时间戳（单位：毫秒）。
+* **`date (number|string|Date)`**：一个时间戳数值（单位：毫秒）或可解析的日期字符串或一个`Date`对象。
 * **`format (string)`**：一个占位符替换字符串，为 [moment format tokens](http://momentjs.com/docs/#/displaying/format/) 的一部分，具体查看下面表格。
 * **`[isUTC = false] (boolean)`**：是否使用协调世界时（UTC）。
 
