@@ -31,14 +31,14 @@ export default function numberFormat (number: number, digits = -1, dot = '.', se
     decPartStr = decPartStr.slice(0, digits)
   }
 
-  const len = intPartStr.length
-  for (let i = 0; i < len; i++) {
-    if (i % 3 === 0 && i !== 0) {
+  const intLen = intPartStr.length
+  const start = intLen % 3
+  for (let i = 0; i < intLen; i++) {
+    result += intPartStr[i]
+    if ((i + 1 - start) % 3 === 0 && i !== intLen - 1) {
       result += sep
     }
-    result += intPartStr[len - 1 - i]
   }
-  result = result.split('').reverse().join('')
 
   if (decPartStr) {
     result += dot
