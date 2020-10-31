@@ -5,14 +5,15 @@ export default function numberFormat (number: number, digits = -1, dot = '.', se
     return ''
   }
   const tenExp = Math.pow(10, digits)
-  let result = ''
+  let result = number >= 0 ? '' : '-'
   let decPartStr
 
   if (digits > -1) {
     number = Math.round(number * tenExp) / tenExp
   }
-  const intPart = Math.floor(number)
-  const decPart = ((number * tenExp) - (intPart * tenExp)) / tenExp
+  const abs = Math.abs(number)
+  const intPart = Math.floor(abs)
+  const decPart = ((abs * tenExp) - (intPart * tenExp)) / tenExp
 
   const intPartStr = intPart.toString()
 

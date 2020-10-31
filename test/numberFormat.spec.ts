@@ -24,6 +24,11 @@ describe('numberFormat', () => {
   })
 
   it('4th argument: sep', () => {
+    expect(numberFormat(0, 0, undefined, ' ')).to.equal('0')
+    expect(numberFormat(1.1, 3, undefined, ' ')).to.equal('1.100')
+    expect(numberFormat(1234567.456, 3, undefined, ' ')).to.equal('1 234 567.456')
+    expect(numberFormat(12345678.456, 3, undefined, ' ')).to.equal('12 345 678.456')
     expect(numberFormat(123456789.456, 3, undefined, ' ')).to.equal('123 456 789.456')
+    expect(numberFormat(-123456789.456, 3, undefined, ' ')).to.equal('-123 456 789.456')
   })
 })
