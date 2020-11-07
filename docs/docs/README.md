@@ -2694,6 +2694,31 @@ const timerId = raf(() => console.log('never happen'))
 raf.cancel(timerId)
 ```
 
+## randomNumbers
+
+```js
+randomNumbers(start, end, length)
+```
+
+Return an array of random integer which is greater than or equal to `start` and less than or equal to `end`. In array, each other is not equal.
+
+**Arguments**
+
+* **`start (number)`**: The minimum integer.
+* **`end (number)`**: The maximum integer.
+* **`length (number)`**: The number of integers.
+
+**Return**
+
+* **`(numbers[])`**
+
+**Example**
+
+```js
+randomNumbers(1, 10, 5)
+// => [9, 4, 1, 5, 7]
+```
+
 ## randomString
 
 ```js

@@ -2705,6 +2705,31 @@ const timerId = raf(() => console.log('never happen'))
 raf.cancel(timerId)
 ```
 
+## randomNumbers
+
+```js
+randomNumbers(start, end, length)
+```
+
+返回一个随机整数数组，每个整数都大于或等于`start`，并且小于或等于`end`。数组当中每个元素互补相等。
+
+**参数**
+
+* **`start (number)`**：最小整数。
+* **`end (number)`**：最大整数。
+* **`length (number)`**：整数的数量。
+
+**返回值**
+
+* **`(numbers[])`**
+
+**示例**
+
+```js
+randomNumbers(1, 10, 5)
+// => [9, 4, 1, 5, 7]
+```
+
 ## randomString
 
 ```js
