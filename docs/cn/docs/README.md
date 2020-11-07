@@ -1318,6 +1318,29 @@ isArray([]);
 // => true
 ```
 
+### isBigInt
+
+```js
+isBigInt(value)
+```
+
+判断一个值是否是 BigInt 类型。
+
+**Arguments**
+
+* **`value (any)`**
+
+**Return**
+
+* **`(boolean)`**
+
+**Example**
+
+```js
+isBigInt(BigInt(1));
+// => true
+```
+
 ### isBoolean
 
 ```js
@@ -1552,6 +1575,29 @@ isString(value)
 
 ```js
 isString('hello world');
+// => true
+```
+
+### isSymbol
+
+```js
+isSymbol(value)
+```
+
+判断一个值是否是 Symbol 类型。
+
+**Arguments**
+
+* **`value (any)`**
+
+**Return**
+
+* **`(boolean)`**
+
+**Example**
+
+```js
+isSymbol(Symbol('foo'));
 // => true
 ```
 
