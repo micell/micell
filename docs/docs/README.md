@@ -1312,6 +1312,29 @@ isArray([]);
 // => true
 ```
 
+### isBigInt
+
+```js
+isBigInt(value)
+```
+
+Check if a value is a BigInt value.
+
+**Arguments**
+
+* **`value (any)`**
+
+**Return**
+
+* **`(boolean)`**
+
+**Example**
+
+```js
+isBigInt(BigInt(1));
+// => true
+```
+
 ### isBoolean
 
 ```js
@@ -1546,6 +1569,29 @@ Check if a value is a String.
 
 ```js
 isString('hello world');
+// => true
+```
+
+### isSymbol
+
+```js
+isSymbol(value)
+```
+
+Check if a value is a Symbol value.
+
+**Arguments**
+
+* **`value (any)`**
+
+**Return**
+
+* **`(boolean)`**
+
+**Example**
+
+```js
+isSymbol(Symbol('foo'));
 // => true
 ```
 
