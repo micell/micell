@@ -166,6 +166,7 @@ namespace micell {
     export const basename = allPath.default.basename;
     export const dirname = allPath.default.dirname;
     export const extname = allPath.default.extname;
+    export const join = allPath.default.join;
   }
 
   export namespace qs {
