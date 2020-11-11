@@ -1694,6 +1694,33 @@ extname('/foo/bar.txt');
 // => ".txt"
 ```
 
+### join
+
+```js
+join(...args)
+```
+
+拼接路径字符串，使用斜线`/`分隔。
+
+**参数**
+
+* **`args (string[])`**
+
+**返回值**
+
+* **`(string)`**
+
+**示例**
+
+```js
+join()
+// => ""
+join('foo', 'bar')
+// => "foo/bar"
+join('foo/', '/bar')
+// => "foo/bar"
+```
+
 ## qs
 
 ### get

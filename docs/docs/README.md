@@ -1686,6 +1686,33 @@ extname('/foo/bar.txt');
 // => ".txt"
 ```
 
+### join
+
+```js
+join(...args)
+```
+
+Join the path strings seperated by an slash `/`.
+
+**Arguments**
+
+* **`args (string[])`**
+
+**Return**
+
+* **`(string)`**
+
+**Example**
+
+```js
+join()
+// => ""
+join('foo', 'bar')
+// => "foo/bar"
+join('foo/', '/bar')
+// => "foo/bar"
+```
+
 ## qs
 
 ### get
