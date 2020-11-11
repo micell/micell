@@ -162,7 +162,7 @@ namespace micell {
     export const isUndefined = allLang.default.isUndefined;
   }
 
-  export namespace lang {
+  export namespace path {
     export const basename = allPath.default.basename;
     export const dirname = allPath.default.dirname;
     export const extname = allPath.default.extname;
