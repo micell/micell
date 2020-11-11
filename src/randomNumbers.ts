@@ -1,4 +1,4 @@
-export default function randomUniqueNumbers(start: number, end: number, length: number): number[] {
+export default function randomNumbers(start: number, end: number, length: number): number[] {
   if (end - start + 1 < length) {
     throw new RangeError('the result of end - start + 1 should be greater than length')
   }

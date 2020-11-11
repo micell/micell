@@ -25,6 +25,7 @@ import { default as md5Alias } from './md5'
 import { default as noopAlias } from './noop'
 import { default as numberFormatAlias } from './numberFormat'
 import { default as rafAlias } from './raf'
+import { default as randomNumbersAlias } from './randomNumbers'
 import { default as randomStringAlias } from './randomString'
 import { default as uuidAlias } from './uuid'
 
@@ -67,6 +68,7 @@ namespace micell {
   export const noop = noopAlias;
   export const numberFormat = numberFormatAlias;
   export const raf = rafAlias;
+  export const randomNumbers = randomNumbersAlias;
   export const randomString = randomStringAlias;
   export const uuid = uuidAlias;
 
