@@ -221,6 +221,7 @@ namespace micell {
 
   export namespace url {
     export const isAbsolute = allUrl.default.isAbsolute;
+    export const join = allUrl.default.join;
     export const parse = allUrl.default.parse;
     export const stringify = allUrl.default.stringify;
   }
