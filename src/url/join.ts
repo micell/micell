@@ -18,7 +18,12 @@ const join = (...args: string[]): string => {
       url += sep
     }
   }
-  url = url.replace(/(?<!:)[/]{2,}/g, '/')
+  url = url.replace(/([/]{2,})/g, (m, p1, offset) => {
+    if (url[offset - 1] === ':') {
+      return m
+    }
+    return '/'
+  })
   return url
 }
 
