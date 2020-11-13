@@ -2493,6 +2493,33 @@ isAbsolute('https://example.com')
 // => true
 ```
 
+### join
+
+```js
+join(...args)
+```
+
+拼接并正规化 URL 子字符串。
+
+**参数**
+
+* **`args (string[])`**
+
+**返回值**
+
+* **`(string)`**
+
+**示例**
+
+```js
+join('https://example.com', 'foo', 'bar')
+// => 'https://example.com/foo/bar'
+join('https://example.com', 'foo', 'bar/')
+// => 'https://example.com/foo/bar/'
+join('https://example.com', 'foo', 'bar', '?hello=world')
+// => 'https://example.com/foo/bar?hello=world'
+```
+
 ### parse
 
 ```js

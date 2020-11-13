@@ -2485,6 +2485,33 @@ isAbsolute('https://example.com')
 // => true
 ```
 
+### join
+
+```js
+join(...args)
+```
+
+Join and normalize the url part strings.
+
+**Arguments**
+
+* **`args (string[])`**
+
+**Return**
+
+* **`(string)`**
+
+**Example**
+
+```js
+join('https://example.com', 'foo', 'bar')
+// => 'https://example.com/foo/bar'
+join('https://example.com', 'foo', 'bar/')
+// => 'https://example.com/foo/bar/'
+join('https://example.com', 'foo', 'bar', '?hello=world')
+// => 'https://example.com/foo/bar?hello=world'
+```
+
 ### parse
 
 ```js
