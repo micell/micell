@@ -83,6 +83,27 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
 
         expect(calls).to.deep.equal(['one', 1, 'two', 1])
       })
+
+      it('should not affect the on method', () => {
+        const emitter = creator()
+        let calls: any[] = []
+        const log = (...args: any[]): void => {
+          calls.push(...args)
+        }
+
+        emitter.once('foo', log)
+        emitter.emit('foo', 'once', 1)
+        emitter.emit('foo', 'once', 2)
+
+        expect(calls).to.deep.equal(['once', 1])
+
+        calls = []
+
+        emitter.on('foo', log)
+        emitter.emit('foo', 'on', 1)
+        emitter.emit('foo', 'on', 2)
+        expect(calls).to.deep.equal(['on', 1, 'on', 2])
+      });
     })
 
     describe('off(type, fn)', () => {

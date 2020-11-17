@@ -18,9 +18,12 @@ class Emitter {
   // Add a listener for a given event.
   // This listener can be called once, then will be removed.
   once (type: EventType, fn: Listener): void {
-    // @ts-ignore
-    fn.$once = true
-    this.on(type, fn)
+    const wrapped = function wrapped(...args: any[]): any {
+      // @ts-ignore
+      return fn.apply(this, args)
+    }
+    wrapped.$once = true
+    this.on(type, wrapped)
   }
 
   // Remove all event listeners
