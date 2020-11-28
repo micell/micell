@@ -38,7 +38,7 @@ describe('randomNumbers', () => {
   })
 
   it('should throw a RangeError if end - start + 1 < length', () => {
-    const gen = () => {
+    const gen = (): void => {
       randomNumbers(1, 10, 20)
     }
     expect(gen).to.throw(RangeError)
