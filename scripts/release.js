@@ -32,6 +32,10 @@ try {
   log('Create the destination directory...')
   mkdir(outDir)
 
+  log('Generate typescript declarations...')
+
+  exec('yarn run types')
+
   log('Compiling source files...')
 
   exec('yarn run build')
