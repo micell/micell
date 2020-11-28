@@ -16,16 +16,16 @@
     "docs:build": "vuepress build docs",
     "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
+    "type-check:watch": "yarn run type-check -- --watch",
     "test": "cross-env BABEL_ENV=test karma start",
-    "test:ci": "npm run test -- --single-run",
+    "test:ci": "yarn run test --single-run",
     "test:bs": "cross-env BABEL_ENV=test BS=true karma start --single-run",
-    "build": "npm run clean && npm run types && npm run build:commonjs && npm run rollup",
+    "build": "yarn run clean && yarn run types && yarn run build:commonjs && yarn run rollup",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions .mjs,.js,.ts --out-dir lib",
     "rollup": "rollup -c",
     "types": "node scripts/generateDeclaration.js",
     "pkg": "node scripts/release.js",
-    "release": "npm run pkg && semantic-release"
+    "release": "yarn run pkg && semantic-release"
   },
   "repository": {
     "type": "git",
