@@ -125,13 +125,13 @@ If you have a bug or feature request or document improvement about micell, you c
 
 ```sh
 # local docs server
-npm run docs:dev
+yarn run docs:dev
 ```
 
 ### Release
 
 ```sh
-npm run release
+yarn run release
 ```
 
 ## License
