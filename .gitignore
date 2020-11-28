@@ -6,6 +6,5 @@ lib
 types
 build
 package-lock.json
-yarn.lock
 *.swp
 *.log
