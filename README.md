@@ -131,7 +131,11 @@ yarn run docs:dev
 ### Release
 
 ```sh
+# CI environment
 yarn run release
+
+# Local machine
+yarn run release --no-ci
 ```
 
 ## License
