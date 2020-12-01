@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('Windows')
+const isWindows = isType('Windows')
+
+export default isWindows

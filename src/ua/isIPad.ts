@@ -1,3 +1,6 @@
+import isIP from '../regex/isIP'
 import isType from './util/isType'
 
-export default isType('IPad')
+const isIPad = isType('IPad')
+
+export default isIPad

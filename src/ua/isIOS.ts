@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('IOS')
+const isIOS = isType('IOS')
+
+export default isIOS

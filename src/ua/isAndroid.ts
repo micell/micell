@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('Android')
+const isAndriod = isType('Android')
+
+export default isAndriod

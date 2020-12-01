@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('Mobile')
+const isMobile = isType('Mobile')
+
+export default isMobile

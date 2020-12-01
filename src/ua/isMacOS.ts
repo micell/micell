@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('MacOS')
+const isMacOS = isType('MacOS')
+
+export default isMacOS
