@@ -1,3 +1,6 @@
+import isTablet from './isTablet'
 import isType from './util/isType'
 
-export default isType('WeChat')
+const isWechat = isType('WeChat')
+
+export default isWechat

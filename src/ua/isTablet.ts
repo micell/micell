@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('Tablet')
+const isTablet = isType('Tablet')
+
+export default isTablet

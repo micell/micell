@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('IPhone')
+const isIPhone = isType('IPhone')
+
+export default isIPhone

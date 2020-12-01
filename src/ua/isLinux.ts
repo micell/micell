@@ -1,3 +1,5 @@
 import isType from './util/isType'
 
-export default isType('Linux')
+const isLinux = isType('Linux')
+
+export default isLinux
