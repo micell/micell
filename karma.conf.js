@@ -114,7 +114,11 @@ module.exports = function (config) {
       'node_modules/chai/chai.js',
       'node_modules/sinon/pkg/sinon.js',
       'test/setup.ts',
-      'test/**/*.spec.ts'
+      'test/**/*.spec.ts',
+      {
+        pattern: 'test/jsonp.js',
+        included: false
+      }
     ],
 
     // list of files / patterns to exclude
