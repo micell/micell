@@ -46,8 +46,8 @@ export default function jsonp (url: string, options: JsonpOptions = {}): Promise
     }
 
     insertScript(src, {
-      onerror (err: Error) {
-        reject(err)
+      onerror () {
+        reject(new Error('load error'))
       }
     })
   })
