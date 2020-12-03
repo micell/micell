@@ -49,12 +49,13 @@ if (!raf || !caf) {
         }
       }, Math.round(next))
     }
+    const timerId = id++
     queue.push({
-      timerId: id++,
+      timerId,
       callback,
       cancelled: false
     })
-    return id
+    return timerId
   }
 
   caf = function (timerId: number): void {
