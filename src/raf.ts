@@ -37,7 +37,7 @@ if (!raf || !caf) {
         const copiedQueue = queue.slice()
         queue.length = 0
         for (let i = 0; i < copiedQueue.length; i++) {
-          if (copiedQueue[i].cancelled) {
+          if (!copiedQueue[i].cancelled) {
             try {
               copiedQueue[i].callback(lastTime)
             } catch (err) {
