@@ -83,6 +83,7 @@ describe('raf', () => {
           if (count > 10) {
             const elapsed = Date.now() - start
             expect(elapsed > tick * 9).to.equal(true)
+            resetRafs()
             done()
           } else {
             count++
@@ -90,9 +91,9 @@ describe('raf', () => {
           }
         })
       })
-      .catch(done)
-      .finally(() => {
+      .catch((err) => {
         resetRafs()
+        done(err)
       })
   })
 
@@ -143,12 +144,13 @@ describe('raf', () => {
           expect(spy1.called).to.equal(true)
           expect(spy2.called).to.equal(false)
           expect(spy3.called).to.equal(true)
+          resetRafs()
           done()
         })
       })
-      .catch(done)
-      .finally(() => {
+      .catch((err) => {
         resetRafs()
+        done(err)
       })
   })
 
@@ -180,6 +182,7 @@ describe('raf', () => {
       .then((mod) => {
         const raf = mod.default
         const onError = (): void => {
+          resetRafs()
           done()
         }
 
@@ -192,9 +195,9 @@ describe('raf', () => {
           throw new Error('error')
         })
       })
-      .catch(done)
-      .finally(() => {
+      .catch((err) => {
         resetRafs()
+        done(err)
       })
   })
 })

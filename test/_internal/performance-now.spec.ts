@@ -22,12 +22,14 @@ describe('_internal/performance-now', () => {
         const now = mod.default
         const time = now()
         expect(Math.round(time) - time).to.equal(0)
-        done()
-      })
-      .catch(done)
-      .finally(() => {
         // @ts-ignore
         window.performance = originalPerformance
+        done()
+      })
+      .catch((err) => {
+        // @ts-ignore
+        window.performance = originalPerformance
+        done(err)
       })
   })
 })
