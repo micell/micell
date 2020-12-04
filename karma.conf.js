@@ -118,6 +118,10 @@ module.exports = function (config) {
       {
         pattern: 'test/jsonp.js',
         included: false
+      },
+      {
+        pattern: 'test/jsonp-invalid.js',
+        included: false
       }
     ],
 

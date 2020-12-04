@@ -4,6 +4,14 @@ import countChars from '../../src/string/countChars'
 describe('countChars', () => {
   const str = 'hello, world!你好，世界！'
 
+  it('should throw an error if the first parameter is not a string', () => {
+    const createFn = (value: any, type: number) => () => countChars(value, type)
+    // @ts-ignore
+    expect(createFn(undefined)).to.throw()
+    // @ts-ignore
+    expect(createFn(1)).to.throw()
+  })
+
   it('should return the number of characters', () => {
     expect(countChars(str)).to.equal(19)
   })

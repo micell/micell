@@ -83,6 +83,19 @@ describe('scrollTo', () => {
     }
   })
 
+  it('scrollTo(container, { left: 100, top: 100 }) if container.scrollTo is not a function', async () => {
+    if (container) {
+      const originScrollTo = container.scrollTo
+      // @ts-ignore
+      container.scrollTo = null
+      scrollTo(container, { left: 100, top: 100 })
+      await delay()
+      expect(scrollX(container)).to.equal(100)
+      expect(scrollY(container)).to.equal(100)
+      container.scrollTo = originScrollTo
+    }
+  })
+
   it('scrollTo({ x: 0, y: 1000, easing: \'linear\' })', async () => {
     scrollTo({ x: 0, y: 1000, easing: 'linear' })
     expect(scrollX()).to.equal(0)
@@ -107,6 +120,12 @@ describe('scrollTo', () => {
     expect(scrollY()).to.be.above(0)
 
     await delay(500)
+    expect(scrollX()).to.equal(0)
+    expect(scrollY()).to.equal(1000)
+  })
+
+  it('scrollTo({ left: 0, top: 1000, easing: \'invalid-easing\' })', async () => {
+    scrollTo({ x: 0, y: 1000, easing: 'invalid-easing' })
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(1000)
   })

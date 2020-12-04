@@ -56,11 +56,12 @@ describe('base64/encode', () => {
     }
   })
 
-  // TODO: ts type check error
-  // it('should throw a TypeError', () => {
-  //   const fn1 = () => encode()
-  //   const fn2 = () => encode(1)
-  //   expect(fn1).to.throw(TypeError)
-  //   expect(fn2).to.throw(TypeError)
-  // })
+  it('should throw a TypeError', () => {
+    // @ts-ignore
+    const fn1 = () => encode()
+    // @ts-ignore
+    const fn2 = () => encode(1)
+    expect(fn1).to.throw(TypeError)
+    expect(fn2).to.throw(TypeError)
+  })
 })

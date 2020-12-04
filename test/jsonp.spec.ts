@@ -24,6 +24,22 @@ describe('jsonp', () => {
       })
   })
 
+  it('should handle the query string right', (done) => {
+    jsonp('/base/test/jsonp.js?v=1')
+      .then((data) => {
+        expect(data).to.equal(1)
+        done()
+      })
+  })
+
+  it('should reject with the parsign error', (done) => {
+    jsonp('/base/test/jsonp-invalid.js')
+      .catch((err: Error) => {
+        expect(err).to.instanceof(Error)
+        done()
+      })
+  })
+
   it('should receive the response data without parsing', (done) => {
     jsonp('/base/test/jsonp.js', {
       responseType: 'text'
