@@ -144,13 +144,13 @@ const testData = [
 ]
 
 describe('url/parse', () => {
-  // TODO: unable to pass the type check
-  // it('should throw a TypeError if the 1st parameter is not a string', () => {
-  //   const createFn = url => () => parse(url)
-  //   expect(createFn()).to.throw(TypeError)
-  //   expect(createFn(1)).to.throw(TypeError)
-  //   expect(createFn({})).to.throw(TypeError)
-  // })
+  it('should throw a TypeError if the 1st parameter is not a string', () => {
+    const createFn = (url: any) => () => parse(url)
+    // @ts-ignore
+    expect(createFn()).to.throw(TypeError)
+    expect(createFn(1)).to.throw(TypeError)
+    expect(createFn({})).to.throw(TypeError)
+  })
 
   it('should throw a TypeError if the 1st parameter is not a valid url', () => {
     type CallFunc = () => void

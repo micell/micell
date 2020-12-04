@@ -59,11 +59,12 @@ describe('base64/decode', () => {
     }
   })
 
-  // TODO: ts type check error
-  // it('should throw a Type Error', () => {
-  //   const fn1 = () => decode()
-  //   const fn2 = () => decode(1)
-  //   expect(fn1).to.throw(TypeError)
-  //   expect(fn2).to.throw(TypeError)
-  // })
+  it('should throw a TypeError', () => {
+    // @ts-ignore
+    const fn1 = () => decode()
+    // @ts-ignore
+    const fn2 = () => decode(1)
+    expect(fn1).to.throw(TypeError)
+    expect(fn2).to.throw(TypeError)
+  })
 })

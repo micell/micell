@@ -10,12 +10,33 @@ const testData: Array<TestDatum> = [
   {
     expected: 'http://example.com',
     input: {
-      hash: '',
       host: 'example.com',
+      hostname: 'example.com',
+      protocol: 'http'
+    }
+  },
+  {
+    expected: 'http://example.com',
+    input: {
+      hash: '',
       hostname: 'example.com',
       password: '',
       pathname: '',
       port: '',
+      protocol: 'http',
+      query: {},
+      search: '',
+      username: ''
+    }
+  },
+  {
+    expected: 'http://example.com:8000',
+    input: {
+      hash: '',
+      hostname: 'example.com',
+      password: '',
+      pathname: '',
+      port: '8000',
       protocol: 'http',
       query: {},
       search: '',
@@ -111,6 +132,20 @@ const testData: Array<TestDatum> = [
         foo: '1',
         bar: ['2', '3']
       },
+      username: ''
+    }
+  },
+  {
+    expected: 'http://www.example.com/path?foo=1&bar=2&bar=3',
+    input: {
+      hash: '',
+      host: 'www.example.com',
+      hostname: 'www.example.com',
+      password: '',
+      pathname: '/path',
+      port: '',
+      protocol: 'http',
+      query: {},
       search: '?foo=1&bar=2&bar=3',
       username: ''
     }
@@ -133,19 +168,19 @@ const testData: Array<TestDatum> = [
 ]
 
 describe('url/stringify', () => {
-  // TODO: unable to pass the type check
-  // it('should throw a TypeError if the 1st parameter is not an object', () => {
-  //   const createFn = value => () => stringify(value)
-  //   expect(createFn()).to.throw(TypeError)
-  //   expect(createFn('')).to.throw(TypeError)
-  //   expect(createFn([])).to.throw(TypeError)
-  // })
+  it('should throw a TypeError if the 1st parameter is not an object', () => {
+    const createFn = (value: any) => () => stringify(value)
+    // @ts-ignore
+    expect(createFn()).to.throw(TypeError)
+    expect(createFn('')).to.throw(TypeError)
+    expect(createFn([])).to.throw(TypeError)
+  })
 
-  // TODO: unable to pass the type check
-  // it('should throw a Type error if the protocol missing', () => {
-  //   const fn = () => stringify({ hostname: 'example.com' })
-  //   expect(fn).to.throw(TypeError)
-  // })
+  it('should throw a Type error if the protocol missing', () => {
+    // @ts-ignore
+    const fn = () => stringify({ hostname: 'example.com' })
+    expect(fn).to.throw(TypeError)
+  })
 
   it('should throw a TypeError if host and hostname property missing', () => {
     const fn = (): void => {
