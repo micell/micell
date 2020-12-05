@@ -1,15 +1,17 @@
 import { expect } from 'chai'
 
 describe('_internal/performance-now', () => {
-  it('should return a decimal', (done) => {
+  it('should return a non-zero value', (done) => {
     import('../../src/_internal/performance-now')
       .then((mod) => {
         const now = mod.default
         const time = now()
-        expect(Math.round(time) - time).not.to.equal(0)
+        expect(time).to.gt(0)
         done()
       })
-      .catch(done)
+      .catch((err) => {
+        done(err)
+      })
   })
 
   it('should return an integer if window.performance is not suppored', (done) => {
