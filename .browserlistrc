@@ -1,4 +1,4 @@
 latest 4 versions
-> 0.25%
-ie >= 9
-node >= 8
+> 1%
+ie >= 11
+node >= 10
