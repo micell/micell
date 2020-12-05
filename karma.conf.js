@@ -4,17 +4,31 @@ const path = require('path')
 // Generated on Wed Jun 26 2019 00:32:00 GMT+0800 (China Standard Time)
 
 module.exports = function (config) {
+  const {
+    FF
+  } = process.env
+
   let customLaunchers = {}
 
-  customLaunchers = {
-    ChromeNoSandboxHeadless: {
-      base: 'Chrome',
-      flags: [
-        '--no-sandbox',
-        '--headless',
-        '--disable-gpu',
-        '--remote-debugging-port=9222'
-      ]
+
+  if (FF) {
+    customLaunchers = {
+      FirefoxHeadless: {
+        base: 'Firefox',
+        flags: ['-headless']
+      }
+    }
+  } else {
+    customLaunchers = {
+      ChromeNoSandboxHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--no-sandbox',
+          '--headless',
+          '--disable-gpu',
+          '--remote-debugging-port=9222'
+        ]
+      }
     }
   }
 
