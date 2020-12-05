@@ -103,7 +103,7 @@ See [Docs](https://micell.org/docs).
 * Firefox
 * Safari
 * Edge
-* IE >= 9
+* IE >= 11
 * iOS >= 10
 * Android >= 5
 
