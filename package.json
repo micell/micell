@@ -19,7 +19,6 @@
     "type-check:watch": "yarn run type-check -- --watch",
     "test": "cross-env BABEL_ENV=test karma start",
     "test:ci": "yarn run test --single-run",
-    "test:bs": "cross-env BABEL_ENV=test BS=true karma start --single-run",
     "build": "yarn run clean && yarn run types && yarn run build:commonjs && yarn run rollup",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions .mjs,.js,.ts --out-dir lib",
     "rollup": "rollup -c",
