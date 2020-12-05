@@ -107,10 +107,6 @@ See [Docs](https://micell.org/docs).
 * iOS >= 10
 * Android >= 5
 
-**Real device tests powered by**
-
-[<img src="assets/Browserstack-logo@2x.png" width="300" alt="BrowserStack Logo">](https://www.browserstack.com)
-
 ## Changelog
 
 See [Release notes](https://github.com/micell/micell/releases).

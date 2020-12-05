@@ -103,13 +103,9 @@ micell.cookie.get('name')
 * Firefox
 * Safari
 * Edge
-* IE >= 9
+* IE >= 11
 * iOS >= 10
 * Android >= 5
-
-**真机测试由 BrowserStack 驱动**
-
-[<img src="assets/Browserstack-logo@2x.png" width="300" alt="BrowserStack Logo">](https://www.browserstack.com)
 
 ## 更新日志
 
