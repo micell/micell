@@ -31,8 +31,10 @@ describe('css', () => {
   it('should return the specified property\'s value if the 2nd argument is a string', () => {
     expect(css('#el1', 'width')).to.equal('100px')
     expect(css('#el1', 'height')).to.equal('100px')
-    expect(css('#el1', 'padding')).to.equal('10px')
     expect(css('#el1', 'paddingTop')).to.equal('10px')
+    expect(css('#el1', 'paddingRight')).to.equal('10px')
+    expect(css('#el1', 'paddingBottom')).to.equal('10px')
+    expect(css('#el1', 'paddingLeft')).to.equal('10px')
     expect(css('#el1', 'border-left-width')).to.equal('1px')
   })
 
@@ -45,7 +47,10 @@ describe('css', () => {
       })
       const style = window.getComputedStyle(el)
       expect(style.width).to.equal('50px')
-      expect(style.borderWidth).to.equal('2px')
+      expect(style.borderTopWidth).to.equal('2px')
+      expect(style.borderRightWidth).to.equal('2px')
+      expect(style.borderBottomWidth).to.equal('2px')
+      expect(style.borderLeftWidth).to.equal('2px')
     }
   })
 })
