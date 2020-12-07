@@ -7032,6 +7032,10 @@ karma-coverage@^2.0.1:
     istanbul-reports "^3.0.0"
     minimatch "^3.0.4"
 
+"karma-edgium-launcher@git+https://github.com/matracey/karma-edgium-launcher.git":
+  version "3.1.0"
+  resolved "git+https://github.com/matracey/karma-edgium-launcher.git#704328a9c0589c342121b3db8838f6d3ca412702"
+
 karma-file-fixtures-preprocessor@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/karma-file-fixtures-preprocessor/-/karma-file-fixtures-preprocessor-2.0.1.tgz#7a27e17d898b331bcc539883fe5fd8e3f77ee9bb"

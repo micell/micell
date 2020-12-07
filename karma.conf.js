@@ -6,7 +6,8 @@ const path = require('path')
 module.exports = function (config) {
   const {
     FF,
-    SF
+    SF,
+    Edge
   } = process.env
 
   let browsers = []
@@ -16,6 +17,8 @@ module.exports = function (config) {
     browsers = ['FirefoxHeadless']
   } else if (SF) {
     browsers = ['Safari']
+  } else if (Edge) {
+    browsers = ['EdgeHeadless']
   } else {
     customLaunchers = {
       ChromeNoSandboxHeadless: {
