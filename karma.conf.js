@@ -12,7 +12,6 @@ module.exports = function (config) {
   let browsers = []
   let customLaunchers = {}
 
-
   if (FF) {
     browsers = ['FirefoxHeadless']
   } else if (SF) {
@@ -29,6 +28,7 @@ module.exports = function (config) {
         ]
       }
     }
+    browsers = Object.keys(customLaunchers)
   }
 
   config.set({
