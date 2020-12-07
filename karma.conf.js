@@ -8,16 +8,12 @@ module.exports = function (config) {
     FF
   } = process.env
 
+  let browsers = []
   let customLaunchers = {}
 
 
   if (FF) {
-    customLaunchers = {
-      FirefoxHeadless: {
-        base: 'Firefox',
-        flags: ['-headless']
-      }
-    }
+    browsers = ['FirefoxHeadless']
   } else {
     customLaunchers = {
       ChromeNoSandboxHeadless: {
@@ -126,7 +122,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: Object.keys(customLaunchers),
+    browsers,
 
     customLaunchers,
 
