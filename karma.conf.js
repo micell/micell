@@ -7,7 +7,8 @@ module.exports = function (config) {
   const {
     FF,
     SF,
-    Edge
+    Edge,
+    IE
   } = process.env
 
   let browsers = []
@@ -19,6 +20,8 @@ module.exports = function (config) {
     browsers = ['Safari']
   } else if (Edge) {
     browsers = ['EdgeHeadless']
+  } else if (IE) {
+    browsers = ['IE']
   } else {
     customLaunchers = {
       ChromeNoSandboxHeadless: {
@@ -45,8 +48,7 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/chai/chai.js',
-      'node_modules/sinon/pkg/sinon.js',
+      'node_modules/es6-promise/dist/es6-promise.auto.js',
       'test/setup.ts',
       'test/**/*.spec.ts',
       {
@@ -66,9 +68,8 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.ts': ['webpack', 'sourcemap'],
-      'test/**/*.ts': ['webpack', 'sourcemap'],
-      'test/**/*.spec.ts': ['webpack', 'sourcemap'],
+      '**/*.js': ['webpack', 'sourcemap'],
+      '**/*.ts': ['webpack', 'sourcemap'],
       'test/fixtures/**/*': ['file-fixtures']
     },
 
@@ -90,7 +91,10 @@ module.exports = function (config) {
       mode: 'development',
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ['.mjs', '.js', '.json', '.ts']
+        extensions: ['.mjs', '.js', '.json', '.ts'],
+        alias: {
+          sinon: path.resolve(__dirname, 'node_modules/sinon/pkg/sinon.js')
+        }
       },
       module: {
         rules: [
