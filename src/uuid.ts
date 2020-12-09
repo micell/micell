@@ -8,13 +8,21 @@ import isBrowser from './_internal/isBrowser'
 const hexDigits = '0123456789abcdef'
 const maxUint32 = Math.pow(2, 32) - 1
 
+let getRandomValues: (array: Uint32Array) => Uint32Array
+
+if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+  getRandomValues = (array: Uint32Array): Uint32Array => window.crypto.getRandomValues(array)
+  // @ts-ignore
+} else if (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function') {
+  // @ts-ignore
+  getRandomValues = (array: Uint32Array): Uint32Array => window.msCrypto.getRandomValues(array)
+}
+
 let random: () => number = Math.random
 
-if (isBrowser && typeof window.Uint32Array === 'function' &&
-  ((window.crypto && typeof window.crypto.getRandomValues === 'function') ||
-  // @ts-ignore
-  (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function'))) {
-  random = (): number => window.crypto.getRandomValues(new Uint32Array(1))[0] / maxUint32
+// @ts-ignore
+if (isBrowser && typeof window.Uint32Array === 'function' && getRandomValues) {
+  random = (): number => getRandomValues(new Uint32Array(1))[0] / maxUint32
 }
 
 export default function uuid (): string {
