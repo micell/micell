@@ -1,11 +1,13 @@
+import isDate from '../lang/isDate'
+
 export default function diff (
   date1: number | string | Date,
   date2: number | string | Date,
   unit?: string,
   roundFunc: (value: number) => number = Math.round
 ): number {
-  const d1 = new Date(date1)
-  const d2 = new Date(date2)
+  const d1 = isDate(date1) ? date1 as Date : new Date(date1)
+  const d2 = isDate(date2) ? date2 as Date : new Date(date2)
   const dateDiff = d2.getTime() - d1.getTime()
   let result = 0
 
