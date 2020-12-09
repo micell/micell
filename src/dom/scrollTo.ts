@@ -74,7 +74,11 @@ export default function scrollTo (
       behavior
     } = opts;
     if (isFunction(el.scrollTo)) {
-      (el as Window).scrollTo({ left, top, behavior })
+      if (behavior) {
+        el.scrollTo({ left, top, behavior })
+      } else {
+        el.scrollTo(left, top)
+      }
     } else {
       if (left !== undefined) {
         (el as Element).scrollLeft = left;
