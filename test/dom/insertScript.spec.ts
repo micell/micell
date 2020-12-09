@@ -7,7 +7,8 @@ describe('insertScript', () => {
     insertScript(url)
     const scripts = document.querySelectorAll('script')
     let src = ''
-    for (const script of Array.from(scripts)) {
+    for (let i = 0; i < scripts.length; i++) {
+      const script = scripts[i]
       if (script.src === url) {
         src = script.src
       }
