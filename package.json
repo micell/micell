@@ -28,7 +28,8 @@
     "rollup": "rollup -c",
     "types": "node scripts/generateDeclaration.js",
     "pkg": "node scripts/release.js",
-    "release": "yarn run pkg && semantic-release"
+    "release": "yarn run pkg && semantic-release",
+    "postpublish": "cpy build/package.json ."
   },
   "repository": {
     "type": "git",
@@ -84,6 +85,7 @@
     "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
     "chalk": "^2.4.2",
+    "cpy-cli": "^3.1.1",
     "cross-env": "^5.2.0",
     "es6-promise": "^4.2.8",
     "eslint": "^7.0.0",
