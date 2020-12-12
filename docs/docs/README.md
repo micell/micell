@@ -13,6 +13,10 @@ decode(input, [options])
 
 Decoding a base64-encoded string to a utf8 string, hex string or byte array.
 
+**Since**
+
+0.3.0
+
 **Arguments**
 
 * **`input (string)`**
@@ -48,6 +52,10 @@ Encoding a utf8 string, byte array or Uint8Array to a base64 string.
 ```js
 encode(input)
 ```
+
+**Since**
+
+0.3.0
 
 **Arguments**
 
@@ -85,6 +93,10 @@ isAlphabetic(ch)
 
 Detect a character whether it is one of a-z or A-Z.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -110,6 +122,10 @@ isAlphanumeric(ch)
 ```
 
 Detect a character whether it is one of a-z or A-Z or 0-9.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -140,6 +156,10 @@ isASCII(ch)
 
 Detect a character whether it is an ASCII character.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -169,6 +189,10 @@ isCJK(ch)
 
 Detect a character whether it is a CJK (Chinese, Japanese and Korean) character.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -194,6 +218,10 @@ isControl(ch)
 ```
 
 Detect a character whether it is a [control character](https://en.wikipedia.org/wiki/Control_character).
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -221,6 +249,10 @@ isDigit(ch)
 
 Detect a character whether it is a decimal digit (0-9).
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -247,6 +279,10 @@ isGraph(ch)
 
 Detect a character whether it is a [graphic character](https://en.wikipedia.org/wiki/Graphic_character).
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -272,6 +308,10 @@ isHexadecimal(ch)
 ```
 
 Detect a character whether it is a hexadecimal character (0-9, a-f, A-F).
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -302,6 +342,10 @@ isLower(ch)
 
 Detect a character whether it is a lower-case character (a-z).
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -324,6 +368,10 @@ isPrint(ch)
 ```
 
 Detect a character whether it is a [printable character](https://en.wikipedia.org/wiki/ASCII#Printable_characters).
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -348,6 +396,10 @@ isPunctuation(ch)
 
 Detect a character whether it is a punctuation character.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -371,6 +423,10 @@ isSpace(ch)
 
 Detect a character whether it is a space character.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`ch (string)`**: A string with length equal to 1.
@@ -393,6 +449,10 @@ isUpper(ch)
 ```
 
 Detect a character whether it is a upper-case character (A-Z).
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -419,6 +479,10 @@ get(key)
 
 Get the cookie's value of the specified name, with `decodeURIComponent` decoding.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`key (string)`**: Cookie name.
@@ -435,6 +499,10 @@ getAll()
 
 Get the all cookies' value, with `decodeURIComponent` decoding.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(Object)`**
@@ -446,6 +514,10 @@ getJson(key)
 ```
 
 Get the cookie's value of the specified name, with `JSON.parse` decoding.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -463,6 +535,10 @@ getRaw(key)
 
 Get the cookie's value of the specified name, without decoding.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`key (string)`**
@@ -479,6 +555,10 @@ isEnabled()
 
 Check if the cookie is enabled.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(boolean)`**
@@ -490,6 +570,10 @@ remove(key, [options])
 ```
 
 Remove a cookie.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -535,6 +619,10 @@ set(key, value, [options])
 
 Same as `set`, set a cookie, and the `value` argument will be encoded with `JSON.stringify`.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`key (string)`**: Cookie name.
@@ -554,6 +642,10 @@ set(key, value, options)
 ```
 
 Same as `set`, set a cookie without any encoding.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -576,6 +668,10 @@ diff(date1, date2, [unit], [roundFunc])
 ```
 
 Compute the difference of the specified period unit between two dates.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -617,9 +713,13 @@ diff(date1, date2, 'D')
 format(date, format, [isUTC])
 ```
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
-* **`date (number|string|Date)`**: A timestamp number (unit: ms) or a parsable date string or a `Date` object.
+* **`date (number|string from 0.8.0|Date)`**: A timestamp number (unit: ms) or a parsable date string or a `Date` object.
 * **`format (string)`**: A string of tokens, which is subset of the [moment format tokens](http://momentjs.com/docs/#/displaying/format/). see below table.
 * **`[isUTC = false] (boolean)`**: Use the UTC time, default is `false`.
 
@@ -662,6 +762,10 @@ format(date, 'YYYY-M-D h:m:s');
 timeAgo.format(date, [locale], [nowDate])
 ```
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`date (number|Date|string)`**: A timestamp, a Date object or a parsable date string.
@@ -694,6 +798,10 @@ clientX(elem)
 
 Get the difference between the left edge of an element and the left edge of viewport.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`elem (Element)`**: An element.
@@ -718,6 +826,10 @@ clientY(elem)
 
 Get the difference between the top edge of an element and the top edge of viewport.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`elem (Element)`**: An element.
@@ -741,6 +853,10 @@ createEvent(type, [options])
 ```
 
 Create a custom event.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -772,6 +888,10 @@ domReady(callback)
 Defer the execution of the `callback`, which will be executed in `DOMContentLoaded` event.
 If the `DOMContentLoaded` has triggered, then the `callback` will be executed in next event loop.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`callback (Function)`**
@@ -789,7 +909,6 @@ domReady(function () {
 });
 ```
 
-
 ### insertScript
 
 ```js
@@ -797,6 +916,10 @@ insertScript(url, [props])
 ```
 
 Insert a `<script>` to document.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -810,6 +933,10 @@ isElement(obj)
 ```
 
 Check if the argument is an element.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -827,6 +954,10 @@ isInViewport(el)
 
 Check if an element is in the viewport.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`el (Element)`**: An element.
@@ -843,6 +974,10 @@ isWindow(obj)
 
 Check if a value is window object.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`obj (Any)`**: Any value.
@@ -858,6 +993,10 @@ pageX(el)
 ```
 
 Return the horizontal distance of an element to the left edge of the page.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -881,6 +1020,10 @@ pageY(el)
 ```
 
 Return the vertical distance of an element to the left edge of the page.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -907,6 +1050,10 @@ scrollTo(elOrWindow, options)
 ```
 
 Scroll the page or element to the target position.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -949,6 +1096,10 @@ scrollX([elOrWindow])
 
 Get the horizontal scroll distance of an element or a window.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`[elOrWindow = window] (Element|Window)`**: An element or a window.
@@ -974,6 +1125,10 @@ scrollY([elOrWindow])
 ```
 
 Get the horizontal scroll distance of an element or a window.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1001,6 +1156,10 @@ viewport([elOrWindow])
 
 Get the width and height of the viewport of an element or a window.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`[elOrWindow = window] (Element|Window)`**: An element or a window.
@@ -1025,6 +1184,10 @@ cubicBezier(x1, y1, x2, y2)
 ```
 
 It generates an easing function, like the `cubic-bezier()` of CSS transition.
+
+**Since**
+
+0.2.0
 
 **Arguments**
 
@@ -1053,6 +1216,10 @@ ease(x)
 
 It is a shortand to `cubicBezier(0.25, 0.1, 0.25, 1)`.
 
+**Since**
+
+0.2.0
+
 **Arguments**
 
 * **`x (number)`**
@@ -1068,6 +1235,10 @@ easeIn(x)
 ```
 
 It is a shortand to `cubicBezier(0.42, 0, 1, 1)`.
+
+**Since**
+
+0.2.0
 
 **Arguments**
 
@@ -1085,6 +1256,10 @@ easeInOut(x)
 
 It is a shortand to `cubicBezier(0.42, 0, 0.58, 1)`.
 
+**Since**
+
+0.2.0
+
 **Arguments**
 
 * **`x (number)`**
@@ -1101,6 +1276,10 @@ easeOut(x)
 
 It is a shortand to `cubicBezier(0, 0, 0.58, 1)`.
 
+**Since**
+
+0.2.0
+
 **Arguments**
 
 * **`x (number)`**
@@ -1116,6 +1295,10 @@ linear(x)
 ```
 
 It is a shortand to `cubicBezier(0, 0, 1, 1)`.
+
+**Since**
+
+0.2.0
 
 **Arguments**
 
@@ -1159,6 +1342,10 @@ new Emitter()
 
 The Emitter constructor. Recommend to use the below `create()` method to create an Emitter instance.
 
+**Since**
+
+0.5.0
+
 **Return**
 
 * **`(Emitter)`**
@@ -1170,6 +1357,10 @@ create()
 ```
 
 Create an Emitter instance.
+
+**Since**
+
+0.5.0
 
 **Return**
 
@@ -1190,6 +1381,10 @@ emitter.emit('foo')
 emit(type, [arg1], [arg2], ...)
 ```
 
+**Since**
+
+0.5.0
+
 **Arguments**
 
 * **`type (string)`**
@@ -1208,6 +1403,10 @@ getListeners(type)
 ```
 
 Return the given type listeners or all listeners.
+
+**Since**
+
+0.5.0
 
 **Arguments**
 
@@ -1241,6 +1440,10 @@ off(type, listener)
 * If only the `type` parameter is passed, the given type listeners will be removed.
 * If the `type` and `listener` are passed, then all the `listener`s of the `type` will be removed.
 
+**Since**
+
+0.5.0
+
 **Arguments**
 
 * **`[type (string)]`**
@@ -1269,6 +1472,10 @@ on(type, listener)
 
 Attach a listener to the emitter.
 
+**Since**
+
+0.5.0
+
 **Arguments**
 
 * **`[type (string)]`**
@@ -1281,6 +1488,10 @@ once(type, listener)
 ```
 
 Same as `on`, attach a listener to the emitter but the listener will be triggered once.
+
+**Since**
+
+0.5.0
 
 **Arguments**
 
@@ -1296,6 +1507,10 @@ isArray(value)
 ```
 
 Check if a value is an Array.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1320,6 +1535,10 @@ isBigInt(value)
 
 Check if a value is a BigInt value.
 
+**Since**
+
+0.8.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1342,6 +1561,10 @@ isBoolean(value)
 ```
 
 Check if a value is a Boolean.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1366,6 +1589,10 @@ isDate(value)
 
 Check if a value is a Date object.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1389,6 +1616,10 @@ isError(value)
 
 Check if a value is an Error object.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1411,6 +1642,10 @@ isFunction(value)
 ```
 
 Check if a value is a function, including generator function and async function.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1438,6 +1673,10 @@ isNil(value)
 
 Check if a value is `null` or `undefined`.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1463,6 +1702,10 @@ isNull(value)
 
 Check if a value is `null`
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1486,6 +1729,10 @@ isNumber(value)
 
 Check if a value is a Number.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1508,6 +1755,10 @@ isObject(value)
 ```
 
 Check if a value is an Object.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1534,6 +1785,10 @@ isRegExp(value)
 
 Check if a value is a RegExp object.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1556,6 +1811,10 @@ isString(value)
 ```
 
 Check if a value is a String.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1580,6 +1839,10 @@ isSymbol(value)
 
 Check if a value is a Symbol value.
 
+**Since**
+
+0.8.0
+
 **Arguments**
 
 * **`value (any)`**
@@ -1602,6 +1865,10 @@ isUndefined(value)
 ```
 
 Check if a value is `undefined`.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1627,6 +1894,10 @@ basename(str)
 ```
 Return the last part of the path string.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -1647,6 +1918,10 @@ basename('/foo/bar');
 ```js
 dirname(str)
 ```
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1671,6 +1946,10 @@ extname(str)
 
 Return the extension name of the path.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -1693,6 +1972,10 @@ join(...args)
 ```
 
 Join the path strings seperated by an slash `/`.
+
+**Since**
+
+0.8.0
 
 **Arguments**
 
@@ -1723,6 +2006,10 @@ get(name)
 
 Get the value of the specified name in the current search string.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`name (string)`**
@@ -1752,6 +2039,10 @@ parse(search)
 
 Parse a search string.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`search (string)`**
@@ -1767,6 +2058,10 @@ stringify(query)
 ```
 
 Convert an object to a search string.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1785,6 +2080,10 @@ isAscii(str)
 ```
 
 Check if a string contains the ASCII characters only.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1808,6 +2107,10 @@ isDecimal(str)
 ```
 
 Check if a string is a decimal number.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1834,6 +2137,10 @@ isDigit(str)
 
 Check if a string contains the digits (0-9) only.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -1856,6 +2163,10 @@ isDomain(str)
 ```
 
 Check if a string is a domain.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1882,6 +2193,10 @@ isEmail(str)
 
 Check if a string is an email address.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -1907,6 +2222,10 @@ isHexColor(str)
 ```
 
 Check if a string is an hex color value.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1937,6 +2256,10 @@ isHsl(str)
 
 Check if a string is an HSL value.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -1962,6 +2285,10 @@ isHsla(str)
 ```
 
 Check if a string is an HSLA value.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -1989,6 +2316,10 @@ isInteger(str)
 
 Same as `isDigit`. Check if a string contains the digits only.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2011,6 +2342,10 @@ isIP(str)
 ```
 
 Check if a string is an IP (v4 or v6) address.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2038,6 +2373,10 @@ isIPv4(str)
 
 Check if a string is an IP (v4) address.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2060,6 +2399,10 @@ isIPv6(str)
 ```
 
 Check if a string is an IP (v4) address.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2084,6 +2427,10 @@ isQQ(str)
 
 Check if a string is a QQ id.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2106,6 +2453,10 @@ isRealNumber(str)
 ```
 
 Check if a string is a real number.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2136,6 +2487,10 @@ isRgb(str)
 
 Check if a string is a RGB value.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2161,6 +2516,10 @@ isRgba(str)
 ```
 
 Check if a string is a RGBA value.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2190,6 +2549,10 @@ countLines(str)
 
 Count the number of lines separated by `"\n"`.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2216,6 +2579,10 @@ escapeRegexp(str)
 
 Escape the special characters in regular expression.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2239,6 +2606,10 @@ firstChar(str)
 
 Return the first character of a string.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2261,6 +2632,10 @@ isValidJSON(str)
 ```
 
 Check if a string is a valid JSON string.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2288,6 +2663,10 @@ lastChar(str)
 
 Return the last character of a string.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`str (string)`**
@@ -2310,6 +2689,10 @@ truncate([str], [options])
 ```
 
 Return a truncated string end with the specified omission.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2346,6 +2729,10 @@ isWindows()
 
 Check if the os is Windows.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(boolean)`**
@@ -2357,6 +2744,10 @@ isMacOS()
 ```
 
 Check if the os is macOS.
+
+**Since**
+
+0.1.0
 
 **Return**
 
@@ -2370,6 +2761,10 @@ isLinux()
 
 Check if the os is Linux.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(boolean)`**
@@ -2381,6 +2776,10 @@ isAndroid()
 ```
 
 Check if the os is Android.
+
+**Since**
+
+0.1.0
 
 **Return**
 
@@ -2394,6 +2793,10 @@ isIOS()
 
 Check if the os is iOS.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(boolean)`**
@@ -2405,6 +2808,10 @@ isMobile()
 ```
 
 Check if the os is a mobile system.
+
+**Since**
+
+0.1.0
 
 **Return**
 
@@ -2418,6 +2825,10 @@ isTablet()
 
 Check if the os is a tablet system.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(boolean)`**
@@ -2429,6 +2840,10 @@ isWechat()
 ```
 
 Check if the environment is Wechat.
+
+**Since**
+
+0.1.0
 
 **Return**
 
@@ -2442,6 +2857,10 @@ isIPhone()
 
 Check if the environment is iPhone.
 
+**Since**
+
+0.1.0
+
 **Return**
 
 * **`(boolean)`**
@@ -2453,6 +2872,10 @@ isIPad()
 ```
 
 Check if the environment is iPad.
+
+**Since**
+
+0.1.0
 
 **Return**
 
@@ -2467,6 +2890,10 @@ isAbsolute(url)
 ```
 
 Check if the `url` is an absolute URL.
+
+**Since**
+
+0.6.0
 
 **Arguments**
 
@@ -2493,6 +2920,10 @@ join(...args)
 
 Join and normalize the url part strings.
 
+**Since**
+
+0.8.0
+
 **Arguments**
 
 * **`args (string[])`**
@@ -2517,6 +2948,10 @@ join('https://example.com', 'foo', 'bar', '?hello=world')
 ```js
 parse(url)
 ```
+
+**Since**
+
+0.4.0
 
 **Arguments**
 
@@ -2556,6 +2991,10 @@ parse('http://admin:123456@example.com:8080/path-to-somewhere?foo=1&lang=js&lang
 stringify(urlParts)
 ```
 
+**Since**
+
+0.4.0
+
 **Arguments**
 
 * **`urlParts (Object)`**: The url parts object.
@@ -2585,6 +3024,10 @@ stringify({
 ajax(url, [options])
 ```
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`url (string)`**: The request url.
@@ -2608,6 +3051,10 @@ css(el, [prop])
 ```
 
 Get the value of the specified or all CSS properties.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2643,6 +3090,10 @@ delay(duration)
 ```
 Return a promise, it will be resolved after the `duration` time.
 
+**Since**
+
+0.1.0
+
 **Arguments**
 
 * **`duration (number)`**: The duration.
@@ -2656,6 +3107,10 @@ Return a promise, it will be resolved after the `duration` time.
 ```js
 jsonp(url, [options])
 ```
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2674,6 +3129,10 @@ jsonp(url, [options])
 ```js
 md5(input)
 ```
+
+**Since**
+
+0.4.0
 
 **Arguments**
 
@@ -2694,6 +3153,10 @@ md5('hello 你好')
 
 This is an empty function, accepting no argument, returning no value.
 
+**Since**
+
+0.1.0
+
 ## numberFormat
 
 ```js
@@ -2701,6 +3164,10 @@ numberFormat(number, [digits], [dot], [sep])
 ```
 
 Format a number.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2730,6 +3197,10 @@ raf(callback)
 
 It is same as [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) when supported. Or, use `setTimeout` to simulate.
 
+**Since**
+
+0.2.0
+
 **Arguments**
 
 * **`callback (Function)`**: The function to be invoked before the next repaint. A [DOMHighResTimeStamp](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp) similar  to be returned by `performance.now()` is passed to be as the first argument.
@@ -2756,6 +3227,10 @@ randomNumbers(start, end, length)
 
 Return an array of random integer which is greater than or equal to `start` and less than or equal to `end`. In array, each other is not equal.
 
+**Since**
+
+0.8.0
+
 **Arguments**
 
 * **`start (number)`**: The minimum integer.
@@ -2780,6 +3255,10 @@ randomString([len], [chars])
 ```
 
 Return a random string which consists of the characters specified by `chars`.
+
+**Since**
+
+0.1.0
 
 **Arguments**
 
@@ -2809,6 +3288,10 @@ uuid()
 ```
 
 Generate a UUID based on random numbers, see algorithm in [rfc4122](https://tools.ietf.org/html/rfc4122#section-4.4).
+
+**Since**
+
+0.1.0
 
 **Return**
 
