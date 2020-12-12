@@ -614,7 +614,7 @@ Set a cookie, and the `value` argument will be encoded with `encodeURIComponent`
 ### setJson
 
 ```js
-set(key, value, [options])
+setJson(key, value, [options])
 ```
 
 Same as `set`, set a cookie, and the `value` argument will be encoded with `JSON.stringify`.
@@ -638,7 +638,7 @@ Same as `set`, set a cookie, and the `value` argument will be encoded with `JSON
 ### setRaw
 
 ```js
-set(key, value, options)
+setRaw(key, value, options)
 ```
 
 Same as `set`, set a cookie without any encoding.
@@ -2721,13 +2721,13 @@ truncate(str, { length: 10, countType: 1 });
 
 ## ua
 
-### isWindows
+### isAndroid
 
 ```js
-isWindows()
+isAndroid()
 ```
 
-Check if the os is Windows.
+Check if the os is Android.
 
 **Since**
 
@@ -2737,13 +2737,45 @@ Check if the os is Windows.
 
 * **`(boolean)`**
 
-### isMacOS
+### isIOS
 
 ```js
-isMacOS()
+isIOS()
 ```
 
-Check if the os is macOS.
+Check if the os is iOS.
+
+**Since**
+
+0.1.0
+
+**Return**
+
+* **`(boolean)`**
+
+### isIPad
+
+```js
+isIPad()
+```
+
+Check if the environment is iPad.
+
+**Since**
+
+0.1.0
+
+**Return**
+
+* **`(boolean)`**
+
+### isIPhone
+
+```js
+isIPhone()
+```
+
+Check if the environment is iPhone.
 
 **Since**
 
@@ -2768,30 +2800,13 @@ Check if the os is Linux.
 **Return**
 
 * **`(boolean)`**
-
-### isAndroid
-
-```js
-isAndroid()
-```
-
-Check if the os is Android.
-
-**Since**
-
-0.1.0
-
-**Return**
-
-* **`(boolean)`**
-
-### isIOS
+### isMacOS
 
 ```js
-isIOS()
+isMacOS()
 ```
 
-Check if the os is iOS.
+Check if the os is macOS.
 
 **Since**
 
@@ -2849,29 +2864,13 @@ Check if the environment is Wechat.
 
 * **`(boolean)`**
 
-### isIPhone
+### isWindows
 
 ```js
-isIPhone()
+isWindows()
 ```
 
-Check if the environment is iPhone.
-
-**Since**
-
-0.1.0
-
-**Return**
-
-* **`(boolean)`**
-
-### isIPad
-
-```js
-isIPad()
-```
-
-Check if the environment is iPad.
+Check if the os is Windows.
 
 **Since**
 

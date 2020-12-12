@@ -2731,13 +2731,13 @@ truncate(str, { length: 10, countType: 1 });
 
 ## ua
 
-### isWindows
+### isAndroid
 
 ```js
-isWindows()
+isAndroid()
 ```
 
-判断运行环境是否是 Windows。
+判断运行环境是否是安卓。
 
 **起始版本**
 
@@ -2747,13 +2747,45 @@ isWindows()
 
 * **`(boolean)`**
 
-### isMacOS
+### isIOS
 
 ```js
-isMacOS()
+isIOS()
 ```
 
-判断运行环境是否是 macOS。
+判断运行环境是否是 iOS。
+
+**起始版本**
+
+0.1.0
+
+**返回值**
+
+* **`(boolean)`**
+
+### isIPad
+
+```js
+isIPad()
+```
+
+判断运行环境是否是 iPad。
+
+**起始版本**
+
+0.1.0
+
+**返回值**
+
+* **`(boolean)`**
+
+### isIPhone
+
+```js
+isIPhone()
+```
+
+判断运行环境是否是 iPhone。
 
 **起始版本**
 
@@ -2779,29 +2811,13 @@ isLinux()
 
 * **`(boolean)`**
 
-### isAndroid
+### isMacOS
 
 ```js
-isAndroid()
+isMacOS()
 ```
 
-判断运行环境是否是安卓。
-
-**起始版本**
-
-0.1.0
-
-**返回值**
-
-* **`(boolean)`**
-
-### isIOS
-
-```js
-isIOS()
-```
-
-判断运行环境是否是 iOS。
+判断运行环境是否是 macOS。
 
 **起始版本**
 
@@ -2859,29 +2875,13 @@ isWechat()
 
 * **`(boolean)`**
 
-### isIPhone
+### isWindows
 
 ```js
-isIPhone()
+isWindows()
 ```
 
-判断运行环境是否是 iPhone。
-
-**起始版本**
-
-0.1.0
-
-**返回值**
-
-* **`(boolean)`**
-
-### isIPad
-
-```js
-isIPad()
-```
-
-判断运行环境是否是 iPad。
+判断运行环境是否是 Windows。
 
 **起始版本**
 
