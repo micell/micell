@@ -2551,6 +2551,38 @@ isRgb('RGBA(255, 255, 255, 0.5)');
 
 ## string
 
+### countChars
+
+```js
+countChars(str, [type])
+```
+
+计算一个字符串当中字符数量。
+
+**起始版本**
+
+0.1.0
+
+**参数**
+
+* **`str (string)`**
+* **`[type = 0] (number)`**：如果`type`是`0`，则返回字符串的长度值（length）。如果`type`是`1`，则一个全宽字符计数为 2，一个半宽字符计数为 1。如果`type`是`2`，则一个全宽字符计数为 1，一个半宽字符计数为 0.5，但是最终结果会向上取整。
+
+**返回值**
+
+* **`(number)`**
+
+**示例**
+
+```js
+countChars('hello你好')
+// => 7
+countChars('hello你好', 1)
+// => 9
+countChars('hello你好', 2)
+// => 5
+```
+
 ### countLines
 
 ```js

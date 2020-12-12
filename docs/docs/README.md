@@ -2541,6 +2541,38 @@ isRgb('RGBA(255, 255, 255, 0.5)');
 
 ## string
 
+### countChars
+
+```js
+countChars(str, [type])
+```
+
+Count the number of characters in a string.
+
+**Since**
+
+0.1.0
+
+**Arguments**
+
+* **`str (string)`**
+* **`[type = 0] (number)`**: If `type` is `0`, return the length of string. If `type` is `1`, a full width character is counted 2, an half width character is counted 1. If `type` is `1`, a full width character is counted 1, an half width characters is counted 0.5, but the result will be round up to an integer.
+
+**Return**
+
+* **`(number)`**
+
+**Example**
+
+```js
+countChars('hello你好')
+// => 7
+countChars('hello你好', 1)
+// => 9
+countChars('hello你好', 2)
+// => 5
+```
+
 ### countLines
 
 ```js
