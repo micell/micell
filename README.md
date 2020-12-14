@@ -115,25 +115,7 @@ See [Release notes](https://github.com/micell/micell/releases).
 
 If you have a bug or feature request or document improvement about micell, you can [open](https://github.com/micell/micell/issues/new) an issue or [create](https://github.com/micell/micell/pull/new/dev) a pull request to [dev](https://github.com/micell/micell/tree/dev) branch.
 
-### Docs
-
-> You should use yarn to install the dependencies.
-
-```sh
-# local docs server
-yarn run docs:dev
-```
-
-### Release
-
-```sh
-# CI environment
-yarn run release
-
-# Local machine
-yarn run release --no-ci
-```
-
+Also, you can read the [CONTRIBUTING](CONTRIBUTING.md) guide.
 ## License
 
 MIT
