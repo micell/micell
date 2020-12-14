@@ -115,14 +115,7 @@ micell.cookie.get('name')
 
 如果你有任何 bug，功能需求或者文档改善，你都可以[提](https://github.com/micell/micell/issues/new)一个 issue 或者[创建](https://github.com/micell/micell/pull/new/dev)一个 pull request 到 [dev](https://github.com/micell/micell/tree/dev) 分支。
 
-### 文档
-
-> 最好使用 yarn 安装依赖。
-
-```sh
-# local docs server
-npm run docs:dev
-```
+此外，你可以阅读 [CONTRIBUTING](CONTRIBUTING.md) 指南。
 
 ## 许可证
 
