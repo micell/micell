@@ -25,6 +25,14 @@ And, lint script will be run in git commit automatically.
 * Node.js
 * Yarn
 
+### Project structure
+
+* **assets**: Images, fonts and so on.
+* **docs**: Document files written in markdown. And, use vuepress to generate the documentation.
+* **scripts**: Build scripts.
+* **src**: Source code.
+* **test**: Test files.
+
 ### Test
 
 ```sh
