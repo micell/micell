@@ -66,10 +66,13 @@ export default function stringify (urlParts: URLParts): string {
 
   if (search) {
     url += search
-  } else if (query) {
-    const search = queryStringify(query)
-    if (search) {
-      url += `?${search}`
+  } else {
+    /* istanbul ignore else */
+    if (query) {
+      const search = queryStringify(query)
+      if (search) {
+        url += `?${search}`
+      }
     }
   }
 

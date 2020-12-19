@@ -80,9 +80,11 @@ export default function scrollTo (
         el.scrollTo(left, top)
       }
     } else {
+      /* istanbul ignore else */
       if (left !== undefined) {
         (el as Element).scrollLeft = left;
       }
+      /* istanbul ignore else */
       if (top !== undefined) {
         (el as Element).scrollTop = top
       }
@@ -99,6 +101,8 @@ export default function scrollTo (
       let y1 = 0
       let x2 = 0
       let y2 = 0
+
+      /* istanbul ignore else */
       if (matched) {
         x1 = Number(matched[1])
         y1 = Number(matched[2])

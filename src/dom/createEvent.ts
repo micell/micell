@@ -15,8 +15,10 @@ export default function createEvent (type: string, options: CreateEventOptions =
   try {
     event = new CustomEvent(type, options)
   } catch (err) {
+    /* istanbul ignore next */
     // @ts-ignore
     event = document.createEvent('Event')
+    /* istanbul ignore next */
     // @ts-ignore
     if (typeof event.initCustomEvent === 'function') {
       event.initCustomEvent(type, bubbles, cancelable, detail)

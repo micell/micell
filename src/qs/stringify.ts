@@ -5,8 +5,10 @@ import { Query } from './types'
 export default function stringify (query: Query): string {
   const pairs = []
 
+  /* istanbul ignore else */
   if (isObject(query)) {
     for (const name in query) {
+      /* istanbul ignore else */
       if (hasOwn(query, name)) {
         const value = query[name]
         const encodedName = encodeURIComponent(name)

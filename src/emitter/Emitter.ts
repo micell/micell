@@ -38,22 +38,25 @@ class Emitter {
     } else if (arguments.length === 1) {
       // @ts-ignore
       delete this[EVENTS_KEY][type]
-    } else if (events) {
-      let len = events.length
-      let i = 0
-      let listener
-      while (i < len) {
-        listener = events[i]
-        if (listener === fn) {
-          events.splice(i, 1)
-          len--
-        } else {
-          i++
+    } else {
+      /* istanbul ignore else */
+      if (events) {
+        let len = events.length
+        let i = 0
+        let listener
+        while (i < len) {
+          listener = events[i]
+          if (listener === fn) {
+            events.splice(i, 1)
+            len--
+          } else {
+            i++
+          }
         }
-      }
-      if (!events.length) {
-        // @ts-ignore
-        delete this[EVENTS_KEY][type]
+        if (!events.length) {
+          // @ts-ignore
+          delete this[EVENTS_KEY][type]
+        }
       }
     }
   }

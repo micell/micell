@@ -28,6 +28,7 @@ const timeAgo: TimeAgo = {
   },
 
   setLocale (name: string): void {
+    /* istanbul ignore else */
     if (hasOwn(locales, name)) {
       currentLocale = name
     }

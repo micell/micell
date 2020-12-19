@@ -7,7 +7,7 @@ export default function getAll (decoder: CookieDecoder = decodeURIComponent): Co
 
   while ((match = reKey.exec(document.cookie))) {
     reKey.lastIndex = (match.index + match.length) - 1
-    cookies[match[1]] = typeof decoder === 'function' ? decoder(match[2]) : match[2]
+    cookies[match[1]] = typeof decoder === 'function' ? decoder(match[2]) : /* istanbul ignore next */ match[2]
   }
 
   return cookies
