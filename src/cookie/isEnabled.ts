@@ -9,6 +9,7 @@ export default function isEnabled (): boolean {
 
   const enabled = re.test(document.cookie)
 
+  /* istanbul ignore else */
   if (enabled) {
     remove(key)
   }

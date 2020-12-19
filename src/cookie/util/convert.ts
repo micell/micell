@@ -8,6 +8,7 @@ export default function convert (opts: CookieOptions): string {
   let key: (keyof CookieOptions)
 
   for (key in opts) {
+    /* istanbul ignore else */
     if (hasOwn(opts, key)) {
       if (/^expires$/i.test(key)) {
         let expires = opts[key]

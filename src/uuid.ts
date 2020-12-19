@@ -10,16 +10,20 @@ const maxUint32 = Math.pow(2, 32) - 1
 
 let getRandomValues: (array: Uint32Array) => Uint32Array
 
+/* istanbul ignore else */
 if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
   getRandomValues = (array: Uint32Array): Uint32Array => window.crypto.getRandomValues(array)
+} else {
   // @ts-ignore
-} else if (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function') {
-  // @ts-ignore
-  getRandomValues = (array: Uint32Array): Uint32Array => window.msCrypto.getRandomValues(array)
+  if (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function') {
+    // @ts-ignore
+    getRandomValues = (array: Uint32Array): Uint32Array => window.msCrypto.getRandomValues(array)
+  }
 }
 
 let random: () => number = Math.random
 
+/* istanbul ignore else */
 // @ts-ignore
 if (isBrowser && typeof window.Uint32Array === 'function' && getRandomValues) {
   random = (): number => getRandomValues(new Uint32Array(1))[0] / maxUint32
