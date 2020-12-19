@@ -5,8 +5,7 @@ export default function isEnabled (): boolean {
   const value = '1'
   const re = new RegExp(`(?:^|; )${key}=${value}(?:;|$)`)
 
-  // TODO: set path to root?
-  document.cookie = `${key}=${value}`
+  document.cookie = `${key}=${value};path=/;`
 
   const enabled = re.test(document.cookie)
 
