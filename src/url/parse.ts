@@ -29,10 +29,10 @@ export default function parse (url: string): URLObject {
     throw new TypeError('invalid url')
   }
 
-  const protocol = matched[1] || ''
+  const protocol = matched[1]
   const username = matched[2] || ''
   const password = matched[3] || ''
-  const hostname = matched[4] || ''
+  const hostname = matched[4]
   // TODO: should convert port to a number?
   const port = matched[5] || ''
   const pathname = matched[6] || ''
