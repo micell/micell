@@ -2,6 +2,11 @@ import { expect } from 'chai'
 import parse from '../../src/qs/parse'
 
 describe('qs/parse', () => {
+  it('the default argument should be an empty string', () => {
+    // @ts-ignore
+    expect(parse()).to.deep.equal({})
+  })
+
   it('empty query string', () => {
     expect(parse('')).to.deep.equal({})
   })
