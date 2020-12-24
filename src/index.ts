@@ -37,6 +37,7 @@ namespace micell {
   export type CookieOptions = allCookie.CookieOptions;
   export type Cookies = allCookie.Cookies;
 
+  export type ParsedDate = allDate.ParsedDate;
   export type TimeAgo = allDate.TimeAgoLocale;
 
   export type AnyFunction = allDom.AnyFunction;
