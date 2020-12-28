@@ -18,6 +18,7 @@ import * as allCss from './css'
 import * as allJsonp from './jsonp'
 
 import { default as ajaxAlias } from './ajax'
+import { default as classNamesAlias } from './classNames'
 import { default as cssAlias } from './css'
 import { default as delayAlias } from './delay'
 import { default as jsonpAlias } from './jsonp'
@@ -62,6 +63,7 @@ namespace micell {
   export type JsonpOptions = allJsonp.JsonpOptions;
 
   export const ajax = ajaxAlias;
+  export const classNames = classNamesAlias;
   export const css = cssAlias;
   export const delay = delayAlias;
   export const jsonp = jsonpAlias;

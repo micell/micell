@@ -3087,6 +3087,43 @@ ajax(url, [options])
 **返回值**
 
 * **`(Promise)`**
+j
+## classNames
+
+```js
+classNames(...args)
+```
+
+根据任意数量的参数生成一个元素的`className`值，和 [JedWatson/classnames](https://github.com/JedWatson/classnames) 相同。
+
+**参数**
+
+* **`[args] (any[])`**：见下面示例。
+
+**返回值**
+
+* **`(string)`**
+
+**示例**
+
+```js
+classNames('foo', 'bar'); // => 'foo bar'
+classNames('foo', { bar: true }); // => 'foo bar'
+classNames({ 'foo-bar': true }); // => 'foo-bar'
+classNames({ 'foo-bar': false }); // => ''
+classNames({ foo: true }, { bar: true }); // => 'foo bar'
+classNames({ foo: true, bar: true }); // => 'foo bar'
+
+// 接受各种类型参数
+classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
+
+// 假值（falsy）会被忽略
+classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
+
+// 数组会根据上面规则展开
+const arr = ['b', { c: true, d: false }];
+classNames('a', arr); // => 'a b c'
+```
 
 ## css
 
