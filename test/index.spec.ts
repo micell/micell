@@ -15,6 +15,7 @@ import * as allUa from '../src/ua'
 import * as allUrl from '../src/url'
 
 import { default as ajaxAlias } from '../src/ajax'
+import { default as classNamesAlias } from '../src/classNames'
 import { default as cssAlias } from '../src/css'
 import { default as delayAlias } from '../src/delay'
 import { default as jsonpAlias } from '../src/jsonp'
@@ -30,6 +31,7 @@ import index from '../src'
 describe('index', () => {
   it('should export the right bindings', () => {
     expect(index.ajax).to.equal(ajaxAlias)
+    expect(index.classNames).to.equal(classNamesAlias)
     expect(index.css).to.equal(cssAlias)
     expect(index.delay).to.equal(delayAlias)
     expect(index.jsonp).to.equal(jsonpAlias)
