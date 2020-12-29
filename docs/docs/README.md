@@ -756,6 +756,45 @@ format(date, 'YYYY-M-D h:m:s');
 // => "1970-1-1 1:1:1"
 ```
 
+### parse
+
+```js
+parse(date, [isUTC])
+```
+
+**Since**
+
+0.10.0
+
+**Arguments**
+
+* **`date (number|string|Date)`**: A timestamp number (unit: ms) or a parsable date string or a `Date` object.
+* **`[isUTC = false] (boolean)`**: Use the UTC time, default is `false`.
+
+**Return**
+
+* **`(object)`**
+
+**Example**
+
+```js
+// In UTC+0800
+j
+parse(0)
+// => { years: 1970, months: 0, dates: 1, hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }
+parse(new Date(0))
+// => { years: 1970, months: 0, dates: 1, hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }
+parse('Thu, 01 Jan 1970 00:00:00 GMT')
+// => { years: 1970, months: 0, dates: 1, hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }
+
+parse(0, true)
+// => { years: 1970, months: 0, dates: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }
+parse(new Date(0), true)
+// => { years: 1970, months: 0, dates: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }
+parse('Thu, 01 Jan 1970 00:00:00 GMT', true)
+// => { years: 1970, months: 0, dates: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }
+```
+
 ### timeAgo
 
 ```js
