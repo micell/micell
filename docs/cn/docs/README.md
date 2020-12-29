@@ -3117,7 +3117,8 @@ classNames({ foo: true, bar: true }); // => 'foo bar'
 // 接受各种类型参数
 classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
 
-// 假值（falsy）会被忽略
+// 假值（falsy）和非字符串/对象/数组值会被忽略
+classNames(null, false, 'bar', undefined, 0, 1, true, { baz: null }, ''); // => 'bar'
 classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
 
 // 数组会根据上面规则展开
