@@ -3096,6 +3096,10 @@ classNames(...args)
 
 根据任意数量的参数生成一个元素的`className`值，和 [JedWatson/classnames](https://github.com/JedWatson/classnames) 相同。
 
+**起始版本**
+
+0.10.0
+
 **参数**
 
 * **`[args] (any[])`**：见下面示例。
