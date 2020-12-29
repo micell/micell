@@ -3083,6 +3083,10 @@ classNames(...args)
 
 Generate the `className` value of an element by any number of arguments. It is same as [JedWatson/classnames](https://github.com/JedWatson/classnames).
 
+**Since**
+
+0.10.0
+
 **Arguments**
 
 * **`[args] (any[])`**: See the below example.
