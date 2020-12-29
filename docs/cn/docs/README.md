@@ -3185,6 +3185,30 @@ delay([duration])
 
 * **`(Promise)`**
 
+## download
+
+```js
+download(file, [fileName])
+```
+
+下载一个 URL 所定位的文件或[`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob)对象或[`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)对象。该函数来自于[eligrey/FileSaver.js](https://github.com/eligrey/FileSaver.js)。
+
+**参数**
+
+* **`file (string | Blob | File)`**：一个 URL 字符串或`Blob`对象或`File`对象。
+* **`[fileName] (string)`**：优先使用该参数作为文件名，其次，如果`file`参数是`File`类型，则使用`file`的`name`属性，最后使用`'download'`字符串。
+
+**示例**
+
+```js
+// 下载 url 字符串所定位的文件
+download('https://micell.org/logo.svg', 'micell-logo.svg')
+
+// 下载 Blob 对象
+const blob = new Blob(['Hello, world!'], { type: 'text/plain;charset=utf-8' })
+download(blob, 'hello-world.txt')
+```
+
 ## jsonp
 
 ```js

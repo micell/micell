@@ -3170,6 +3170,29 @@ Return a promise, it will be resolved after the `duration` time.
 
 * **`(Promise)`**
 
+## download
+
+```js
+download(file, [fileName])
+```
+
+Download a url or a [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob) object or a [File](https://developer.mozilla.org/en-US/docs/Web/API/File) object. This function originates from [eligrey/FileSaver.js](https://github.com/eligrey/FileSaver.js).
+
+**Arguments**
+
+* **`file (string | Blob | File)`**: a url string or a `Blob` object or a `File` object.
+* **`[fileName] (string)`**: Prefer use this argument as file name, then the name of `file` if `file` is type of `File`, and finally the `'download'` string.
+
+**Example**
+
+```js
+// Download the file located by a url string
+download('https://micell.org/logo.svg', 'micell-logo.svg')
+
+// Download the Blob
+const blob = new Blob(['Hello, world!'], { type: 'text/plain;charset=utf-8' })
+download(blob, 'hello-world.txt')
+```
 ## jsonp
 
 ```js
