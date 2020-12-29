@@ -21,6 +21,7 @@ import { default as ajaxAlias } from './ajax'
 import { default as classNamesAlias } from './classNames'
 import { default as cssAlias } from './css'
 import { default as delayAlias } from './delay'
+import { default as downloadAlias } from './download'
 import { default as jsonpAlias } from './jsonp'
 import { default as md5Alias } from './md5'
 import { default as noopAlias } from './noop'
@@ -66,6 +67,7 @@ namespace micell {
   export const classNames = classNamesAlias;
   export const css = cssAlias;
   export const delay = delayAlias;
+  export const download = downloadAlias;
   export const jsonp = jsonpAlias;
   export const md5 = md5Alias;
   export const noop = noopAlias;
