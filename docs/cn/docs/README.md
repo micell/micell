@@ -766,6 +766,46 @@ format(date, 'YYYY-M-D h:m:s');
 // => "1970-1-1 1:1:1"
 ```
 
+### parse
+
+```js
+parse(date, [isUTC])
+```
+
+**起始版本**
+
+0.10.0
+
+**参数**
+
+* **`date (number|string|Date)`**：一个时间戳数值（单位：毫秒）或可解析的日期字符串或一个`Date`对象。
+* **`format (string)`**：一个占位符替换字符串，为 [moment format tokens](http://momentjs.com/docs/#/displaying/format/) 的一部分，具体查看下面表格。
+* **`[isUTC = false] (boolean)`**：是否使用协调世界时（UTC）。
+
+**返回值**
+
+* **`(object)`**
+
+**示例**
+
+```js
+// In UTC+0800
+j
+parse(0)
+// => { years: 1970, months: 0, dates: 1, hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }
+parse(new Date(0))
+// => { years: 1970, months: 0, dates: 1, hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }
+parse('Thu, 01 Jan 1970 00:00:00 GMT')
+// => { years: 1970, months: 0, dates: 1, hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }
+
+parse(0, true)
+// => { years: 1970, months: 0, dates: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }
+parse(new Date(0), true)
+// => { years: 1970, months: 0, dates: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }
+parse('Thu, 01 Jan 1970 00:00:00 GMT', true)
+// => { years: 1970, months: 0, dates: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }
+```
+
 ### timeAgo
 
 ```js
