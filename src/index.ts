@@ -113,6 +113,7 @@ namespace micell {
   export namespace date {
     export const diff = allDate.default.diff;
     export const format = allDate.default.format;
+    export const parse = allDate.default.parse;
     export const timeAgo = allDate.default.timeAgo;
   }
 
