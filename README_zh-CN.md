@@ -113,7 +113,7 @@ micell.cookie.get('name')
 
 ## 贡献
 
-如果你有任何 bug，功能需求或者文档改善，你都可以[提](https://github.com/micell/micell/issues/new)一个 issue 或者[创建](https://github.com/micell/micell/pull/new/dev)一个 pull request 到 [dev](https://github.com/micell/micell/tree/dev) 分支。
+如果你有任何 bug，功能需求或者文档改善，你都可以[提](https://github.com/micell/micell/issues/new)一个 issue 或者[创建](https://github.com/micell/micell/pull/new/main)一个 pull request 到 [main](https://github.com/micell/micell/tree/main) 分支。
 
 此外，你可以阅读 [CONTRIBUTING](CONTRIBUTING.md) 指南。
 
