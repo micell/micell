@@ -84,6 +84,8 @@ micell.cookie.get('name')
 
 更多函数请查看[文档](/cn/docs/)。
 
+> **小提示**：你可以在浏览器控制台尝试 micell，使用全局对象`micell`。
+
 ## 减少打包体积
 
 可以通过 [babel-plugin-lodash](https://www.npmjs.com/package/babel-plugin-lodash) 来实现按需打包。
