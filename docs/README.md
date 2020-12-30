@@ -17,7 +17,7 @@ footer: MIT Licensed | Copyright © 2019-present Alex Chao
 
 ## What is Micell?
 
-Micell (pronouced /maɪˈsel/, like **my-cell**) is a collection of functions which is used with
+Micell (pronounced /maɪˈsel/, like **my-cell**) is a collection of functions which is used with
 web development daily. Micell only includes the common functions in the most projects. Also,
 for integrity, it will include some uncommon functions.
 
