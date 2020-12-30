@@ -85,6 +85,8 @@ micell.cookie.get('name')
 
 More functions see the [Docs](/docs/).
 
+> **Tip**: You can try micell in the console of browser which is exported as the global `micell` object.
+
 ## Reduce the bundle size
 
 You can use the [babel-plugin-lodash](https://www.npmjs.com/package/babel-plugin-lodash) to bundle
