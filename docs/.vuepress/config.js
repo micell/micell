@@ -16,6 +16,10 @@ module.exports = {
     }
   },
   themeConfig: {
+    algolia: {
+      apiKey: '29617a193d9f9251776d9ac3ac419b27',
+      indexName: 'micell'
+    },
     locales: {
       '/': {
         label: 'English',
