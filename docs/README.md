@@ -49,7 +49,7 @@ yarn add micell
 
 **CDN**
 
-If you want use micell with `<script>` directly, you can use [jsDelivr](https://www.jsdelivr.com/package/npm/micell).
+If you want to use micell with `<script>` directly, you can use [jsDelivr](https://www.jsdelivr.com/package/npm/micell).
 
 The latest version:
 
