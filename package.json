@@ -90,7 +90,7 @@
     "es6-promise": "^4.2.8",
     "eslint": "^7.0.0",
     "husky": "^2.7.0",
-    "karma": "^4.4.1",
+    "karma": "^6.0.0",
     "karma-browserstack-launcher": "^1.5.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^2.0.1",
