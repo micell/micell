@@ -33,6 +33,7 @@ import { default as uuidAlias } from './uuid'
 
 namespace micell {
   export type Base64DecodeOptions = allBase64.Base64DecodeOptions;
+  export type Base64DecodeFileOptions = allBase64.Base64DecodeFileOptions;
 
   export type CookieDecoder = allCookie.CookieDecoder;
   export type CookieEncoder = allCookie.CookieEncoder;
@@ -79,7 +80,9 @@ namespace micell {
 
   export namespace base64 {
     export const decode = allBase64.default.decode;
+    export const decodeFile = allBase64.default.decodeFile;
     export const encode = allBase64.default.encode;
+    export const encodeFile = allBase64.default.encodeFile;
   }
 
   export namespace char {

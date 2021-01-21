@@ -46,6 +46,38 @@ decode(input, { encoding: 'binary' })
 // => [104, 101, 108, 108, 111, 32, 228, 189, 160, 229, 165, 189]
 ```
 
+### decodeFile
+
+将一个 base64 编码字符串解码成一个 [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) 对象。
+
+```js
+decodeFile(input, options)
+```
+
+**起始版本**
+
+0.12.0
+
+**参数**
+
+* **`input (string)`**：一个 base64 编码字符串。
+* **`options (Object)`**
+  + `type (string)`：MIME 类型，比如`'plain/text'`。
+
+**返回值**
+
+* **`(Promise<Blob>)`**
+
+**示例**
+
+```js
+decodeFile('aGVsbG8gd29ybGQ=', { type: 'plain/text' })
+  .then(blob => {
+    console.log(blob)
+    // => Blob {size: 11, type: "plain/text"}
+  })
+```
+
 ### encode
 
 将一个 UTF8 字符串、字节数组或者`Uint8Array`编码为 base64 字符串。
@@ -82,6 +114,37 @@ encode(bytes)
 const uint8 = new Uint8Array(bytes)
 encode(uint8)
 // => 'aGVsbG8g5L2g5aW9'
+```
+
+### encodeFile
+
+将一个 [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)/[File](https://developer.mozilla.org/en-US/docs/Web/API/File) 对象编码成一个字符串。
+
+```js
+encodeFile(file)
+```
+
+**起始版本**
+
+0.12.0
+
+**参数**
+
+* **`file (Blob)`**
+
+**返回值**
+
+* **`(Promise<string>)`**
+
+**示例**
+
+```js
+const blob = new Blob(['hello world'], { type: 'plain/text' })
+encodeFile(blob)
+  .then((str) => {
+    console.log(str)
+    // => 'aGVsbG8gd29ybGQ='
+  })
 ```
 
 ## char
