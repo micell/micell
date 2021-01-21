@@ -1,5 +1,5 @@
 module.exports = {
-  branch: 'main',
+  branches: ['main'],
   repositoryUrl: 'https://github.com/micell/micell.git',
   tagFormat: '${version}',
   plugins: [
