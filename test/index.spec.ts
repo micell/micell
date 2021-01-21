@@ -44,7 +44,9 @@ describe('index', () => {
     expect(index.uuid).to.equal(uuidAlias)
 
     expect(index.base64.decode).to.equal(allBase64.default.decode)
+    expect(index.base64.decodeFile).to.equal(allBase64.default.decodeFile)
     expect(index.base64.encode).to.equal(allBase64.default.encode)
+    expect(index.base64.encodeFile).to.equal(allBase64.default.encodeFile)
 
     expect(index.char.isAlphabetic).to.equal(allChar.default.isAlphabetic)
     expect(index.char.isAlphanumeric).to.equal(allChar.default.isAlphanumeric)
