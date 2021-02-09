@@ -1088,6 +1088,66 @@ Check if a value is window object.
 
 * **`(boolean)`**
 
+### pageHeight
+
+```js
+pageHeight([el])
+```
+
+Return the height of an element's content, including content not visible on the screen due to overflow.
+
+**Since**
+
+0.13.0
+
+**Arguments**
+
+* **`[el] (Element)`**
+
+**Return**
+
+* **`(number)`**
+
+**Example**
+
+```js
+// The height of current document
+pageHeight()
+
+// The height of an element's content
+pageHeight(document.getElementById('el1'))
+```
+
+### pageWidth
+
+```js
+pageWidth([el])
+```
+
+Return the width of an element's content, including content not visible on the screen due to overflow.
+
+**Since**
+
+0.13.0
+
+**Arguments**
+
+* **`[el] (Element)`**
+
+**Return**
+
+* **`(number)`**
+
+**Example**
+
+```js
+// The width of current document
+pageWidth()
+
+// The width of an element's content
+pageWidth(document.getElementById('el1'))
+```
+
 ### pageX
 
 ```js

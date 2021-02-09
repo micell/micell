@@ -129,6 +129,8 @@ namespace micell {
     export const isElement = allDom.default.isElement;
     export const isInViewport = allDom.default.isInViewport;
     export const isWindow = allDom.default.isWindow;
+    export const pageHeight = allDom.default.pageHeight;
+    export const pageWidth = allDom.default.pageWidth;
     export const pageX = allDom.default.pageX;
     export const pageY = allDom.default.pageY;
     export const scrollTo = allDom.default.scrollTo;

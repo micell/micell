@@ -1102,6 +1102,66 @@ isWindow(obj)
 
 * **`(boolean)`**
 
+### pageHeight
+
+```js
+pageHeight([el])
+```
+
+返回元素内容高度，包括由于溢出导致未显示部分。
+
+**起始版本**
+
+0.13.0
+
+**参数**
+
+* **`[el] (Element)`**
+
+**返回值**
+
+* **`(number)`**
+
+**示例**
+
+```js
+// 当前页面文档高度
+pageHeight()
+
+// 元素内容高度
+pageHeight(document.getElementById('el1'))
+```
+
+### pageWidth
+
+```js
+pageWidth([el])
+```
+
+返回元素内容宽度，包括由于溢出导致未显示部分。
+
+**起始版本**
+
+0.13.0
+
+**参数**
+
+* **`[el] (Element)`**
+
+**返回值**
+
+* **`(number)`**
+
+**示例**
+
+```js
+// 当前页面文档宽度
+pageWidth()
+
+// 元素内容宽度
+pageWidth(document.getElementById('el1'))
+```
+
 ### pageX
 
 ```js

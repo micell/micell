@@ -84,6 +84,8 @@ describe('index', () => {
     expect(index.dom.isElement).to.equal(allDom.default.isElement)
     expect(index.dom.isInViewport).to.equal(allDom.default.isInViewport)
     expect(index.dom.isWindow).to.equal(allDom.default.isWindow)
+    expect(index.dom.pageHeight).to.equal(allDom.default.pageHeight)
+    expect(index.dom.pageWidth).to.equal(allDom.default.pageWidth)
     expect(index.dom.pageX).to.equal(allDom.default.pageX)
     expect(index.dom.pageY).to.equal(allDom.default.pageY)
     expect(index.dom.scrollTo).to.equal(allDom.default.scrollTo)

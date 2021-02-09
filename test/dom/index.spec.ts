@@ -7,6 +7,8 @@ import insertScript from '../../src/dom/insertScript'
 import isElement from '../../src/dom/isElement'
 import isInViewport from '../../src/dom/isInViewport'
 import isWindow from '../../src/dom/isWindow'
+import pageHeight from '../../src/dom/pageHeight'
+import pageWidth from '../../src/dom/pageWidth'
 import pageX from '../../src/dom/pageX'
 import pageY from '../../src/dom/pageY'
 import scrollTo from '../../src/dom/scrollTo'
@@ -25,6 +27,8 @@ describe('dom/index', () => {
     expect(index.isElement).to.equal(isElement)
     expect(index.isInViewport).to.equal(isInViewport)
     expect(index.isWindow).to.equal(isWindow)
+    expect(index.pageHeight).to.equal(pageHeight)
+    expect(index.pageWidth).to.equal(pageWidth)
     expect(index.pageX).to.equal(pageX)
     expect(index.pageY).to.equal(pageY)
     expect(index.scrollTo).to.equal(scrollTo)
