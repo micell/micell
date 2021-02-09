@@ -6,6 +6,8 @@ import insertScript from './insertScript'
 import isElement from './isElement'
 import isInViewport from './isInViewport'
 import isWindow from './isWindow'
+import pageHeight from './pageHeight'
+import pageWidth from './pageWidth'
 import pageX from './pageX'
 import pageY from './pageY'
 import scrollTo from './scrollTo'
@@ -30,6 +32,8 @@ export default {
   isWindow,
   pageX,
   pageY,
+  pageHeight,
+  pageWidth,
   scrollTo,
   scrollX,
   scrollY,
