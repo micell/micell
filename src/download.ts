@@ -7,10 +7,11 @@
 * License : https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md (MIT)
 * source  : http://purl.eligrey.com/github/FileSaver.js
 */
+import isBrowser from './_internal/isBrowser'
 
 // TODO: add tests
 
-const isMacOSWebView = /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent)
+const isMacOSWebView = () => /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent)
 
 function bom(file: File | Blob): File | Blob {
   if (/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(file.type)) {
@@ -56,7 +57,11 @@ function click(node: Node) {
 let download: (file: string | Blob | File, name?: string) => void
 
 /* istanbul ignore else */
-if ('download' in HTMLAnchorElement.prototype && !isMacOSWebView) {
+if (!isBrowser) {
+  download = function download(): never {
+    throw new Error('download is not support in pure Node.js')
+  }
+} else if ('download' in HTMLAnchorElement.prototype && !isMacOSWebView()) {
   download = function download(file: string | Blob | File, name?: string): void {
     const a = document.createElement('a')
     const fileName = name || (file as File).name || 'download'
@@ -120,7 +125,7 @@ if ('download' in HTMLAnchorElement.prototype && !isMacOSWebView) {
       const isSafari = /constructor/i.test(String(window.HTMLElement)) || String(window.safari || '')
       const isChromeIOS = /CriOS\/[\d]+/.test(navigator.userAgent)
 
-      if ((isChromeIOS || (force && isSafari) || isMacOSWebView) && typeof FileReader !== 'undefined') {
+      if ((isChromeIOS || (force && isSafari) || isMacOSWebView()) && typeof FileReader !== 'undefined') {
         // Safari doesn't allow downloading of blob URLs
         const reader = new FileReader()
         reader.onloadend = function () {
