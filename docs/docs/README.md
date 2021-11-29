@@ -2355,6 +2355,8 @@ isEmail(str)
 
 Check if a string is an email address.
 
+> If you need to check if an email is valid, the best option is that sending an email with a recipient link.
+
 **Since**
 
 0.1.0
