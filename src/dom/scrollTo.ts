@@ -28,7 +28,7 @@ const easings: Easings = {
 }
 
 const reEasingKeyword = /^(linear|ease|ease-in|ease-in-out|ease-out)$/
-const reCubicBezier = /^cubic-bezier\(\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*\)$/
+const reCubicBezier = /^cubic-bezier\(\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*\)$/
 
 export interface ScrollToOptions {
   x?: number;

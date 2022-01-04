@@ -1,1 +1,1 @@
-export default /^[+-]?(?:\d+\.?\d*|\.\d+)$/
+export default /^[+-]?(?:\d+|\d+\.\d*|\.\d+)$/

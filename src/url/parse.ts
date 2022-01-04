@@ -2,6 +2,7 @@ import isString from '../lang/isString'
 import queryParse from '../qs/parse'
 import { Query } from '../qs/types'
 
+// TODO: figure out redos bug
 const reUrl = /(\w+):\/\/(?:(\w+)(?::(\w+))?@)?([^@/#]+\.[a-z]+)(?::(\d+))?([^?#]+)?(\?[^#]+)?(#[\w\W]+)?/
 
 export interface URLObject {

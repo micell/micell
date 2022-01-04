@@ -14,7 +14,7 @@ import isBrowser from './_internal/isBrowser'
 const isMacOSWebView = () => /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent)
 
 function bom(file: File | Blob): File | Blob {
-  if (/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(file.type)) {
+  if (/^\s*(?:text\/[^;\s/]*|application\/xml|[^;\s/]*\/[^;\s/]*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(file.type)) {
     return new Blob([String.fromCharCode(0xFEFF), file], { type: file.type })
   }
   return file
