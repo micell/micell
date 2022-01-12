@@ -52,13 +52,13 @@ The latest version:
 The specific version:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/micell@0.1.0/dist/micell.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/micell@0.13.3/dist/micell.js"></script>
 ```
 
 The ES Modules version:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/micell@0.1.0/dist/micell.esm.browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/micell@0.13.3/dist/micell.esm.browser.js"></script>
 ```
 
 The micell also exists in [unpkg](https://unpkg.com/).
