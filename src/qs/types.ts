@@ -1,3 +1,3 @@
 export interface Query {
-  [key: string]: string | number | boolean | Array<string | number | boolean>;
+  [key: string]: undefined | null | string | number | boolean | Array<string | number | boolean>;
 }

@@ -25,4 +25,12 @@ describe('qs/stringify', () => {
     expect(stringify({ foo: 'hello world' })).to.equal('foo=hello%20world')
     expect(stringify({ 'foo bar': 'hello world' })).to.equal('foo%20bar=hello%20world')
   })
+
+  it('should ignore if the value is undefined', () => {
+    expect(stringify({ foo: undefined })).to.equal('')
+  })
+
+  it('should be transformed to an empty string if value is null', () => {
+    expect(stringify({ foo: null })).to.equal('foo=')
+  })
 })

@@ -16,6 +16,10 @@ export default function stringify (query: Query): string {
           value.forEach(v => {
             pairs.push(`${encodedName}=${encodeURIComponent(v)}`)
           })
+        } else if (value === undefined) {
+          break;
+        } else if (value === null) {
+          pairs.push(`${encodedName}=`)
         } else {
           pairs.push(`${encodedName}=${encodeURIComponent(value)}`)
         }
