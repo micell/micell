@@ -751,19 +751,19 @@ Compute the difference of the specified period unit between two dates.
 
 | Unit value | Representation |
 | ---------- | -------------- |
-| Y | Years |
-| M | Months |
-| D | Days |
-| h | hours |
-| m | minutes |
-| s | seconds |
-| ms | milliseconds |
+| Y          | Years          |
+| M          | Months         |
+| D          | Days           |
+| h          | hours          |
+| m          | minutes        |
+| s          | seconds        |
+| ms         | milliseconds   |
 
 **Example**
 
 ```js
-const date1 = new Date(2019, 1, 10, 0, 0, 0);
-const date2 = '2019-01-01 00:00:00';
+const date1 = '2019-01-01 00:00:00';
+const date2 = new Date(2019, 1, 10, 0, 0, 0);
 diff(date1, date2);
 // => 3456000000
 diff(date1, date2, 'D')
@@ -792,22 +792,22 @@ format(date, format, [isUTC])
 
 **Format tokens**
 
-| Token | Output |
-| ----- | ------ |
-| YY | 70 71 ... 18 19 |
-| YYYY | 1970 1971 ... 2018 2019 |
-| M | 1 2 ... 11 12 |
-| MM | 01 02 ... 11 12 |
-| D | 1 2 ... 30 31 |
-| DD | 01 02 ... 30 31 |
-| H | 0 1 ... 22 23 |
-| HH | 00 01 ... 22 23 |
-| h | 1 2 ... 11 12 |
-| hh | 01 02 ... 11 12 |
-| m | 1 2 ... 58 59 |
-| mm | 01 02 ... 58 59 |
-| s | 1 2 ... 58 59 |
-| ss | 01 02 ... 58 59 |
+| Token | Output                  |
+| ----- | ----------------------- |
+| YY    | 70 71 ... 18 19         |
+| YYYY  | 1970 1971 ... 2018 2019 |
+| M     | 1 2 ... 11 12           |
+| MM    | 01 02 ... 11 12         |
+| D     | 1 2 ... 30 31           |
+| DD    | 01 02 ... 30 31         |
+| H     | 0 1 ... 22 23           |
+| HH    | 00 01 ... 22 23         |
+| h     | 1 2 ... 11 12           |
+| hh    | 01 02 ... 11 12         |
+| m     | 1 2 ... 58 59           |
+| mm    | 01 02 ... 58 59         |
+| s     | 1 2 ... 58 59           |
+| ss    | 01 02 ... 58 59         |
 
 **Example**
 
