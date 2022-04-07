@@ -140,6 +140,44 @@ const testData = [
       search: '',
       username: ''
     }
+  },
+  {
+    input: 'http://localhost:8000/path?foo=1#title',
+    expected: {
+      hash: '#title',
+      host: 'localhost:8000',
+      hostname: 'localhost',
+      href: 'http://localhost:8000/path?foo=1#title',
+      origin: 'http://localhost:8000',
+      password: '',
+      pathname: '/path',
+      port: '8000',
+      protocol: 'http',
+      query: {
+        foo: '1'
+      },
+      search: '?foo=1',
+      username: ''
+    }
+  },
+  {
+    input: 'http://192.168.0.1:8000/path?foo=1#title',
+    expected: {
+      hash: '#title',
+      host: '192.168.0.1:8000',
+      hostname: '192.168.0.1',
+      href: 'http://192.168.0.1:8000/path?foo=1#title',
+      origin: 'http://192.168.0.1:8000',
+      password: '',
+      pathname: '/path',
+      port: '8000',
+      protocol: 'http',
+      query: {
+        foo: '1'
+      },
+      search: '?foo=1',
+      username: ''
+    }
   }
 ]
 
