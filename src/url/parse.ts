@@ -3,7 +3,7 @@ import queryParse from '../qs/parse'
 import { Query } from '../qs/types'
 
 // TODO: figure out redos bug
-const reUrl = /(\w+):\/\/(?:(\w+)(?::(\w+))?@)?([^@/#]+\.[a-z]+)(?::(\d+))?([^?#]+)?(\?[^#]+)?(#[\w\W]+)?/
+const reUrl = /(\w+):\/\/(?:(\w+)(?::(\w+))?@)?([^@:/#]+)(?::(\d+))?([^?#]+)?(\?[^#]+)?(#[\w\W]+)?/
 
 export interface URLObject {
   hash: string;
@@ -34,7 +34,6 @@ export default function parse (url: string): URLObject {
   const username = matched[2] || ''
   const password = matched[3] || ''
   const hostname = matched[4]
-  // TODO: should convert port to a number?
   const port = matched[5] || ''
   const pathname = matched[6] || ''
   const search = matched[7] || ''
