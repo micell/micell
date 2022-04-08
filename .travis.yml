@@ -6,8 +6,6 @@ addons:
   chrome: stable
 install:
   - yarn
-before_script:
-  - yarn global add codecov
 script:
   - yarn run test:ci
-  - codecov
+  - cat ./scripts/coverage.sh | bash
