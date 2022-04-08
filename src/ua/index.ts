@@ -1,3 +1,4 @@
+import isAlipay from './isAlipay'
 import isAndroid from './isAndroid'
 import isIOS from './isIOS'
 import isIPad from './isIPad'
@@ -10,6 +11,7 @@ import isWeChat from './isWeChat'
 import isWindows from './isWindows'
 
 export default {
+  isAlipay,
   isAndroid,
   isIOS,
   isIPad,

@@ -13,6 +13,7 @@ const testMap: TestMap = {
   IOS: /like Mac OS X/,
   Mobile: /Mobi|iPh|480/,
   Tablet: /Tablet|Pad|Nexus 7/,
+  Alipay: /AlipayClient/,
   WeChat: /MicroMessenger/,
   IPhone: /iPhone|iPod/,
   IPad: /iPad/
