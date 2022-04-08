@@ -2927,6 +2927,22 @@ truncate(str, { length: 10, countType: 1 });
 
 ## ua
 
+### isAlipay
+
+```js
+isAlipay()
+```
+
+判断运行环境是否是支付宝。
+
+**起始版本**
+
+0.14.0
+
+**返回值**
+
+* **`(boolean)`**
+
 ### isAndroid
 
 ```js

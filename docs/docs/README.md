@@ -2917,6 +2917,22 @@ truncate(str, { length: 10, countType: 1 });
 
 ## ua
 
+### isAlipay
+
+```js
+isAlipay()
+```
+
+Check is the environment is Alipay App.
+
+**Since**
+
+0.14.0
+
+**Return**
+
+* **`(boolean)`**
+
 ### isAndroid
 
 ```js

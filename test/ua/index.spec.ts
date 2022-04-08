@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import isAlipay from '../../src/ua/isAlipay'
 import isAndroid from '../../src/ua/isAndroid'
 import isIOS from '../../src/ua/isIOS'
 import isIPad from '../../src/ua/isIPad'
@@ -13,6 +14,7 @@ import index from '../../src/ua/index'
 
 describe('ua/index', () => {
   it('should export the right bindings', () => {
+    expect(index.isAlipay).to.equal(isAlipay)
     expect(index.isAndroid).to.equal(isAndroid)
     expect(index.isIOS).to.equal(isIOS)
     expect(index.isIPad).to.equal(isIPad)
