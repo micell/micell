@@ -1670,6 +1670,54 @@ once(type, listener)
 
 ## lang
 
+### getType
+
+```js
+getType(value)
+```
+
+返回`value`的数据类型。
+
+**起始版本**
+
+0.14.0
+
+**参数**
+
+* **`value (any)`**
+
+**返回值**
+
+* **`(string)`**
+
+**示例**
+
+```js
+getType(undefined)
+// => 'Undefined'
+getType(null)
+// => 'Null'
+getType(1)
+// => 'Number'
+getType(true)
+// => 'Boolean'
+getType('')
+// => 'String'
+getType(Symbol('foo'))
+// => 'Symbol'
+getType(0n)
+// => 'BigInt'
+getType({})
+// => 'Object'
+getType([])
+// => 'Array'
+getType(/\s/)
+// => 'RegExp'
+getType(new Date())
+// => 'Date'
+getType(function () {})
+// => 'Function'
+```
 ### isArray
 
 ```js

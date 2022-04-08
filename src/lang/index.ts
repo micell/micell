@@ -1,3 +1,4 @@
+import getType from './getType'
 import isArray from './isArray'
 import isBoolean from './isBoolean'
 import isDate from './isDate'
@@ -12,6 +13,7 @@ import isString from './isString'
 import isUndefined from './isUndefined'
 
 export default {
+  getType,
   isArray,
   isBoolean,
   isDate,

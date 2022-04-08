@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import getType from '../../src/lang/getType'
 import isArray from '../../src/lang/isArray'
 import isBoolean from '../../src/lang/isBoolean'
 import isDate from '../../src/lang/isDate'
@@ -15,6 +16,7 @@ import index from '../../src/lang/index'
 
 describe('lang/index', () => {
   it('should export the right bindings', () => {
+    expect(index.getType).to.equal(getType)
     expect(index.isArray).to.equal(isArray)
     expect(index.isBoolean).to.equal(isBoolean)
     expect(index.isDate).to.equal(isDate)
