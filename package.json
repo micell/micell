@@ -48,9 +48,23 @@
     ]
   },
   "keywords": [
-    "micellar",
+    "micell",
     "utility",
-    "util"
+    "util",
+    "base64",
+    "cookie",
+    "date",
+    "dom",
+    "easing",
+    "emitter",
+    "path",
+    "qs",
+    "querystring",
+    "regex",
+    "string",
+    "ua",
+    "useragent",
+    "url"
   ],
   "author": "Alex Chao",
   "license": "MIT",
