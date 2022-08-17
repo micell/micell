@@ -27,10 +27,10 @@ describe('qs/stringify', () => {
   })
 
   it('should ignore if the value is undefined', () => {
-    expect(stringify({ foo: undefined })).to.equal('')
+    expect(stringify({ foo: undefined, bar: 2 })).to.equal('bar=2')
   })
 
   it('should be transformed to an empty string if value is null', () => {
-    expect(stringify({ foo: null })).to.equal('foo=')
+    expect(stringify({ foo: null, bar: 2 })).to.equal('foo=&bar=2')
   })
 })
