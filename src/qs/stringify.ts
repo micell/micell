@@ -17,7 +17,7 @@ export default function stringify (query: Query): string {
             pairs.push(`${encodedName}=${encodeURIComponent(v)}`)
           })
         } else if (value === undefined) {
-          break;
+          continue;
         } else if (value === null) {
           pairs.push(`${encodedName}=`)
         } else {
