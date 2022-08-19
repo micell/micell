@@ -20,62 +20,20 @@ describe('date/timeAgo', () => {
     type FormatParams = [number | string | Date]
     type TestUnit = [FormatParams, string]
     const testUnits: Array<TestUnit> = [
-      [
-        [now],
-        'just now'
-      ],
-      [
-        [now - 5000],
-        '5 seconds ago'
-      ],
-      [
-        [now - (60 * 1000)],
-        '1 minute ago'
-      ],
-      [
-        [now - (5 * 60 * 1000)],
-        '5 minutes ago'
-      ],
-      [
-        [now - (60 * 60 * 1000)],
-        '1 hour ago'
-      ],
-      [
-        [now - (5 * 60 * 60 * 1000)],
-        '5 hours ago'
-      ],
-      [
-        [now - (24 * 60 * 60 * 1000)],
-        '1 day ago'
-      ],
-      [
-        [now - (5 * 24 * 60 * 60 * 1000)],
-        '5 days ago'
-      ],
-      [
-        [now - (7 * 24 * 60 * 60 * 1000)],
-        '1 week ago'
-      ],
-      [
-        [now - (2 * 7 * 24 * 60 * 60 * 1000)],
-        '2 weeks ago'
-      ],
-      [
-        [now - (30 * 24 * 60 * 60 * 1000)],
-        '1 month ago'
-      ],
-      [
-        [now - (5 * 30 * 24 * 60 * 60 * 1000)],
-        '5 months ago'
-      ],
-      [
-        [now - (365 * 24 * 60 * 60 * 1000)],
-        '1 year ago'
-      ],
-      [
-        [now - (5 * 365 * 24 * 60 * 60 * 1000)],
-        '5 years ago'
-      ]
+      [[now], 'just now'],
+      [[now - 5000], '5 seconds ago'],
+      [[now - 60 * 1000], '1 minute ago'],
+      [[now - 5 * 60 * 1000], '5 minutes ago'],
+      [[now - 60 * 60 * 1000], '1 hour ago'],
+      [[now - 5 * 60 * 60 * 1000], '5 hours ago'],
+      [[now - 24 * 60 * 60 * 1000], '1 day ago'],
+      [[now - 5 * 24 * 60 * 60 * 1000], '5 days ago'],
+      [[now - 7 * 24 * 60 * 60 * 1000], '1 week ago'],
+      [[now - 2 * 7 * 24 * 60 * 60 * 1000], '2 weeks ago'],
+      [[now - 30 * 24 * 60 * 60 * 1000], '1 month ago'],
+      [[now - 5 * 30 * 24 * 60 * 60 * 1000], '5 months ago'],
+      [[now - 365 * 24 * 60 * 60 * 1000], '1 year ago'],
+      [[now - 5 * 365 * 24 * 60 * 60 * 1000], '5 years ago'],
     ]
     testUnits.forEach((testUnit) => {
       expect(timeAgo.format.apply(null, testUnit[0])).to.equal(testUnit[1])
@@ -98,7 +56,7 @@ describe('date/timeAgo', () => {
       ['-', '+'],
       ['-%s seconds', '+%s seconds'],
       ['-%s minute', '+%s minute'],
-      ['-%s minutes', '+%s minutes']
+      ['-%s minutes', '+%s minutes'],
     ]
     timeAgo.addLocale('custom', locale)
     timeAgo.setLocale('custom')
@@ -108,22 +66,10 @@ describe('date/timeAgo', () => {
     type TestUnit = [FormatParams, string]
     const now = Date.now()
     const testUnits: Array<TestUnit> = [
-      [
-        [now],
-        '-'
-      ],
-      [
-        [now - 5000],
-        '-5 seconds'
-      ],
-      [
-        [now, undefined, new Date(now - 5000)],
-        '+5 seconds'
-      ],
-      [
-        [now - (60 * 1000)],
-        '-1 minute'
-      ]
+      [[now], '-'],
+      [[now - 5000], '-5 seconds'],
+      [[now, undefined, new Date(now - 5000)], '+5 seconds'],
+      [[now - 60 * 1000], '-1 minute'],
     ]
 
     testUnits.forEach((testUnit) => {

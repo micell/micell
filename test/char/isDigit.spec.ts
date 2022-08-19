@@ -11,7 +11,7 @@ describe('char/isDigit', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isDigit(ch))
+    const result = chars.every((ch) => isDigit(ch))
     expect(result).to.equal(true)
   })
 

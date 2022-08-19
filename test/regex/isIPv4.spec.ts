@@ -2,16 +2,13 @@ import { expect } from 'chai'
 import isIPv4 from '../../src/regex/isIPv4'
 
 describe('regex/isIPv4', () => {
-  const ipv4Strings = [
-    '0.0.0.0',
-    '10.255.255.255'
-  ]
+  const ipv4Strings = ['0.0.0.0', '10.255.255.255']
   const notIpv4Strings = [
     '',
     '0.0.0.0.',
     '0. 0.0.0',
     '10.255.255.256',
-    '10.10.10.00'
+    '10.10.10.00',
   ]
 
   it('should be an IPv4 string', () => {

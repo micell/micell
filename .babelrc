@@ -1,11 +1,17 @@
 {
   "presets": [
-    ["@babel/preset-typescript", {
-      "allowNamespaces": true
-    }],
-    ["@babel/preset-env", {
-      "modules": false
-    }]
+    [
+      "@babel/preset-typescript",
+      {
+        "allowNamespaces": true
+      }
+    ],
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
   ],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
@@ -21,13 +27,12 @@
     },
     "test": {
       "plugins": [
-        ["babel-plugin-istanbul", {
-          "exclude": [
-            "node_modules/**/*",
-            "**/*.spec.ts",
-            "test/**/*.ts"
-          ]
-        }]
+        [
+          "babel-plugin-istanbul",
+          {
+            "exclude": ["node_modules/**/*", "**/*.spec.ts", "test/**/*.ts"]
+          }
+        ]
       ]
     }
   }

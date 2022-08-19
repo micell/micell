@@ -9,12 +9,7 @@ describe('regex/isEmail', () => {
     'a+b@example.com',
     'aaa@163.com',
   ]
-  const notEmailStrings = [
-    'a',
-    'a@',
-    '@a',
-    '@a.com',
-  ]
+  const notEmailStrings = ['a', 'a@', '@a', '@a.com']
 
   it('should be an email string', () => {
     emailStrings.forEach((str) => {

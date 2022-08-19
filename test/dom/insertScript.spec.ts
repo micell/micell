@@ -26,7 +26,7 @@ describe('insertScript', () => {
     const url = 'http://example.com/app3.js'
     insertScript(url, {
       id: 'foo',
-      async: true
+      async: true,
     })
     const script = document.getElementById('foo') as HTMLScriptElement
     expect(script.async).to.equal(true)
@@ -35,9 +35,9 @@ describe('insertScript', () => {
   it.skip('should trigger the load event if script load is success', (done) => {
     const url = '/base/test/setup.js'
     const script = insertScript(url, {
-      onload () {
+      onload() {
         done()
-      }
+      },
     })
     expect(script.onload).to.be.an('function')
   })
@@ -45,10 +45,10 @@ describe('insertScript', () => {
   it.skip('should trigger the error event if script load is failed', (done) => {
     const url = 'http://some-never-be-exist-domain.com/app.js'
     const script = insertScript(url, {
-      onerror (e: Event) {
+      onerror(e: Event) {
         expect(e.type).to.equal('error')
         done()
-      }
+      },
     })
     expect(script.onerror).to.be.an('function')
   })

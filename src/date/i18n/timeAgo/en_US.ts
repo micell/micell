@@ -12,7 +12,7 @@ const locale: Array<[string, string]> = [
   ['1 month ago', 'in 1 month'],
   ['%s months ago', 'in %s months'],
   ['1 year ago', 'in 1 year'],
-  ['%s years ago', 'in %s years']
+  ['%s years ago', 'in %s years'],
 ]
 
 export default locale

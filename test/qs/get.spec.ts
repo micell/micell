@@ -33,7 +33,13 @@ describe('qs/get', () => {
   it('multiple query pairs with the same name', () => {
     expect(get('lang', 'lang[]')).to.deep.equal([''])
     expect(get('lang', 'lang[]=')).to.deep.equal([''])
-    expect(get('lang', 'lang=HTML&lang=CSS&lang=JavaScript')).to.deep.equal(['HTML', 'CSS', 'JavaScript'])
-    expect(get('lang', 'lang[]=HTML&lang[]=CSS&lang[]=JavaScript')).to.deep.equal(['HTML', 'CSS', 'JavaScript'])
+    expect(get('lang', 'lang=HTML&lang=CSS&lang=JavaScript')).to.deep.equal([
+      'HTML',
+      'CSS',
+      'JavaScript',
+    ])
+    expect(
+      get('lang', 'lang[]=HTML&lang[]=CSS&lang[]=JavaScript'),
+    ).to.deep.equal(['HTML', 'CSS', 'JavaScript'])
   })
 })

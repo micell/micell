@@ -11,15 +11,9 @@ describe('regex/isRealNumber', () => {
     '-1.12',
     '-1.1e5',
     '-.1E-5',
-    '+.1E+5'
+    '+.1E+5',
   ]
-  const notRealNumberStrings = [
-    '',
-    '1..1',
-    '..1',
-    '1.1.',
-    '1e1.1'
-  ]
+  const notRealNumberStrings = ['', '1..1', '..1', '1.1.', '1e1.1']
 
   it('should be a real number string', () => {
     realNumberStrings.forEach((str) => {

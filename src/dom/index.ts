@@ -37,5 +37,5 @@ export default {
   scrollTo,
   scrollX,
   scrollY,
-  viewport
+  viewport,
 }

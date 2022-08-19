@@ -12,7 +12,7 @@ const locale: Array<[string, string]> = [
   ['1 个月前', '1 个月后'],
   ['%s 个月前', '%s 个月后'],
   ['1 年前', '1 年后'],
-  ['%s 年前', '%s 年后']
+  ['%s 年前', '%s 年后'],
 ]
 
 export default locale

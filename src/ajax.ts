@@ -2,16 +2,19 @@ import isObject from './lang/isObject'
 import isString from './lang/isString'
 
 export interface AjaxOptions {
-  async?: boolean;
-  beforeSend?: (xhr: XMLHttpRequest) => void | boolean;
-  data?: any;
-  headers?: { [key: string]: string };
-  method?: string;
-  responseType?: XMLHttpRequestResponseType;
-  timeout?: number;
+  async?: boolean
+  beforeSend?: (xhr: XMLHttpRequest) => void | boolean
+  data?: any
+  headers?: { [key: string]: string }
+  method?: string
+  responseType?: XMLHttpRequestResponseType
+  timeout?: number
 }
 
-export default function ajax (url: string, options: AjaxOptions = {}): Promise<XMLHttpRequest> {
+export default function ajax(
+  url: string,
+  options: AjaxOptions = {},
+): Promise<XMLHttpRequest> {
   return new Promise((resolve, reject) => {
     const {
       async = true,
@@ -20,7 +23,7 @@ export default function ajax (url: string, options: AjaxOptions = {}): Promise<X
       headers = {},
       method = 'get',
       responseType = 'json',
-      timeout = 0
+      timeout = 0,
     } = options
 
     const xhr = new XMLHttpRequest()

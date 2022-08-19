@@ -2,10 +2,7 @@ import { expect } from 'chai'
 import isHexColor from '../../src/regex/isHexColor'
 
 describe('regex/isHexColor', () => {
-  const hexColorStrings = [
-    '#fff',
-    '#ffaa00'
-  ]
+  const hexColorStrings = ['#fff', '#ffaa00']
   const notHexColorStrings = [
     '',
     '#',
@@ -15,7 +12,7 @@ describe('regex/isHexColor', () => {
     '#ff',
     '#ffff',
     '#fffff',
-    '#ffg'
+    '#ffg',
   ]
 
   it('should be an hexadicimal color string', () => {

@@ -1,12 +1,20 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
 
-const rafNames = ['requestAnimationFrame', 'webkitRequestAnimationFrame', 'mozRequestAnimationFrame']
-const cafNames = ['cancelAnimationFrame', 'webkitCancelAnimationFrame', 'mozCancelAnimationFrame']
+const rafNames = [
+  'requestAnimationFrame',
+  'webkitRequestAnimationFrame',
+  'mozRequestAnimationFrame',
+]
+const cafNames = [
+  'cancelAnimationFrame',
+  'webkitCancelAnimationFrame',
+  'mozCancelAnimationFrame',
+]
 
 const emptyRafs = () => {
   const originRafs: { [key: string]: any } = Object.create(null)
-  const originCafs: { [key: string] : any } = Object.create(null)
+  const originCafs: { [key: string]: any } = Object.create(null)
   for (const name of rafNames) {
     // @ts-ignore
     const fn = window[name]
@@ -40,8 +48,7 @@ const emptyRafs = () => {
 }
 
 describe('raf', () => {
-  before(() => {
-  })
+  before(() => {})
 
   it('should invoke the next callback continuely', (done) => {
     // @ts-ignore
@@ -51,7 +58,7 @@ describe('raf', () => {
         const tick = 1000 / 60
         const start = Date.now()
         let count = 0
-        raf(function next (ht) {
+        raf(function next(ht) {
           expect(ht > 0).to.equal(true)
 
           if (count > 10) {
@@ -77,7 +84,7 @@ describe('raf', () => {
         const start = Date.now()
         let count = 0
         // @ts-ignore
-        raf(function next (ht) {
+        raf(function next(ht) {
           expect(ht > 0).to.equal(true)
 
           if (count > 10) {

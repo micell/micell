@@ -4,12 +4,7 @@ const path = require('path')
 // Generated on Wed Jun 26 2019 00:32:00 GMT+0800 (China Standard Time)
 
 module.exports = function (config) {
-  const {
-    FF,
-    SF,
-    Edge,
-    IE
-  } = process.env
+  const { FF, SF, Edge, IE } = process.env
 
   let browsers = []
   let customLaunchers = {}
@@ -30,15 +25,14 @@ module.exports = function (config) {
           '--no-sandbox',
           '--headless',
           '--disable-gpu',
-          '--remote-debugging-port=9222'
-        ]
-      }
+          '--remote-debugging-port=9222',
+        ],
+      },
     }
     browsers = Object.keys(customLaunchers)
   }
 
   config.set({
-
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
@@ -53,24 +47,23 @@ module.exports = function (config) {
       'test/**/*.spec.ts',
       {
         pattern: 'test/jsonp.js',
-        included: false
+        included: false,
       },
       {
         pattern: 'test/jsonp-invalid.js',
-        included: false
-      }
+        included: false,
+      },
     ],
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       '**/*.js': ['webpack', 'sourcemap'],
       '**/*.ts': ['webpack', 'sourcemap'],
-      'test/fixtures/**/*': ['file-fixtures']
+      'test/fixtures/**/*': ['file-fixtures'],
     },
 
     // test results reporter to use
@@ -79,11 +72,8 @@ module.exports = function (config) {
     reporters: ['progress', 'coverage'],
 
     coverageReporter: {
-      reporters: [
-        { type: 'html' },
-        { type: 'lcovonly' }
-      ],
-      subdir: '.'
+      reporters: [{ type: 'html' }, { type: 'lcovonly' }],
+      subdir: '.',
     },
 
     // webpack
@@ -93,23 +83,18 @@ module.exports = function (config) {
       resolve: {
         extensions: ['.mjs', '.js', '.json', '.ts'],
         alias: {
-          sinon: path.resolve(__dirname, 'node_modules/sinon/pkg/sinon.js')
-        }
+          sinon: path.resolve(__dirname, 'node_modules/sinon/pkg/sinon.js'),
+        },
       },
       module: {
         rules: [
           {
             test: /\.(js|ts)$/,
-            use: [
-              'babel-loader'
-            ],
-            include: [
-              path.resolve('src/'),
-              path.resolve('test/')
-            ]
-          }
-        ]
-      }
+            use: ['babel-loader'],
+            include: [path.resolve('src/'), path.resolve('test/')],
+          },
+        ],
+      },
     },
 
     // web server port
@@ -142,6 +127,6 @@ module.exports = function (config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
   })
 }

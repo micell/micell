@@ -19,14 +19,24 @@ describe('cookie/util/convert', () => {
   })
 
   it('should return an encoded string', () => {
-    expect(convert({ domain: 'example.com', path: '/', secure: true })).to.equal(`;domain=example.com;path=/;secure`)
-    expect(convert({ domain: 'example.com', path: '/', secure: false })).to.equal(`;domain=example.com;path=/`)
+    expect(
+      convert({ domain: 'example.com', path: '/', secure: true }),
+    ).to.equal(`;domain=example.com;path=/;secure`)
+    expect(
+      convert({ domain: 'example.com', path: '/', secure: false }),
+    ).to.equal(`;domain=example.com;path=/`)
 
-    expect(convert({ expires: now.toUTCString() })).to.equal(`;expires=${now.toUTCString()};path=/`)
-    expect(convert({ expires: now })).to.equal(`;expires=${now.toUTCString()};path=/`)
+    expect(convert({ expires: now.toUTCString() })).to.equal(
+      `;expires=${now.toUTCString()};path=/`,
+    )
+    expect(convert({ expires: now })).to.equal(
+      `;expires=${now.toUTCString()};path=/`,
+    )
 
     const date = new Date(now.getTime())
     date.setDate(date.getDate() + 1)
-    expect(convert({ expires: 1 })).to.equal(`;expires=${date.toUTCString()};path=/`)
+    expect(convert({ expires: 1 })).to.equal(
+      `;expires=${date.toUTCString()};path=/`,
+    )
   })
 })

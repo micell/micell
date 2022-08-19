@@ -17,7 +17,7 @@ describe('char/isAlphanumeric', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isAlphanumeric(ch))
+    const result = chars.every((ch) => isAlphanumeric(ch))
     expect(result).to.equal(true)
   })
 

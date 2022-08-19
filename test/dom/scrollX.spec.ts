@@ -4,10 +4,11 @@ import scrollX from '../../src/dom/scrollX'
 describe('scrollX', () => {
   before(() => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/scrollX.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/scrollX.html']
   })
 
-  it('should return the document\'s scrollX if the first parameter is missing or a window object', (done) => {
+  it("should return the document's scrollX if the first parameter is missing or a window object", (done) => {
     window.scrollTo(100, 0)
     setTimeout(() => {
       // @ts-ignore
@@ -17,7 +18,7 @@ describe('scrollX', () => {
     })
   })
 
-  it('should return the element\'s scrollX if the first parameter is an element', (done) => {
+  it("should return the element's scrollX if the first parameter is an element", (done) => {
     const el = document.querySelector('.container')
     // TODO: do we need the conditional check to exclude `null` value?
     if (el) {

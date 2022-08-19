@@ -16,8 +16,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://admin@example.com',
@@ -33,8 +33,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: 'admin'
-    }
+      username: 'admin',
+    },
   },
   {
     input: 'http://admin:123456@example.com',
@@ -50,8 +50,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: 'admin'
-    }
+      username: 'admin',
+    },
   },
   {
     input: 'http://www.example.com',
@@ -67,8 +67,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://example.com:80',
@@ -84,8 +84,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://example.com/path/one.html',
@@ -101,8 +101,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://www.example.com/path?foo=1&bar=2&bar=3',
@@ -118,11 +118,11 @@ const testData = [
       protocol: 'http',
       query: {
         foo: '1',
-        bar: ['2', '3']
+        bar: ['2', '3'],
       },
       search: '?foo=1&bar=2&bar=3',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://www.example.com#title',
@@ -138,8 +138,8 @@ const testData = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://localhost:8000/path?foo=1#title',
@@ -154,11 +154,11 @@ const testData = [
       port: '8000',
       protocol: 'http',
       query: {
-        foo: '1'
+        foo: '1',
       },
       search: '?foo=1',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     input: 'http://192.168.0.1:8000/path?foo=1#title',
@@ -173,12 +173,12 @@ const testData = [
       port: '8000',
       protocol: 'http',
       query: {
-        foo: '1'
+        foo: '1',
       },
       search: '?foo=1',
-      username: ''
-    }
-  }
+      username: '',
+    },
+  },
 ]
 
 describe('url/parse', () => {

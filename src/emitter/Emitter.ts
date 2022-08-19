@@ -4,20 +4,20 @@ import { EventType, Listener, Events } from './types'
 const EVENTS_KEY = '@events'
 
 class Emitter {
-  [EVENTS_KEY]: Events;
+  [EVENTS_KEY]: Events
 
   constructor() {
     this[EVENTS_KEY] = {} as Events
   }
 
   // Add a listener for a given event.
-  on (type: EventType, fn: Listener): void {
-    (this[EVENTS_KEY][type] = this[EVENTS_KEY][type] || []).push(fn)
+  on(type: EventType, fn: Listener): void {
+    ;(this[EVENTS_KEY][type] = this[EVENTS_KEY][type] || []).push(fn)
   }
 
   // Add a listener for a given event.
   // This listener can be called once, then will be removed.
-  once (type: EventType, fn: Listener): void {
+  once(type: EventType, fn: Listener): void {
     const wrapped = function wrapped(...args: any[]): any {
       // @ts-ignore
       return fn.apply(this, args)
@@ -29,7 +29,7 @@ class Emitter {
   // Remove all event listeners
   // or remove the given event listeners
   // or remove the specified listener for the given event.
-  off (type?: EventType, fn?: Listener): void {
+  off(type?: EventType, fn?: Listener): void {
     // @ts-ignore
     const events = this[EVENTS_KEY][type]
 
@@ -62,7 +62,7 @@ class Emitter {
   }
 
   // Trigger a given event with optional arguments.
-  emit (type: EventType, ...args: any[]): void {
+  emit(type: EventType, ...args: any[]): void {
     const listeners = this[EVENTS_KEY][type]
     if (!listeners) return
     const shallowListeners = listeners.slice()
@@ -78,7 +78,7 @@ class Emitter {
   }
 
   // Get the event listeners or all event listeners.
-  getListeners (type?: EventType): Array<Listener> {
+  getListeners(type?: EventType): Array<Listener> {
     if (type) {
       return this[EVENTS_KEY][type] || ([] as Array<Listener>)
     }

@@ -1,6 +1,6 @@
 import isElement from './isElement'
 
-export default function pageX (el: HTMLElement): number {
+export default function pageX(el: HTMLElement): number {
   // TODO: to throw a type error?
   if (!isElement(el)) return 0
 

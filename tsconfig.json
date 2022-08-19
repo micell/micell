@@ -2,7 +2,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
   "include": [
     "src/**/*",

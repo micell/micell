@@ -3,21 +3,20 @@ import queryStringify from '../qs/stringify'
 import { Query } from '../qs/types'
 
 export interface URLParts {
-  hash?: string;
+  hash?: string
   // TODO: host and hostname must be passed at least one
-  host?: string;
-  hostname?: string;
-  password?: string;
-  pathname?: string;
-  port?: string;
-  protocol: string;
-  query?: Query;
-  search?: string;
-  username?: string;
+  host?: string
+  hostname?: string
+  password?: string
+  pathname?: string
+  port?: string
+  protocol: string
+  query?: Query
+  search?: string
+  username?: string
 }
 
-
-export default function stringify (urlParts: URLParts): string {
+export default function stringify(urlParts: URLParts): string {
   if (!isObject(urlParts)) {
     throw new TypeError('invalid url parts object')
   }
@@ -31,7 +30,7 @@ export default function stringify (urlParts: URLParts): string {
     pathname = '',
     search = '',
     query = {},
-    hash = ''
+    hash = '',
   } = urlParts
 
   if (!protocol) {

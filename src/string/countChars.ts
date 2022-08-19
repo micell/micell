@@ -1,7 +1,7 @@
 import isString from '../lang/isString'
 import isCJK from '../char/isCJK'
 
-export default function count (str: string, type = 0): number {
+export default function count(str: string, type = 0): number {
   if (!isString(str)) {
     throw new TypeError('the first argument must be a string')
   }

@@ -1,4 +1,4 @@
-export default function bytesToUtf8 (bytes: Array<number>): string {
+export default function bytesToUtf8(bytes: Array<number>): string {
   const codeUnits = []
   let codePoint = 0
   let utf8 = ''
@@ -9,16 +9,15 @@ export default function bytesToUtf8 (bytes: Array<number>): string {
     if (byte < 0x80) {
       codeUnits.push(bytes[i])
     } else if (byte < 0xe0) {
-      codePoint = ((bytes[i] & 31) << 6) +
-        (bytes[++i] & 63)
+      codePoint = ((bytes[i] & 31) << 6) + (bytes[++i] & 63)
       codeUnits.push(codePoint)
     } else if (byte < 0xf0) {
-      codePoint = ((bytes[i] & 15) << 12) +
-        ((bytes[++i] & 63) << 6) +
-        (bytes[++i] & 63)
+      codePoint =
+        ((bytes[i] & 15) << 12) + ((bytes[++i] & 63) << 6) + (bytes[++i] & 63)
       codeUnits.push(codePoint)
     } else {
-      codePoint = ((bytes[i] & 7) << 18) +
+      codePoint =
+        ((bytes[i] & 7) << 18) +
         ((bytes[++i] & 63) << 12) +
         ((bytes[++i] & 63) << 6) +
         (bytes[++i] & 63)

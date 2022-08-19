@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import basename from '../../src/path/basename'
 
 describe('path/basename', () => {
-  it('should return the original string if there isn\'t a slash', () => {
+  it("should return the original string if there isn't a slash", () => {
     expect(basename('hello.md')).to.equal('hello.md')
   })
 

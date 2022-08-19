@@ -21,6 +21,8 @@ describe('truncate', () => {
 
   it('options.countType', () => {
     expect(truncate(str, { length: 10, countType: 1 })).to.equal('hello, 你...')
-    expect(truncate(str, { length: 10, countType: 2 })).to.equal('hello, 你好，world!...')
+    expect(truncate(str, { length: 10, countType: 2 })).to.equal(
+      'hello, 你好，world!...',
+    )
   })
 })

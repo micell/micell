@@ -11,7 +11,7 @@ describe('char/isASCII', () => {
   })
 
   it('should return true', () => {
-    const result = asciiChars.every(ch => isASCII(ch))
+    const result = asciiChars.every((ch) => isASCII(ch))
     expect(result).to.equal(true)
   })
 

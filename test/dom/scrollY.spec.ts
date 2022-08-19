@@ -4,10 +4,11 @@ import scrollY from '../../src/dom/scrollY'
 describe('scrollY', () => {
   before(() => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/scrollY.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/scrollY.html']
   })
 
-  it('should return the document\'s scrollY if the first parameter is missing or a window object', (done) => {
+  it("should return the document's scrollY if the first parameter is missing or a window object", (done) => {
     window.scrollTo(0, 100)
     setTimeout(() => {
       // @ts-ignore
@@ -17,7 +18,7 @@ describe('scrollY', () => {
     })
   })
 
-  it('should return the element\'s scrollY if the first parameter is an element', (done) => {
+  it("should return the element's scrollY if the first parameter is an element", (done) => {
     const el = document.querySelector('.container')
     if (el) {
       el.scrollTop = 100

@@ -15,5 +15,5 @@ export default {
   getListeners,
   off,
   on,
-  once
+  once,
 }

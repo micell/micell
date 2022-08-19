@@ -11,7 +11,8 @@ describe('pageX', () => {
 
   it('should return the expected pageX', (done) => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/pageX.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/pageX.html']
     setTimeout(() => {
       const el1 = document.getElementById('el1')
       const el2 = document.getElementById('el2')

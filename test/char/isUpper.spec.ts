@@ -11,7 +11,7 @@ describe('char/isUpper', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isUpper(ch))
+    const result = chars.every((ch) => isUpper(ch))
     expect(result).to.equal(true)
   })
 

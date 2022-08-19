@@ -9,27 +9,61 @@ import isArray from './lang/isArray'
 
 const isUint8Array = isType('Uint8Array')
 
-function F (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
-  const n = a + (b & c | ~b & d) + (x >>> 0) + t
+function F(
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  x: number,
+  s: number,
+  t: number,
+): number {
+  const n = a + ((b & c) | (~b & d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function G (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
-  const n = a + (b & d | c & ~d) + (x >>> 0) + t
+function G(
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  x: number,
+  s: number,
+  t: number,
+): number {
+  const n = a + ((b & d) | (c & ~d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function H (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
+function H(
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  x: number,
+  s: number,
+  t: number,
+): number {
   const n = a + (b ^ c ^ d) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function I (a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
+function I(
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  x: number,
+  s: number,
+  t: number,
+): number {
   const n = a + (c ^ (b | ~d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-export default function md5 (input: string | Array<number> | Uint8Array): string {
+export default function md5(
+  input: string | Array<number> | Uint8Array,
+): string {
   let bytes: Array<number> = []
 
   if (isString(input)) {
@@ -37,7 +71,9 @@ export default function md5 (input: string | Array<number> | Uint8Array): string
   } else if (isArray(input) || isUint8Array(input)) {
     bytes = input as Array<number>
   } else {
-    throw TypeError('the input parameter must be one of String, Byte Array, Uint8Array')
+    throw TypeError(
+      'the input parameter must be one of String, Byte Array, Uint8Array',
+    )
   }
 
   const m = bytesToWords(bytes)
@@ -49,12 +85,13 @@ export default function md5 (input: string | Array<number> | Uint8Array): string
 
   // Swap endian
   for (let i = 0; i < m.length; i++) {
-    m[i] = ((m[i] << 8) | (m[i] >>> 24)) & 0x00FF00FF |
-            ((m[i] << 24) | (m[i] >>> 8)) & 0xFF00FF00
+    m[i] =
+      (((m[i] << 8) | (m[i] >>> 24)) & 0x00ff00ff) |
+      (((m[i] << 24) | (m[i] >>> 8)) & 0xff00ff00)
   }
 
   // Padding
-  m[len >>> 5] |= 0x80 << (len % 32)
+  m[len >>> 5] |= 0x80 << len % 32
   m[(((len + 64) >>> 9) << 4) + 14] = len
 
   for (let i = 0; i < m.length; i += 16) {

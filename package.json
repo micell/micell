@@ -17,6 +17,7 @@
     "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn run type-check -- --watch",
+    "prettier": "prettier --write .",
     "test": "cross-env BABEL_ENV=test karma start",
     "test:ci": "yarn run test --single-run",
     "test:ff": "cross-env BABEL_ENV=test FF=true karma start",
@@ -37,14 +38,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run type-check && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "*.ts": [
-      "tsc --noEmit --esModuleInterop",
-      "eslint . --ext .ts --fix"
+      "eslint . --ext .ts --fix",
+      "prettier --write"
     ]
   },
   "keywords": [
@@ -102,6 +103,7 @@
     "cross-env": "^5.2.0",
     "es6-promise": "^4.2.8",
     "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.5.0",
     "husky": "^2.7.0",
     "karma": "^6.0.0",
     "karma-browserstack-launcher": "^1.5.1",
@@ -119,6 +121,7 @@
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "mocha": "^6.1.4",
+    "prettier": "^2.7.1",
     "replace": "^1.2.1",
     "request": "^2.88.0",
     "rimraf": "^2.6.1",

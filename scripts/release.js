@@ -13,7 +13,9 @@ const outDir = path.resolve(root, 'build')
 
 try {
   if (exec('git diff-files --quiet').code !== 0) {
-    logError(`You have unsaved changes in the working tree. Commit or stash changes before releaseing.`)
+    logError(
+      `You have unsaved changes in the working tree. Commit or stash changes before releaseing.`,
+    )
     exit(1)
   }
 
@@ -43,9 +45,9 @@ try {
     'types/*',
     'README.md',
     'LICENSE',
-    'package.json'
+    'package.json',
   ]
-  files.forEach(filename => {
+  files.forEach((filename) => {
     const src = path.resolve(root, filename)
     cp('-Rf', src, outDir)
   })

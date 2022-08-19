@@ -1,17 +1,20 @@
 import insertScript from './dom/insertScript'
 
 export interface JsonpOptions {
-  callback?: string;
-  responseType?: string;
-  timeout?: number;
+  callback?: string
+  responseType?: string
+  timeout?: number
 }
 
-export default function jsonp (url: string, options: JsonpOptions = {}): Promise<any> {
+export default function jsonp(
+  url: string,
+  options: JsonpOptions = {},
+): Promise<any> {
   return new Promise((resolve, reject) => {
     const {
       callback = '_callback',
       responseType = 'json',
-      timeout = 0
+      timeout = 0,
     } = options
     const callbackName = `_callback${Date.now()}`
     const hasQuestion = url.indexOf('?') > -1
@@ -46,9 +49,9 @@ export default function jsonp (url: string, options: JsonpOptions = {}): Promise
     }
 
     insertScript(src, {
-      onerror () {
+      onerror() {
         reject(new Error('load error'))
-      }
+      },
     })
   })
 }

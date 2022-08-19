@@ -1,1 +1,1 @@
-export default function noop (): void {}
+export default function noop(): void {}

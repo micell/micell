@@ -12,7 +12,7 @@ describe('char/isControl', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isControl(ch))
+    const result = chars.every((ch) => isControl(ch))
     expect(result).to.equal(true)
   })
 

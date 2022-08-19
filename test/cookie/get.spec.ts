@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import get from '../../src/cookie/get'
 
 describe('cookie/get', () => {
-  it('should return null if the cookie key isn\'t exist', () => {
+  it("should return null if the cookie key isn't exist", () => {
     expect(get('nokey')).to.equal(null)
   })
 

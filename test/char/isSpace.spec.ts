@@ -12,7 +12,7 @@ describe('char/isSpace', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isSpace(ch))
+    const result = chars.every((ch) => isSpace(ch))
     expect(result).to.equal(true)
   })
 

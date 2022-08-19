@@ -25,5 +25,5 @@ export default {
   isObject,
   isRegExp,
   isString,
-  isUndefined
+  isUndefined,
 }

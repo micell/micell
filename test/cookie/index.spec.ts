@@ -1,13 +1,13 @@
 import { expect } from 'chai'
-import get from '../../src/cookie/get';
-import getAll from '../../src/cookie/getAll';
-import getJson from '../../src/cookie/getJson';
-import getRaw from '../../src/cookie/getRaw';
-import isEnabled from '../../src/cookie/isEnabled';
-import remove from '../../src/cookie/remove';
-import set from '../../src/cookie/set';
-import setJson from '../../src/cookie/setJson';
-import setRaw from '../../src/cookie/setRaw';
+import get from '../../src/cookie/get'
+import getAll from '../../src/cookie/getAll'
+import getJson from '../../src/cookie/getJson'
+import getRaw from '../../src/cookie/getRaw'
+import isEnabled from '../../src/cookie/isEnabled'
+import remove from '../../src/cookie/remove'
+import set from '../../src/cookie/set'
+import setJson from '../../src/cookie/setJson'
+import setRaw from '../../src/cookie/setRaw'
 import index from '../../src/cookie/index'
 
 describe('cookie/index', () => {

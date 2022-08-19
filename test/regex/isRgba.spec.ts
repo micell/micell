@@ -9,14 +9,14 @@ describe('regex/isRgba', () => {
     'rgba(0,0,0,.1)',
     'rgba(0,0,0,1)',
     'rgba(10, 10, 10, 0.1)',
-    'rgba( 0, 0,  0 , 0.1 )'
+    'rgba( 0, 0,  0 , 0.1 )',
   ]
   const notRgbaStrings = [
     '',
     'rgba(0,0,0.1,0.1)',
     'Rgba(0,0,0,0.1)',
     'rgba(0,0,0,-0.1)',
-    'rgba (0,0,0,0.1)'
+    'rgba (0,0,0,0.1)',
   ]
 
   it('should be a RGBA string', () => {

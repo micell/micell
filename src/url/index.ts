@@ -10,5 +10,5 @@ export default {
   isAbsolute,
   join,
   parse,
-  stringify
+  stringify,
 }

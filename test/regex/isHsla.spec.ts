@@ -9,7 +9,7 @@ describe('regex/isHsla', () => {
     'hsla(0,0%,1%,.1)',
     'HSLA(0,0%,1%,0.1)',
     'hsla(0, 0%, 1%, 0.1)',
-    'hsla(  0  , 0% ,  1% , 0.1  )'
+    'hsla(  0  , 0% ,  1% , 0.1  )',
   ]
   const notHslaStrings = [
     '',
@@ -18,7 +18,7 @@ describe('regex/isHsla', () => {
     'Hsla(0,0%,1%,0,-0.1)',
     'Hsla(0,0%,1%,0,0.1)',
     'hsla(0.1,0%,1%,0.1)',
-    'hsla (0,0%,1%,0.1)'
+    'hsla (0,0%,1%,0.1)',
   ]
 
   it('should be an HSLA string', () => {

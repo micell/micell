@@ -3,10 +3,13 @@ import isObject from './lang/isObject'
 import isElement from './dom/isElement'
 
 export interface CSSProps {
-  [key: string]: number | string;
+  [key: string]: number | string
 }
 
-export default function css (el: string | Element, prop?: string | CSSProps): any {
+export default function css(
+  el: string | Element,
+  prop?: string | CSSProps,
+): any {
   let elem: Element | null
 
   if (isString(el)) {
@@ -24,8 +27,8 @@ export default function css (el: string | Element, prop?: string | CSSProps): an
     let cssText = (elem as HTMLElement).style.cssText
     Object.keys(prop as CSSProps).forEach((name) => {
       cssText += `${name}: ${(prop as CSSProps)[name]};`
-    });
-    (elem as HTMLElement).style.cssText = cssText
+    })
+    ;(elem as HTMLElement).style.cssText = cssText
   } else {
     let ret = window.getComputedStyle(elem)
     if (isString(prop)) {

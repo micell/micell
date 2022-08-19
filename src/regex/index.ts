@@ -61,5 +61,5 @@ export default {
   qq,
   realNumber,
   rgb,
-  rgba
+  rgba,
 }

@@ -1,8 +1,11 @@
 export interface InsertScriptOptions {
-  [key: string]: any;
+  [key: string]: any
 }
 
-export default function insertScript (url: string, options: InsertScriptOptions = {}): HTMLScriptElement {
+export default function insertScript(
+  url: string,
+  options: InsertScriptOptions = {},
+): HTMLScriptElement {
   const script: HTMLScriptElement = document.createElement('script')
 
   script.src = url

@@ -1,2 +1,2 @@
 /* eslint-disable */
-export default /^[\x00-\xff]+$/;
+export default /^[\x00-\xff]+$/

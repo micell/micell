@@ -9,7 +9,8 @@ describe('scrollTo', () => {
 
   before(() => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/scrollTo.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/scrollTo.html']
     container = document.querySelector('.container')
   })
 
@@ -96,7 +97,7 @@ describe('scrollTo', () => {
     }
   })
 
-  it('scrollTo({ x: 0, y: 1000, easing: \'linear\' })', async () => {
+  it("scrollTo({ x: 0, y: 1000, easing: 'linear' })", async () => {
     scrollTo({ x: 0, y: 1000, easing: 'linear' })
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(0)
@@ -110,7 +111,7 @@ describe('scrollTo', () => {
     expect(scrollY()).to.equal(1000)
   })
 
-  it('scrollTo({ x: 0, y: 1000, easing: \'cubic-bezier(0,0,1,1)\' })', async () => {
+  it("scrollTo({ x: 0, y: 1000, easing: 'cubic-bezier(0,0,1,1)' })", async () => {
     scrollTo({ x: 0, y: 1000, easing: 'cubic-bezier(0,0,1,1)' })
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(0)
@@ -124,7 +125,7 @@ describe('scrollTo', () => {
     expect(scrollY()).to.equal(1000)
   })
 
-  it('scrollTo({ left: 0, top: 1000, easing: \'invalid-easing\' })', async () => {
+  it("scrollTo({ left: 0, top: 1000, easing: 'invalid-easing' })", async () => {
     scrollTo({ x: 0, y: 1000, easing: 'invalid-easing' })
     expect(scrollX()).to.equal(0)
     expect(scrollY()).to.equal(1000)

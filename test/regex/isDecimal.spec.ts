@@ -12,16 +12,9 @@ describe('regex/isDecimal', () => {
     '1.',
     '1.1',
     '.1',
-    '0.123'
+    '0.123',
   ]
-  const notDecimalStrings = [
-    'a',
-    '+',
-    '-',
-    '1.1.',
-    '.',
-    '1..1'
-  ]
+  const notDecimalStrings = ['a', '+', '-', '1.1.', '.', '1..1']
 
   it('should be a decimal string', () => {
     decimalStrings.forEach((str) => {

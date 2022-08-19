@@ -12,13 +12,18 @@ const outDir = path.join(__dirname, 'dist')
 const getBabelOptions = ({ useESModules = false, corejs = false } = {}) => ({
   exclude: 'node_modules/**',
   runtimeHelpers: true,
-  plugins: [['@babel/plugin-transform-runtime', {
-    useESModules,
-    corejs
-  }]]
+  plugins: [
+    [
+      '@babel/plugin-transform-runtime',
+      {
+        useESModules,
+        corejs,
+      },
+    ],
+  ],
 })
 
-const isExternal = id => !id.startsWith('.') && !id.startsWith('/')
+const isExternal = (id) => !id.startsWith('.') && !id.startsWith('/')
 
 export default [
   // CommonJs
@@ -27,14 +32,10 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.common.js`,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
     },
     external: isExternal,
-    plugins: [
-      typescript(),
-      nodeResolve(),
-      babel(getBabelOptions())
-    ]
+    plugins: [typescript(), nodeResolve(), babel(getBabelOptions())],
   },
 
   // ES
@@ -43,14 +44,14 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.esm.js`,
       format: 'es',
-      sourcemap: true
+      sourcemap: true,
     },
     external: isExternal,
     plugins: [
       typescript(),
       nodeResolve(),
-      babel(getBabelOptions({ useESModules: true }))
-    ]
+      babel(getBabelOptions({ useESModules: true })),
+    ],
   },
 
   // ES browser
@@ -59,16 +60,16 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.esm.browser.js`,
       format: 'es',
-      sourcemap: true
+      sourcemap: true,
     },
     plugins: [
       typescript(),
       nodeResolve(),
       babel(getBabelOptions({ useESModules: true })),
       replace({
-        'process.env.NODE_ENV': JSON.stringify('development')
-      })
-    ]
+        'process.env.NODE_ENV': JSON.stringify('development'),
+      }),
+    ],
   },
 
   // ES browser production
@@ -77,17 +78,17 @@ export default [
     output: {
       file: `${outDir}/${pkg.name}.esm.browser.min.js`,
       format: 'es',
-      sourcemap: true
+      sourcemap: true,
     },
     plugins: [
       typescript(),
       nodeResolve(),
       babel(getBabelOptions({ useESModules: true })),
       replace({
-        'process.env.NODE_ENV': JSON.stringify('production')
+        'process.env.NODE_ENV': JSON.stringify('production'),
       }),
-      terser()
-    ]
+      terser(),
+    ],
   },
 
   // UMD
@@ -97,7 +98,7 @@ export default [
       file: `${outDir}/${pkg.name}.js`,
       format: 'umd',
       name: pkg.name,
-      sourcemap: true
+      sourcemap: true,
     },
     plugins: [
       typescript(),
@@ -105,9 +106,9 @@ export default [
       babel(getBabelOptions({ corejs: 3 })),
       commonjs(),
       replace({
-        'process.env.NODE_ENV': JSON.stringify('development')
-      })
-    ]
+        'process.env.NODE_ENV': JSON.stringify('development'),
+      }),
+    ],
   },
 
   // UMD production
@@ -117,7 +118,7 @@ export default [
       file: `${outDir}/${pkg.name}.min.js`,
       format: 'umd',
       name: pkg.name,
-      sourcemap: true
+      sourcemap: true,
     },
     plugins: [
       typescript(),
@@ -125,9 +126,9 @@ export default [
       babel(getBabelOptions({ corejs: 3 })),
       commonjs(),
       replace({
-        'process.env.NODE_ENV': JSON.stringify('production')
+        'process.env.NODE_ENV': JSON.stringify('production'),
       }),
-      terser()
-    ]
-  }
+      terser(),
+    ],
+  },
 ]

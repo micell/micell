@@ -1,4 +1,4 @@
-export default function utf8ToBytes (str: string): Array<number> {
+export default function utf8ToBytes(str: string): Array<number> {
   const bytes: Array<number> = []
 
   for (let i = 0; i < str.length; i++) {

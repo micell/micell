@@ -4,7 +4,8 @@ import pageHeight from '../../src/dom/pageHeight'
 describe('pageHeight', () => {
   before((done) => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/pageHeight.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/pageHeight.html']
     done()
   })
 
