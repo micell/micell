@@ -11,7 +11,7 @@ describe('char/isGraph', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isGraph(ch))
+    const result = chars.every((ch) => isGraph(ch))
     expect(result).to.equal(true)
   })
 

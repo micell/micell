@@ -1,4 +1,4 @@
-export default function isValidJSON (value: any): boolean {
+export default function isValidJSON(value: any): boolean {
   let isValid = false
 
   try {

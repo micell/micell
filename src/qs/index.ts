@@ -7,5 +7,5 @@ export type { Query } from './types'
 export default {
   get,
   parse,
-  stringify
+  stringify,
 }

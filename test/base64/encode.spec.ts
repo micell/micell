@@ -7,33 +7,33 @@ describe('base64/encode', () => {
     {
       // empty string
       input: '',
-      output: ''
+      output: '',
     },
     {
       // padding = 1
       input: 'any carnal pleasure.',
-      output: 'YW55IGNhcm5hbCBwbGVhc3VyZS4='
+      output: 'YW55IGNhcm5hbCBwbGVhc3VyZS4=',
     },
     {
       // padding = 2
       input: 'any carnal pleasure',
-      output: 'YW55IGNhcm5hbCBwbGVhc3VyZQ=='
+      output: 'YW55IGNhcm5hbCBwbGVhc3VyZQ==',
     },
     {
       // padding = 0
       input: 'any carnal pleasur',
-      output: 'YW55IGNhcm5hbCBwbGVhc3Vy'
+      output: 'YW55IGNhcm5hbCBwbGVhc3Vy',
     },
     {
       // unicode basic multilingual plane
       input: '你好',
-      output: '5L2g5aW9'
+      output: '5L2g5aW9',
     },
     {
       // unicode other planes
       input: '😀',
-      output: '8J+YgA=='
-    }
+      output: '8J+YgA==',
+    },
   ]
 
   it('the 1st parameter is a string', () => {

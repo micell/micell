@@ -3,10 +3,14 @@ import { expect } from 'chai'
 import Emitter from '../../src/emitter/Emitter'
 
 interface Creator {
-  (): Emitter;
+  (): Emitter
 }
 
-export default function runSpec (describe: SuiteFunction, it: TestFunction, creator: Creator): void {
+export default function runSpec(
+  describe: SuiteFunction,
+  it: TestFunction,
+  creator: Creator,
+): void {
   describe('emitter creator', () => {
     describe('new Emitter or create()', () => {
       it('should return an Emitter instance when no parameter is passed', () => {
@@ -103,7 +107,7 @@ export default function runSpec (describe: SuiteFunction, it: TestFunction, crea
         emitter.emit('foo', 'on', 1)
         emitter.emit('foo', 'on', 2)
         expect(calls).to.deep.equal(['on', 1, 'on', 2])
-      });
+      })
     })
 
     describe('off(type, fn)', () => {

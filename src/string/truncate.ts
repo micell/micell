@@ -1,20 +1,16 @@
 import isCJK from '../char/isCJK'
 
 export interface TruncateOptions {
-  length?: number;
-  omission?: string;
-  countType?: number;
+  length?: number
+  omission?: string
+  countType?: number
 }
 
-export default function truncate (
+export default function truncate(
   str = '',
-  options: TruncateOptions = {}
+  options: TruncateOptions = {},
 ): string {
-  const {
-    length,
-    omission = '...',
-    countType = 0
-  } = options
+  const { length, omission = '...', countType = 0 } = options
   const ensureStr = String(str)
   const len = ensureStr.length
   const countLen = length || len

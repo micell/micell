@@ -2,8 +2,8 @@ import { expect } from 'chai'
 import stringify, { URLParts } from '../../src/url/stringify'
 
 interface TestDatum {
-  expected: string;
-  input: URLParts;
+  expected: string
+  input: URLParts
 }
 
 const testData: Array<TestDatum> = [
@@ -12,8 +12,8 @@ const testData: Array<TestDatum> = [
     input: {
       host: 'example.com',
       hostname: 'example.com',
-      protocol: 'http'
-    }
+      protocol: 'http',
+    },
   },
   {
     expected: 'http://example.com',
@@ -26,8 +26,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://example.com:8000',
@@ -40,8 +40,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://admin@example.com',
@@ -55,8 +55,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: 'admin'
-    }
+      username: 'admin',
+    },
   },
   {
     expected: 'http://admin:123456@example.com',
@@ -70,8 +70,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: 'admin'
-    }
+      username: 'admin',
+    },
   },
   {
     expected: 'http://www.example.com',
@@ -85,8 +85,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://example.com:80',
@@ -100,8 +100,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://example.com/path/one.html',
@@ -115,8 +115,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://www.example.com/path?foo=1&bar=2&bar=3',
@@ -130,10 +130,10 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {
         foo: '1',
-        bar: ['2', '3']
+        bar: ['2', '3'],
       },
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://www.example.com/path?foo=1&bar=2&bar=3',
@@ -147,8 +147,8 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '?foo=1&bar=2&bar=3',
-      username: ''
-    }
+      username: '',
+    },
   },
   {
     expected: 'http://www.example.com#title',
@@ -162,9 +162,9 @@ const testData: Array<TestDatum> = [
       protocol: 'http',
       query: {},
       search: '',
-      username: ''
-    }
-  }
+      username: '',
+    },
+  },
 ]
 
 describe('url/stringify', () => {

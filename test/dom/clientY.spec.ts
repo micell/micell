@@ -11,7 +11,8 @@ describe('clientY', () => {
 
   it('should return the expected clientY', (done) => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/clientY.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/clientY.html']
     setTimeout(() => {
       const el1 = document.getElementById('el1')
       if (el1) {

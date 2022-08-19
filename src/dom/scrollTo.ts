@@ -16,7 +16,7 @@ import scrollY from './scrollY'
 type EasingFunction = (x: number) => number
 
 interface Easings {
-  [key: string]: EasingFunction;
+  [key: string]: EasingFunction
 }
 
 const easings: Easings = {
@@ -24,25 +24,26 @@ const easings: Easings = {
   ease,
   'ease-in': easeIn,
   'ease-in-out': easeInOut,
-  'ease-out': easeOut
+  'ease-out': easeOut,
 }
 
 const reEasingKeyword = /^(linear|ease|ease-in|ease-in-out|ease-out)$/
-const reCubicBezier = /^cubic-bezier\(\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*\)$/
+const reCubicBezier =
+  /^cubic-bezier\(\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*,\s*(\d+|\d+\.\d+|\.\d+)\s*\)$/
 
 export interface ScrollToOptions {
-  x?: number;
-  y?: number;
-  left?: number;
-  top?: number;
-  easing?: string;
-  behavior?: ScrollBehavior;
+  x?: number
+  y?: number
+  left?: number
+  top?: number
+  easing?: string
+  behavior?: ScrollBehavior
 }
 
-export default function scrollTo (
+export default function scrollTo(
   elOrWindow: Element | Window | number | ScrollToOptions,
   x: number | ScrollToOptions = 0,
-  y = 0
+  y = 0,
 ): void {
   let el: any = window
   let options: ScrollToOptions = {}
@@ -68,11 +69,7 @@ export default function scrollTo (
   if (!hasOwn(options, 'y')) options.y = options.top || 0
 
   const innerScrollTo = (opts: ScrollToOptions): void => {
-    const {
-      x: left,
-      y: top,
-      behavior
-    } = opts;
+    const { x: left, y: top, behavior } = opts
     if (isFunction(el.scrollTo)) {
       if (behavior) {
         el.scrollTo({ left, top, behavior })
@@ -82,11 +79,11 @@ export default function scrollTo (
     } else {
       /* istanbul ignore else */
       if (left !== undefined) {
-        (el as Element).scrollLeft = left;
+        ;(el as Element).scrollLeft = left
       }
       /* istanbul ignore else */
       if (top !== undefined) {
-        (el as Element).scrollTop = top
+        ;(el as Element).scrollTop = top
       }
     }
   }

@@ -23,7 +23,9 @@ describe('qs/stringify', () => {
 
   it('should encode the name and value', () => {
     expect(stringify({ foo: 'hello world' })).to.equal('foo=hello%20world')
-    expect(stringify({ 'foo bar': 'hello world' })).to.equal('foo%20bar=hello%20world')
+    expect(stringify({ 'foo bar': 'hello world' })).to.equal(
+      'foo%20bar=hello%20world',
+    )
   })
 
   it('should ignore if the value is undefined', () => {

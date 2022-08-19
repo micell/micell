@@ -1,6 +1,11 @@
 import isNumber from './lang/isNumber'
 
-export default function numberFormat (number: number, digits = -1, dot = '.', sep = ','): string {
+export default function numberFormat(
+  number: number,
+  digits = -1,
+  dot = '.',
+  sep = ',',
+): string {
   if (!isNumber(number)) {
     return ''
   }
@@ -13,7 +18,7 @@ export default function numberFormat (number: number, digits = -1, dot = '.', se
   }
   const abs = Math.abs(number)
   const intPart = Math.floor(abs)
-  const decPart = ((abs * tenExp) - (intPart * tenExp)) / tenExp
+  const decPart = (abs * tenExp - intPart * tenExp) / tenExp
 
   const intPartStr = intPart.toString()
 

@@ -2,7 +2,8 @@ import { expect } from 'chai'
 import computeExpires from '../../../src/cookie/util/computeExpires'
 
 // Treat as equal if the difference between two dates is less than 100ms
-const diff = (d1: Date, d2: Date): number => Math.abs(d1.getTime() - d2.getTime())
+const diff = (d1: Date, d2: Date): number =>
+  Math.abs(d1.getTime() - d2.getTime())
 
 describe('cookie/util/computeExpires', () => {
   it('should return the date of the specified milliseconds', () => {

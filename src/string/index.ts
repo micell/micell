@@ -15,5 +15,5 @@ export default {
   firstChar,
   isValidJSON,
   lastChar,
-  truncate
+  truncate,
 }

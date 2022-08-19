@@ -7,9 +7,9 @@ import index from '../../src/base64/index'
 
 describe('base64/index', () => {
   it('should export the right bindings', () => {
-    expect(index.decode).to.equal(decode);
-    expect(index.decodeFile).to.equal(decodeFile);
-    expect(index.encode).to.equal(encode);
-    expect(index.encodeFile).to.equal(encodeFile);
+    expect(index.decode).to.equal(decode)
+    expect(index.decodeFile).to.equal(decodeFile)
+    expect(index.encode).to.equal(encode)
+    expect(index.encodeFile).to.equal(encodeFile)
   })
 })

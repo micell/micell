@@ -10,5 +10,5 @@ export default {
   decode,
   decodeFile,
   encode,
-  encodeFile
+  encodeFile,
 }

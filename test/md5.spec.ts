@@ -6,16 +6,16 @@ describe('md5', () => {
   const data = [
     {
       input: '',
-      output: 'd41d8cd98f00b204e9800998ecf8427e'
+      output: 'd41d8cd98f00b204e9800998ecf8427e',
     },
     {
       input: 'hello world',
-      output: '5eb63bbbe01eeed093cb22bb8f5acdc3'
+      output: '5eb63bbbe01eeed093cb22bb8f5acdc3',
     },
     {
       input: 'hello 你好',
-      output: '429f2c0b03ebc9911455cbec2a09bc6f'
-    }
+      output: '429f2c0b03ebc9911455cbec2a09bc6f',
+    },
   ]
 
   it('the 1st parameter is a string', () => {

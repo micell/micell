@@ -3,18 +3,23 @@ import isNumber from '../lang/isNumber'
 import isString from '../lang/isString'
 
 export interface ParsedDate {
-  years: number;
-  months: number;
-  dates: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  milliseconds: number;
+  years: number
+  months: number
+  dates: number
+  hours: number
+  minutes: number
+  seconds: number
+  milliseconds: number
 }
 
-export default function parse(date: number | string | Date, isUTC = false): ParsedDate {
+export default function parse(
+  date: number | string | Date,
+  isUTC = false,
+): ParsedDate {
   if (!isNumber(date) && !isString(date) && !isDate(date)) {
-    throw new Error('The first parameter should be a number, a parsable date string or a Date object')
+    throw new Error(
+      'The first parameter should be a number, a parsable date string or a Date object',
+    )
   }
 
   let d: Date
@@ -32,6 +37,6 @@ export default function parse(date: number | string | Date, isUTC = false): Pars
     hours: isUTC ? d.getUTCHours() : d.getHours(),
     minutes: isUTC ? d.getUTCMinutes() : d.getMinutes(),
     seconds: isUTC ? d.getUTCSeconds() : d.getSeconds(),
-    milliseconds: isUTC ? d.getUTCMilliseconds() : d.getMilliseconds()
+    milliseconds: isUTC ? d.getUTCMilliseconds() : d.getMilliseconds(),
   }
 }

@@ -1,1 +1,1 @@
-window._callback0("{");
+window._callback0('{')

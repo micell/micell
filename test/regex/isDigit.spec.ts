@@ -2,17 +2,8 @@ import { expect } from 'chai'
 import isDigit from '../../src/regex/isDigit'
 
 describe('regex/isDigit', () => {
-  const digitStrings = [
-    '0',
-    '1',
-    '123',
-    '0123'
-  ]
-  const notDigitStrings = [
-    'a',
-    ' ',
-    '0a'
-  ]
+  const digitStrings = ['0', '1', '123', '0123']
+  const notDigitStrings = ['a', ' ', '0a']
 
   it('should be a digit string', () => {
     digitStrings.forEach((str) => {

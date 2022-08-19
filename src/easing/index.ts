@@ -11,5 +11,5 @@ export default {
   easeIn,
   easeInOut,
   easeOut,
-  linear
+  linear,
 }

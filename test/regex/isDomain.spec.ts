@@ -2,16 +2,12 @@ import { expect } from 'chai'
 import isDomain from '../../src/regex/isDomain'
 
 describe('regex/isDomain', () => {
-  const domainStrings = [
-    'example.com',
-    'www.example.com',
-    '你好.中国'
-  ]
+  const domainStrings = ['example.com', 'www.example.com', '你好.中国']
   const notDomainStrings = [
     'com',
     'http://com',
     'http://example.com',
-    'https://example.com'
+    'https://example.com',
   ]
 
   it('should be a domain string', () => {

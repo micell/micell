@@ -5,40 +5,44 @@ import zhCN from './i18n/timeAgo/zh_CN'
 export type TimeAgoLocale = Array<[string, string]>
 
 interface TimeAgoLocales {
-  [key: string]: TimeAgoLocale;
+  [key: string]: TimeAgoLocale
 }
 
 const locales: TimeAgoLocales = {
-  'en_US': enUS,
-  'zh_CN': zhCN
+  en_US: enUS,
+  zh_CN: zhCN,
 }
 
 let currentLocale = 'en_US'
 
 export interface TimeAgo {
-  getLocale(): string;
-  setLocale(name: string): void;
-  addLocale(name: string, locale: TimeAgoLocale): void;
-  format(date: number | string | Date, locale?: string, nowDate?: Date): string;
+  getLocale(): string
+  setLocale(name: string): void
+  addLocale(name: string, locale: TimeAgoLocale): void
+  format(date: number | string | Date, locale?: string, nowDate?: Date): string
 }
 
 const timeAgo: TimeAgo = {
-  getLocale (): string {
+  getLocale(): string {
     return currentLocale
   },
 
-  setLocale (name: string): void {
+  setLocale(name: string): void {
     /* istanbul ignore else */
     if (hasOwn(locales, name)) {
       currentLocale = name
     }
   },
 
-  addLocale (name: string, locale: TimeAgoLocale): void {
+  addLocale(name: string, locale: TimeAgoLocale): void {
     locales[name] = locale
   },
 
-  format (date: number | string | Date, locale: string = currentLocale, nowDate: Date = new Date()): string {
+  format(
+    date: number | string | Date,
+    locale: string = currentLocale,
+    nowDate: Date = new Date(),
+  ): string {
     const d = new Date(date)
     const actualLocale = hasOwn(locales, locale) ? locale : currentLocale
     const sign = nowDate.getTime() - d.getTime() >= 0 ? 1 : -1
@@ -100,7 +104,7 @@ const timeAgo: TimeAgo = {
     const tmplPair = locales[actualLocale][index]
     const tmpl = sign > 0 ? tmplPair[0] : tmplPair[1]
     return tmpl.replace(/%s/, String(number))
-  }
+  },
 }
 
 export default timeAgo

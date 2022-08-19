@@ -4,7 +4,8 @@ import isInViewport from '../../src/dom/isInViewport'
 describe('isInViewport', () => {
   before((done) => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/isInViewport.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/isInViewport.html']
     done()
   })
 

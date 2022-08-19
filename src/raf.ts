@@ -16,11 +16,11 @@ for (let i = 0; i < vendors.length && !raf; i++) {
   caf = root[`${vendors[i]}Cancel${name}`]
 }
 
-type AnyFunc = (...args: any[]) => void;
+type AnyFunc = (...args: any[]) => void
 interface QueueItem {
-  timerId: number;
-  cancelled: boolean;
-  callback: AnyFunc;
+  timerId: number
+  cancelled: boolean
+  callback: AnyFunc
 }
 
 if (!raf || !caf) {
@@ -53,7 +53,7 @@ if (!raf || !caf) {
     queue.push({
       timerId,
       callback,
-      cancelled: false
+      cancelled: false,
     })
     return timerId
   }
@@ -67,7 +67,7 @@ if (!raf || !caf) {
   }
 }
 
-function exposeRaf (fn: AnyFunc): number {
+function exposeRaf(fn: AnyFunc): number {
   return raf.call(root, fn)
 }
 

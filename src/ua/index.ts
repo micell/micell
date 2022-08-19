@@ -21,5 +21,5 @@ export default {
   isMobile,
   isTablet,
   isWeChat,
-  isWindows
+  isWindows,
 }

@@ -1,7 +1,7 @@
 import isBrowser from '../../_internal/isBrowser'
 
 interface TestMap {
-  [key: string]: RegExp;
+  [key: string]: RegExp
 }
 
 // Ref: https://github.com/mumuy/browser
@@ -16,7 +16,7 @@ const testMap: TestMap = {
   Alipay: /AlipayClient/,
   WeChat: /MicroMessenger/,
   IPhone: /iPhone|iPod/,
-  IPad: /iPad/
+  IPad: /iPad/,
 }
 const userAgent = isBrowser ? window.navigator.userAgent : ''
 

@@ -7,5 +7,5 @@ export default {
   basename,
   dirname,
   extname,
-  join
+  join,
 }

@@ -10,5 +10,5 @@ export default {
   diff,
   format,
   parse,
-  timeAgo
+  timeAgo,
 }

@@ -2,16 +2,8 @@ import { expect } from 'chai'
 import isQQ from '../../src/regex/isQQ'
 
 describe('regex/isQQ', () => {
-  const qqStrings = [
-    '10000',
-    '123456789',
-    '123456789012345'
-  ]
-  const notQqStrings = [
-    '',
-    '1234',
-    '01234'
-  ]
+  const qqStrings = ['10000', '123456789', '123456789012345']
+  const notQqStrings = ['', '1234', '01234']
 
   it('should be a QQ string', () => {
     qqStrings.forEach((str) => {

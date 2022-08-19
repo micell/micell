@@ -20,7 +20,7 @@ describe('char/isPunctuation', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isPunctuation(ch))
+    const result = chars.every((ch) => isPunctuation(ch))
     expect(result).to.equal(true)
   })
 

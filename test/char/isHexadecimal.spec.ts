@@ -17,7 +17,7 @@ describe('char/isHexadecimal', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isHexadecimal(ch))
+    const result = chars.every((ch) => isHexadecimal(ch))
     expect(result).to.equal(true)
   })
 

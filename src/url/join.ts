@@ -1,4 +1,5 @@
-const reDomain = /^(https?:\/\/)?([^\s:/.]{1,63}\.){1,126}[^\s:/.]{1,63}(:\d{1,5})?\/?$/
+const reDomain =
+  /^(https?:\/\/)?([^\s:/.]{1,63}\.){1,126}[^\s:/.]{1,63}(:\d{1,5})?\/?$/
 const reQueryOrHash = /[?#]/
 
 const join = (...args: string[]): string => {

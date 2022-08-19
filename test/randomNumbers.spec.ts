@@ -9,7 +9,7 @@ describe('randomNumbers', () => {
     const len = 5
     const set = new Set()
     const nums = randomNumbers(start, end, len)
-    nums.forEach(num => {
+    nums.forEach((num) => {
       if (num >= start && num <= end) {
         set.add(num)
       }

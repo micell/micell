@@ -11,7 +11,7 @@ describe('char/isPrint', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isPrint(ch))
+    const result = chars.every((ch) => isPrint(ch))
     expect(result).to.equal(true)
   })
 

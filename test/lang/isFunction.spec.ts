@@ -3,7 +3,7 @@ import isFunction from '../../src/lang/isFunction'
 
 describe('lang/isFunction', () => {
   it('function declaration', () => {
-    function foo (): number {
+    function foo(): number {
       return 0
     }
     expect(isFunction(foo)).to.equal(true)
@@ -24,12 +24,16 @@ describe('lang/isFunction', () => {
   })
 
   it('generator function', () => {
-    function * foo (): IterableIterator<number> { yield 0 }
+    function* foo(): IterableIterator<number> {
+      yield 0
+    }
     expect(isFunction(foo)).to.equal(true)
   })
 
   it('async function', () => {
-    async function foo (): Promise<number> { return 0 }
+    async function foo(): Promise<number> {
+      return 0
+    }
     expect(isFunction(foo)).to.equal(true)
   })
 

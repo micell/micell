@@ -1,6 +1,6 @@
 import remove from './remove'
 
-export default function isEnabled (): boolean {
+export default function isEnabled(): boolean {
   const key = '@key@'
   const value = '1'
   const re = new RegExp(`(?:^|; )${key}=${value}(?:;|$)`)

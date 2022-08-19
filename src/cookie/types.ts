@@ -1,14 +1,14 @@
 export interface Cookies {
-  [key: string]: string;
+  [key: string]: string
 }
 
 export interface CookieOptions {
-  domain?: string;
-  path?: string;
-  expires?: number | string | Date;
-  'max-age'?: number;
-  secure?: boolean;
-  samesite?: string;
+  domain?: string
+  path?: string
+  expires?: number | string | Date
+  'max-age'?: number
+  secure?: boolean
+  samesite?: string
 }
 
 export type CookieDecoder<T = string> = (value: string) => T

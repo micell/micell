@@ -2,8 +2,10 @@ import isString from '../lang/isString'
 import escapeRegexp from '../string/escapeRegexp'
 import { CookieDecoder } from './types'
 
-
-export default function get (key: string, decoder: CookieDecoder | null = decodeURIComponent): any {
+export default function get(
+  key: string,
+  decoder: CookieDecoder | null = decodeURIComponent,
+): any {
   if (!isString(key) || !key) {
     return null
   }

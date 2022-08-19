@@ -25,5 +25,5 @@ export default {
   isPrint,
   isPunctuation,
   isSpace,
-  isUpper
+  isUpper,
 }

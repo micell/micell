@@ -8,15 +8,9 @@ describe('regex/isIP', () => {
     '::1',
     '2001:0db8:0000:0000:0000:ff00:0042:8329',
     '2001:db8:0:0:0:ff00:42:8329',
-    '2001:db8::ff00:42:8329'
+    '2001:db8::ff00:42:8329',
   ]
-  const notIpStrings = [
-    '',
-    '0.0.0.0.',
-    '0.0.0.0 ',
-    '0. 0.0.0',
-    ' ::1'
-  ]
+  const notIpStrings = ['', '0.0.0.0.', '0.0.0.0 ', '0. 0.0.0', ' ::1']
 
   it('should be an IP string', () => {
     ipStrings.forEach((str) => {

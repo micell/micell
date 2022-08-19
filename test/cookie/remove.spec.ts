@@ -17,7 +17,7 @@ describe('cookie/remove', () => {
       path = path.slice(0, lastSlashIndex)
     }
     remove('pathCookie', {
-      path: path || '/'
+      path: path || '/',
     })
     expect(get('pathCookie')).to.equal(null)
   })

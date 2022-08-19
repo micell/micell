@@ -3,10 +3,11 @@ import bytesToUtf8 from '../_internal/bytesToUtf8'
 import isString from '../lang/isString'
 
 interface Base64Map {
-  [key: string]: number;
+  [key: string]: number
 }
 
-const base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+const base64Chars =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 const base64Map: Base64Map = {}
 const bitPadding = '000000'
 
@@ -15,7 +16,7 @@ for (let i = 0; i < base64Chars.length; i++) {
   base64Map[ch] = i
 }
 
-function base64ToBytes (str: string): Array<number> {
+function base64ToBytes(str: string): Array<number> {
   let bits = ''
 
   for (let i = 0; i < 4; i++) {
@@ -38,16 +39,17 @@ function base64ToBytes (str: string): Array<number> {
 }
 
 export interface Base64DecodeOptions {
-  encoding?: 'utf8' | 'binary' | 'hex';
+  encoding?: 'utf8' | 'binary' | 'hex'
 }
 
-export default function decode (input: string, options: Base64DecodeOptions = {}): Array<number> | string {
+export default function decode(
+  input: string,
+  options: Base64DecodeOptions = {},
+): Array<number> | string {
   if (!isString(input)) {
     throw TypeError('input parameter should be a string')
   }
-  const {
-    encoding = 'utf8'
-  } = options
+  const { encoding = 'utf8' } = options
   const bytes = []
 
   for (let i = 0, len = Math.ceil(input.length / 4); i < len; i++) {

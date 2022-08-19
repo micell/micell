@@ -42,7 +42,7 @@ describe('ajax', () => {
   })
 
   it('should resolve with an XMLHttpRequest instance', (done) => {
-    ajax('/').then(xhr => {
+    ajax('/').then((xhr) => {
       expect(xhr).to.be.instanceof(fakeXhr)
       done()
     })
@@ -54,14 +54,17 @@ describe('ajax', () => {
     const data = [
       { name: 'HTML', value: 'html' },
       { name: 'CSS', value: 'css' },
-      { name: 'JavaScript', value: 'js' }
+      { name: 'JavaScript', value: 'js' },
     ]
-    ajax(url)
-      .then((xhr) => {
-        expect(xhr.response).to.deep.equal(data)
-        done()
-      })
-    requests[5].respond(200, { 'Content-Type': 'application/json' }, JSON.stringify(data))
+    ajax(url).then((xhr) => {
+      expect(xhr.response).to.deep.equal(data)
+      done()
+    })
+    requests[5].respond(
+      200,
+      { 'Content-Type': 'application/json' },
+      JSON.stringify(data),
+    )
   })
 
   it('should send with the post method', () => {
@@ -73,9 +76,11 @@ describe('ajax', () => {
     const data = { name: 'foo' }
     ajax('/', {
       method: 'post',
-      data
+      data,
     })
-    expect(requests[7].requestHeaders['content-type']).to.include('application/json')
+    expect(requests[7].requestHeaders['content-type']).to.include(
+      'application/json',
+    )
     expect(requests[7].requestBody).to.equal(JSON.stringify(data))
   })
 
@@ -83,41 +88,42 @@ describe('ajax', () => {
     const data = 'name=foo'
     ajax('/', {
       method: 'post',
-      data
+      data,
     })
-    expect(requests[8].requestHeaders['content-type']).to.include('application/x-www-form-urlencoded')
+    expect(requests[8].requestHeaders['content-type']).to.include(
+      'application/x-www-form-urlencoded',
+    )
   })
 
   it('should send with the specified headers', () => {
     const headers = {
-      'x-name': 'Foo'
+      'x-name': 'Foo',
     }
     ajax('/', { headers })
     expect(requests[9].requestHeaders['x-name']).to.equal(headers['x-name'])
   })
 
   it('should not parse the reponse', (done) => {
-    ajax('/', { responseType: 'text' })
-      .then(xhr => {
-        expect(xhr.response).to.equal('42')
-        done()
-      })
+    ajax('/', { responseType: 'text' }).then((xhr) => {
+      expect(xhr.response).to.equal('42')
+      done()
+    })
     requests[10].respond(200, null, '42')
   })
 
   it('should call the beforeSend callback with an XMLHttpRequest object before sending', (done) => {
     ajax('/', {
-      beforeSend (xhr) {
+      beforeSend(xhr) {
         expect(xhr).to.be.instanceof(fakeXhr)
         done()
-      }
+      },
     })
   })
 
   it('should not send if the beforeSend returns false', (done) => {
     const callback = sinon.spy()
     ajax('/', {
-      beforeSend: () => false
+      beforeSend: () => false,
     }).then(callback)
     setTimeout(() => {
       expect(callback.notCalled).to.equal(true)
@@ -127,20 +133,18 @@ describe('ajax', () => {
   })
 
   it('should reject with an error', (done) => {
-    ajax('/')
-      .catch(err => {
-        expect(err).to.be.instanceof(Error)
-        done()
-      })
+    ajax('/').catch((err) => {
+      expect(err).to.be.instanceof(Error)
+      done()
+    })
     requests[13].error()
   })
 
   it('should reject with a timeout error', (done) => {
-    ajax('/', { timeout: 3000 })
-      .catch(err => {
-        expect(err.message).to.include('timeout')
-        done()
-      })
+    ajax('/', { timeout: 3000 }).catch((err) => {
+      expect(err.message).to.include('timeout')
+      done()
+    })
     fakeTimer.tick(5000)
   })
 })

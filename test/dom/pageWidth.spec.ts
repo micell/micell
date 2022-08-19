@@ -4,7 +4,8 @@ import pageWidth from '../../src/dom/pageWidth'
 describe('pageWidth', () => {
   before((done) => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/pageWidth.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/pageWidth.html']
     done()
   })
 

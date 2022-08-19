@@ -8,33 +8,33 @@ describe('base64/decode', () => {
     {
       // empty string
       input: '',
-      output: ''
+      output: '',
     },
     {
       // padding = 1
       input: 'YW55IGNhcm5hbCBwbGVhc3VyZS4=',
-      output: 'any carnal pleasure.'
+      output: 'any carnal pleasure.',
     },
     {
       // padding = 2
       input: 'YW55IGNhcm5hbCBwbGVhc3VyZQ==',
-      output: 'any carnal pleasure'
+      output: 'any carnal pleasure',
     },
     {
       // padding = 0
       input: 'YW55IGNhcm5hbCBwbGVhc3Vy',
-      output: 'any carnal pleasur'
+      output: 'any carnal pleasur',
     },
     {
       // unicode basic multilingual plane
       input: '5L2g5aW9',
-      output: '你好'
+      output: '你好',
     },
     {
       // unicode other planes
       input: '8J+YgA==',
-      output: '😀'
-    }
+      output: '😀',
+    },
   ]
 
   it('return a utf8 string', () => {

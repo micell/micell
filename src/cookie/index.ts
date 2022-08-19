@@ -8,7 +8,12 @@ import setJson from './setJson'
 import setRaw from './setRaw'
 import remove from './remove'
 
-export type { Cookies, CookieOptions, CookieEncoder, CookieDecoder } from './types'
+export type {
+  Cookies,
+  CookieOptions,
+  CookieEncoder,
+  CookieDecoder,
+} from './types'
 
 export default {
   isEnabled,
@@ -19,5 +24,5 @@ export default {
   set,
   setJson,
   setRaw,
-  remove
+  remove,
 }

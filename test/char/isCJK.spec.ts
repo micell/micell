@@ -6,7 +6,7 @@ const cjkChars = ['你', '，', '阝', 'た', '너']
 
 describe('char/isCJK', () => {
   it('should return true', () => {
-    const result = cjkChars.every(ch => isCJK(ch))
+    const result = cjkChars.every((ch) => isCJK(ch))
     expect(result).to.equal(true)
   })
 

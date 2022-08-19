@@ -4,11 +4,10 @@ import decodeFile from '../../src/base64/decodeFile'
 describe('base64/decodeFile', () => {
   it('should throw an error if the input is not type of string', (done) => {
     // @ts-ignore
-    decodeFile(1)
-      .catch(err => {
-        expect(err).to.instanceOf(Error)
-        done()
-      })
+    decodeFile(1).catch((err) => {
+      expect(err).to.instanceOf(Error)
+      done()
+    })
   })
 
   it('should decode a base64 string to  a Blob object', (done) => {

@@ -15,12 +15,17 @@ if (isBrowser) {
 
   /* istanbul ignore else */
   if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
-    getRandomValues = (array: Uint32Array): Uint32Array => window.crypto.getRandomValues(array)
+    getRandomValues = (array: Uint32Array): Uint32Array =>
+      window.crypto.getRandomValues(array)
   } else {
     // @ts-ignore
-    if (window.msCrypto && typeof window.msCrypto.getRandomValues === 'function') {
+    if (
+      window.msCrypto &&
+      typeof window.msCrypto.getRandomValues === 'function'
+    ) {
       // @ts-ignore
-      getRandomValues = (array: Uint32Array): Uint32Array => window.msCrypto.getRandomValues(array)
+      getRandomValues = (array: Uint32Array): Uint32Array =>
+        window.msCrypto.getRandomValues(array)
     }
   }
 
@@ -31,7 +36,7 @@ if (isBrowser) {
   }
 }
 
-export default function uuid (): string {
+export default function uuid(): string {
   const u: Array<string> = []
 
   for (let i = 0; i < 36; i++) {

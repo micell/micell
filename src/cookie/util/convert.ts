@@ -3,9 +3,9 @@ import computeExpires from './computeExpires'
 import { CookieOptions } from '../types'
 
 // Convert an object to a cookie option string
-export default function convert (opts: CookieOptions): string {
+export default function convert(opts: CookieOptions): string {
   let res = ''
-  let key: (keyof CookieOptions)
+  let key: keyof CookieOptions
 
   for (key in opts) {
     /* istanbul ignore else */

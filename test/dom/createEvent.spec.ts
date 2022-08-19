@@ -4,7 +4,8 @@ import createEvent from '../../src/dom/createEvent'
 describe('createEvent', () => {
   before((done) => {
     // @ts-ignore
-    document.documentElement.innerHTML = window.__FIXTURES__['test/fixtures/dom/createEvent.html']
+    document.documentElement.innerHTML =
+      window.__FIXTURES__['test/fixtures/dom/createEvent.html']
     done()
   })
 

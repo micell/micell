@@ -11,7 +11,7 @@ describe('char/isLower', () => {
   })
 
   it('should return true', () => {
-    const result = chars.every(ch => isLower(ch))
+    const result = chars.every((ch) => isLower(ch))
     expect(result).to.equal(true)
   })
 

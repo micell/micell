@@ -23,6 +23,8 @@ describe('classNames', () => {
   })
 
   it('should join the result of all types', () => {
-    expect(classNames('a', { b: true, c: false }, ['d', { e: true, f: false }])).to.equal('a b d e')
+    expect(
+      classNames('a', { b: true, c: false }, ['d', { e: true, f: false }]),
+    ).to.equal('a b d e')
   })
 })

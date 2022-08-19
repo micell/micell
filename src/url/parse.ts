@@ -2,24 +2,25 @@ import isString from '../lang/isString'
 import queryParse from '../qs/parse'
 import { Query } from '../qs/types'
 
-const reUrl = /^(\w{1,63}):\/\/(?:(\w+)(?::(\w+))?@)?([^\s@:/?#]{1,253})(?::(\d{1,5}))?(\/[^\s?#]+)?(\?[^#]+)?(#[\w\W]+)?$/
+const reUrl =
+  /^(\w{1,63}):\/\/(?:(\w+)(?::(\w+))?@)?([^\s@:/?#]{1,253})(?::(\d{1,5}))?(\/[^\s?#]+)?(\?[^#]+)?(#[\w\W]+)?$/
 
 export interface URLObject {
-  hash: string;
-  host: string;
-  hostname: string;
-  href: string;
-  origin: string;
-  password: string;
-  pathname: string;
-  port: string;
-  protocol: string;
-  query: Query;
-  search: string;
-  username: string;
+  hash: string
+  host: string
+  hostname: string
+  href: string
+  origin: string
+  password: string
+  pathname: string
+  port: string
+  protocol: string
+  query: Query
+  search: string
+  username: string
 }
 
-export default function parse (url: string): URLObject {
+export default function parse(url: string): URLObject {
   if (!isString(url)) {
     throw new TypeError('invalid url')
   }
@@ -53,6 +54,6 @@ export default function parse (url: string): URLObject {
     protocol,
     query,
     search,
-    username
+    username,
   }
 }
