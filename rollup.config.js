@@ -23,8 +23,6 @@ const getBabelOptions = ({ useESModules = false, corejs = false } = {}) => ({
   ],
 })
 
-const isExternal = (id) => !id.startsWith('.') && !id.startsWith('/')
-
 export default [
   // CommonJs
   {
@@ -33,8 +31,8 @@ export default [
       file: `${outDir}/${pkg.name}.common.js`,
       format: 'cjs',
       sourcemap: true,
+      exports: 'default',
     },
-    external: isExternal,
     plugins: [typescript(), nodeResolve(), babel(getBabelOptions())],
   },
 
@@ -46,7 +44,6 @@ export default [
       format: 'es',
       sourcemap: true,
     },
-    external: isExternal,
     plugins: [
       typescript(),
       nodeResolve(),
