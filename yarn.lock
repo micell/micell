@@ -8876,9 +8876,9 @@ karma-coverage@2.0.1:
     minimatch "^3.0.0"
     source-map "^0.5.1"
 
-"karma-edgium-launcher@git+https://github.com/matracey/karma-edgium-launcher.git":
+"karma-edgium-launcher@https://github.com/matracey/karma-edgium-launcher":
   version "3.1.0"
-  resolved "git+https://github.com/matracey/karma-edgium-launcher.git#9489be01fb033375830d2bd0127ffe68f53dc65b"
+  resolved "https://github.com/matracey/karma-edgium-launcher#253b4b506236d16d3e7c450196db1a22ce37aeba"
 
 karma-file-fixtures-preprocessor@^2.0.1:
   version "2.0.1"
