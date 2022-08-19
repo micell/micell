@@ -109,7 +109,7 @@
     "karma-browserstack-launcher": "^1.5.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "2.0.1",
-    "karma-edgium-launcher": "git+https://github.com/matracey/karma-edgium-launcher.git",
+    "karma-edgium-launcher": "https://github.com/matracey/karma-edgium-launcher",
     "karma-file-fixtures-preprocessor": "^2.0.1",
     "karma-firefox-launcher": "^2.1.0",
     "karma-ie-launcher": "^1.0.0",
