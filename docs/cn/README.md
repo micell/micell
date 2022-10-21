@@ -59,13 +59,13 @@ yarn add micell
 指定版本：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/micell@0.14.0/dist/micell.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/micell@0.15.0/dist/micell.js"></script>
 ```
 
 ES 模块版本：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/micell@0.14.0/dist/micell.esm.browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/micell@0.15.0/dist/micell.esm.browser.js"></script>
 ```
 
 micell 同样存在于 [unpkg](https://unpkg.com/) 上。
