@@ -1,4 +1,6 @@
 last 4 versions
-> 1%
+> 0.5%
+chrome >= 87
+safari >= 13
 not ie <= 10
-node >= 10
+node >= 12
