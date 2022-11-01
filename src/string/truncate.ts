@@ -29,5 +29,9 @@ export default function truncate(
       break
     }
   }
-  return `${ensureStr.slice(0, i)}${omission}`
+
+  const truncatedStr = ensureStr.slice(0, i)
+  return `${truncatedStr}${
+    truncatedStr.length < ensureStr.length ? omission : ''
+  }`
 }
