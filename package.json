@@ -30,7 +30,7 @@
     "types": "node scripts/generateDeclaration.js",
     "pkg": "node scripts/release.js",
     "release": "yarn run pkg && semantic-release",
-    "postpublish": "node scripts/postpublish.js"
+    "postpublish": "node ../scripts/postpublish.js"
   },
   "repository": {
     "type": "git",
