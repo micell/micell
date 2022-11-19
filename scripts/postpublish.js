@@ -1,7 +1,7 @@
 const path = require('path')
 const replace = require('replace')
 const { cp } = require('shelljs')
-const pkg = require('../build/package.json')
+const pkg = require('./package.json')
 
 function replaceVersion() {
   replace({
@@ -16,7 +16,7 @@ function replaceVersion() {
 }
 
 function copyPkg() {
-  cp('-f', 'build/package.json', 'package.json')
+  cp('-f', './package.json', '../package.json')
 }
 
 function main() {
