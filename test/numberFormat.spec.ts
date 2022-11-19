@@ -12,6 +12,7 @@ describe('numberFormat', () => {
   it('should format the number normally', () => {
     expect(numberFormat(0)).to.equal('0')
     expect(numberFormat(123456789.123, 3)).to.equal('123,456,789.123')
+    expect(numberFormat(155168.8, 2)).to.equal('155,168.80')
   })
 
   it('2nd argument: digits > -1', () => {
