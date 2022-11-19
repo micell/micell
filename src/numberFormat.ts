@@ -18,7 +18,7 @@ export default function numberFormat(
   }
   const abs = Math.abs(number)
   const intPart = Math.floor(abs)
-  const decPart = (abs * tenExp - intPart * tenExp) / tenExp
+  const decPart = Math.round(abs * tenExp - intPart * tenExp) / tenExp
 
   const intPartStr = intPart.toString()
 
