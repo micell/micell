@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import * as allBase64 from '../src/base64'
 import * as allChar from '../src/char'
 import * as allCookie from '../src/cookie'

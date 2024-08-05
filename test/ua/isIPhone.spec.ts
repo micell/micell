@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isIPhone from '../../src/ua/isIPhone'
 
 describe('ua/isIPhone', () => {

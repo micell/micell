@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isAlphabetic from '../../src/char/isAlphabetic'
 import isAlphanumeric from '../../src/char/isAlphanumeric'
 import isASCII from '../../src/char/isASCII'

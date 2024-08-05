@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import bytesToUtf8 from '../../src/_internal/bytesToUtf8'
 
 describe('_internal/bytesToUtf8', () => {

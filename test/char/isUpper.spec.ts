@@ -1,10 +1,10 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import isUpper from '../../src/char/isUpper'
 
 describe('char/isUpper', () => {
   const chars: Array<string> = []
 
-  before(() => {
+  beforeEach(() => {
     for (let i = 65; i <= 90; i++) {
       chars.push(String.fromCharCode(i))
     }

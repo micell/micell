@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import insertScript from '../../src/dom/insertScript'
 
 describe('insertScript', () => {
@@ -32,24 +32,45 @@ describe('insertScript', () => {
     expect(script.async).to.equal(true)
   })
 
-  it.skip('should trigger the load event if script load is success', (done) => {
+  it('should trigger the load event if script load is success', async ({
+    skip,
+  }) => {
+    skip()
     const url = '/base/test/setup.js'
-    const script = insertScript(url, {
-      onload() {
-        done()
-      },
-    })
-    expect(script.onload).to.be.an('function')
+    let script: HTMLScriptElement | null = null
+    const run = () => {
+      return new Promise((resolve) => {
+        script = insertScript(url, {
+          onload() {
+            resolve(void 0)
+          },
+        })
+      })
+    }
+    await run()
+    expect((script as unknown as HTMLScriptElement).onload).to.be.an('function')
   })
 
-  it.skip('should trigger the error event if script load is failed', (done) => {
+  it('should trigger the error event if script load is failed', async ({
+    skip,
+  }) => {
+    skip()
+
     const url = 'http://some-never-be-exist-domain.com/app.js'
-    const script = insertScript(url, {
-      onerror(e: Event) {
-        expect(e.type).to.equal('error')
-        done()
-      },
-    })
-    expect(script.onerror).to.be.an('function')
+    let script: HTMLScriptElement | null = null
+    const run = () => {
+      return new Promise((resolve, reject) => {
+        script = insertScript(url, {
+          onerror(e: Event) {
+            reject(e.type)
+          },
+        })
+      })
+    }
+    // @ts-ignore
+    await expect(run()).rejects.to.equal('error')
+    expect((script as unknown as HTMLScriptElement).onerror).to.be.an(
+      'function',
+    )
   })
 })

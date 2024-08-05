@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import decode from '../../src/base64/decode'
 import decodeFile from '../../src/base64/decodeFile'
 import encode from '../../src/base64/encode'

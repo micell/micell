@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isAlipay from '../../src/ua/isAlipay'
 import isAndroid from '../../src/ua/isAndroid'
 import isIOS from '../../src/ua/isIOS'

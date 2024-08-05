@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import utf8ToBytes from '../src/_internal/utf8ToBytes'
 import md5 from '../src/md5'
 

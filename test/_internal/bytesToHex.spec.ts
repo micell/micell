@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import bytesToHex from '../../src/_internal/bytesToHex'
 
 describe('_internal/bytesToHex', () => {

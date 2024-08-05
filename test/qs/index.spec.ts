@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import get from '../../src/qs/get'
 import parse from '../../src/qs/parse'
 import stringify from '../../src/qs/stringify'

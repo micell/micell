@@ -1,10 +1,10 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import isAlphanumeric from '../../src/char/isAlphanumeric'
 
 describe('char/isAlphanumeric', () => {
   const chars: Array<string> = []
 
-  before(() => {
+  beforeEach(() => {
     for (let i = 48; i <= 57; i++) {
       chars.push(String.fromCharCode(i))
     }

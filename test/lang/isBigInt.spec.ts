@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isBigInt from '../../src/lang/isBigInt'
 
 describe('lang/isBigInt', () => {

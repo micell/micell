@@ -1,21 +1,15 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import encodeFile from '../../src/base64/encodeFile'
 
 describe('base64/encodeFile', () => {
-  it('should throw an error if the input is not type of Blob', (done) => {
-    encodeFile({} as Blob).catch((err) => {
-      expect(err).to.instanceOf(Error)
-      done()
-    })
+  it('should throw an error if the input is not type of Blob', async () => {
+    // @ts-ignore
+    await expect(encodeFile({} as Blob)).rejects.to.instanceOf(Error)
   })
 
-  it('should encode a Blob object to base64 string', (done) => {
+  it('should encode a Blob object to base64 string', async () => {
     const blob = new Blob(['hello world'], { type: 'plain/text' })
-    encodeFile(blob)
-      .then((str) => {
-        expect(str).to.equal('aGVsbG8gd29ybGQ=')
-        done()
-      })
-      .catch(done)
+    // @ts-ignore
+    await expect(encodeFile(blob)).resolves.to.equal('aGVsbG8gd29ybGQ=')
   })
 })

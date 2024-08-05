@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import delay from '../../src/delay'
 import scrollX from '../../src/dom/scrollX'
 import scrollY from '../../src/dom/scrollY'
@@ -7,10 +7,39 @@ import scrollTo from '../../src/dom/scrollTo'
 describe('scrollTo', () => {
   let container: Element | null
 
-  before(() => {
-    // @ts-ignore
-    document.documentElement.innerHTML =
-      window.__FIXTURES__['test/fixtures/dom/scrollTo.html']
+  beforeEach(() => {
+    document.documentElement.innerHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>scrollTo</title>
+  <style>
+    body {
+      width: 10000px;
+      height: 10000px;
+    }
+
+    .container {
+      width: 500px;
+      height: 500px;
+      overflow: auto;
+    }
+
+    .content {
+      width: 5000px;
+      height: 5000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content"></div>
+  </div>
+</body>
+</html>`
     container = document.querySelector('.container')
   })
 

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import sinon from 'sinon'
 import randomNumbers from '../src/randomNumbers'
 

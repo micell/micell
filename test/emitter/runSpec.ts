@@ -1,5 +1,4 @@
-import { SuiteFunction, TestFunction } from 'mocha'
-import { expect } from 'chai'
+import { expect, SuiteAPI, TestAPI } from 'vitest'
 import Emitter from '../../src/emitter/Emitter'
 
 interface Creator {
@@ -7,8 +6,8 @@ interface Creator {
 }
 
 export default function runSpec(
-  describe: SuiteFunction,
-  it: TestFunction,
+  describe: SuiteAPI,
+  it: TestAPI,
   creator: Creator,
 ): void {
   describe('emitter creator', () => {

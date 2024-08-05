@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isType from '../../../src/ua/util/isType'
 
 describe('ua/util/isType', () => {

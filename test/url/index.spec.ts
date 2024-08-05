@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isAbsolute from '../../src/url/isAbsolute'
 import join from '../../src/url/join'
 import parse from '../../src/url/parse'

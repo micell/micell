@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import linear from '../../src/easing/linear'
 import { identity, compare } from './util'
 

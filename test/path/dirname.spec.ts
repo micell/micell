@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import dirname from '../../src/path/dirname'
 
 describe('path/dirname', () => {

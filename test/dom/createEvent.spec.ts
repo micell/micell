@@ -1,12 +1,25 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import createEvent from '../../src/dom/createEvent'
 
 describe('createEvent', () => {
-  before((done) => {
-    // @ts-ignore
-    document.documentElement.innerHTML =
-      window.__FIXTURES__['test/fixtures/dom/createEvent.html']
-    done()
+  beforeEach(() => {
+    document.documentElement.innerHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <div id="container">
+    <div id="el1"></div>
+  </div>
+</body>
+</html>
+
+`
   })
 
   it('should return an event object', () => {

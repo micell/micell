@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import timeAgo from '../../src/date/timeAgo'
 
 describe('date/timeAgo', () => {

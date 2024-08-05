@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isAbsolute from '../../src/url/isAbsolute'
 
 describe('url/isAbsolute', () => {
