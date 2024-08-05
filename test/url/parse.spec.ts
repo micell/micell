@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import parse from '../../src/url/parse'
 
 const testData = [

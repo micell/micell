@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isWindows from '../../src/ua/isWindows'
 
 describe('ua/isWindows', () => {

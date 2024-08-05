@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isHsl from '../../src/regex/isHsl'
 
 describe('regex/isHsl', () => {

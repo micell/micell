@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import clientX from '../../src/dom/clientX'
 import clientY from '../../src/dom/clientY'
 import createEvent from '../../src/dom/createEvent'

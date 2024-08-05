@@ -1,12 +1,28 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import css from '../src/css'
 
 describe('css', () => {
-  before((done) => {
-    // @ts-ignore
-    document.documentElement.innerHTML =
-      window.__FIXTURES__['test/fixtures/css.html']
-    setTimeout(() => done(), 0)
+  beforeEach(() => {
+    document.documentElement.innerHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    #el1 {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="el1" style="border: 1px solid #000;"></div>
+</body>
+</html>`
   })
 
   it('should throw an error if the selector matched element is not exist', () => {

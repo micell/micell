@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import create from '../../src/emitter/create'
 import emit from '../../src/emitter/emit'
 import Emitter from '../../src/emitter/Emitter'

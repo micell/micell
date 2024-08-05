@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import globalEmitter from '../../src/emitter/util/globalEmitter'
 import on from '../../src/emitter/on'
 import emit from '../../src/emitter/emit'

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import diff from '../../src/date/diff'
 
 describe('date/diff', () => {

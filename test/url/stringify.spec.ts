@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import stringify, { URLParts } from '../../src/url/stringify'
 
 interface TestDatum {

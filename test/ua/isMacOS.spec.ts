@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isMacOS from '../../src/ua/isMacOS'
 
 describe('ua/isMacOS', () => {

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import format from '../../src/date/format'
 import padStart from '../../src/_internal/padStart'
 

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isRealNumber from '../../src/regex/isRealNumber'
 
 describe('regex/isRealNumber', () => {

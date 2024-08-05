@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import extname from '../../src/path/extname'
 
 describe('path/extname', () => {

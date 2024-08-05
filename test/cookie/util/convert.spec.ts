@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, beforeEach, afterEach, expect, it } from 'vitest'
 import sinon from 'sinon'
 import convert from '../../../src/cookie/util/convert'
 
@@ -6,11 +6,11 @@ describe('cookie/util/convert', () => {
   const now = new Date()
   let clock: sinon.SinonFakeTimers
 
-  before(() => {
+  beforeEach(() => {
     clock = sinon.useFakeTimers({ now })
   })
 
-  after(() => {
+  afterEach(() => {
     clock.restore()
   })
 

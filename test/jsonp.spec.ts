@@ -1,56 +1,48 @@
-import { expect } from 'chai'
+import { beforeEach, afterEach, describe, expect, it } from 'vitest'
 import sinon from 'sinon'
 import jsonp from '../src/jsonp'
 
 describe('jsonp', () => {
-  let clock: sinon.SinonFakeTimers
+  let fakeTimer: sinon.SinonFakeTimers
 
-  before((done) => {
+  beforeEach(() => {
+    fakeTimer = sinon.useFakeTimers()
+  })
+
+  afterEach(() => {
+    fakeTimer.restore()
+  })
+
+  it('should receive the response data with json parsing', async () => {
     // @ts-ignore
-    document.documentElement.innerHTML =
-      window.__FIXTURES__['test/fixtures/css.html']
-    setTimeout(() => done(), 0)
-    clock = sinon.useFakeTimers()
+    await expect(jsonp('/mocks/jsonp/jsonp.js')).resolves.to.equal(1)
   })
 
-  after(() => {
-    clock.restore()
+  it('should handle the query string right', async () => {
+    // @ts-ignore
+    await expect(jsonp('/mocks/jsonp/jsonp.js?v=1')).resolves.to.equal(1)
   })
 
-  it('should receive the response data with json parsing', (done) => {
-    jsonp('/base/test/jsonp.js').then((data) => {
-      expect(data).to.equal(1)
-      done()
-    })
+  it('should reject with the parsign error', async () => {
+    // @ts-ignore
+    await expect(jsonp('/mocks/jsonp/jsonp-invalid.js')).rejects.to.instanceof(
+      Error,
+    )
   })
 
-  it('should handle the query string right', (done) => {
-    jsonp('/base/test/jsonp.js?v=1').then((data) => {
-      expect(data).to.equal(1)
-      done()
-    })
+  it('should receive the response data without parsing', async () => {
+    await expect(
+      jsonp('/mocks/jsonp/jsonp.js', {
+        responseType: 'text',
+      }),
+      // @ts-ignore
+    ).resolves.to.equal('1')
   })
 
-  it('should reject with the parsign error', (done) => {
-    jsonp('/base/test/jsonp-invalid.js').catch((err: Error) => {
-      expect(err).to.instanceof(Error)
-      done()
-    })
-  })
-
-  it('should receive the response data without parsing', (done) => {
-    jsonp('/base/test/jsonp.js', {
-      responseType: 'text',
-    }).then((data) => {
-      expect(data).to.equal('1')
-      done()
-    })
-  })
-
-  it('should reject with an error', (done) => {
-    jsonp('/base/test/jsonp-non-exist.js').catch((err) => {
-      expect(err).to.instanceOf(Error)
-      done()
-    })
+  it('should reject with an error', async () => {
+    // @ts-ignore
+    await expect(jsonp('/mocks/jsonp/jsonp-error.js')).rejects.to.instanceof(
+      Error,
+    )
   })
 })

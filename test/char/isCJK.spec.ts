@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isCJK from '../../src/char/isCJK'
 
 // Todo: Need to test all cjk characters?

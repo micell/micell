@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import ascii from '../../src/regex/ascii'
 import decimal from '../../src/regex/decimal'
 import digit from '../../src/regex/digit'

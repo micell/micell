@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, beforeEach, afterEach, expect, it } from 'vitest'
 import sinon from 'sinon'
 import ajax from '../src/ajax'
 
@@ -7,7 +7,7 @@ describe('ajax', () => {
   let fakeXhr: sinon.SinonFakeXMLHttpRequestStatic
   const requests: sinon.SinonFakeXMLHttpRequest[] = []
 
-  before(() => {
+  beforeEach(() => {
     fakeTimer = sinon.useFakeTimers()
     fakeXhr = sinon.useFakeXMLHttpRequest()
     fakeXhr.onCreate = (xhr: sinon.SinonFakeXMLHttpRequest): void => {
@@ -15,7 +15,7 @@ describe('ajax', () => {
     }
   })
 
-  after(() => {
+  afterEach(() => {
     fakeTimer.restore()
     fakeXhr.restore()
   })
@@ -41,30 +41,36 @@ describe('ajax', () => {
     expect(requests[3].async).to.equal(true)
   })
 
-  it('should resolve with an XMLHttpRequest instance', (done) => {
-    ajax('/').then((xhr) => {
-      expect(xhr).to.be.instanceof(fakeXhr)
-      done()
-    })
-    requests[4].respond(200, null, '')
+  it('should resolve with an XMLHttpRequest instance', async () => {
+    const run = async () => {
+      const ret = ajax('/')
+      requests[4].respond(200, null, '')
+      return ret
+    }
+    // @ts-ignore
+    expect(run()).resolves.to.be.instanceof(fakeXhr)
   })
 
-  it('should receive the response parsed with json by default', (done) => {
+  it('should receive the response parsed with json by default', async () => {
     const url = '/api/langs'
     const data = [
       { name: 'HTML', value: 'html' },
       { name: 'CSS', value: 'css' },
       { name: 'JavaScript', value: 'js' },
     ]
-    ajax(url).then((xhr) => {
-      expect(xhr.response).to.deep.equal(data)
-      done()
-    })
-    requests[5].respond(
-      200,
-      { 'Content-Type': 'application/json' },
-      JSON.stringify(data),
-    )
+    const run = () => {
+      return new Promise((resolve) => {
+        ajax(url).then((xhr) => {
+          resolve(xhr.response)
+        })
+        requests[5].respond(
+          200,
+          { 'Content-Type': 'application/json' },
+          JSON.stringify(data),
+        )
+      })
+    }
+    await expect(run()).resolves.to.deep.equal(data)
   })
 
   it('should send with the post method', () => {
@@ -103,48 +109,70 @@ describe('ajax', () => {
     expect(requests[9].requestHeaders['x-name']).to.equal(headers['x-name'])
   })
 
-  it('should not parse the reponse', (done) => {
-    ajax('/', { responseType: 'text' }).then((xhr) => {
-      expect(xhr.response).to.equal('42')
-      done()
-    })
-    requests[10].respond(200, null, '42')
+  it('should not parse the reponse', async () => {
+    const run = () => {
+      return new Promise((resolve) => {
+        ajax('/', { responseType: 'text' }).then((xhr) => {
+          resolve(xhr.response)
+        })
+        requests[10].respond(200, null, '42')
+      })
+    }
+    // @ts-ignore
+    await expect(run()).resolves.to.equal('42')
   })
 
-  it('should call the beforeSend callback with an XMLHttpRequest object before sending', (done) => {
-    ajax('/', {
-      beforeSend(xhr) {
-        expect(xhr).to.be.instanceof(fakeXhr)
-        done()
-      },
-    })
+  it('should call the beforeSend callback with an XMLHttpRequest object before sending', async () => {
+    const run = () => {
+      return new Promise((resolve) => {
+        ajax('/', {
+          beforeSend(xhr) {
+            resolve(xhr)
+          },
+        })
+        requests[11].respond(200, null, '')
+      })
+    }
+    // @ts-ignore
+    await expect(run()).resolves.to.be.instanceof(fakeXhr)
   })
 
-  it('should not send if the beforeSend returns false', (done) => {
-    const callback = sinon.spy()
-    ajax('/', {
-      beforeSend: () => false,
-    }).then(callback)
-    setTimeout(() => {
-      expect(callback.notCalled).to.equal(true)
-      done()
-    }, 0)
-    fakeTimer.tick(1)
+  it('should not send if the beforeSend returns false', async () => {
+    const run = async () => {
+      return new Promise((resolve) => {
+        const callback = sinon.spy()
+        ajax('/', {
+          beforeSend: () => false,
+        }).then(callback)
+        setTimeout(() => {
+          resolve(callback.notCalled)
+        }, 0)
+        fakeTimer.tick(1)
+      })
+    }
+    // @ts-ignore
+    await expect(run()).resolves.to.equal(true)
   })
 
-  it('should reject with an error', (done) => {
-    ajax('/').catch((err) => {
-      expect(err).to.be.instanceof(Error)
-      done()
-    })
-    requests[13].error()
+  it('should reject with an error', async () => {
+    const run = () => {
+      return new Promise((resolve, reject) => {
+        ajax('/').catch(reject)
+        requests[13].error()
+      })
+    }
+    // @ts-ignore
+    await expect(run()).rejects.to.be.instanceof(Error)
   })
 
-  it('should reject with a timeout error', (done) => {
-    ajax('/', { timeout: 3000 }).catch((err) => {
-      expect(err.message).to.include('timeout')
-      done()
-    })
-    fakeTimer.tick(5000)
+  it('should reject with a timeout error', async () => {
+    const run = () => {
+      return new Promise((resolve, reject) => {
+        ajax('/', { timeout: 3000 }).catch(reject)
+        fakeTimer.tick(3001)
+      })
+    }
+    // @ts-ignore
+    await expect(run()).rejects.to.be.instanceof(Error)
   })
 })

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import countChars from '../../src/string/countChars'
 import countLines from '../../src/string/countLines'
 import escapeRegexp from '../../src/string/escapeRegexp'

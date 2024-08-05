@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import get from '../../src/cookie/get'
 import getRaw from '../../src/cookie/getRaw'
 import set from '../../src/cookie/set'

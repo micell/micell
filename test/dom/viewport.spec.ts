@@ -1,12 +1,40 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import viewport from '../../src/dom/viewport'
 
 describe('viewport', () => {
-  before((done) => {
-    // @ts-ignore
-    document.documentElement.innerHTML =
-      window.__FIXTURES__['test/fixtures/dom/viewport.html']
-    done()
+  beforeEach(() => {
+    document.documentElement.innerHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    #el1 {
+      width: 200px;
+      height: 100px;
+      overflow: auto;
+    }
+
+    p {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="el1">
+    <h1>Title</h1>
+    <p>Some text</p>
+    <p>Some text</p>
+    <p>Some text</p>
+    <p>Some text</p>
+    <p>Some text</p>
+    <p>Some text</p>
+  </div>
+</body>
+</html>`
   })
 
   it('should return `{ width: 0, height: 0 }` if no argument', () => {

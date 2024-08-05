@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import { Events } from '../../src/emitter/types'
 import globalEmitter from '../../src/emitter/util/globalEmitter'
 import off from '../../src/emitter/off'

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isIPv6 from '../../src/regex/isIPv6'
 
 describe('regex/isIPv6', () => {

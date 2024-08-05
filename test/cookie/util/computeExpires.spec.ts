@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import computeExpires from '../../../src/cookie/util/computeExpires'
 
 // Treat as equal if the difference between two dates is less than 100ms

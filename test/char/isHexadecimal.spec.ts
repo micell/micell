@@ -1,10 +1,10 @@
-import { expect } from 'chai'
+import { describe, beforeEach, expect, it } from 'vitest'
 import isHexadecimal from '../../src/char/isHexadecimal'
 
 describe('char/isHexadecimal', () => {
   const chars: Array<string> = []
 
-  before(() => {
+  beforeEach(() => {
     for (let i = 48; i <= 57; i++) {
       chars.push(String.fromCharCode(i))
     }

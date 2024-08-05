@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import isWeChat from '../../src/ua/isWeChat'
 
 describe('ua/isWeChat', () => {

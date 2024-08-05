@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 import basename from '../../src/path/basename'
 import dirname from '../../src/path/dirname'
 import extname from '../../src/path/extname'
