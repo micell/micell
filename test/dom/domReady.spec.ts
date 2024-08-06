@@ -1,19 +1,18 @@
-import { describe, expect, it } from 'vitest'
-import sinon from 'sinon'
+import { describe, expect, it, vi } from 'vitest'
 import domReady from '../../src/dom/domReady'
 
 describe('domReady', () => {
   it('should execute the argument function after DOM ready', async () => {
-    const callback = sinon.fake()
+    const callback = vi.fn()
     const run = () => {
       return new Promise((resolve) => {
         domReady(() => {
           callback()
-          resolve(callback.calledOnce)
+          resolve(callback)
         })
       })
     }
     // @ts-ignore
-    await expect(run()).resolves.to.equal(true)
+    await expect(run()).resolves.to.toHaveBeenCalledOnce()
   })
 })

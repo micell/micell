@@ -1,17 +1,17 @@
-import { describe, beforeEach, afterEach, expect, it } from 'vitest'
-import sinon from 'sinon'
+import { describe, beforeEach, afterEach, expect, it, vi } from 'vitest'
 import convert from '../../../src/cookie/util/convert'
 
 describe('cookie/util/convert', () => {
   const now = new Date()
-  let clock: sinon.SinonFakeTimers
 
   beforeEach(() => {
-    clock = sinon.useFakeTimers({ now })
+    vi.useFakeTimers({
+      now,
+    })
   })
 
   afterEach(() => {
-    clock.restore()
+    vi.useRealTimers()
   })
 
   it('should return a string including path if an empty options is passed', () => {

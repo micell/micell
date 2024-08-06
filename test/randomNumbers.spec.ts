@@ -1,5 +1,4 @@
-import { describe, expect, it } from 'vitest'
-import sinon from 'sinon'
+import { describe, expect, it, vi } from 'vitest'
 import randomNumbers from '../src/randomNumbers'
 
 describe('randomNumbers', () => {
@@ -18,17 +17,15 @@ describe('randomNumbers', () => {
   })
 
   it('down to start', () => {
-    const fakeRandom = sinon.fake.returns(0)
-    sinon.replace(Math, 'random', fakeRandom)
+    vi.spyOn(Math, 'random').mockImplementation(() => 0)
     expect(randomNumbers(1, 10, 1)).to.deep.equal([1])
-    sinon.restore()
+    vi.restoreAllMocks()
   })
 
   it('up to end', () => {
-    const fakeRandom = sinon.fake.returns(0.9)
-    sinon.replace(Math, 'random', fakeRandom)
+    vi.spyOn(Math, 'random').mockImplementation(() => 0.9)
     expect(randomNumbers(1, 10, 1)).to.deep.equal([10])
-    sinon.restore()
+    vi.restoreAllMocks()
   })
 
   it('should return an array of the specified length', () => {
