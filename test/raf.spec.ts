@@ -1,5 +1,4 @@
-import { describe, beforeEach, expect, it } from 'vitest'
-import sinon from 'sinon'
+import { describe, beforeEach, expect, it, vi } from 'vitest'
 
 const rafNames = [
   'requestAnimationFrame',
@@ -112,9 +111,9 @@ describe('raf', () => {
     // @ts-ignore
     const mod = await import('../src/raf')
     const raf = mod.default
-    const spy1 = sinon.spy()
-    const spy2 = sinon.spy()
-    const spy3 = sinon.spy()
+    const spy1 = vi.fn()
+    const spy2 = vi.fn()
+    const spy3 = vi.fn()
     const timerId1 = raf(spy1)
     expect(timerId1).to.be.above(0)
     const timerId2 = raf(spy2)
@@ -126,11 +125,15 @@ describe('raf', () => {
     const run = () => {
       return new Promise((resolve) => {
         raf(() => {
-          resolve([spy1.called, spy2.called, spy3.called])
+          resolve([
+            spy1.mock.calls.length,
+            spy2.mock.calls.length,
+            spy3.mock.calls.length,
+          ])
         })
       })
     }
-    await expect(run()).resolves.toEqual([true, false, true])
+    await expect(run()).resolves.toEqual([1, 0, 1])
   })
 
   it('should cancel the callback without native raf', async () => {
@@ -138,9 +141,9 @@ describe('raf', () => {
     // @ts-ignore
     const mod = await import('../src/raf?non-native')
     const raf = mod.default
-    const spy1 = sinon.spy()
-    const spy2 = sinon.spy()
-    const spy3 = sinon.spy()
+    const spy1 = vi.fn()
+    const spy2 = vi.fn()
+    const spy3 = vi.fn()
     const timerId1 = raf(spy1)
     expect(timerId1).to.be.above(0)
     const timerId2 = raf(spy2)
@@ -153,13 +156,17 @@ describe('raf', () => {
     const run = () => {
       return new Promise((resolve) => {
         raf(() => {
-          resolve([spy1.called, spy2.called, spy3.called])
+          resolve([
+            spy1.mock.calls.length,
+            spy2.mock.calls.length,
+            spy3.mock.calls.length,
+          ])
           resetRafs()
         })
       })
     }
 
-    await expect(run()).resolves.toEqual([true, false, true])
+    await expect(run()).resolves.toEqual([1, 0, 1])
   })
 
   it('should throw in the callback', async () => {

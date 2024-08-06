@@ -1,16 +1,15 @@
-import { beforeEach, afterEach, describe, expect, it } from 'vitest'
-import sinon from 'sinon'
+import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest'
 import jsonp from '../src/jsonp'
 
 describe('jsonp', () => {
-  let fakeTimer: sinon.SinonFakeTimers
-
   beforeEach(() => {
-    fakeTimer = sinon.useFakeTimers()
+    vi.useFakeTimers({
+      now: 0,
+    })
   })
 
   afterEach(() => {
-    fakeTimer.restore()
+    vi.useRealTimers()
   })
 
   it('should receive the response data with json parsing', async () => {
