@@ -26,5 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn
+    - run: yarn playwright install
     - run: yarn test:ci:cover
     - run: ./scripts/coverage.sh
