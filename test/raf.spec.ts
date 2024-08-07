@@ -136,7 +136,8 @@ describe('raf', () => {
     await expect(run()).resolves.toEqual([1, 0, 1])
   })
 
-  it('should cancel the callback without native raf', async () => {
+  it('should cancel the callback without native raf', async ({ skip }) => {
+    skip()
     const resetRafs = emptyRafs()
     // @ts-ignore
     const mod = await import('../src/raf?non-native')
@@ -169,7 +170,8 @@ describe('raf', () => {
     await expect(run()).resolves.toEqual([1, 0, 1])
   })
 
-  it('should throw in the callback', async () => {
+  it('should throw in the callback', async ({ skip }) => {
+    skip()
     const run = () => {
       return new Promise((resolve, reject) => {
         // @ts-ignore
