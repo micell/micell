@@ -22,7 +22,7 @@
     "test": "vitest",
     "test:ci": "vitest run --browser.headless",
     "test:cover": "vitest --coverage",
-    "test:ci:cover": "vitest --coverage --browser.headless",
+    "test:ci:cover": "vitest run --coverage --browser.headless",
     "build": "yarn run clean && yarn run types && yarn run build:commonjs && yarn run rollup",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions .mjs,.js,.ts --out-dir lib",
     "rollup": "rollup -c",
