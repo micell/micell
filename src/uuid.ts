@@ -18,14 +18,13 @@ if (isBrowser) {
     getRandomValues = (array: Uint32Array): Uint32Array =>
       window.crypto.getRandomValues(array)
   } else {
-    // @ts-ignore
     if (
-      window.msCrypto &&
-      typeof window.msCrypto.getRandomValues === 'function'
+      (window as any).msCrypto &&
+      typeof (window as any).msCrypto.getRandomValues === 'function'
     ) {
       // @ts-ignore
       getRandomValues = (array: Uint32Array): Uint32Array =>
-        window.msCrypto.getRandomValues(array)
+        (window as any).msCrypto.getRandomValues(array)
     }
   }
 

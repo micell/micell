@@ -1,0 +1,12 @@
+// Extend parent tsconfig.json
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}

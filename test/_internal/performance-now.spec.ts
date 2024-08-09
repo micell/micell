@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 describe('_internal/performance-now', () => {
   it('should return a non-zero value', async () => {
+    // @ts-ignore
     const mod = await import('../../src/_internal/performance-now')
     const now = mod.default
     const time = now()

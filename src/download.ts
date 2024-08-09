@@ -131,7 +131,7 @@ if (!isBrowser) {
           setTimeout(() => click(a))
         }
       } else {
-        navigator.msSaveOrOpenBlob(bom(file), fileName)
+        ;(navigator as any).msSaveOrOpenBlob(bom(file), fileName)
       }
     }
   } else {
@@ -154,7 +154,7 @@ if (!isBrowser) {
       const force = file.type === 'application/octet-stream'
       const isSafari =
         /constructor/i.test(String(window.HTMLElement)) ||
-        String(window.safari || '')
+        String((window as any).safari || '')
       const isChromeIOS = /CriOS\/[\d]+/.test(navigator.userAgent)
 
       if (

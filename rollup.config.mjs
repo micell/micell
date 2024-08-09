@@ -1,17 +1,19 @@
-import path from 'path'
-import nodeResolve from 'rollup-plugin-node-resolve'
-import babel from 'rollup-plugin-babel'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url';
+import nodeResolve from '@rollup/plugin-node-resolve'
+import babel from '@rollup/plugin-babel'
 import typescript from '@rollup/plugin-typescript'
-import commonjs from 'rollup-plugin-commonjs'
-import replace from 'rollup-plugin-replace'
-import { terser } from 'rollup-plugin-terser'
+import commonjs from '@rollup/plugin-commonjs'
+import replace from '@rollup/plugin-replace'
+import terser from '@rollup/plugin-terser'
 
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const outDir = path.join(__dirname, 'dist')
 const getBabelOptions = ({ useESModules = false, corejs = false } = {}) => ({
   exclude: 'node_modules/**',
-  runtimeHelpers: true,
+  babelHelpers: 'runtime',
   plugins: [
     [
       '@babel/plugin-transform-runtime',
@@ -31,7 +33,6 @@ export default [
       file: `${outDir}/${pkg.name}.common.js`,
       format: 'cjs',
       sourcemap: true,
-      exports: 'default',
     },
     plugins: [typescript(), nodeResolve(), babel(getBabelOptions())],
   },

@@ -13,26 +13,12 @@
       }
     ]
   ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-transform-runtime"
-  ],
+  "plugins": ["@babel/plugin-transform-runtime"],
   "env": {
     "commonjs": {
       "plugins": [
         ["@babel/plugin-transform-modules-commonjs"],
         ["babel-plugin-add-module-exports"]
-      ]
-    },
-    "test": {
-      "plugins": [
-        [
-          "babel-plugin-istanbul",
-          {
-            "exclude": ["node_modules/**/*", "**/*.spec.ts", "test/**/*.ts"]
-          }
-        ]
       ]
     }
   }

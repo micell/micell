@@ -52,6 +52,7 @@ describe('raf', () => {
   it('should invoke the next callback continuely', async () => {
     const run = () => {
       return new Promise((resolve) => {
+        // @ts-ignore
         import('../src/raf').then((mod) => {
           const raf = mod.default
           const tick = 1000 / 60
