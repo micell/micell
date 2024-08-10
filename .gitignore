@@ -8,3 +8,5 @@ build
 package-lock.json
 *.swp
 *.log
+docs/.vitepress/cache
+docs/.vitepress/dist
