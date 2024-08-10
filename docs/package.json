@@ -1,13 +1,5 @@
 {
   "name": "docs",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
-  },
-  "devDependencies": {
-    "micell": "latest"
-  }
+  "type": "module"
 }

@@ -2,7 +2,7 @@ import { createRequire } from 'module'
 import { defineConfig, type DefaultTheme } from 'vitepress'
 
 const require = createRequire(import.meta.url)
-const pkg = require('micell/package.json')
+const pkg = require('../../../package.json')
 
 export const zh = defineConfig({
   lang: 'zh-Hans',

@@ -50,7 +50,7 @@ micell.randomString();
 micell.cookie.get('name')
 ```
 
-More functions see the [Docs](/docs/).
+More functions see the [Docs](/docs/base64).
 
 > **Tip**: You can try micell in the console of browser which is exported as the global `micell` object.
 

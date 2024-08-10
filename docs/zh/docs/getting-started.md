@@ -50,7 +50,7 @@ micell.randomString(6);
 micell.cookie.get('name')
 ```
 
-更多函数请查看[文档](/cn/docs/)。
+更多函数请查看[文档](/zh/docs/base64)。
 
 > **小提示**：你可以在浏览器控制台尝试 micell，使用全局对象`micell`。
 
