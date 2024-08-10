@@ -41,6 +41,20 @@ export const shared = defineConfig({
     ['meta', { property: 'og:site_name', content: 'Micell' }],
     ['meta', { property: 'og:image', content: 'https:/micell.org/images/logo_48x48.png' }],
     ['meta', { property: 'og:url', content: 'https://micell.org/' }],
+
+    // Google Analytics
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-8VWNLHG1B8' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8VWNLHG1B8');`
+    ]
   ],
 
   themeConfig: {
