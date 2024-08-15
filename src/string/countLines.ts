@@ -10,8 +10,7 @@ const countLines = (text: string, newline?: string): number => {
 
   // Todo: use regexp to check
   const isEndWithNewline =
-    textString.lastIndexOf(newlineChar) ===
-    textString.length - newlineChar.length
+    textString.lastIndexOf(newlineChar) === textString.length - newlineChar.length
 
   // Todo: add a comment
   if (textString && !isEndWithNewline) {

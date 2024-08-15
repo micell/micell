@@ -1,6 +1,6 @@
+import isASCII from './isASCII'
 import isAlphabetic from './isAlphabetic'
 import isAlphanumeric from './isAlphanumeric'
-import isASCII from './isASCII'
 import isCJK from './isCJK'
 import isControl from './isControl'
 import isDigit from './isDigit'

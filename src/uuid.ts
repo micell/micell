@@ -6,7 +6,7 @@
 import isBrowser from './_internal/isBrowser'
 
 const hexDigits = '0123456789abcdef'
-const maxUint32 = Math.pow(2, 32) - 1
+const maxUint32 = 2 ** 32 - 1
 
 let random: () => number = Math.random
 
@@ -15,8 +15,7 @@ if (isBrowser) {
 
   /* istanbul ignore else */
   if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
-    getRandomValues = (array: Uint32Array): Uint32Array =>
-      window.crypto.getRandomValues(array)
+    getRandomValues = (array: Uint32Array): Uint32Array => window.crypto.getRandomValues(array)
   } else {
     if (
       (window as any).msCrypto &&

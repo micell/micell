@@ -1,5 +1,5 @@
-import isObject from './lang/isObject'
 import isArray from './lang/isArray'
+import isObject from './lang/isObject'
 import isString from './lang/isString'
 
 type Falsy = undefined | null | false | 0 | ''

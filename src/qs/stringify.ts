@@ -1,6 +1,6 @@
 import hasOwn from '../_internal/hasOwn'
 import isObject from '../lang/isObject'
-import { Query } from './types'
+import type { Query } from './types'
 
 export default function stringify(query: Query): string {
   const pairs = []
@@ -13,11 +13,10 @@ export default function stringify(query: Query): string {
         const value = query[name]
         const encodedName = encodeURIComponent(name)
         if (Array.isArray(value)) {
-          value.forEach((v) => {
+          for (const v of value) {
             pairs.push(`${encodedName}=${encodeURIComponent(v)}`)
-          })
+          }
         } else if (value === undefined) {
-          continue
         } else if (value === null) {
           pairs.push(`${encodedName}=`)
         } else {

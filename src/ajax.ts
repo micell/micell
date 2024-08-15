@@ -3,7 +3,7 @@ import isString from './lang/isString'
 
 export interface AjaxOptions {
   async?: boolean
-  beforeSend?: (xhr: XMLHttpRequest) => void | boolean
+  beforeSend?: (xhr: XMLHttpRequest) => undefined | boolean
   data?: any
   headers?: { [key: string]: string }
   method?: string
@@ -11,10 +11,7 @@ export interface AjaxOptions {
   timeout?: number
 }
 
-export default function ajax(
-  url: string,
-  options: AjaxOptions = {},
-): Promise<XMLHttpRequest> {
+export default function ajax(url: string, options: AjaxOptions = {}): Promise<XMLHttpRequest> {
   return new Promise((resolve, reject) => {
     const {
       async = true,

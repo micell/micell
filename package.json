@@ -16,7 +16,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "predocs:build": "cd docs && yarn",
-    "lint": "eslint . --ext .ts",
+    "lint": "biome check --files-ignore-unknown=true",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn run type-check -- --watch",
     "prettier": "prettier --write .",
@@ -31,22 +31,16 @@
     "types": "node scripts/generateDeclaration.js",
     "pkg": "node scripts/release.js",
     "release": "yarn run pkg && semantic-release",
-    "postpublish": "node ../scripts/postpublish.js"
+    "postpublish": "node ../scripts/postpublish.js",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/micell/micell.git"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run type-check && lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "*.ts": [
-      "eslint . --ext .ts --fix",
-      "prettier --write"
+      "biome check --write"
     ]
   },
   "keywords": [
@@ -83,6 +77,7 @@
     "@babel/plugin-transform-runtime": "^7.24.7",
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-typescript": "^7.24.7",
+    "@biomejs/biome": "1.8.3",
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
     "@rollup/plugin-babel": "^6.0.4",
@@ -94,20 +89,15 @@
     "@semantic-release/git": "^10.0.1",
     "@types/shelljs": "^0.8.15",
     "@types/sinon": "^10.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
     "@vitest/browser": "^2.0.5",
     "@vitest/coverage-istanbul": "^2.0.5",
     "babel-plugin-add-module-exports": "^1.0.2",
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
-    "eslint": "^8.6.0",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^2.7.0",
+    "husky": "^9.1.4",
     "lint-staged": "^12.1.4",
     "lodash": "^4.17.21",
     "playwright": "^1.46.0",
-    "prettier": "^2.7.1",
     "replace": "^1.2.2",
     "rimraf": "^5.0.10",
     "rollup": "^4.20.0",

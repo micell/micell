@@ -41,10 +41,10 @@ function downloadUrl(url: string, fileName: string) {
   const xhr = new XMLHttpRequest()
   xhr.open('GET', url)
   xhr.responseType = 'blob'
-  xhr.onload = function () {
+  xhr.onload = () => {
     download(xhr.response, fileName)
   }
-  xhr.onerror = function () {
+  xhr.onerror = () => {
     console.error('could not download file')
   }
   xhr.send()
@@ -84,10 +84,7 @@ if (!isBrowser) {
     throw new Error('download is not support in pure Node.js')
   }
 } else if ('download' in HTMLAnchorElement.prototype && !isMacOSWebView()) {
-  download = function download(
-    file: string | Blob | File,
-    name?: string,
-  ): void {
+  download = function download(file: string | Blob | File, name?: string): void {
     const a = document.createElement('a')
     const fileName = name || (file as File).name || 'download'
 
@@ -115,10 +112,7 @@ if (!isBrowser) {
   }
 } else {
   if ('msSaveOrOpenBlob' in navigator) {
-    download = function download(
-      file: string | Blob | File,
-      name?: string,
-    ): void {
+    download = function download(file: string | Blob | File, name?: string): void {
       const fileName = name || (file as File).name || 'download'
 
       if (typeof file === 'string') {
@@ -135,10 +129,7 @@ if (!isBrowser) {
       }
     }
   } else {
-    download = function download(
-      file: string | Blob | File,
-      name?: string,
-    ): void {
+    download = function download(file: string | Blob | File, name?: string): void {
       let popup = window.open('', '_blank')
       if (popup) {
         popup.document.title = 'downloading...'
@@ -153,8 +144,7 @@ if (!isBrowser) {
 
       const force = file.type === 'application/octet-stream'
       const isSafari =
-        /constructor/i.test(String(window.HTMLElement)) ||
-        String((window as any).safari || '')
+        /constructor/i.test(String(window.HTMLElement)) || String((window as any).safari || '')
       const isChromeIOS = /CriOS\/[\d]+/.test(navigator.userAgent)
 
       if (
@@ -163,11 +153,9 @@ if (!isBrowser) {
       ) {
         // Safari doesn't allow downloading of blob URLs
         const reader = new FileReader()
-        reader.onloadend = function () {
+        reader.onloadend = () => {
           let url = (reader.result as string) || ''
-          url = isChromeIOS
-            ? url
-            : url.replace(/^data:[^;]*;/, 'data:attachment/file;')
+          url = isChromeIOS ? url : url.replace(/^data:[^;]*;/, 'data:attachment/file;')
           if (popup) {
             popup.location.href = url
           } else {
@@ -182,7 +170,7 @@ if (!isBrowser) {
         if (popup) popup.location.href = url
         else location.href = url
         popup = null
-        setTimeout(function () {
+        setTimeout(() => {
           URL.revokeObjectURL(url)
         }, 4e4) // 40s
       }

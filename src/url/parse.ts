@@ -1,6 +1,6 @@
 import isString from '../lang/isString'
 import queryParse from '../qs/parse'
-import { Query } from '../qs/types'
+import type { Query } from '../qs/types'
 
 const reUrl =
   /^(\w{1,63}):\/\/(?:(\w+)(?::(\w+))?@)?([^\s@:/?#]{1,253})(?::(\d{1,5}))?(\/[^\s?#]+)?(\?[^#]+)?(#[\w\W]+)?$/

@@ -4,10 +4,7 @@ export interface Base64DecodeFileOptions {
   type: string
 }
 
-export default function decodeFile(
-  input: string,
-  options: Base64DecodeFileOptions,
-): Promise<Blob> {
+export default function decodeFile(input: string, options: Base64DecodeFileOptions): Promise<Blob> {
   return new Promise((resolve, reject) => {
     try {
       const { type } = options

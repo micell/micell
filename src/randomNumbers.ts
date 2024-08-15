@@ -1,12 +1,6 @@
-export default function randomNumbers(
-  start: number,
-  end: number,
-  length: number,
-): number[] {
+export default function randomNumbers(start: number, end: number, length: number): number[] {
   if (end - start + 1 < length) {
-    throw new RangeError(
-      'the result of end - start + 1 should be greater than length',
-    )
+    throw new RangeError('the result of end - start + 1 should be greater than length')
   }
   const obj: { [key: string]: boolean } = Object.create(null)
   const nums: number[] = []

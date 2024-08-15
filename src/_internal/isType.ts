@@ -1,6 +1,4 @@
-export interface ToStringFunc {
-  (o: any): boolean
-}
+export type ToStringFunc = (o: any) => boolean
 
 const isType: (type: string) => ToStringFunc =
   (type: string): ToStringFunc =>

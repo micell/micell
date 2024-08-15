@@ -1,5 +1,5 @@
+import type { EventType, Events, Listener } from './types'
 import flattenEvents from './util/flattenEvents'
-import { EventType, Listener, Events } from './types'
 
 const EVENTS_KEY = '@events'
 
@@ -29,13 +29,14 @@ class Emitter {
   // Remove all event listeners
   // or remove the given event listeners
   // or remove the specified listener for the given event.
-  off(type?: EventType, fn?: Listener): void {
+  off(...args: [EventType?, Listener?]): void {
+    const [type, fn] = args
     // @ts-ignore
     const events = this[EVENTS_KEY][type]
 
-    if (arguments.length === 0) {
+    if (args.length === 0) {
       this[EVENTS_KEY] = {} as Events
-    } else if (arguments.length === 1) {
+    } else if (args.length === 1) {
       // @ts-ignore
       delete this[EVENTS_KEY][type]
     } else {
@@ -43,7 +44,7 @@ class Emitter {
       if (events) {
         let len = events.length
         let i = 0
-        let listener
+        let listener: Listener
         while (i < len) {
           listener = events[i]
           if (listener === fn) {

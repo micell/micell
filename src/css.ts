@@ -1,15 +1,12 @@
-import isString from './lang/isString'
-import isObject from './lang/isObject'
 import isElement from './dom/isElement'
+import isObject from './lang/isObject'
+import isString from './lang/isString'
 
 export interface CSSProps {
   [key: string]: number | string
 }
 
-export default function css(
-  el: string | Element,
-  prop?: string | CSSProps,
-): any {
+export default function css(el: string | Element, prop?: string | CSSProps): any {
   let elem: Element | null
 
   if (isString(el)) {
@@ -25,9 +22,9 @@ export default function css(
 
   if (isObject(prop)) {
     let cssText = (elem as HTMLElement).style.cssText
-    Object.keys(prop as CSSProps).forEach((name) => {
+    for (const name of Object.keys(prop as CSSProps)) {
       cssText += `${name}: ${(prop as CSSProps)[name]};`
-    })
+    }
     ;(elem as HTMLElement).style.cssText = cssText
   } else {
     let ret = window.getComputedStyle(elem)

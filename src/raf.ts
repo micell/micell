@@ -28,7 +28,7 @@ if (!raf || !caf) {
   const tick = 1000 / 60
   let lastTime = 0
   let id = 0
-  raf = function (callback: AnyFunc): number {
+  raf = (callback: AnyFunc): number => {
     if (queue.length === 0) {
       const nowTime = now()
       const next = Math.max(0, tick - (nowTime - lastTime))
@@ -58,7 +58,7 @@ if (!raf || !caf) {
     return timerId
   }
 
-  caf = function (timerId: number): void {
+  caf = (timerId: number): void => {
     for (let i = 0; i < queue.length; i++) {
       if (queue[i].timerId === timerId) {
         queue[i].cancelled = true
@@ -71,7 +71,7 @@ function exposeRaf(fn: AnyFunc): number {
   return raf.call(root, fn)
 }
 
-exposeRaf.cancel = function (timerId: number): void {
+exposeRaf.cancel = (timerId: number): void => {
   caf.call(root, timerId)
 }
 

@@ -1,5 +1,5 @@
+import type { CookieEncoder, CookieOptions } from './types'
 import convert from './util/convert'
-import { CookieOptions, CookieEncoder } from './types'
 
 export default function set(
   key: string,

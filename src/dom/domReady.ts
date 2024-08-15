@@ -7,18 +7,15 @@ export type AnyFunction = (...args: any[]) => any
 const fns: Array<AnyFunction> = []
 const doc = typeof document === 'object' && document
 // @ts-ignore
-const hack = doc && doc.documentElement.doScroll
+const hack = doc?.documentElement.doScroll
 const domContentLoaded = 'DOMContentLoaded'
 let loaded =
-  doc &&
-  (hack ? /* istanbul ignore next */ /^loaded|^c/ : /^loaded|^i|^c/).test(
-    doc.readyState,
-  )
+  doc && (hack ? /* istanbul ignore next */ /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
 let listener: AnyFunction
 
 /* istanbul ignore else */
 if (!loaded && doc) {
-  listener = function (): void {
+  listener = (): void => {
     let fn = fns.shift()
     doc.removeEventListener(domContentLoaded, listener)
     loaded = true

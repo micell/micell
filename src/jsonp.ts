@@ -6,16 +6,9 @@ export interface JsonpOptions {
   timeout?: number
 }
 
-export default function jsonp(
-  url: string,
-  options: JsonpOptions = {},
-): Promise<any> {
+export default function jsonp(url: string, options: JsonpOptions = {}): Promise<any> {
   return new Promise((resolve, reject) => {
-    const {
-      callback = '_callback',
-      responseType = 'json',
-      timeout = 0,
-    } = options
+    const { callback = '_callback', responseType = 'json', timeout = 0 } = options
     const callbackName = `_callback${Date.now()}`
     const hasQuestion = url.indexOf('?') > -1
     let src = url

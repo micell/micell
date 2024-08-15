@@ -1,5 +1,5 @@
-import isWindow from './isWindow'
 import isElement from './isElement'
+import isWindow from './isWindow'
 
 export default function scrollY(elOrWindow: Element | Window = window): number {
   let y = 0

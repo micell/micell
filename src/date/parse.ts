@@ -12,10 +12,7 @@ export interface ParsedDate {
   milliseconds: number
 }
 
-export default function parse(
-  date: number | string | Date,
-  isUTC = false,
-): ParsedDate {
+export default function parse(date: number | string | Date, isUTC = false): ParsedDate {
   if (!isNumber(date) && !isString(date) && !isDate(date)) {
     throw new Error(
       'The first parameter should be a number, a parsable date string or a Date object',

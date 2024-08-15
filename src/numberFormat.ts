@@ -1,17 +1,12 @@
 import isNumber from './lang/isNumber'
 
-export default function numberFormat(
-  number: number,
-  digits = -1,
-  dot = '.',
-  sep = ',',
-): string {
+export default function numberFormat(number: number, digits = -1, dot = '.', sep = ','): string {
   if (!isNumber(number)) {
     return ''
   }
-  const tenExp = Math.pow(10, digits)
+  const tenExp = 10 ** digits
   let result = number >= 0 ? '' : '-'
-  let decPartStr
+  let decPartStr: string
 
   if (digits > -1) {
     number = Math.round(number * tenExp) / tenExp

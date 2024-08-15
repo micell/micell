@@ -1,5 +1,5 @@
 import set from './set'
-import { CookieOptions } from './types'
+import type { CookieOptions } from './types'
 
 export default function remove(key: string, options?: CookieOptions): void {
   let opts = { expires: -1 }

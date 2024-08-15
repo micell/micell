@@ -1,13 +1,9 @@
+import padStart from '../_internal/padStart'
 import isDate from '../lang/isDate'
 import isNumber from '../lang/isNumber'
 import isString from '../lang/isString'
-import padStart from '../_internal/padStart'
 
-const dateFormat = (
-  date: number | string | Date,
-  format?: string,
-  isUTC?: boolean,
-): string => {
+const dateFormat = (date: number | string | Date, format?: string, isUTC?: boolean): string => {
   if (!isNumber(date) && !isString(date) && !isDate(date)) {
     throw new Error(
       'The first parameter should be a number, a parsable date string or a Date object',

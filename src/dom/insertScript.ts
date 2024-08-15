@@ -10,10 +10,10 @@ export default function insertScript(
 
   script.src = url
 
-  Object.keys(options).forEach((key) => {
+  for (const key of Object.keys(options)) {
     // @ts-ignore
     script[key] = options[key]
-  })
+  }
 
   document.body.appendChild(script)
   return script

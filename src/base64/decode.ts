@@ -6,8 +6,7 @@ interface Base64Map {
   [key: string]: number
 }
 
-const base64Chars =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+const base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 const base64Map: Base64Map = {}
 const bitPadding = '000000'
 
@@ -32,7 +31,7 @@ function base64ToBytes(str: string): Array<number> {
   const bytes = []
 
   for (let i = 0, len = Math.floor(bits.length / 8); i < len; i++) {
-    bytes.push(parseInt(bits.slice(i * 8, (i + 1) * 8), 2))
+    bytes.push(Number.parseInt(bits.slice(i * 8, (i + 1) * 8), 2))
   }
 
   return bytes
@@ -58,7 +57,8 @@ export default function decode(
 
   if (encoding === 'binary') {
     return bytes
-  } else if (encoding === 'hex') {
+  }
+  if (encoding === 'hex') {
     return bytesToHex(bytes)
   }
 

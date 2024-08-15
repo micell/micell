@@ -21,7 +21,5 @@ const testMap: TestMap = {
 const userAgent = isBrowser ? window.navigator.userAgent : ''
 
 export default function (type: string): (ua?: string) => boolean {
-  return function (ua: string = userAgent): boolean {
-    return testMap[type].test(ua)
-  }
+  return (ua: string = userAgent): boolean => testMap[type].test(ua)
 }

@@ -12,8 +12,7 @@ export default function bytesToUtf8(bytes: Array<number>): string {
       codePoint = ((bytes[i] & 31) << 6) + (bytes[++i] & 63)
       codeUnits.push(codePoint)
     } else if (byte < 0xf0) {
-      codePoint =
-        ((bytes[i] & 15) << 12) + ((bytes[++i] & 63) << 6) + (bytes[++i] & 63)
+      codePoint = ((bytes[i] & 15) << 12) + ((bytes[++i] & 63) << 6) + (bytes[++i] & 63)
       codeUnits.push(codePoint)
     } else {
       codePoint =

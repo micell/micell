@@ -35,15 +35,9 @@ function getSlope(aT: number, aA1: number, aA2: number): number {
   return 3.0 * A(aA1, aA2) * aT * aT + 2.0 * B(aA1, aA2) * aT + C(aA1)
 }
 
-function binarySubdivide(
-  aX: number,
-  aA: number,
-  aB: number,
-  mX1: number,
-  mX2: number,
-): number {
-  let currentX
-  let currentT
+function binarySubdivide(aX: number, aA: number, aB: number, mX1: number, mX2: number): number {
+  let currentX: number
+  let currentT: number
   let i = 0
   do {
     currentT = aA + (aB - aA) / 2.0
@@ -53,19 +47,11 @@ function binarySubdivide(
     } else {
       aA = currentT
     }
-  } while (
-    Math.abs(currentX) > SUBDIVISION_PRECISION &&
-    ++i < SUBDIVISION_MAX_ITERATIONS
-  )
+  } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS)
   return currentT
 }
 
-function newtonRaphsonIterate(
-  aX: number,
-  aGuessT: number,
-  mX1: number,
-  mX2: number,
-): number {
+function newtonRaphsonIterate(aX: number, aGuessT: number, mX1: number, mX2: number): number {
   for (let i = 0; i < NEWTON_ITERATIONS; ++i) {
     const currentSlope = getSlope(aGuessT, mX1, mX2)
     if (currentSlope === 0.0) {
@@ -108,11 +94,7 @@ export default function bezier(
     let currentSample = 1
     const lastSample = kSplineTableSize - 1
 
-    for (
-      ;
-      currentSample !== lastSample && sampleValues[currentSample] <= aX;
-      ++currentSample
-    ) {
+    for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
       intervalStart += kSampleStepSize
     }
     --currentSample
@@ -126,17 +108,11 @@ export default function bezier(
     const initialSlope = getSlope(guessForT, mX1, mX2)
     if (initialSlope >= NEWTON_MIN_SLOPE) {
       return newtonRaphsonIterate(aX, guessForT, mX1, mX2)
-    } else if (initialSlope === 0.0) {
-      return guessForT
-    } else {
-      return binarySubdivide(
-        aX,
-        intervalStart,
-        intervalStart + kSampleStepSize,
-        mX1,
-        mX2,
-      )
     }
+    if (initialSlope === 0.0) {
+      return guessForT
+    }
+    return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2)
   }
 
   return function BezierEasing(x: number): number {

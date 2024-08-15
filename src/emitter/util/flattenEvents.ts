@@ -1,5 +1,5 @@
 import hasOwn from '../../_internal/hasOwn'
-import { Events, Listener } from '../types'
+import type { Events, Listener } from '../types'
 
 export default function flattenEvents(events: Events): Array<Listener> {
   let listeners: Array<Listener> = []

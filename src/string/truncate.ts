@@ -6,10 +6,7 @@ export interface TruncateOptions {
   countType?: number
 }
 
-export default function truncate(
-  str = '',
-  options: TruncateOptions = {},
-): string {
+export default function truncate(str = '', options: TruncateOptions = {}): string {
   const { length, omission = '...', countType = 0 } = options
   const ensureStr = String(str)
   const len = ensureStr.length
@@ -31,7 +28,5 @@ export default function truncate(
   }
 
   const truncatedStr = ensureStr.slice(0, i)
-  return `${truncatedStr}${
-    truncatedStr.length < ensureStr.length ? omission : ''
-  }`
+  return `${truncatedStr}${truncatedStr.length < ensureStr.length ? omission : ''}`
 }

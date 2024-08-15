@@ -1,69 +1,35 @@
-import isType from './_internal/isType'
-import utf8ToBytes from './_internal/utf8ToBytes'
-import bytesToWords from './_internal/bytesToWords'
-import wordsToBytes from './_internal/wordsToBytes'
 import bytesToHex from './_internal/bytesToHex'
+import bytesToWords from './_internal/bytesToWords'
+import isType from './_internal/isType'
 import swapEndian from './_internal/swapEndian'
-import isString from './lang/isString'
+import utf8ToBytes from './_internal/utf8ToBytes'
+import wordsToBytes from './_internal/wordsToBytes'
 import isArray from './lang/isArray'
+import isString from './lang/isString'
 
 const isUint8Array = isType('Uint8Array')
 
-function F(
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  x: number,
-  s: number,
-  t: number,
-): number {
+function F(a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + ((b & c) | (~b & d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function G(
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  x: number,
-  s: number,
-  t: number,
-): number {
+function G(a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + ((b & d) | (c & ~d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function H(
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  x: number,
-  s: number,
-  t: number,
-): number {
+function H(a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + (b ^ c ^ d) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-function I(
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  x: number,
-  s: number,
-  t: number,
-): number {
+function I(a: number, b: number, c: number, d: number, x: number, s: number, t: number): number {
   const n = a + (c ^ (b | ~d)) + (x >>> 0) + t
   return ((n << s) | (n >>> (32 - s))) + b
 }
 
-export default function md5(
-  input: string | Array<number> | Uint8Array,
-): string {
+export default function md5(input: string | Array<number> | Uint8Array): string {
   let bytes: Array<number> = []
 
   if (isString(input)) {
@@ -71,9 +37,7 @@ export default function md5(
   } else if (isArray(input) || isUint8Array(input)) {
     bytes = input as Array<number>
   } else {
-    throw TypeError(
-      'the input parameter must be one of String, Byte Array, Uint8Array',
-    )
+    throw TypeError('the input parameter must be one of String, Byte Array, Uint8Array')
   }
 
   const m = bytesToWords(bytes)
@@ -86,12 +50,11 @@ export default function md5(
   // Swap endian
   for (let i = 0; i < m.length; i++) {
     m[i] =
-      (((m[i] << 8) | (m[i] >>> 24)) & 0x00ff00ff) |
-      (((m[i] << 24) | (m[i] >>> 8)) & 0xff00ff00)
+      (((m[i] << 8) | (m[i] >>> 24)) & 0x00ff00ff) | (((m[i] << 24) | (m[i] >>> 8)) & 0xff00ff00)
   }
 
   // Padding
-  m[len >>> 5] |= 0x80 << len % 32
+  m[len >>> 5] |= 0x80 << (len % 32)
   m[(((len + 64) >>> 9) << 4) + 14] = len
 
   for (let i = 0; i < m.length; i += 16) {

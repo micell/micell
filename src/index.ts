@@ -13,9 +13,9 @@ import * as allString from './string'
 import * as allUa from './ua'
 import * as allUrl from './url'
 
-import * as allAjax from './ajax'
-import * as allCss from './css'
-import * as allJsonp from './jsonp'
+import type * as allAjax from './ajax'
+import type * as allCss from './css'
+import type * as allJsonp from './jsonp'
 
 import { default as ajaxAlias } from './ajax'
 import { default as classNamesAlias } from './classNames'

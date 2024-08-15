@@ -15,8 +15,7 @@
  */
 export default function randomString(len?: number, chars?: string): string {
   const actualLen = len || 32
-  const actualChars =
-    chars || '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz'
+  const actualChars = chars || '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz'
 
   let str = ''
 

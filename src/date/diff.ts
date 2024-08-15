@@ -30,7 +30,6 @@ export default function diff(
     case 's':
       result = roundFunc(dateDiff / 1000)
       break
-    case 'ms':
     default:
       result = dateDiff
       break

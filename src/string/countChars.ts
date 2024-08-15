@@ -1,5 +1,5 @@
-import isString from '../lang/isString'
 import isCJK from '../char/isCJK'
+import isString from '../lang/isString'
 
 export default function count(str: string, type = 0): number {
   if (!isString(str)) {

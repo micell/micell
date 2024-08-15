@@ -1,6 +1,6 @@
 import hasOwn from '../../_internal/hasOwn'
+import type { CookieOptions } from '../types'
 import computeExpires from './computeExpires'
-import { CookieOptions } from '../types'
 
 // Convert an object to a cookie option string
 export default function convert(opts: CookieOptions): string {
