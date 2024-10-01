@@ -39,6 +39,12 @@ npm i -S micell
 yarn add micell
 ```
 
+**Pnpm**
+
+```sh
+pnpm add micell
+```
+
 **CDN**
 
 If you want use micell with `<script>` directly, you can use [jsDelivr](https://www.jsdelivr.com/package/npm/micell).
@@ -114,7 +120,8 @@ See [Release notes](https://github.com/micell/micell/releases).
 
 If you have a bug or feature request or document improvement about micell, you can [open](https://github.com/micell/micell/issues/new) an issue or [create](https://github.com/micell/micell/pull/new/main) a pull request to [main](https://github.com/micell/micell/tree/main) branch.
 
-Also, you can read the [CONTRIBUTING](CONTRIBUTING.md) guide.
+Also, you can read the [CONTRIBUTING](.github/CONTRIBUTING.md) guide.
+
 ## License
 
 MIT
