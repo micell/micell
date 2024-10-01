@@ -101,7 +101,7 @@
     "replace": "^1.2.2",
     "rimraf": "^5.0.10",
     "rollup": "^4.20.0",
-    "semantic-release": "^18.0.1",
+    "semantic-release": "^22.0.0",
     "shelljs": "^0.8.5",
     "sinon": "^18.0.0",
     "tslib": "^2.6.3",
