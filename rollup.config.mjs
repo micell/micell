@@ -66,6 +66,7 @@ export default [
       babel(getBabelOptions({ useESModules: true })),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
+        preventAssignment: true,
       }),
     ],
   },
@@ -84,6 +85,7 @@ export default [
       babel(getBabelOptions({ useESModules: true })),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production'),
+        preventAssignment: true,
       }),
       terser(),
     ],
@@ -105,6 +107,7 @@ export default [
       commonjs(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
+        preventAssignment: true,
       }),
     ],
   },
@@ -125,6 +128,7 @@ export default [
       commonjs(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production'),
+        preventAssignment: true,
       }),
       terser(),
     ],
