@@ -22,7 +22,7 @@ export const en = defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You',
+      copyright: 'Copyright © 2017-present Alex Chao',
     },
   },
 })

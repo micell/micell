@@ -22,7 +22,7 @@ export const zh = defineConfig({
 
     footer: {
       message: '基于 MIT 许可发布',
-      copyright: `版权所有 © 2019-${new Date().getFullYear()} Alex Chao`,
+      copyright: `版权所有 © 2017-present Alex Chao`,
     },
 
     docFooter: {
