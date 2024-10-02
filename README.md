@@ -1,6 +1,6 @@
 # micell
 
-[![Build Status](https://travis-ci.com/micell/micell.svg?branch=master)](https://travis-ci.com/micell/micell)
+[![Build Status](https://github.com/micell/micell/actions/workflows/node.js.yml/badge.svg)](https://github.com/micell/micell/actions/workflows/node.js.yml)
 [![codecov](https://codecov.io/gh/micell/micell/branch/master/graph/badge.svg)](https://codecov.io/gh/micell/micell)
 [![npm](https://img.shields.io/npm/v/micell.svg)](https://www.npmjs.com/package/micell)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/micell)
