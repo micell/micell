@@ -5,13 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,17 +19,18 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install pnpm
-      run: npm i -g pnpm
-    - name: Install dependencies
-      run: pnpm install
-    - run: pnpm playwright install
-    - name: Test and coverage
-      run: pnpm test:ci:cover
-    - name: Upload coverage to Codecov
-      run: ./scripts/coverage.sh
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install pnpm
+        run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - run: pnpm playwright install
+      - name: Test and coverage
+        run: pnpm test:ci:cover
+      - run: chmod +x ./scripts/coverage.sh
+      - name: Upload coverage to Codecov
+        run: ./scripts/coverage.sh
