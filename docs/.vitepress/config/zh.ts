@@ -59,6 +59,11 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '/zh/docs/',
     },
     {
+      text: '工具库',
+      link: '/zh/utility-libraries/commonly-used',
+      activeMatch: '/zh/utility-libraries/',
+    },
+    {
       text: pkg.version,
       items: [
         {

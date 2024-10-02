@@ -35,6 +35,11 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '/docs/',
     },
     {
+      text: 'Utility Libraries',
+      link: '/utility-libraries/commonly-used',
+      activeMatch: '/utility-libraries/',
+    },
+    {
       text: pkg.version,
       items: [
         {
