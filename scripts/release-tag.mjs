@@ -42,14 +42,17 @@ if (branch !== 'main') {
   fail(`on "${branch}", expected "main" — the tag belongs on the merged release commit`)
 }
 
-git('fetch', remote, 'main')
+git('fetch', remote, `+refs/heads/main:refs/remotes/${remote}/main`)
 const head = git('rev-parse', 'HEAD')
 if (head !== git('rev-parse', `${remote}/main`)) {
   fail(`local main is not in sync with ${remote}/main — pull first`)
 }
 
 if (git('tag', '--list', tag) !== '') {
-  fail(`tag ${tag} already exists`)
+  fail(`tag ${tag} already exists locally`)
+}
+if (git('ls-remote', '--tags', remote, `refs/tags/${tag}`) !== '') {
+  fail(`tag ${tag} already exists on ${remote}`)
 }
 
 git('tag', '-a', tag, '-m', tag)

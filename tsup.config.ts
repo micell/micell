@@ -36,7 +36,7 @@ export default defineConfig({
   sourcemap: true,
   splitting: false,
   clean: true,
-  dts: true,
+  dts: false,
   outExtension() {
     return { js: '.es.js' }
   },

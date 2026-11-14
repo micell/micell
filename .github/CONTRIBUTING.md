@@ -53,7 +53,7 @@ pnpm test:ci
 # Tests with coverage
 pnpm test:ci:cover
 
-# Build ESM/CJS/IIFE bundles and the declaration file
+# Build the ESM bundles and the declaration tree
 pnpm build
 
 # Local docs server

@@ -21,7 +21,7 @@
 | `dist/micell.esm.js` | `dist/micell.es.js` |
 | `dist/micell.esm.browser.js` | 移除 |
 | `lib/**/*.js` | 移除 |
-| `types/index.d.ts` | `dist/micell.d.ts` |
+| `types/index.d.ts` | `dist/types/index.d.ts` |
 
 包通过 `exports` 映射暴露入口，`micell/lib/...` 深导入不再可用。
 

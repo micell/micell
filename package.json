@@ -5,72 +5,73 @@
   "type": "module",
   "main": "./dist/micell.es.js",
   "module": "./dist/micell.es.js",
-  "types": "./dist/micell.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/micell.d.ts",
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/micell.es.js"
     },
     "./base64": {
-      "types": "./dist/base64.d.ts",
+      "types": "./dist/types/entries/base64.d.ts",
       "import": "./dist/base64.es.js"
     },
     "./char": {
-      "types": "./dist/char.d.ts",
+      "types": "./dist/types/entries/char.d.ts",
       "import": "./dist/char.es.js"
     },
     "./cookie": {
-      "types": "./dist/cookie.d.ts",
+      "types": "./dist/types/entries/cookie.d.ts",
       "import": "./dist/cookie.es.js"
     },
     "./date": {
-      "types": "./dist/date.d.ts",
+      "types": "./dist/types/entries/date.d.ts",
       "import": "./dist/date.es.js"
     },
     "./dom": {
-      "types": "./dist/dom.d.ts",
+      "types": "./dist/types/entries/dom.d.ts",
       "import": "./dist/dom.es.js"
     },
     "./easing": {
-      "types": "./dist/easing.d.ts",
+      "types": "./dist/types/entries/easing.d.ts",
       "import": "./dist/easing.es.js"
     },
     "./emitter": {
-      "types": "./dist/emitter.d.ts",
+      "types": "./dist/types/entries/emitter.d.ts",
       "import": "./dist/emitter.es.js"
     },
     "./lang": {
-      "types": "./dist/lang.d.ts",
+      "types": "./dist/types/entries/lang.d.ts",
       "import": "./dist/lang.es.js"
     },
     "./path": {
-      "types": "./dist/path.d.ts",
+      "types": "./dist/types/entries/path.d.ts",
       "import": "./dist/path.es.js"
     },
     "./qs": {
-      "types": "./dist/qs.d.ts",
+      "types": "./dist/types/entries/qs.d.ts",
       "import": "./dist/qs.es.js"
     },
     "./regex": {
-      "types": "./dist/regex.d.ts",
+      "types": "./dist/types/entries/regex.d.ts",
       "import": "./dist/regex.es.js"
     },
     "./string": {
-      "types": "./dist/string.d.ts",
+      "types": "./dist/types/entries/string.d.ts",
       "import": "./dist/string.es.js"
     },
     "./ua": {
-      "types": "./dist/ua.d.ts",
+      "types": "./dist/types/entries/ua.d.ts",
       "import": "./dist/ua.es.js"
     },
     "./url": {
-      "types": "./dist/url.d.ts",
+      "types": "./dist/types/entries/url.d.ts",
       "import": "./dist/url.es.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
     "dist",
+    "CHANGELOG.md",
     "UPGRADING.md"
   ],
   "sideEffects": false,
@@ -89,7 +90,7 @@
     "test:ci": "vitest run --browser.headless",
     "test:cover": "vitest --coverage",
     "test:ci:cover": "vitest run --coverage --browser.headless",
-    "build": "pnpm run clean && tsup",
+    "build": "pnpm run clean && tsup && tsc -p tsconfig.build.json",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",

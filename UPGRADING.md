@@ -17,8 +17,8 @@ import date from 'micell/date'
 ```
 
 Available subpaths: `base64`, `char`, `cookie`, `date`, `dom`, `easing`,
-`emitter`, `lang`, `path`, `qs`, `regex`, `string`, `ua`, `url`. They are
-ESM-only; CommonJS consumers keep using the root entry.
+`emitter`, `lang`, `path`, `qs`, `regex`, `string`, `ua`, `url`. All entries
+are ESM-only.
 
 ### No runtime dependencies
 
@@ -37,13 +37,13 @@ APIs listed under "Browser support" below.
 | `dist/micell.esm.js` | `dist/micell.es.js` |
 | `dist/micell.esm.browser.js` | removed |
 | `lib/**/*.js` | removed |
-| `types/index.d.ts` | `dist/micell.d.ts` (single file) |
+| `types/index.d.ts` | `dist/types/index.d.ts` (declaration tree) |
 
 `package.json` now uses an `exports` map:
 
 ```json
 {
-  "types": "./dist/micell.d.ts",
+  "types": "./dist/types/index.d.ts",
   "import": "./dist/micell.es.js"
 }
 ```
@@ -87,7 +87,7 @@ browser library and mostly relies on DOM APIs.
 | Area | Before | After |
 | --- | --- | --- |
 | Build | Babel + Rollup | tsup (esbuild) |
-| Types | `tsc` per-file to `types/` | tsup dts (single file + shared chunks) |
+| Types | `tsc` per-file to `types/` | tsc declaration tree in `dist/types/` |
 | Lint / format | Biome | Oxlint + Oxfmt |
 | Tests | Vitest 2 (istanbul) | Vitest 4 (v8 coverage) |
 | Release | semantic-release | bumpp + changelogen |

@@ -21,7 +21,7 @@
 | `dist/micell.esm.js` | `dist/micell.es.js` |
 | `dist/micell.esm.browser.js` | removed |
 | `lib/**/*.js` | removed |
-| `types/index.d.ts` | `dist/micell.d.ts` |
+| `types/index.d.ts` | `dist/types/index.d.ts` |
 
 The package exposes its entries through an `exports` map; deep imports into `micell/lib/...` are gone.
 
