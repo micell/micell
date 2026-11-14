@@ -80,16 +80,18 @@ IE 11, iOS 10 and Android 5 are no longer supported. The baseline is:
 
 ### Node.js
 
-`engines.node` is `^20.19.0 || >=22.12.0`. This is the requirement of the build
-toolchain (tsup / vite / vitest), not of the library at runtime — micell is a
-browser library and mostly relies on DOM APIs.
+`engines.node` is `^20.19.0 || >=22.12.0` — the floor for *consuming* the
+library, which is a browser library and mostly relies on DOM APIs. The build
+toolchain needs more: tsdown declares `^22.18.0 || ^24.11.0 || >=26.0.0`, so
+build and test on a Node release in that range even though micell itself runs
+on Node 20.19.
 
 ### Toolchain
 
 | Area | Before | After |
 | --- | --- | --- |
-| Build | Babel + Rollup | tsup (esbuild) |
-| Types | `tsc` per-file to `types/` | tsup dts (shared chunks) |
+| Build | Babel + Rollup | tsdown (Rolldown) |
+| Types | `tsc` per-file to `types/` | tsdown dts (rolldown-plugin-dts) |
 | Lint / format | Biome | Oxlint + Oxfmt |
 | Tests | Vitest 2 (istanbul) | Vitest 4 (v8 coverage) |
 | Release | semantic-release | bumpp + changelogen |

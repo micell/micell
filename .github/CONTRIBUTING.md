@@ -19,7 +19,8 @@ We're open to and grateful for contributions made by the community. By contribut
 
 ### Prerequisite
 
-* Node.js `^20.19.0 || >=22.12.0`
+* Node.js `^20.19.0 || >=22.12.0` to consume the package. Building and testing
+  it needs a Node release tsdown supports: `^22.18.0 || ^24.11.0 || >=26.0.0`
 * pnpm >= 10
 
 ### Project structure

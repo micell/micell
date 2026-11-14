@@ -36,13 +36,16 @@
 
 ### Tooling
 
-- tsup (esbuild) replaces Babel + Rollup.
+- tsdown (Rolldown) replaces the Babel + Rollup pipeline and bundles the
+  declarations through rolldown-plugin-dts. Entry filenames stay hash-free so
+  the `exports` map keeps resolving; code shared between entries ships as
+  `[name]-[hash].es.js` chunks instead of being inlined into every entry.
 - Oxlint + Oxfmt replace Biome.
 - Vitest 4 with the Playwright provider and v8 coverage.
 - bumpp + changelogen replace semantic-release.
 - VitePress 2 (Vite 8 / Rolldown) replaces VitePress 1, which pinned Vite 5.
   The docs configs now import their siblings with explicit `.ts` extensions.
-- Oxfmt 0.78, tsup 9 and Vite 8 clear every advisory Dependabot reported
+- Oxfmt 0.78, tsdown 0.23 and Vite 8 clear every advisory Dependabot reported
   against the dev toolchain; `pnpm-workspace.yaml` additionally pins
   `mdast-util-to-hast >= 13.2.2` and `@bundled-es-modules/cookie > cookie
   >= 0.7.0` past their advisories.
