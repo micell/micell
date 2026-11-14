@@ -93,7 +93,7 @@ jobs:
           test -f dist/date.d.ts
 
       - name: Check declarations
-        run: pnpm exec tsc --noEmit --skipLibCheck false --target es2020 --module esnext --moduleResolution bundler dist/micell.d.ts dist/date.d.ts
+        run: pnpm exec tsc --ignoreConfig --noEmit --skipLibCheck false --target es2020 --module esnext --moduleResolution bundler dist/micell.d.ts dist/date.d.ts
 
   docs:
     name: Docs

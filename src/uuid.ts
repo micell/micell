@@ -11,18 +11,19 @@ const maxUint32 = 2 ** 32 - 1
 let random: () => number = Math.random
 
 if (isBrowser) {
-  let getRandomValues: (array: Uint32Array) => Uint32Array
+  let getRandomValues: (array: Uint32Array<ArrayBuffer>) => Uint32Array<ArrayBuffer>
 
   /* istanbul ignore else */
   if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
-    getRandomValues = (array: Uint32Array): Uint32Array => window.crypto.getRandomValues(array)
+    getRandomValues = (array: Uint32Array<ArrayBuffer>): Uint32Array<ArrayBuffer> =>
+      window.crypto.getRandomValues(array)
   } else {
     if (
       (window as any).msCrypto &&
       typeof (window as any).msCrypto.getRandomValues === 'function'
     ) {
       // @ts-ignore
-      getRandomValues = (array: Uint32Array): Uint32Array =>
+      getRandomValues = (array: Uint32Array<ArrayBuffer>): Uint32Array<ArrayBuffer> =>
         (window as any).msCrypto.getRandomValues(array)
     }
   }
@@ -30,7 +31,7 @@ if (isBrowser) {
   /* istanbul ignore else */
   // @ts-ignore
   if (typeof window.Uint32Array === 'function' && getRandomValues) {
-    random = (): number => getRandomValues(new Uint32Array(1))[0] / maxUint32
+    random = (): number => getRandomValues(new Uint32Array(new ArrayBuffer(4)))[0] / maxUint32
   }
 }
 

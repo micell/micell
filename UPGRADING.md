@@ -92,6 +92,7 @@ on Node 20.19.
 | --- | --- | --- |
 | Build | Babel + Rollup | tsdown (Rolldown) |
 | Types | `tsc` per-file to `types/` | tsdown dts (rolldown-plugin-dts) |
+| Type checking | `tsc` 5 (JavaScript) | `tsc` 7 (native) |
 | Lint / format | Biome | Oxlint + Oxfmt |
 | Tests | Vitest 2 (istanbul) | Vitest 4 (v8 coverage) |
 | Release | semantic-release | bumpp + changelogen |

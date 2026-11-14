@@ -40,6 +40,11 @@
   declarations through rolldown-plugin-dts. Entry filenames stay hash-free so
   the `exports` map keeps resolving; code shared between entries ships as
   `[name]-[hash].es.js` chunks instead of being inlined into every entry.
+- TypeScript 7 (the native compiler) replaces TypeScript 5. No compatibility
+  package is needed: tsdown emits the declarations through
+  rolldown-plugin-dts, which talks to the compiler API TypeScript 7 no longer
+  ships. The only source change it forced was the `Uint32Array<ArrayBuffer>`
+  annotations in `uuid`.
 - Oxlint + Oxfmt replace Biome.
 - Vitest 4 with the Playwright provider and v8 coverage.
 - bumpp + changelogen replace semantic-release.
