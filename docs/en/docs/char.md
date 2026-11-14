@@ -1,5 +1,7 @@
 # char
 
+> Since 1.0 you can import this module on its own: `import char from 'micell/char'` (ESM).
+
 ## isAlphabetic
 
 ```js

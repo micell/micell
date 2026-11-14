@@ -2,18 +2,7 @@ import { describe, expect, it } from 'vitest'
 import isDecimal from '../../src/regex/isDecimal'
 
 describe('regex/isDecimal', () => {
-  const decimalStrings = [
-    '0',
-    '1',
-    '123',
-    '0123',
-    '+1',
-    '-1',
-    '1.',
-    '1.1',
-    '.1',
-    '0.123',
-  ]
+  const decimalStrings = ['0', '1', '123', '0123', '+1', '-1', '1.', '1.1', '.1', '0.123']
   const notDecimalStrings = ['a', '+', '-', '1.1.', '.', '1..1']
 
   it('should be a decimal string', () => {

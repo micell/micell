@@ -12,6 +12,6 @@ for integrity, it will include some uncommon functions.
 ## Why Micell?
 
 * **Shared in community**: You don't need to write the common utility functions repeatedly. Micell make reusing across all projects.
-* **Typescript support**: Source code is written with TypeScript. And type declaration files is bundled in npm package.
-* **High reliability**: Test in all modern browsers, even in IE 11. Up to 96% test coverage.
-* **Import as need**: Use **babel-plugin-lodash** to import the used modules.
+* **Typescript support**: Source code is written with TypeScript. And type declaration files are bundled in npm package.
+* **High reliability**: The full suite runs in a real Chromium browser.
+* **Zero runtime dependencies**: ESM output with `sideEffects: false`, so unused code is dropped by bundlers.

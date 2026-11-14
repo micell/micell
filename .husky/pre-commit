@@ -1,1 +1,1 @@
-npm run type-check && lint-staged
+pnpm exec lint-staged

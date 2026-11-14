@@ -1,5 +1,7 @@
 # dom
 
+> Since 1.0 you can import this module on its own: `import dom from 'micell/dom'` (ESM).
+
 ## clientX
 
 ```js
@@ -388,7 +390,7 @@ const el = document.getElementById('el')
 scrollX(el);
 ```
 
-## scrolY
+## scrollY
 
 ```js
 scrollY([elOrWindow])

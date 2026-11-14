@@ -1,5 +1,7 @@
 # char
 
+> 1.0 起可以按模块引入：`import char from 'micell/char'`（ESM）。
+
 ## isAlphabetic
 
 ```js

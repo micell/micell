@@ -2,11 +2,11 @@
 node_modules
 coverage
 dist
-lib
-types
-build
-package-lock.json
-*.swp
-*.log
 docs/.vitepress/cache
 docs/.vitepress/dist
+test-results
+.vitest-attachments
+package-lock.json
+yarn.lock
+*.swp
+*.log

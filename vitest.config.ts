@@ -1,17 +1,17 @@
-import { configDefaults, defineConfig } from 'vitest/config'
+import { playwright } from '@vitest/browser-playwright'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
-    exclude: [...configDefaults.exclude, 'packages/template/*'],
     browser: {
-      provider: 'playwright', // or 'webdriverio'
       enabled: true,
-      name: 'chromium', // browser name is required
+      provider: playwright(),
+      instances: [{ browser: 'chromium' }],
     },
     coverage: {
-      provider: 'istanbul', // or 'v8'
-      include: ['src/**/*'],
+      provider: 'v8',
+      reporter: ['text', 'html', 'json-summary'],
+      include: ['src/**/*.ts'],
     },
   },
 })

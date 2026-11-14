@@ -9,8 +9,8 @@ describe('base64/decodeFile', () => {
 
   it('should decode a base64 string to  a Blob object', async () => {
     const blob = new Blob(['hello world'], { type: 'plain/text' })
-    await expect(
-      decodeFile('aGVsbG8gd29ybGQ=', { type: 'plain/text' }),
-    ).resolves.to.deep.equal(blob)
+    await expect(decodeFile('aGVsbG8gd29ybGQ=', { type: 'plain/text' })).resolves.to.deep.equal(
+      blob,
+    )
   })
 })

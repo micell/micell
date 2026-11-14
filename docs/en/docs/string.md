@@ -1,5 +1,7 @@
 # string
 
+> Since 1.0 you can import this module on its own: `import string from 'micell/string'` (ESM).
+
 ## countChars
 
 ```js

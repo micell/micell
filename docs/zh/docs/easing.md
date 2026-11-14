@@ -1,5 +1,7 @@
 # easing
 
+> 1.0 起可以按模块引入：`import easing from 'micell/easing'`（ESM）。
+
 ## cubicBezier
 
 ```js

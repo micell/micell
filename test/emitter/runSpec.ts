@@ -5,11 +5,7 @@ interface Creator {
   (): Emitter
 }
 
-export default function runSpec(
-  describe: SuiteAPI,
-  it: TestAPI,
-  creator: Creator,
-): void {
+export default function runSpec(describe: SuiteAPI, it: TestAPI, creator: Creator): void {
   describe('emitter creator', () => {
     describe('new Emitter or create()', () => {
       it('should return an Emitter instance when no parameter is passed', () => {

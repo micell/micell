@@ -1,5 +1,7 @@
 # date
 
+> Since 1.0 you can import this module on its own: `import date from 'micell/date'` (ESM).
+
 ## diff
 
 ```js

@@ -2,12 +2,7 @@ import { describe, expect, it } from 'vitest'
 import isRgb from '../../src/regex/isRgb'
 
 describe('regex/isRgb', () => {
-  const rgbStrings = [
-    'rgb(0,0,0)',
-    'RGB(0,0,0)',
-    'rgb(10, 10, 10)',
-    'rgb( 0, 0,  0 )',
-  ]
+  const rgbStrings = ['rgb(0,0,0)', 'RGB(0,0,0)', 'rgb(10, 10, 10)', 'rgb( 0, 0,  0 )']
   const notRgbStrings = ['', 'rgb(0,0,0.1)', 'Rgb(0,0,0)', 'rgb (0,0,0)']
 
   it('should be a RGB string', () => {

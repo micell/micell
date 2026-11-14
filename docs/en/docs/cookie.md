@@ -1,5 +1,7 @@
 # cookie
 
+> Since 1.0 you can import this module on its own: `import cookie from 'micell/cookie'` (ESM).
+
 ## get
 
 ```js

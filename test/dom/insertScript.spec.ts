@@ -32,9 +32,7 @@ describe('insertScript', () => {
     expect(script.async).to.equal(true)
   })
 
-  it('should trigger the load event if script load is success', async ({
-    skip,
-  }) => {
+  it('should trigger the load event if script load is success', async ({ skip }) => {
     skip()
     const url = '/base/test/setup.js'
     let script: HTMLScriptElement | null = null
@@ -51,9 +49,7 @@ describe('insertScript', () => {
     expect((script as unknown as HTMLScriptElement).onload).to.be.an('function')
   })
 
-  it('should trigger the error event if script load is failed', async ({
-    skip,
-  }) => {
+  it('should trigger the error event if script load is failed', async ({ skip }) => {
     skip()
 
     const url = 'http://some-never-be-exist-domain.com/app.js'
@@ -69,8 +65,6 @@ describe('insertScript', () => {
     }
     // @ts-ignore
     await expect(run()).rejects.to.equal('error')
-    expect((script as unknown as HTMLScriptElement).onerror).to.be.an(
-      'function',
-    )
+    expect((script as unknown as HTMLScriptElement).onerror).to.be.an('function')
   })
 })

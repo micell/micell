@@ -6,7 +6,7 @@ const pkg = require('../../../package.json')
 
 export const en = defineConfig({
   lang: 'en-US',
-  description: 'Vite & Vue powered static site generator.',
+  description: 'A collection of functions for frontend development',
 
   themeConfig: {
     nav: nav(),
@@ -16,7 +16,7 @@ export const en = defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      pattern: 'https://github.com/micell/micell/edit/main/docs/:path',
       text: 'Edit this page on GitHub',
     },
 
@@ -48,7 +48,7 @@ function nav(): DefaultTheme.NavItem[] {
         },
         {
           text: 'Contributing',
-          link: 'https://github.com/micell/micell/blob/main/.github/contributing.md',
+          link: 'https://github.com/micell/micell/blob/main/.github/CONTRIBUTING.md',
         },
       ],
     },
@@ -63,6 +63,7 @@ function sidebarDocs(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'What is Micell?', link: 'what-is-micell' },
         { text: 'Getting Started', link: 'getting-started' },
+        { text: 'Upgrading from 0.x', link: 'upgrading' },
       ],
     },
     {
@@ -74,7 +75,6 @@ function sidebarDocs(): DefaultTheme.SidebarItem[] {
         { text: 'cookie', link: 'cookie' },
         { text: 'date', link: 'date' },
         { text: 'dom', link: 'dom' },
-        { text: 'date', link: 'date' },
         { text: 'easing', link: 'easing' },
         { text: 'emitter', link: 'emitter' },
         { text: 'lang', link: 'lang' },

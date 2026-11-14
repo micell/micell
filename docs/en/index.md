@@ -20,5 +20,5 @@ features:
   - title: TypeScript Support
     details: Including sufficient TypeScript type definitions
   - title: Small Size
-    details: Use the babel-plugin-lodash to reduce the bundle size.
+    details: No runtime dependencies; per-module imports and ESM.
 ---

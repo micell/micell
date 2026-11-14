@@ -1,5 +1,7 @@
 # base64
 
+> Since 1.0 you can import this module on its own: `import base64 from 'micell/base64'` (ESM).
+
 ## decode
 
 ```js

@@ -33,7 +33,11 @@ export const shared = defineConfig({
   /* prettier-ignore */
   head: [
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['script', { src: '//cdn.jsdelivr.net/npm/micell@latest' }],
+    [
+      'script',
+      { type: 'module' },
+      `import('https://cdn.jsdelivr.net/npm/micell@latest/dist/micell.es.js').then((mod) => { window.micell = mod.default }).catch(() => {})`,
+    ],
     ['meta', { name: 'theme-color', content: '#4db350' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],

@@ -18,6 +18,7 @@ import { default as ajaxAlias } from '../src/ajax'
 import { default as classNamesAlias } from '../src/classNames'
 import { default as cssAlias } from '../src/css'
 import { default as delayAlias } from '../src/delay'
+import { default as downloadAlias } from '../src/download'
 import { default as jsonpAlias } from '../src/jsonp'
 import { default as md5Alias } from '../src/md5'
 import { default as noopAlias } from '../src/noop'
@@ -34,6 +35,7 @@ describe('index', () => {
     expect(index.classNames).to.equal(classNamesAlias)
     expect(index.css).to.equal(cssAlias)
     expect(index.delay).to.equal(delayAlias)
+    expect(index.download).to.equal(downloadAlias)
     expect(index.jsonp).to.equal(jsonpAlias)
     expect(index.md5).to.equal(md5Alias)
     expect(index.noop).to.equal(noopAlias)
@@ -74,6 +76,7 @@ describe('index', () => {
 
     expect(index.date.diff).to.equal(allDate.default.diff)
     expect(index.date.format).to.equal(allDate.default.format)
+    expect(index.date.parse).to.equal(allDate.default.parse)
     expect(index.date.timeAgo).to.equal(allDate.default.timeAgo)
 
     expect(index.dom.clientX).to.equal(allDom.default.clientX)
@@ -108,7 +111,9 @@ describe('index', () => {
     expect(index.emitter.on).to.equal(allEmitter.default.on)
     expect(index.emitter.off).to.equal(allEmitter.default.off)
 
+    expect(index.lang.getType).to.equal(allLang.default.getType)
     expect(index.lang.isArray).to.equal(allLang.default.isArray)
+    expect(index.lang.isBigInt).to.equal(allLang.default.isBigInt)
     expect(index.lang.isBoolean).to.equal(allLang.default.isBoolean)
     expect(index.lang.isDate).to.equal(allLang.default.isDate)
     expect(index.lang.isError).to.equal(allLang.default.isError)
@@ -119,6 +124,7 @@ describe('index', () => {
     expect(index.lang.isObject).to.equal(allLang.default.isObject)
     expect(index.lang.isRegExp).to.equal(allLang.default.isRegExp)
     expect(index.lang.isString).to.equal(allLang.default.isString)
+    expect(index.lang.isSymbol).to.equal(allLang.default.isSymbol)
     expect(index.lang.isUndefined).to.equal(allLang.default.isUndefined)
 
     expect(index.path.basename).to.equal(allPath.default.basename)
@@ -175,6 +181,7 @@ describe('index', () => {
     expect(index.url.parse).to.equal(allUrl.default.parse)
     expect(index.url.stringify).to.equal(allUrl.default.stringify)
 
+    expect(index.ua.isAlipay).to.equal(allUa.default.isAlipay)
     expect(index.ua.isAndroid).to.equal(allUa.default.isAndroid)
     expect(index.ua.isIOS).to.equal(allUa.default.isIOS)
     expect(index.ua.isIPad).to.equal(allUa.default.isIPad)

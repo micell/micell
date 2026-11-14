@@ -1,5 +1,7 @@
 # url
 
+> 1.0 起可以按模块引入：`import url from 'micell/url'`（ESM）。
+
 ## isAbsolute
 
 ```js

@@ -1,15 +1,14 @@
 # micell
 
-[![Build Status](https://github.com/micell/micell/actions/workflows/node.js.yml/badge.svg)](https://github.com/micell/micell/actions/workflows/node.js.yml)
-[![codecov](https://codecov.io/gh/micell/micell/branch/master/graph/badge.svg)](https://codecov.io/gh/micell/micell)
+[![Build Status](https://github.com/micell/micell/actions/workflows/ci.yml/badge.svg)](https://github.com/micell/micell/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/micell/micell/branch/main/graph/badge.svg)](https://codecov.io/gh/micell/micell)
 [![npm](https://img.shields.io/npm/v/micell.svg)](https://www.npmjs.com/package/micell)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/micell)
 ![NPM](https://img.shields.io/npm/l/micell)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bff6938e-fda6-416f-84fd-bf33fc6a6072/deploy-status)](https://app.netlify.com/sites/pensive-leakey-00e229/deploys)
 
 **English** | **[简体中文](README_zh-CN.md)**
 
-A collection of functions for web development.
+A collection of functions for web development, with no runtime dependencies.
 
 * Base64 encoding and decoding a string or binary data
 * Character range checking
@@ -27,47 +26,36 @@ A collection of functions for web development.
 
 ## Install
 
-**Npm**
-
 ```sh
-npm i -S micell
-```
-
-**Yarn**
-
-```sh
-yarn add micell
-```
-
-**Pnpm**
-
-```sh
+npm install micell
+# or
 pnpm add micell
+# or
+yarn add micell
 ```
 
 **CDN**
 
-If you want use micell with `<script>` directly, you can use [jsDelivr](https://www.jsdelivr.com/package/npm/micell).
-
-The latest version:
+The package is ESM-only; load it as a module:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/micell"></script>
+<script type="module">
+  import micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
+
+  micell.randomString(6)
+</script>
 ```
 
 The specific version:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/micell@0.15.2/dist/micell.js"></script>
+<script type="module">
+  import micell from 'https://cdn.jsdelivr.net/npm/micell@1.0.0/dist/micell.es.js'
+</script>
 ```
 
-The ES Modules version:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/micell@0.15.2/dist/micell.esm.browser.js"></script>
-```
-
-The micell also exists in [unpkg](https://unpkg.com/).
+micell is also available on [unpkg](https://unpkg.com/), e.g.
+`https://unpkg.com/micell@1/dist/micell.es.js`.
 
 ## Usage
 
@@ -75,28 +63,34 @@ The micell also exists in [unpkg](https://unpkg.com/).
 import micell from 'micell'
 
 // Generate a random string
-micell.randomString();
+micell.randomString(6)
 
 // Get a cookie value
 micell.cookie.get('name')
 ```
 
-More functions see the [Docs](/docs/).
+More functions see the [Docs](https://micell.org/docs).
 
-### Reduce the bundle size
+### Bundle size
 
-You can use the [babel-plugin-lodash](https://www.npmjs.com/package/babel-plugin-lodash) to bundle
-the methods as you needed.
+The package is ESM-only and declares `"sideEffects": false`, so bundlers can
+drop it entirely when it is not imported. The library has no runtime
+dependencies, so it adds nothing to your dependency tree.
 
-**.babelrc**
+Import a single module instead of the whole library:
 
-```json
-{
-  "plugins": [
-    ["lodash", { "id": ["micell"] }]
-  ]
-}
+```js
+// Only the date module and its dependencies are bundled
+import { format, parse } from 'micell/date'
+
+// Or take the module namespace
+import date from 'micell/date'
 ```
+
+Every module under `src/` has a matching subpath: `micell/base64`, `micell/char`,
+`micell/cookie`, `micell/date`, `micell/dom`, `micell/easing`, `micell/emitter`,
+`micell/lang`, `micell/path`, `micell/qs`, `micell/regex`, `micell/string`,
+`micell/ua` and `micell/url`. All entries are ESM-only.
 
 ## Docs
 
@@ -104,17 +98,18 @@ See [Docs](https://micell.org/docs).
 
 ## Compatibility
 
-* Chrome
-* Firefox
-* Safari
-* Edge
-* IE >= 11
-* iOS >= 10
-* Android >= 5
+* Chrome >= 87
+* Edge >= 88
+* Firefox >= 78
+* Safari >= 13
+
+## Upgrading from 0.x
+
+See [UPGRADING.md](UPGRADING.md). 1.0 drops IE 11 and the built-in polyfills.
 
 ## Changelog
 
-See [Release notes](https://github.com/micell/micell/releases).
+See [CHANGELOG.md](CHANGELOG.md) and [Release notes](https://github.com/micell/micell/releases).
 
 ## Contributing
 
@@ -126,4 +121,4 @@ Also, you can read the [CONTRIBUTING](.github/CONTRIBUTING.md) guide.
 
 MIT
 
-Copyright (c) 2019-preset, Alex Chao
+Copyright (c) 2019-present, Alex Chao

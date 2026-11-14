@@ -38,8 +38,10 @@ describe('qs/get', () => {
       'CSS',
       'JavaScript',
     ])
-    expect(
-      get('lang', 'lang[]=HTML&lang[]=CSS&lang[]=JavaScript'),
-    ).to.deep.equal(['HTML', 'CSS', 'JavaScript'])
+    expect(get('lang', 'lang[]=HTML&lang[]=CSS&lang[]=JavaScript')).to.deep.equal([
+      'HTML',
+      'CSS',
+      'JavaScript',
+    ])
   })
 })

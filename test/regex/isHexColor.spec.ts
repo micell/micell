@@ -3,17 +3,7 @@ import isHexColor from '../../src/regex/isHexColor'
 
 describe('regex/isHexColor', () => {
   const hexColorStrings = ['#fff', '#ffaa00']
-  const notHexColorStrings = [
-    '',
-    '#',
-    'fff',
-    'ffaa00',
-    '#f',
-    '#ff',
-    '#ffff',
-    '#fffff',
-    '#ffg',
-  ]
+  const notHexColorStrings = ['', '#', 'fff', 'ffaa00', '#f', '#ff', '#ffff', '#fffff', '#ffg']
 
   it('should be an hexadicimal color string', () => {
     hexColorStrings.forEach((str) => {

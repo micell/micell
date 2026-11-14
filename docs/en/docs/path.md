@@ -1,5 +1,7 @@
 # path
 
+> Since 1.0 you can import this module on its own: `import path from 'micell/path'` (ESM).
+
 ## basename
 
 ```js

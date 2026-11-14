@@ -1,5 +1,7 @@
 # emitter
 
+> 1.0 起可以按模块引入：`import emitter from 'micell/emitter'`（ESM）。
+
 你可以使用`micell.emitter.create()`创建一个`Emitter`实例对象，每一个 Emitter 实例对象都有下面的方法：
 
 * `emit`

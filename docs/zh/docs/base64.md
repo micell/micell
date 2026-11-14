@@ -1,5 +1,7 @@
 # base64
 
+> 1.0 起可以按模块引入：`import base64 from 'micell/base64'`（ESM）。
+
 ## decode
 
 ```js

@@ -2,17 +2,7 @@ import { describe, expect, it } from 'vitest'
 import isRealNumber from '../../src/regex/isRealNumber'
 
 describe('regex/isRealNumber', () => {
-  const realNumberStrings = [
-    '0',
-    '1',
-    '0.1',
-    '.1',
-    '+1.1',
-    '-1.12',
-    '-1.1e5',
-    '-.1E-5',
-    '+.1E+5',
-  ]
+  const realNumberStrings = ['0', '1', '0.1', '.1', '+1.1', '-1.12', '-1.1e5', '-.1E-5', '+.1E+5']
   const notRealNumberStrings = ['', '1..1', '..1', '1.1.', '1e1.1']
 
   it('should be a real number string', () => {

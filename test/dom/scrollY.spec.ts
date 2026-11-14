@@ -2,8 +2,7 @@ import { describe, beforeEach, expect, it } from 'vitest'
 import scrollY from '../../src/dom/scrollY'
 
 describe('scrollY', () => {
-  const delay = (duration = 0) =>
-    new Promise((resolve) => setTimeout(resolve, duration))
+  const delay = (duration = 0) => new Promise((resolve) => setTimeout(resolve, duration))
 
   beforeEach(() => {
     document.documentElement.innerHTML = `

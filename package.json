@@ -1,38 +1,102 @@
 {
   "name": "micell",
-  "version": "0.15.2",
+  "version": "1.0.0",
   "description": "A collection of functions for frontend development",
-  "main": "dist/micell.common.js",
-  "module": "dist/micell.esm.js",
-  "jsdelivr": "dist/micell.js",
-  "unpkg": "dist/micell.js",
-  "types": "index.d.ts",
+  "type": "module",
+  "main": "./dist/micell.es.js",
+  "module": "./dist/micell.es.js",
+  "types": "./dist/micell.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/micell.d.ts",
+      "import": "./dist/micell.es.js"
+    },
+    "./base64": {
+      "types": "./dist/base64.d.ts",
+      "import": "./dist/base64.es.js"
+    },
+    "./char": {
+      "types": "./dist/char.d.ts",
+      "import": "./dist/char.es.js"
+    },
+    "./cookie": {
+      "types": "./dist/cookie.d.ts",
+      "import": "./dist/cookie.es.js"
+    },
+    "./date": {
+      "types": "./dist/date.d.ts",
+      "import": "./dist/date.es.js"
+    },
+    "./dom": {
+      "types": "./dist/dom.d.ts",
+      "import": "./dist/dom.es.js"
+    },
+    "./easing": {
+      "types": "./dist/easing.d.ts",
+      "import": "./dist/easing.es.js"
+    },
+    "./emitter": {
+      "types": "./dist/emitter.d.ts",
+      "import": "./dist/emitter.es.js"
+    },
+    "./lang": {
+      "types": "./dist/lang.d.ts",
+      "import": "./dist/lang.es.js"
+    },
+    "./path": {
+      "types": "./dist/path.d.ts",
+      "import": "./dist/path.es.js"
+    },
+    "./qs": {
+      "types": "./dist/qs.d.ts",
+      "import": "./dist/qs.es.js"
+    },
+    "./regex": {
+      "types": "./dist/regex.d.ts",
+      "import": "./dist/regex.es.js"
+    },
+    "./string": {
+      "types": "./dist/string.d.ts",
+      "import": "./dist/string.es.js"
+    },
+    "./ua": {
+      "types": "./dist/ua.d.ts",
+      "import": "./dist/ua.es.js"
+    },
+    "./url": {
+      "types": "./dist/url.d.ts",
+      "import": "./dist/url.es.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "UPGRADING.md"
+  ],
+  "sideEffects": false,
   "engines": {
-    "node": ">=10.0.0"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "scripts": {
-    "clean": "rimraf dist lib es types coverage",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "predocs:build": "cd docs && pnpm i",
-    "lint": "biome check --files-ignore-unknown=true",
+    "clean": "rimraf dist coverage",
+    "lint": "oxlint src test",
+    "fmt": "oxfmt src test",
+    "fmt:check": "oxfmt --check src test",
     "type-check": "tsc --noEmit",
     "type-check:watch": "pnpm run type-check -- --watch",
-    "prettier": "prettier --write .",
     "vitest": "vitest",
     "test": "vitest",
     "test:ci": "vitest run --browser.headless",
     "test:cover": "vitest --coverage",
     "test:ci:cover": "vitest run --coverage --browser.headless",
-    "build": "pnpm run clean && pnpm run types && pnpm run build:commonjs && pnpm run rollup",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions .mjs,.js,.ts --out-dir lib",
-    "rollup": "rollup -c",
-    "types": "zx ./scripts/generateDeclaration.mjs",
-    "pkg": "zx ./scripts/release.mjs",
-    "release": "pnpm run pkg && semantic-release",
-    "postpublish": "zx ../scripts/postpublish.mjs",
-    "prepare": "husky && pnpm exec playwright install"
+    "build": "pnpm run clean && tsup",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "changelog": "changelogen",
+    "release": "bumpp -a --commit \"chore(release): {version}\"",
+    "release:tag": "node scripts/release-tag.mjs",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -40,7 +104,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "biome check --write --no-errors-on-unmatched"
+      "oxfmt --write",
+      "oxlint --fix"
     ]
   },
   "keywords": [
@@ -69,50 +134,21 @@
   },
   "homepage": "https://micell.org",
   "devDependencies": {
-    "@babel/cli": "^7.25.6",
-    "@babel/core": "^7.25.2",
-    "@babel/helper-environment-visitor": "^7.24.7",
-    "@babel/node": "^7.25.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.24.8",
-    "@babel/plugin-transform-runtime": "^7.24.7",
-    "@babel/preset-env": "^7.25.3",
-    "@babel/preset-typescript": "^7.24.7",
-    "@biomejs/biome": "1.8.3",
-    "@commitlint/cli": "^18.6.1",
-    "@commitlint/config-conventional": "^18.6.3",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-replace": "^5.0.7",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@semantic-release/git": "^10.0.1",
-    "@types/shelljs": "^0.8.15",
-    "@types/sinon": "^10.0.6",
-    "@vitest/browser": "^2.0.5",
-    "@vitest/coverage-istanbul": "^2.0.5",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "chalk": "^2.4.2",
-    "cross-env": "^5.2.0",
-    "husky": "^9.1.4",
-    "lint-staged": "^12.1.4",
-    "playwright": "^1.46.0",
-    "ramda": "^0.30.1",
-    "replace": "^1.2.2",
-    "rimraf": "^5.0.10",
-    "rollup": "^4.20.0",
-    "semantic-release": "^22.0.0",
-    "sinon": "^18.0.0",
-    "tslib": "^2.6.3",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.0",
-    "vitepress": "^1.3.2",
-    "vitest": "^2.0.5",
-    "zx": "^8.1.8"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.25.0",
-    "@babel/runtime-corejs3": "^7.25.0",
-    "core-js": "^3.38.0"
+    "@types/node": "^25.0.9",
+    "@vitest/browser-playwright": "^4.1.11",
+    "@vitest/coverage-v8": "^4.1.11",
+    "bumpp": "^12.2.2",
+    "changelogen": "^0.6.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.41.0",
+    "playwright": "^1.65.0",
+    "rimraf": "^6.1.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.5",
+    "vitepress": "^1.6.4",
+    "vitest": "^4.1.11"
   }
 }

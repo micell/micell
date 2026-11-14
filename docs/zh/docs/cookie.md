@@ -1,5 +1,7 @@
 # cookie
 
+> 1.0 起可以按模块引入：`import cookie from 'micell/cookie'`（ESM）。
+
 ## get
 
 ```js

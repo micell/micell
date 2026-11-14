@@ -1,5 +1,7 @@
 # emitter
 
+> Since 1.0 you can import this module on its own: `import emitter from 'micell/emitter'` (ESM).
+
 You can use `micell.emitter.create()` to create an Emitter instance. And, every Emitter instance has the below methods:
 
 * `emit`

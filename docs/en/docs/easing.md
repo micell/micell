@@ -1,5 +1,7 @@
 # easing
 
+> Since 1.0 you can import this module on its own: `import easing from 'micell/easing'` (ESM).
+
 ## cubicBezier
 
 ```js

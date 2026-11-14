@@ -1,5 +1,7 @@
 # ua
 
+> Since 1.0 you can import this module on its own: `import ua from 'micell/ua'` (ESM).
+
 ## isAlipay
 
 ```js
@@ -10,7 +12,7 @@ Check is the environment is Alipay App.
 
 **Since**
 
-0.14.0
+1.0.0 (available via deep imports since 0.14.0)
 
 **Return**
 

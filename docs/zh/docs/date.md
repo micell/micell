@@ -1,5 +1,7 @@
 # date
 
+> 1.0 起可以按模块引入：`import date from 'micell/date'`（ESM）。
+
 ## diff
 
 ```js

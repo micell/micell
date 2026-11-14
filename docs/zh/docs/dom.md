@@ -1,5 +1,7 @@
 # dom
 
+> 1.0 起可以按模块引入：`import dom from 'micell/dom'`（ESM）。
+
 ## clientX
 
 ```js
@@ -389,7 +391,7 @@ const el = document.getElementById('el')
 scrollX(el);
 ```
 
-## scrolY
+## scrollY
 
 ```js
 scrollY([elOrWindow])

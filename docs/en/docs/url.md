@@ -1,5 +1,7 @@
 # url
 
+> Since 1.0 you can import this module on its own: `import url from 'micell/url'` (ESM).
+
 ## isAbsolute
 
 ```js

@@ -1,6 +1,5 @@
 const identity = (x: number): number => x
-const isApproximate = (a: number, b: number): boolean =>
-  Math.abs(a - b) < 0.000001
+const isApproximate = (a: number, b: number): boolean => Math.abs(a - b) < 0.000001
 type EasingFunc = (x: number) => number
 const compare = (easing1: EasingFunc, easing2: EasingFunc): boolean => {
   const nums = [

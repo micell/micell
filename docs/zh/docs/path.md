@@ -1,5 +1,7 @@
 # path
 
+> 1.0 起可以按模块引入：`import path from 'micell/path'`（ESM）。
+
 ## basename
 
 ```js

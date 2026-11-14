@@ -159,7 +159,9 @@ namespace micell {
   }
 
   export namespace lang {
+    export const getType = allLang.default.getType
     export const isArray = allLang.default.isArray
+    export const isBigInt = allLang.default.isBigInt
     export const isBoolean = allLang.default.isBoolean
     export const isDate = allLang.default.isDate
     export const isError = allLang.default.isError
@@ -170,6 +172,7 @@ namespace micell {
     export const isObject = allLang.default.isObject
     export const isRegExp = allLang.default.isRegExp
     export const isString = allLang.default.isString
+    export const isSymbol = allLang.default.isSymbol
     export const isUndefined = allLang.default.isUndefined
   }
 
@@ -238,6 +241,7 @@ namespace micell {
   }
 
   export namespace ua {
+    export const isAlipay = allUa.default.isAlipay
     export const isAndroid = allUa.default.isAndroid
     export const isIOS = allUa.default.isIOS
     export const isIPad = allUa.default.isIPad

@@ -1,5 +1,7 @@
 # lang
 
+> Since 1.0 you can import this module on its own: `import lang from 'micell/lang'` (ESM).
+
 ## getType
 
 ```js
@@ -10,7 +12,7 @@ Return the type of `value`.
 
 **Since**
 
-0.14.0
+1.0.0 (available via deep imports since 0.14.0)
 
 **Arguments**
 
@@ -86,7 +88,7 @@ Check if a value is a BigInt value.
 
 **Since**
 
-0.8.0
+1.0.0 (available via deep imports since 0.8.0)
 
 **Arguments**
 
@@ -390,7 +392,7 @@ Check if a value is a Symbol value.
 
 **Since**
 
-0.8.0
+1.0.0 (available via deep imports since 0.8.0)
 
 **Arguments**
 

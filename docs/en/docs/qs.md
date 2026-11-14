@@ -1,5 +1,7 @@
 # qs
 
+> Since 1.0 you can import this module on its own: `import qs from 'micell/qs'` (ESM).
+
 ## get
 
 ```js

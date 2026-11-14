@@ -24,9 +24,7 @@ describe('jsonp', () => {
 
   it('should reject with the parsign error', async () => {
     // @ts-ignore
-    await expect(jsonp('/mocks/jsonp/jsonp-invalid.js')).rejects.to.instanceof(
-      Error,
-    )
+    await expect(jsonp('/mocks/jsonp/jsonp-invalid.js')).rejects.to.instanceof(Error)
   })
 
   it('should receive the response data without parsing', async () => {
@@ -40,8 +38,6 @@ describe('jsonp', () => {
 
   it('should reject with an error', async () => {
     // @ts-ignore
-    await expect(jsonp('/mocks/jsonp/jsonp-error.js')).rejects.to.instanceof(
-      Error,
-    )
+    await expect(jsonp('/mocks/jsonp/jsonp-error.js')).rejects.to.instanceof(Error)
   })
 })

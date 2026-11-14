@@ -12,43 +12,62 @@ We're open to and grateful for contributions made by the community. By contribut
 
 ### Code style
 
-In short, that is the below.
-
 * **2 spaces indention**
 * **Line end without semicolon**
-* **No trailing comma**
-
-And, lint script will be run in git commit automatically.
+* **Single quotes**
+* Format and lint run in the pre-commit hook (`oxfmt` + `oxlint`).
 
 ### Prerequisite
 
-* Node.js
-* Yarn
+* Node.js `^20.19.0 || >=22.12.0`
+* pnpm >= 10
 
 ### Project structure
 
-* **assets**: Images, fonts and so on.
-* **docs**: Document files written in markdown. And, use vuepress to generate the documentation.
-* **scripts**: Build scripts.
+* **docs**: Document files written in markdown, generated with VitePress.
+* **scripts**: Release scripts.
 * **src**: Source code.
-* **test**: Test files.
+* **src/entries**: Per-module subpath entries (`micell/date`, `micell/string`, …);
+  regenerate them when a module's default export changes.
+* **test**: Test files, run in a real Chromium via Vitest browser mode.
 
-### Test
-
-```sh
-# Local test with headless chrome
-yarn test
-```
-### Document
+### Commands
 
 ```sh
-# Local docs server with vuepress
-yarn docs:dev
+# Install dependencies
+pnpm install
+
+# Install the Playwright browser once
+pnpm exec playwright install chromium
+
+# Type check
+pnpm type-check
+
+# Lint and format
+pnpm lint
+pnpm fmt:check
+
+# Tests (headless Chromium)
+pnpm test:ci
+
+# Tests with coverage
+pnpm test:ci:cover
+
+# Build ESM/CJS/IIFE bundles and the declaration file
+pnpm build
+
+# Local docs server
+pnpm docs:dev
+
+# Build the docs site
+pnpm docs:build
 ```
 
 ### Git commit message
 
-We use the style of [conventional-changelog-angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular). For example:
+We use [Conventional Commits](https://www.conventionalcommits.org/). The type and
+scope drive the generated `CHANGELOG.md`, so describe what a package consumer
+can observe. For example:
 
 ```txt
 fix: toggle the if check
@@ -59,9 +78,9 @@ feat(ua): add isIE method
 ### Releasing
 
 ```sh
-# CI environment
-yarn run release
+# Bump the version, regenerate CHANGELOG.md, open a release PR
+pnpm release
 
-# Local machine
-yarn run release --no-ci
+# After the PR is merged, tag the merge commit on main
+pnpm release:tag
 ```

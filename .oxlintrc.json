@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "ignorePatterns": ["dist", "coverage", "node_modules", "docs"],
+  "rules": {
+    "no-cond-assign": "off",
+    "no-plusplus": "off",
+    "no-bitwise": "off"
+  }
+}

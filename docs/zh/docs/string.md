@@ -1,5 +1,7 @@
 # string
 
+> 1.0 起可以按模块引入：`import string from 'micell/string'`（ESM）。
+
 ## countChars
 
 ```js

@@ -5,9 +5,8 @@
 export type AnyFunction = (...args: any[]) => any
 
 const fns: Array<AnyFunction> = []
-const doc = typeof document === 'object' && document
-// @ts-ignore
-const hack = doc?.documentElement.doScroll
+const doc = typeof document === 'object' ? document : null
+const hack = doc && (doc.documentElement as HTMLElement & { doScroll?: unknown }).doScroll
 const domContentLoaded = 'DOMContentLoaded'
 let loaded =
   doc && (hack ? /* istanbul ignore next */ /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)

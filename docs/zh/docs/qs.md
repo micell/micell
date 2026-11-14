@@ -1,5 +1,7 @@
 # qs
 
+> 1.0 起可以按模块引入：`import qs from 'micell/qs'`（ESM）。
+
 ## get
 
 ```js
