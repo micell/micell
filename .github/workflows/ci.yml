@@ -94,3 +94,25 @@ jobs:
 
       - name: Check declarations
         run: pnpm exec tsc --noEmit --skipLibCheck false --target es2020 --module esnext --moduleResolution bundler dist/micell.d.ts dist/date.d.ts
+
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build docs
+        run: pnpm docs:build
