@@ -138,7 +138,7 @@
   },
   "homepage": "https://micell.org",
   "devDependencies": {
-    "@types/node": "^25.0.9",
+    "@types/node": "^26.6.6",
     "@vitest/browser-playwright": "^4.1.11",
     "@vitest/coverage-v8": "^4.1.11",
     "bumpp": "^12.2.2",
