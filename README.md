@@ -40,7 +40,7 @@ The package is ESM-only; load it as a module:
 
 ```html
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
 
   micell.randomString(6)
 </script>
@@ -50,7 +50,7 @@ The specific version:
 
 ```html
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1.0.0/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1.0.0/dist/micell.es.js'
 </script>
 ```
 
@@ -60,7 +60,7 @@ micell is also available on [unpkg](https://unpkg.com/), e.g.
 ## Usage
 
 ```js
-import micell from 'micell'
+import * as micell from 'micell'
 
 // Generate a random string
 micell.randomString(6)

@@ -1,8 +1,10 @@
 # Upgrading to 1.0
 
-micell 1.0 keeps the public API: `import micell from 'micell'` and
-`micell.<module>.<fn>()` work as before. The release modernizes the toolchain
-and the distribution format, and drops the legacy browser/polyfill support.
+micell 1.0 keeps the module layout: `import * as micell from 'micell'` and
+`micell.<module>.<fn>()` work as before. The root entry no longer has a
+default export, so `import micell from 'micell'` must become the namespace
+import above (or a subpath import). The release modernizes the toolchain and
+the distribution format, and drops the legacy browser/polyfill support.
 
 ## What changed
 
@@ -37,13 +39,13 @@ APIs listed under "Browser support" below.
 | `dist/micell.esm.js` | `dist/micell.es.js` |
 | `dist/micell.esm.browser.js` | removed |
 | `lib/**/*.js` | removed |
-| `types/index.d.ts` | `dist/types/index.d.ts` (declaration tree) |
+| `types/index.d.ts` | `dist/micell.d.ts` (entry + shared chunks) |
 
 `package.json` now uses an `exports` map:
 
 ```json
 {
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/micell.d.ts",
   "import": "./dist/micell.es.js"
 }
 ```
@@ -60,7 +62,7 @@ Load the ES module directly from a CDN:
 
 <!-- 1.0 -->
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
 
   micell.randomString(6)
   micell.cookie.get('name')
@@ -87,7 +89,7 @@ browser library and mostly relies on DOM APIs.
 | Area | Before | After |
 | --- | --- | --- |
 | Build | Babel + Rollup | tsup (esbuild) |
-| Types | `tsc` per-file to `types/` | tsc declaration tree in `dist/types/` |
+| Types | `tsc` per-file to `types/` | tsup dts (shared chunks) |
 | Lint / format | Biome | Oxlint + Oxfmt |
 | Tests | Vitest 2 (istanbul) | Vitest 4 (v8 coverage) |
 | Release | semantic-release | bumpp + changelogen |

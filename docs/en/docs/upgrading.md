@@ -1,6 +1,6 @@
 # Upgrading from 0.x to 1.0
 
-1.0 keeps `import micell from 'micell'` and `micell.<module>.<fn>()` working. The changes are in the distribution format and the runtime baseline.
+1.0 keeps the module layout: `import * as micell from 'micell'` and `micell.<module>.<fn>()` still work. The root entry no longer has a default export, so `import micell from 'micell'` must become the namespace import above (or a subpath import). The changes are in the distribution format and the runtime baseline.
 
 ## What changed
 
@@ -21,7 +21,7 @@
 | `dist/micell.esm.js` | `dist/micell.es.js` |
 | `dist/micell.esm.browser.js` | removed |
 | `lib/**/*.js` | removed |
-| `types/index.d.ts` | `dist/types/index.d.ts` |
+| `types/index.d.ts` | `dist/micell.d.ts` |
 
 The package exposes its entries through an `exports` map; deep imports into `micell/lib/...` are gone.
 
@@ -33,7 +33,7 @@ The package exposes its entries through an `exports` map; deep imports into `mic
 
 <!-- 1.0 -->
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
 
   micell.randomString(6)
 </script>

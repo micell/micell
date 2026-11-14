@@ -9,6 +9,8 @@
   Firefox 78+ and Safari 13+.
 - New package layout: a single `dist/` directory behind an `exports` map.
   Deep imports into `micell/lib/...` and the `types/` tree are gone.
+- The root entry no longer has a default export. Import the whole library
+  with `import * as micell from 'micell'`, or use a subpath import.
 - ESM-only distribution: the CommonJS (`dist/micell.common.js`) and UMD
   (`dist/micell.js`) bundles were removed. Use `import` or
   `<script type="module">`; `require('micell')` is no longer exported.

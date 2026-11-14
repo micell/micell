@@ -28,7 +28,7 @@ yarn add micell
 
 ```html
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
 
   micell.randomString(6)
 </script>
@@ -38,7 +38,7 @@ yarn add micell
 
 ```html
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1.0.0/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1.0.0/dist/micell.es.js'
 </script>
 ```
 
@@ -47,7 +47,7 @@ micell 同样存在于 [unpkg](https://unpkg.com/) 上。
 ## 使用
 
 ```js
-import micell from 'micell'
+import * as micell from 'micell'
 
 // 生成一个随机字符串
 micell.randomString(6);

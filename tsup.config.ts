@@ -19,9 +19,9 @@ const modules = [
 
 /**
  * ESM-only distribution:
- *   dist/micell.es.js            root entry (`import micell from 'micell'`)
+ *   dist/micell.es.js            root entry (`import * as micell from 'micell'`)
  *   dist/<module>.es.js          per-module entries (`import { format } from 'micell/date'`)
- *   dist/micell.d.ts + chunks    declarations
+ *   dist/types/**                declarations
  *
  * Every entry is a self-contained ES bundle; consumers must use a bundler or
  * native ESM (`<script type="module">`). No CommonJS or IIFE output.
@@ -36,7 +36,7 @@ export default defineConfig({
   sourcemap: true,
   splitting: false,
   clean: true,
-  dts: false,
+  dts: true,
   outExtension() {
     return { js: '.es.js' }
   },

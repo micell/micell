@@ -1,6 +1,6 @@
 # 从 0.x 升级到 1.0
 
-1.0 保留 `import micell from 'micell'` 与 `micell.<module>.<fn>()` 的用法，变化集中在分发形态和运行环境要求上。
+1.0 保留 `import * as micell from 'micell'` 与 `micell.<module>.<fn>()` 的用法。根入口不再提供默认导出，`import micell from 'micell'` 需改为上面的命名空间导入（或按需子路径导入）。变化集中在分发形态和运行环境要求上。
 
 ## 主要变化
 
@@ -21,7 +21,7 @@
 | `dist/micell.esm.js` | `dist/micell.es.js` |
 | `dist/micell.esm.browser.js` | 移除 |
 | `lib/**/*.js` | 移除 |
-| `types/index.d.ts` | `dist/types/index.d.ts` |
+| `types/index.d.ts` | `dist/micell.d.ts` |
 
 包通过 `exports` 映射暴露入口，`micell/lib/...` 深导入不再可用。
 
@@ -33,7 +33,7 @@
 
 <!-- 1.0 -->
 <script type="module">
-  import micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
+  import * as micell from 'https://cdn.jsdelivr.net/npm/micell@1/dist/micell.es.js'
 
   micell.randomString(6)
 </script>

@@ -27,9 +27,13 @@ import { default as rafAlias } from '../src/raf'
 import { default as randomNumbersAlias } from '../src/randomNumbers'
 import { default as randomStringAlias } from '../src/randomString'
 import { default as uuidAlias } from '../src/uuid'
-import index from '../src'
+import * as index from '../src'
 
 describe('index', () => {
+  it('should not expose a default export', () => {
+    expect('default' in index).to.equal(false)
+  })
+
   it('should export the right bindings', () => {
     expect(index.ajax).to.equal(ajaxAlias)
     expect(index.classNames).to.equal(classNamesAlias)
