@@ -2,3 +2,13 @@ allowBuilds:
   esbuild: true
   msw: false
   playwright: true
+
+minimumReleaseAgeExclude:
+  - mdast-util-to-hast@13.2.2
+
+overrides:
+  # @bundled-es-modules/cookie@2.0.0 still declares cookie@^0.5.0 (GHSA-pxg6-pf52-xh8x).
+  # It only re-exports cookie for msw, which this repo never imports.
+  '@bundled-es-modules/cookie>cookie': '>=0.7.0'
+  # hast-util-to-html (via shiki) accepts ^13.0.0; pin past GHSA-4fh9-h7wg-q85m.
+  'mdast-util-to-hast': '>=13.2.2'

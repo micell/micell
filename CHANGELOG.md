@@ -40,3 +40,10 @@
 - Oxlint + Oxfmt replace Biome.
 - Vitest 4 with the Playwright provider and v8 coverage.
 - bumpp + changelogen replace semantic-release.
+- VitePress 2 (Vite 8 / Rolldown) replaces VitePress 1, which pinned Vite 5.
+  The docs configs now import their siblings with explicit `.ts` extensions.
+- Oxfmt 0.78, tsup 9 and Vite 8 clear every advisory Dependabot reported
+  against the dev toolchain; `pnpm-workspace.yaml` additionally pins
+  `mdast-util-to-hast >= 13.2.2` and `@bundled-es-modules/cookie > cookie
+  >= 0.7.0` past their advisories.
+- Dependabot version updates are configured in `.github/dependabot.yml`.

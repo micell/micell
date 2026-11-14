@@ -104,9 +104,12 @@
     "url": "git+ssh://git@github.com/micell/micell.git"
   },
   "lint-staged": {
-    "*.ts": [
+    "{src,test}/**/*.ts": [
       "oxfmt --write",
       "oxlint --fix"
+    ],
+    "docs/**/*.ts": [
+      "oxfmt --write"
     ]
   },
   "keywords": [
@@ -142,14 +145,14 @@
     "changelogen": "^0.6.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "oxfmt": "^0.66.0",
+    "oxfmt": "^0.78.0",
     "oxlint": "^1.41.0",
     "playwright": "^1.65.0",
     "rimraf": "^6.1.3",
-    "tsup": "^8.5.1",
+    "tsup": "^9.0.0",
     "typescript": "^5.9.3",
-    "vite": "^7.3.5",
-    "vitepress": "^1.6.4",
+    "vite": "^8.3.8",
+    "vitepress": "^2.0.0-alpha.21",
     "vitest": "^4.1.11"
   }
 }
